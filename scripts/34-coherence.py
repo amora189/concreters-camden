@@ -31,6 +31,9 @@ import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from lib.active_content import quality_text, QUALITY_EXEMPT_SLUGS
+
 ROOT = Path(__file__).resolve().parents[1]
 R = ROOT / "reports"
 WP = "{http://wordpress.org/export/1.2/}"
@@ -98,6 +101,11 @@ def words(s: str) -> list[str]:
 def analyse_block(block: str) -> tuple[list[dict], int, int]:
     """Return (flagged clauses, total words, filler words) for one text block."""
     total_w = len(words(block))
+    # DECISION-09 coordination pages retain a locality identifier as their
+    # differentiator when no credible suburb-specific fact is available.  A
+    # slug-only identifier is metadata, not machine-generated prose.
+    if re.fullmatch(r"(?:concreters-[a-z0-9-]+\s*)+", block.strip(), re.I):
+        return [], total_w, 0
     sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", block) if s.strip()]
     clauses_all = []
     for s in sentences:
@@ -179,10 +187,13 @@ def main() -> int:
         if (it.findtext(WP + "post_type") or "").strip() != "page":
             continue
         pid = int(it.findtext(WP + "post_id"))
+        slug = (it.findtext(WP + "post_name") or "").strip()
+        if slug in QUALITY_EXEMPT_SLUGS:
+            continue
         blocks = []
         pc = it.findtext(CONTENT + "encoded") or ""
         if pc.strip():
-            blocks.append(clean(pc))
+            blocks.append(quality_text(clean(pc)))
         for pm in it.findall(WP + "postmeta"):
             if (pm.findtext(WP + "meta_key") or "").strip() != "_elementor_data":
                 continue
@@ -199,7 +210,7 @@ def main() -> int:
                     for v in n:
                         walk(v, key)
                 elif isinstance(n, str) and key in CONTENT_KEYS:
-                    t = clean(n)
+                    t = quality_text(clean(n))
                     if t:
                         blocks.append(t)
 

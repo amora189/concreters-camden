@@ -2,141 +2,144 @@
  "pages_scanned": 75,
  "threshold": 0.2,
  "severity_counts": {
-  "MODERATE": 9,
-  "BELOW THRESHOLD": 61,
-  "CLEAN": 5
+  "SEVERE": 11,
+  "MODERATE": 45,
+  "BELOW THRESHOLD": 18,
+  "CLEAN": 1
  },
  "severity_by_class": {
   "home": {
-   "CLEAN": 1
+   "BELOW THRESHOLD": 1
   },
   "service": {
-   "MODERATE": 8,
-   "BELOW THRESHOLD": 2
+   "SEVERE": 10
   },
   "suburb": {
-   "MODERATE": 1,
-   "BELOW THRESHOLD": 59
+   "MODERATE": 45,
+   "BELOW THRESHOLD": 15
   },
   "utility": {
-   "CLEAN": 4
+   "SEVERE": 1,
+   "BELOW THRESHOLD": 2,
+   "CLEAN": 1
   }
  },
- "severe_pages": 0,
- "severe_filler_words": 0,
- "pages_over_threshold": 9,
- "pages_with_any_filler": 70,
- "pages_clean": 5,
- "total_body_words": 28589,
- "total_filler_words": 2645,
- "corpus_filler_pct": 0.0925,
+ "severe_pages": 11,
+ "severe_filler_words": 19060,
+ "pages_over_threshold": 56,
+ "pages_with_any_filler": 74,
+ "pages_clean": 1,
+ "total_body_words": 33622,
+ "total_filler_words": 20536,
+ "corpus_filler_pct": 0.6108,
  "over_by_class": {
-  "service": 8,
-  "suburb": 1
+  "service": 10,
+  "utility": 1,
+  "suburb": 45
  },
  "all_by_class": {
   "service": 10,
+  "utility": 4,
   "suburb": 60,
-  "home": 1,
-  "utility": 4
+  "home": 1
  },
  "worst": [
   [
-   "commercial-concreting-south-west-sydney",
-   "service",
-   "0.3065"
-  ],
-  [
-   "concreters-len-waters-estate",
-   "suburb",
-   "0.2880"
-  ],
-  [
-   "concrete-driveways-south-west-sydney",
-   "service",
-   "0.2484"
-  ],
-  [
-   "concrete-driveway-replacement-south-west-sydney",
-   "service",
-   "0.2416"
-  ],
-  [
-   "concrete-paths-south-west-sydney",
-   "service",
-   "0.2355"
-  ],
-  [
-   "exposed-aggregate-south-west-sydney",
-   "service",
-   "0.2347"
-  ],
-  [
-   "decorative-concrete-south-west-sydney",
-   "service",
-   "0.2295"
-  ],
-  [
-   "concrete-patios-south-west-sydney",
-   "service",
-   "0.2286"
-  ],
-  [
    "concrete-crossovers-and-laybacks-south-west-sydney",
    "service",
-   "0.2210"
+   "0.9370"
   ],
   [
-   "concrete-slabs-south-west-sydney",
+   "commercial-concreting-south-west-sydney",
    "service",
-   "0.1921"
+   "0.9354"
   ],
   [
    "shed-and-garage-slabs-south-west-sydney",
    "service",
-   "0.1905"
+   "0.9336"
   ],
   [
-   "concreters-casula",
+   "concrete-paths-south-west-sydney",
+   "service",
+   "0.9118"
+  ],
+  [
+   "concrete-patios-south-west-sydney",
+   "service",
+   "0.9082"
+  ],
+  [
+   "exposed-aggregate-south-west-sydney",
+   "service",
+   "0.8979"
+  ],
+  [
+   "concrete-driveway-replacement-south-west-sydney",
+   "service",
+   "0.8936"
+  ],
+  [
+   "concrete-slabs-south-west-sydney",
+   "service",
+   "0.8922"
+  ],
+  [
+   "concrete-driveways-south-west-sydney",
+   "service",
+   "0.8724"
+  ],
+  [
+   "decorative-concrete-south-west-sydney",
+   "service",
+   "0.7913"
+  ],
+  [
+   "about",
+   "utility",
+   "0.3926"
+  ],
+  [
+   "concreters-len-waters-estate",
    "suburb",
-   "0.1566"
+   "0.2551"
   ]
  ],
  "best": [
   [
-   "concreters-austral",
+   "concreters-gregory-hills",
    "suburb",
-   "0.0409"
+   "0.0090"
   ],
   [
-   "concreters-edmondson-park",
+   "concreters-cobbitty",
    "suburb",
-   "0.0384"
+   "0.0090"
+  ],
+  [
+   "concreters-currans-hill",
+   "suburb",
+   "0.0090"
+  ],
+  [
+   "concreters-catherine-field",
+   "suburb",
+   "0.0089"
+  ],
+  [
+   "concreters-mount-annan",
+   "suburb",
+   "0.0087"
+  ],
+  [
+   "concreters-spring-farm",
+   "suburb",
+   "0.0085"
   ],
   [
    "concreters-bringelly",
    "suburb",
    "0.0047"
-  ],
-  [
-   "homepage",
-   "home",
-   "0.0000"
-  ],
-  [
-   "contact",
-   "utility",
-   "0.0000"
-  ],
-  [
-   "quote",
-   "utility",
-   "0.0000"
-  ],
-  [
-   "about",
-   "utility",
-   "0.0000"
   ],
   [
    "gallery",

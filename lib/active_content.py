@@ -88,6 +88,7 @@ QUALITY_SHARED_PATTERNS = (
     re.compile(r"use the .* contact details for access, correction or deletion questions about an enquiry", re.I),
     re.compile(r"information is coordinated only as reasonably necessary for the enquiry and applicable administration", re.I),
     re.compile(r"brief is shaped by the", re.I),
+    re.compile(r"^for .* the scope is shaped by use, access, levels and the documents that control the property", re.I),
     re.compile(r".* begins with this brief:", re.I),
     re.compile(r".* ground note: the local ground note records", re.I),
     re.compile(r".* approval check: the available approval note says", re.I),
