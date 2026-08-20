@@ -1,0 +1,143 @@
+{
+  "result": "PASS",
+  "authority": "Owner approval dated 20 August 2026 — FINAL IMAGE REMEDIATION prompt",
+  "report49_sha256": "9F4E64D69D59C576BFD03017F229B6D0A1BBA4B686F5C8D0E1C93D002D75306B",
+  "worksheet_sha256": "74AC2BF6D3EA62707709AE51661A09309143C8E19D2437E71A900DA90F0DD0EE",
+  "verdict_totals": {
+    "GENERIC": 10,
+    "UNUSABLE": 6
+  },
+  "blank_verdicts": 0,
+  "ok_or_replace_verdicts": 0,
+  "hold_assets": 0,
+  "mapping": [
+    {
+      "worksheet_number": "1",
+      "attachment_id": 907,
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "target_filename": "",
+      "target_alt": ""
+    },
+    {
+      "worksheet_number": "2",
+      "attachment_id": 924,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "target_filename": "coloured-concrete-patio-924.png",
+      "target_alt": "Coloured concrete patio beside a home"
+    },
+    {
+      "worksheet_number": "3",
+      "attachment_id": 226,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "target_filename": "fresh-concrete-side-yard-slab-226.jpg",
+      "target_alt": "Freshly finished concrete slab in a residential side yard"
+    },
+    {
+      "worksheet_number": "4",
+      "attachment_id": 1185,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "target_filename": "dark-concrete-driveway-crossing-1185.jpg",
+      "target_alt": "Dark concrete driveway crossing between a kerb and property"
+    },
+    {
+      "worksheet_number": "5",
+      "attachment_id": 906,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "target_filename": "residential-site-excavation-906.jpg",
+      "target_alt": "Excavated residential area prepared for concrete work"
+    },
+    {
+      "worksheet_number": "6",
+      "attachment_id": 1150,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "target_filename": "single-storey-brick-home-driveway-1150.jpg",
+      "target_alt": "Single-storey brick home with a concrete driveway"
+    },
+    {
+      "worksheet_number": "7",
+      "attachment_id": 1186,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "target_filename": "commercial-building-concrete-hardstand-1186.webp",
+      "target_alt": "Modern commercial building with a concrete hardstand"
+    },
+    {
+      "worksheet_number": "8",
+      "attachment_id": 1187,
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "target_filename": "",
+      "target_alt": ""
+    },
+    {
+      "worksheet_number": "9",
+      "attachment_id": 1152,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "target_filename": "aerial-suburban-park-and-housing-1152.jpg",
+      "target_alt": "Aerial view of a landscaped park surrounded by housing"
+    },
+    {
+      "worksheet_number": "10",
+      "attachment_id": 908,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "target_filename": "aerial-new-housing-estate-908.jpg",
+      "target_alt": "Aerial view of a developing suburban housing estate"
+    },
+    {
+      "worksheet_number": "11",
+      "attachment_id": 480,
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "target_filename": "",
+      "target_alt": ""
+    },
+    {
+      "worksheet_number": "12",
+      "attachment_id": 481,
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "target_filename": "",
+      "target_alt": ""
+    },
+    {
+      "worksheet_number": "13",
+      "attachment_id": 482,
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "target_filename": "",
+      "target_alt": ""
+    },
+    {
+      "worksheet_number": "14",
+      "attachment_id": 956,
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "target_filename": "",
+      "target_alt": ""
+    },
+    {
+      "worksheet_number": "15",
+      "attachment_id": 926,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "target_filename": "stamped-concrete-driveway-926.jpg",
+      "target_alt": "Stamped concrete driveway beside a brick home"
+    },
+    {
+      "worksheet_number": "16",
+      "attachment_id": 925,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "target_filename": "stencilled-concrete-driveway-925.webp",
+      "target_alt": "Stencilled concrete driveway with a block pattern"
+    }
+  ]
+}

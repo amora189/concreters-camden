@@ -1,0 +1,103 @@
+schema_version: "1.0"
+generated: "2026-08-21"
+authority: "Official Liverpool City Council sources sighted 21 August 2026; owner authorised application"
+
+liverpool:
+  source_set:
+    forms_page:
+      source_url: "https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms"
+      sighted_date: "2026-08-21"
+      verified: true
+    vehicular_crossing_form_march_2026:
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      sighted_date: "2026-08-21"
+      verified: true
+      pages: 18
+      sha256: "43F74C0F01C5EA6F0C89919BE8C1859F758F96AF549A9CF71ADA5F87DD7CAF33"
+    online_application_portal:
+      source_url: "https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx"
+      sighted_date: "2026-08-21"
+      verified: true
+  requirements:
+    roads_act_section_138:
+      value: "Application under section 138 of the Roads Act 1993"
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [1]
+      sighted_date: "2026-08-21"
+    owner_cost_responsibility:
+      value: "The property owner is responsible for crossing construction, maintenance and repair costs"
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [2, 5]
+      sighted_date: "2026-08-21"
+    contractor_licensing_and_liability:
+      value: "The owner must ensure the contractor is licensed and has current public-liability cover of at least $10 million"
+      verified: true
+      applies_to: "the contractor selected for the crossing; this is not evidence that Structure Co holds either credential"
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [1, 2, 5]
+      sighted_date: "2026-08-21"
+    surface:
+      value: "Plain concrete"
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [1]
+      sighted_date: "2026-08-21"
+    residential_strength:
+      value_mpa_at_28_days: 25
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [8]
+      sighted_date: "2026-08-21"
+    medium_density_commercial_industrial_strength:
+      value_mpa_at_28_days: 32
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [8]
+      sighted_date: "2026-08-21"
+    crossing_bedding:
+      value: "Minimum 50 mm compacted DGS20 bedding"
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [7]
+      sighted_date: "2026-08-21"
+    kerb_gutter_layback_bedding:
+      value: "Minimum 100 mm compacted DGS20 bedding where kerb, gutter or layback is constructed"
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [7]
+      sighted_date: "2026-08-21"
+    pre_pour_inspection:
+      value: "Completed formwork and associated works require inspection and Council approval before concrete is poured"
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [2, 5, 10]
+      sighted_date: "2026-08-21"
+    drawings_and_directions:
+      value: "Construct according to Council drawing R25 and site-specific directions from the crossing inspector"
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [7]
+      sighted_date: "2026-08-21"
+    utilities:
+      value: "Applicable utility clearances and approvals in the current form must be resolved"
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [6, 7]
+      sighted_date: "2026-08-21"
+    application_and_inspection_process:
+      value: "Apply through Council and book the required inspection using the Council application number"
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [2, 10]
+      sighted_date: "2026-08-21"
+    fees:
+      value: "Fees are assessed under Council's current schedule; no dollar amount is asserted"
+      verified: true
+      source_url: "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf"
+      source_pages: [2]
+      sighted_date: "2026-08-21"
+  exclusions:
+    precinct_dcp_generalisation: "No precinct-specific DCP control is generalised to every Liverpool property"
+    structure_co_credentials: "Council requirements are not evidence that Structure Co is licensed or insured"

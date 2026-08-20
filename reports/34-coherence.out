@@ -1,0 +1,166 @@
+{
+ "pages_scanned": 156,
+ "threshold": 0.2,
+ "severity_counts": {
+  "SEVERE": 90,
+  "MODERATE": 49,
+  "BELOW THRESHOLD": 12,
+  "CLEAN": 5
+ },
+ "severity_by_class": {
+  "cost_comparison": {
+   "SEVERE": 10
+  },
+  "guide": {
+   "SEVERE": 35
+  },
+  "guide_hub": {
+   "BELOW THRESHOLD": 1
+  },
+  "home": {
+   "CLEAN": 1
+  },
+  "intersection": {
+   "SEVERE": 35
+  },
+  "service": {
+   "SEVERE": 10
+  },
+  "suburb": {
+   "MODERATE": 49,
+   "BELOW THRESHOLD": 11
+  },
+  "utility": {
+   "CLEAN": 4
+  }
+ },
+ "severe_pages": 90,
+ "severe_filler_words": 145064,
+ "pages_over_threshold": 139,
+ "pages_with_any_filler": 151,
+ "pages_clean": 5,
+ "total_body_words": 181571,
+ "total_filler_words": 149686,
+ "corpus_filler_pct": 0.8244,
+ "over_by_class": {
+  "guide": 35,
+  "cost_comparison": 10,
+  "intersection": 35,
+  "service": 10,
+  "suburb": 49
+ },
+ "all_by_class": {
+  "guide": 35,
+  "cost_comparison": 10,
+  "intersection": 35,
+  "service": 10,
+  "suburb": 60,
+  "guide_hub": 1,
+  "home": 1,
+  "utility": 4
+ },
+ "worst": [
+  [
+   "camden-council-driveway-crossing",
+   "guide",
+   "0.9716"
+  ],
+  [
+   "driveway-cost-calculator",
+   "cost_comparison",
+   "0.9701"
+  ],
+  [
+   "slab-volume-calculator",
+   "cost_comparison",
+   "0.9701"
+  ],
+  [
+   "coloured-concrete-driveway-cost",
+   "cost_comparison",
+   "0.9670"
+  ],
+  [
+   "exposed-aggregate-driveway-cost",
+   "cost_comparison",
+   "0.9670"
+  ],
+  [
+   "plain-concrete-driveway-cost",
+   "cost_comparison",
+   "0.9670"
+  ],
+  [
+   "stencilled-concrete-driveway-cost",
+   "cost_comparison",
+   "0.9670"
+  ],
+  [
+   "concrete-crossovers-and-laybacks-spring-farm",
+   "intersection",
+   "0.9562"
+  ],
+  [
+   "concrete-crossovers-and-laybacks-austral",
+   "intersection",
+   "0.9560"
+  ],
+  [
+   "concrete-crossovers-and-laybacks-leppington",
+   "intersection",
+   "0.9555"
+  ],
+  [
+   "concrete-driveway-cost-nsw",
+   "guide",
+   "0.9554"
+  ],
+  [
+   "concrete-crossovers-and-laybacks-currans-hill",
+   "intersection",
+   "0.9537"
+  ]
+ ],
+ "best": [
+  [
+   "concreters-mount-annan",
+   "suburb",
+   "0.1577"
+  ],
+  [
+   "concreters-oran-park",
+   "suburb",
+   "0.1451"
+  ],
+  [
+   "guides",
+   "guide_hub",
+   "0.0515"
+  ],
+  [
+   "homepage",
+   "home",
+   "0.0000"
+  ],
+  [
+   "contact",
+   "utility",
+   "0.0000"
+  ],
+  [
+   "quote",
+   "utility",
+   "0.0000"
+  ],
+  [
+   "about",
+   "utility",
+   "0.0000"
+  ],
+  [
+   "gallery",
+   "utility",
+   "0.0000"
+  ]
+ ]
+}

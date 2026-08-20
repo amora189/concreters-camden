@@ -1,0 +1,1 @@
+encoding-canary: em dash — | en dash – | squared m² | non-breaking space [ ]

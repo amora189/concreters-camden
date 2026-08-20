@@ -1,0 +1,50 @@
+{
+  "result": "PASS",
+  "gate": 13,
+  "baseline": {
+    "total": 466,
+    "reader_visible": 366,
+    "nonvisible_filenames_urls_slugs": 100,
+    "detail": {
+      "nonvisible:elementor:url": 10,
+      "nonvisible:item:attachment_url": 10,
+      "nonvisible:item:guid": 10,
+      "nonvisible:item:link": 10,
+      "nonvisible:item:post_name": 10,
+      "nonvisible:meta:_wp_attached_file": 10,
+      "nonvisible:meta:_wp_attachment_metadata": 40,
+      "visible:channel:image:title": 1,
+      "visible:channel:title": 1,
+      "visible:elementor:alt": 24,
+      "visible:elementor:editor": 132,
+      "visible:elementor:item_title": 6,
+      "visible:elementor:testimonial_content": 3,
+      "visible:elementor:text": 48,
+      "visible:elementor:title": 6,
+      "visible:elementor:value": 6,
+      "visible:item:title": 12,
+      "visible:meta:_wp_attachment_image_alt": 10,
+      "visible:meta:rank_math_breadcrumb_title": 2,
+      "visible:meta:rank_math_description": 7,
+      "visible:meta:rank_math_focus_keyword": 1,
+      "visible:meta:rank_math_title": 107
+    },
+    "unknown": []
+  },
+  "classification": "466 total = 366 rename targets + 100 filename/URL/slug provenance",
+  "active_derivative": {
+    "total": 0,
+    "reader_visible": 0,
+    "nonvisible_filenames_urls_slugs": 0,
+    "detail": {},
+    "unknown": []
+  },
+  "reader_visible_disposition": {
+    "renamed_in_active_derivative": 183,
+    "excluded_with_withdrawn_pages": 183,
+    "remaining": 0
+  },
+  "preserved_prefix_rule": "immutable corex- attachment provenance is untouched; the active derivative may remove or rename a prefix only through the Phase B manifest while all Elementor references remain resolved",
+  "visible_source_name_or_tagline_hits": [],
+  "errors": []
+}

@@ -1,0 +1,407 @@
+{
+  "schema_version": "1.0",
+  "phase": "D — Liverpool",
+  "status": "COMPLETE",
+  "generated_by": "scripts/52-phase-d-liverpool.py",
+  "source_access_date": "2026-08-21",
+  "official_pdf_sha256": "43F74C0F01C5EA6F0C89919BE8C1859F758F96AF549A9CF71ADA5F87DD7CAF33",
+  "requirements": [
+    {
+      "requirement": "roads_act_section_138",
+      "recorded_value": "Application under section 138 of the Roads Act 1993",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        1
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 1,
+      "result": "PASS"
+    },
+    {
+      "requirement": "owner_cost_responsibility",
+      "recorded_value": "The property owner is responsible for crossing construction, maintenance and repair costs",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        2,
+        5
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 1,
+      "result": "PASS"
+    },
+    {
+      "requirement": "contractor_licensing_and_liability",
+      "recorded_value": "The owner must ensure the contractor is licensed and has current public-liability cover of at least $10 million",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        1,
+        2,
+        5
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 1,
+      "result": "PASS"
+    },
+    {
+      "requirement": "surface",
+      "recorded_value": "Plain concrete",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        1
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 1,
+      "result": "PASS"
+    },
+    {
+      "requirement": "residential_strength",
+      "recorded_value": 25,
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        8
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 2,
+      "result": "PASS"
+    },
+    {
+      "requirement": "medium_density_commercial_industrial_strength",
+      "recorded_value": 32,
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        8
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 2,
+      "result": "PASS"
+    },
+    {
+      "requirement": "crossing_bedding",
+      "recorded_value": "Minimum 50 mm compacted DGS20 bedding",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        7
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 2,
+      "result": "PASS"
+    },
+    {
+      "requirement": "kerb_gutter_layback_bedding",
+      "recorded_value": "Minimum 100 mm compacted DGS20 bedding where kerb, gutter or layback is constructed",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        7
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 2,
+      "result": "PASS"
+    },
+    {
+      "requirement": "pre_pour_inspection",
+      "recorded_value": "Completed formwork and associated works require inspection and Council approval before concrete is poured",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        2,
+        5,
+        10
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 3,
+      "result": "PASS"
+    },
+    {
+      "requirement": "drawings_and_directions",
+      "recorded_value": "Construct according to Council drawing R25 and site-specific directions from the crossing inspector",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        7
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 3,
+      "result": "PASS"
+    },
+    {
+      "requirement": "utilities",
+      "recorded_value": "Applicable utility clearances and approvals in the current form must be resolved",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        6,
+        7
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 3,
+      "result": "PASS"
+    },
+    {
+      "requirement": "application_and_inspection_process",
+      "recorded_value": "Apply through Council and book the required inspection using the Council application number",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        2,
+        10
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 3,
+      "result": "PASS"
+    },
+    {
+      "requirement": "fees",
+      "recorded_value": "Fees are assessed under Council's current schedule; no dollar amount is asserted",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "source_pages": [
+        2
+      ],
+      "access_date": "2026-08-21",
+      "source_matches": [],
+      "content_block": 1,
+      "result": "PASS"
+    }
+  ],
+  "resolved_fields": [
+    {
+      "field_id": "LVP-01",
+      "page_id": 221,
+      "slug": "concreters-leppington",
+      "intended_status": "publish",
+      "placement": "_elementor_data:$[13].elements[2].elements[0].elements[0].settings.editor",
+      "requirements": [
+        "roads_act_section_138",
+        "owner_cost_responsibility",
+        "contractor_licensing_and_liability",
+        "surface",
+        "fees"
+      ],
+      "exact_final_text": "Liverpool City Council vehicle crossings are applied for under section 138 of the Roads Act 1993. The property owner is responsible for the construction, maintenance and repair costs. Council requires the owner to ensure the contractor is licensed and has current public-liability cover of at least $10 million. The proposed surface must be plain concrete. Use Council's current forms page and online application portal; fees are assessed under Council's current schedule rather than stated here. Before relying on these requirements, confirm with Council that the March 2026 form and fee schedule are still current for the application. <a href=\"https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms\">Council forms</a> · <a href=\"https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx\">online application portal</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms",
+      "portal_url": "https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx",
+      "access_date": "2026-08-21"
+    },
+    {
+      "field_id": "LVP-02",
+      "page_id": 221,
+      "slug": "concreters-leppington",
+      "intended_status": "publish",
+      "placement": "_elementor_data:$[13].elements[2].elements[1].elements[0].settings.editor",
+      "requirements": [
+        "residential_strength",
+        "medium_density_commercial_industrial_strength",
+        "crossing_bedding",
+        "kerb_gutter_layback_bedding"
+      ],
+      "exact_final_text": "The March 2026 Liverpool specification requires concrete with a minimum strength at 28 days of 25 MPa for residential driveways and 32 MPa for medium-density, commercial and industrial driveways. It requires at least 50 mm of compacted DGS20 bedding for the crossing and at least 100 mm of compacted DGS20 bedding where kerb, gutter or a layback is constructed. <a href=\"https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf\">March 2026 Vehicular Crossing Application and Specifications</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "",
+      "portal_url": "",
+      "access_date": "2026-08-21"
+    },
+    {
+      "field_id": "LVP-03",
+      "page_id": 221,
+      "slug": "concreters-leppington",
+      "intended_status": "publish",
+      "placement": "_elementor_data:$[13].elements[2].elements[2].elements[0].settings.editor",
+      "requirements": [
+        "pre_pour_inspection",
+        "drawings_and_directions",
+        "utilities",
+        "application_and_inspection_process"
+      ],
+      "exact_final_text": "Construction must follow Liverpool City Council drawing R25 and any site-specific direction from Council's crossing inspector. Applicable utility clearances and approvals must be resolved, including the form's requirements for electricity assets, communications pits, Sydney Water assets, stormwater connections, drainage structures, street trees and pram ramps. Completed formwork, reinforcement, jointing, base material, barricades and signage must be inspected, and Council approval must be obtained before concrete is poured. The Council application number is required when booking the inspection. Council assesses each application and site; approval and any site-specific requirements must be confirmed before work. This is a Council process; it does not state that Structure Co holds the contractor licence or insurance. <a href=\"https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf\">Current Council specification</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "",
+      "portal_url": "",
+      "access_date": "2026-08-21"
+    },
+    {
+      "field_id": "LVP-04",
+      "page_id": 1163,
+      "slug": "concreters-austral",
+      "intended_status": "publish",
+      "placement": "_elementor_data:$[13].elements[2].elements[0].elements[0].settings.editor",
+      "requirements": [
+        "roads_act_section_138",
+        "owner_cost_responsibility",
+        "contractor_licensing_and_liability",
+        "surface",
+        "fees"
+      ],
+      "exact_final_text": "Liverpool City Council vehicle crossings are applied for under section 138 of the Roads Act 1993. The property owner is responsible for the construction, maintenance and repair costs. Council requires the owner to ensure the contractor is licensed and has current public-liability cover of at least $10 million. The proposed surface must be plain concrete. Use Council's current forms page and online application portal; fees are assessed under Council's current schedule rather than stated here. Before relying on these requirements, confirm with Council that the March 2026 form and fee schedule are still current for the application. <a href=\"https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms\">Council forms</a> · <a href=\"https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx\">online application portal</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms",
+      "portal_url": "https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx",
+      "access_date": "2026-08-21"
+    },
+    {
+      "field_id": "LVP-05",
+      "page_id": 1163,
+      "slug": "concreters-austral",
+      "intended_status": "publish",
+      "placement": "_elementor_data:$[13].elements[2].elements[1].elements[0].settings.editor",
+      "requirements": [
+        "residential_strength",
+        "medium_density_commercial_industrial_strength",
+        "crossing_bedding",
+        "kerb_gutter_layback_bedding"
+      ],
+      "exact_final_text": "The March 2026 Liverpool specification requires concrete with a minimum strength at 28 days of 25 MPa for residential driveways and 32 MPa for medium-density, commercial and industrial driveways. It requires at least 50 mm of compacted DGS20 bedding for the crossing and at least 100 mm of compacted DGS20 bedding where kerb, gutter or a layback is constructed. <a href=\"https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf\">March 2026 Vehicular Crossing Application and Specifications</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "",
+      "portal_url": "",
+      "access_date": "2026-08-21"
+    },
+    {
+      "field_id": "LVP-06",
+      "page_id": 1163,
+      "slug": "concreters-austral",
+      "intended_status": "publish",
+      "placement": "_elementor_data:$[13].elements[2].elements[2].elements[0].settings.editor",
+      "requirements": [
+        "pre_pour_inspection",
+        "drawings_and_directions",
+        "utilities",
+        "application_and_inspection_process"
+      ],
+      "exact_final_text": "Construction must follow Liverpool City Council drawing R25 and any site-specific direction from Council's crossing inspector. Applicable utility clearances and approvals must be resolved, including the form's requirements for electricity assets, communications pits, Sydney Water assets, stormwater connections, drainage structures, street trees and pram ramps. Completed formwork, reinforcement, jointing, base material, barricades and signage must be inspected, and Council approval must be obtained before concrete is poured. The Council application number is required when booking the inspection. Council assesses each application and site; approval and any site-specific requirements must be confirmed before work. This is a Council process; it does not state that Structure Co holds the contractor licence or insurance. <a href=\"https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf\">Current Council specification</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "",
+      "portal_url": "",
+      "access_date": "2026-08-21"
+    },
+    {
+      "field_id": "LVP-07",
+      "page_id": 1387,
+      "slug": "concreters-edmondson-park",
+      "intended_status": "draft",
+      "placement": "_elementor_data:$[13].elements[2].elements[0].elements[0].settings.editor",
+      "requirements": [
+        "roads_act_section_138",
+        "owner_cost_responsibility",
+        "contractor_licensing_and_liability",
+        "surface",
+        "fees"
+      ],
+      "exact_final_text": "Liverpool City Council vehicle crossings are applied for under section 138 of the Roads Act 1993. The property owner is responsible for the construction, maintenance and repair costs. Council requires the owner to ensure the contractor is licensed and has current public-liability cover of at least $10 million. The proposed surface must be plain concrete. Use Council's current forms page and online application portal; fees are assessed under Council's current schedule rather than stated here. Before relying on these requirements, confirm with Council that the March 2026 form and fee schedule are still current for the application. <a href=\"https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms\">Council forms</a> · <a href=\"https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx\">online application portal</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms",
+      "portal_url": "https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx",
+      "access_date": "2026-08-21"
+    },
+    {
+      "field_id": "LVP-08",
+      "page_id": 1387,
+      "slug": "concreters-edmondson-park",
+      "intended_status": "draft",
+      "placement": "_elementor_data:$[13].elements[2].elements[1].elements[0].settings.editor",
+      "requirements": [
+        "residential_strength",
+        "medium_density_commercial_industrial_strength",
+        "crossing_bedding",
+        "kerb_gutter_layback_bedding"
+      ],
+      "exact_final_text": "The March 2026 Liverpool specification requires concrete with a minimum strength at 28 days of 25 MPa for residential driveways and 32 MPa for medium-density, commercial and industrial driveways. It requires at least 50 mm of compacted DGS20 bedding for the crossing and at least 100 mm of compacted DGS20 bedding where kerb, gutter or a layback is constructed. <a href=\"https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf\">March 2026 Vehicular Crossing Application and Specifications</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "",
+      "portal_url": "",
+      "access_date": "2026-08-21"
+    },
+    {
+      "field_id": "LVP-09",
+      "page_id": 1387,
+      "slug": "concreters-edmondson-park",
+      "intended_status": "draft",
+      "placement": "_elementor_data:$[13].elements[2].elements[2].elements[0].settings.editor",
+      "requirements": [
+        "pre_pour_inspection",
+        "drawings_and_directions",
+        "utilities",
+        "application_and_inspection_process"
+      ],
+      "exact_final_text": "Construction must follow Liverpool City Council drawing R25 and any site-specific direction from Council's crossing inspector. Applicable utility clearances and approvals must be resolved, including the form's requirements for electricity assets, communications pits, Sydney Water assets, stormwater connections, drainage structures, street trees and pram ramps. Completed formwork, reinforcement, jointing, base material, barricades and signage must be inspected, and Council approval must be obtained before concrete is poured. The Council application number is required when booking the inspection. Council assesses each application and site; approval and any site-specific requirements must be confirmed before work. This is a Council process; it does not state that Structure Co holds the contractor licence or insurance. <a href=\"https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf\">Current Council specification</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "",
+      "portal_url": "",
+      "access_date": "2026-08-21"
+    },
+    {
+      "field_id": "LVP-10",
+      "page_id": 1388,
+      "slug": "concreters-bringelly",
+      "intended_status": "draft",
+      "placement": "_elementor_data:$[13].elements[2].elements[0].elements[0].settings.editor",
+      "requirements": [
+        "roads_act_section_138",
+        "owner_cost_responsibility",
+        "contractor_licensing_and_liability",
+        "surface",
+        "fees"
+      ],
+      "exact_final_text": "Liverpool City Council vehicle crossings are applied for under section 138 of the Roads Act 1993. The property owner is responsible for the construction, maintenance and repair costs. Council requires the owner to ensure the contractor is licensed and has current public-liability cover of at least $10 million. The proposed surface must be plain concrete. Use Council's current forms page and online application portal; fees are assessed under Council's current schedule rather than stated here. Before relying on these requirements, confirm with Council that the March 2026 form and fee schedule are still current for the application. <a href=\"https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms\">Council forms</a> · <a href=\"https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx\">online application portal</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms",
+      "portal_url": "https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx",
+      "access_date": "2026-08-21"
+    },
+    {
+      "field_id": "LVP-11",
+      "page_id": 1388,
+      "slug": "concreters-bringelly",
+      "intended_status": "draft",
+      "placement": "_elementor_data:$[13].elements[2].elements[1].elements[0].settings.editor",
+      "requirements": [
+        "residential_strength",
+        "medium_density_commercial_industrial_strength",
+        "crossing_bedding",
+        "kerb_gutter_layback_bedding"
+      ],
+      "exact_final_text": "The March 2026 Liverpool specification requires concrete with a minimum strength at 28 days of 25 MPa for residential driveways and 32 MPa for medium-density, commercial and industrial driveways. It requires at least 50 mm of compacted DGS20 bedding for the crossing and at least 100 mm of compacted DGS20 bedding where kerb, gutter or a layback is constructed. <a href=\"https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf\">March 2026 Vehicular Crossing Application and Specifications</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "",
+      "portal_url": "",
+      "access_date": "2026-08-21"
+    },
+    {
+      "field_id": "LVP-12",
+      "page_id": 1388,
+      "slug": "concreters-bringelly",
+      "intended_status": "draft",
+      "placement": "_elementor_data:$[13].elements[2].elements[2].elements[0].settings.editor",
+      "requirements": [
+        "pre_pour_inspection",
+        "drawings_and_directions",
+        "utilities",
+        "application_and_inspection_process"
+      ],
+      "exact_final_text": "Construction must follow Liverpool City Council drawing R25 and any site-specific direction from Council's crossing inspector. Applicable utility clearances and approvals must be resolved, including the form's requirements for electricity assets, communications pits, Sydney Water assets, stormwater connections, drainage structures, street trees and pram ramps. Completed formwork, reinforcement, jointing, base material, barricades and signage must be inspected, and Council approval must be obtained before concrete is poured. The Council application number is required when booking the inspection. Council assesses each application and site; approval and any site-specific requirements must be confirmed before work. This is a Council process; it does not state that Structure Co holds the contractor licence or insurance. <a href=\"https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf\">Current Council specification</a>.",
+      "disposition": "OFFICIAL_EVIDENCE_APPLIED",
+      "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+      "forms_url": "",
+      "portal_url": "",
+      "access_date": "2026-08-21"
+    }
+  ]
+}

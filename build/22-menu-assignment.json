@@ -1,0 +1,213 @@
+{
+ "generated": "2026-08-19",
+ "authority": "owner decision 19 August 2026; reports/41-astra-export-audit.md §6",
+ "note": "Stage 29 step 4 applies this. Astra registers three theme locations; there are five menus, so two are deliberately unassigned.",
+ "prune_source": "build/27-wave1-menus.json",
+ "locations": {
+  "primary": {
+   "term_id": 9,
+   "menu": "primary",
+   "menu_name": "Primary",
+   "retained_items": 10,
+   "source_items": 23
+  },
+  "mobile_menu": {
+   "term_id": 10,
+   "menu": "primary-2",
+   "menu_name": "Primary (2)",
+   "retained_items": 10,
+   "source_items": 23
+  },
+  "footer_menu": {
+   "term_id": 11,
+   "menu": "footer-services",
+   "menu_name": "Footer Services",
+   "retained_items": 7,
+   "source_items": 7
+  }
+ },
+ "unassigned": {
+  "footer-areas": {
+   "term_id": 12,
+   "reason": "all 6 targets are Tier 1 pages held noindex,follow; 0 retained"
+  },
+  "footer-blogs": {
+   "term_id": 13,
+   "reason": "all 6 targets withdrawn and draft; 0 retained"
+  }
+ },
+ "supplied_mapping_overridden": {
+  "footer_menu": 13,
+  "replaced_with": 11
+ },
+ "retained_items": {
+  "Primary": [
+   {
+    "post_id": 1503,
+    "title": "Services",
+    "object": "custom",
+    "object_id": "1503"
+   },
+   {
+    "post_id": 1504,
+    "title": "Concrete Driveways",
+    "object": "page",
+    "object_id": "105"
+   },
+   {
+    "post_id": 1505,
+    "title": "Concrete Slabs",
+    "object": "page",
+    "object_id": "163"
+   },
+   {
+    "post_id": 1506,
+    "title": "Exposed Aggregate Concrete",
+    "object": "page",
+    "object_id": "129"
+   },
+   {
+    "post_id": 1507,
+    "title": "Decorative Concrete",
+    "object": "page",
+    "object_id": "922"
+   },
+   {
+    "post_id": 1508,
+    "title": "Concrete Patios and Alfresco Slabs",
+    "object": "page",
+    "object_id": "195"
+   },
+   {
+    "post_id": 1509,
+    "title": "Concrete Paths and Pathways",
+    "object": "page",
+    "object_id": "178"
+   },
+   {
+    "post_id": 1510,
+    "title": "Commercial Concreting",
+    "object": "page",
+    "object_id": "1369"
+   },
+   {
+    "post_id": 1511,
+    "title": "Areas",
+    "object": "custom",
+    "object_id": "1511"
+   },
+   {
+    "post_id": 1525,
+    "title": "Contact",
+    "object": "page",
+    "object_id": "321"
+   }
+  ],
+  "Primary (2)": [
+   {
+    "post_id": 1526,
+    "title": "Services",
+    "object": "custom",
+    "object_id": "1526"
+   },
+   {
+    "post_id": 1527,
+    "title": "Concrete Driveways",
+    "object": "page",
+    "object_id": "105"
+   },
+   {
+    "post_id": 1528,
+    "title": "Concrete Slabs",
+    "object": "page",
+    "object_id": "163"
+   },
+   {
+    "post_id": 1529,
+    "title": "Exposed Aggregate Concrete",
+    "object": "page",
+    "object_id": "129"
+   },
+   {
+    "post_id": 1530,
+    "title": "Decorative Concrete",
+    "object": "page",
+    "object_id": "922"
+   },
+   {
+    "post_id": 1531,
+    "title": "Concrete Patios and Alfresco Slabs",
+    "object": "page",
+    "object_id": "195"
+   },
+   {
+    "post_id": 1532,
+    "title": "Concrete Paths and Pathways",
+    "object": "page",
+    "object_id": "178"
+   },
+   {
+    "post_id": 1533,
+    "title": "Commercial Concreting",
+    "object": "page",
+    "object_id": "1369"
+   },
+   {
+    "post_id": 1534,
+    "title": "Areas",
+    "object": "custom",
+    "object_id": "1534"
+   },
+   {
+    "post_id": 1548,
+    "title": "Contact",
+    "object": "page",
+    "object_id": "321"
+   }
+  ],
+  "Footer Services": [
+   {
+    "post_id": 1555,
+    "title": "Concrete Driveways",
+    "object": "page",
+    "object_id": "105"
+   },
+   {
+    "post_id": 1556,
+    "title": "Concrete Slabs",
+    "object": "page",
+    "object_id": "163"
+   },
+   {
+    "post_id": 1557,
+    "title": "Exposed Aggregate Concrete",
+    "object": "page",
+    "object_id": "129"
+   },
+   {
+    "post_id": 1558,
+    "title": "Decorative Concrete",
+    "object": "page",
+    "object_id": "922"
+   },
+   {
+    "post_id": 1559,
+    "title": "Concrete Patios and Alfresco Slabs",
+    "object": "page",
+    "object_id": "195"
+   },
+   {
+    "post_id": 1560,
+    "title": "Concrete Paths and Pathways",
+    "object": "page",
+    "object_id": "178"
+   },
+   {
+    "post_id": 1561,
+    "title": "Commercial Concreting",
+    "object": "page",
+    "object_id": "1369"
+   }
+  ]
+ }
+}

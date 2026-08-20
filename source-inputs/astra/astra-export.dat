@@ -1,0 +1,75 @@
+a:4:{s:8:"template";s:5:"astra";s:4:"mods";a:4:{i:0;b:0;s:18:"nav_menu_locations";a:3:{s:7:"primary";i:9;s:11:"mobile_menu";i:10;s:11:"footer_menu";i:13;}s:18:"custom_css_post_id";i:893;s:11:"custom_logo";i:469;}s:7:"options";a:9:{s:9:"site_icon";s:3:"472";s:66:"astra-settings[ast-callback-notice-header-transparent-header-logo]";s:0:"";s:71:"astra-settings[ast-callback-notice-header-transparent-header-logo-link]";s:0:"";s:38:"astra-settings[ast-header-retina-logo]";s:0:"";s:34:"astra-settings[mobile-header-logo]";s:0:"";s:77:"astra-settings[ast-callback-notice-header-transparent-meta-enabled-with-link]";s:0:"";s:39:"astra-settings[transparent-header-logo]";s:0:"";s:46:"astra-settings[transparent-header-retina-logo]";s:0:"";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:1832:"/* Local Werribee project cards */
+.local-work-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgba(20, 35, 58, 0.35);
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease;
+    will-change: transform;
+}
+
+/* Keeps images neat */
+.local-work-card img {
+    display: block;
+    width: 100%;
+    transition:
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.35s ease;
+}
+
+/* Animated navy border */
+.local-work-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+
+    background:
+        linear-gradient(#18263d, #18263d) left top / 0 2px no-repeat,
+        linear-gradient(#18263d, #18263d) right top / 2px 0 no-repeat,
+        linear-gradient(#18263d, #18263d) right bottom / 0 2px no-repeat,
+        linear-gradient(#18263d, #18263d) left bottom / 2px 0 no-repeat;
+
+    transition: background-size 0.4s ease;
+}
+
+/* Hover movement */
+.local-work-card:hover {
+    transform: translateY(-7px);
+    box-shadow:
+        0 16px 30px rgba(20, 35, 58, 0.18),
+        0 0 0 1px rgba(20, 35, 58, 0.2);
+}
+
+/* Slight image zoom */
+.local-work-card:hover img {
+    transform: scale(1.035);
+    filter: contrast(1.03) saturate(1.04);
+}
+
+/* Draw border around all four sides */
+.local-work-card:hover::after {
+    background-size:
+        100% 2px,
+        2px 100%,
+        100% 2px,
+        2px 100%;
+}
+
+/* Keyboard accessibility */
+.local-work-card:focus-within {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 30px rgba(20, 35, 58, 0.18);
+}
+
+/* Reduce movement for users who disable animations */
+@media (prefers-reduced-motion: reduce) {
+    .local-work-card,
+    .local-work-card img,
+    .local-work-card::after {
+        transition: none;
+    }
+}";}

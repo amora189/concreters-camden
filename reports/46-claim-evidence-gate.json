@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "totals": {
+    "occurrences": 16,
+    "supported": 16,
+    "unsupported": 0,
+    "pages_with_claims": 6,
+    "pages_with_unsupported_claims": 0,
+    "legacy_occurrences_dispositioned": 232,
+    "legacy_unsupported_dispositioned": 228,
+    "additional_blind_spot_occurrences_dispositioned": 309,
+    "current_by_category": {
+      "response_time_promise": 1,
+      "workmanship_guarantee_warranty": 15
+    }
+  },
+  "legacy_reconciliation": {
+    "reported_occurrences": 232,
+    "reported_unsupported": 228,
+    "text_and_widget_occurrences": 228,
+    "band_b_adjacencies": 4,
+    "unsupported_text_and_widgets": 224,
+    "unsupported_band_b_adjacencies": 4,
+    "post_report50_occurrences": 135,
+    "post_report50_unsupported": 131,
+    "arithmetic": "232 = 228 text/widget + 4 Band B adjacency; 228 unsupported = 224 + 4. Report 50 removed 97 occurrences, leaving 135/131 before this pass."
+  },
+  "errors": []
+}

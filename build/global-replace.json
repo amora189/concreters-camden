@@ -1,0 +1,102 @@
+[
+  {
+    "find": "bestconcretersmelbourne.com.au",
+    "replace": "concreterscamden.com.au"
+  },
+  {
+    "find": "E&T Co Concreters Melbourne",
+    "replace": "Structure Co Concreters Camden"
+  },
+  {
+    "find": "E&T Co Concreters Camden",
+    "replace": "Structure Co Concreters Camden"
+  },
+  {
+    "find": "CoreX Concreters Camden",
+    "replace": "Structure Co Concreters Camden"
+  },
+  {
+    "find": "Wyndham City Council",
+    "replace": "Camden Council / Liverpool City Council / Campbelltown City Council / Wollondilly Shire Council per page"
+  },
+  {
+    "find": "Melbourne's west",
+    "replace": "South West Sydney"
+  },
+  {
+    "find": "Hoppers Crossing",
+    "replace": "mapped Camden/South West Sydney suburb per page"
+  },
+  {
+    "find": "volcanic plains",
+    "replace": "Wianamatta Shale / page-specific geology"
+  },
+  {
+    "find": "Werribee South",
+    "replace": "mapped Camden/South West Sydney suburb per page"
+  },
+  {
+    "find": "Werribee River",
+    "replace": "per-suburb water feature"
+  },
+  {
+    "find": "03 4427 9541",
+    "replace": "[[NSW_PHONE]]"
+  },
+  {
+    "find": "Wyndham Vale",
+    "replace": "mapped Camden/South West Sydney suburb per page"
+  },
+  {
+    "find": "Point Cook",
+    "replace": "mapped Camden/South West Sydney suburb per page"
+  },
+  {
+    "find": "Melbourne",
+    "replace": "South West Sydney"
+  },
+  {
+    "find": "Truganina",
+    "replace": "mapped Camden/South West Sydney suburb per page"
+  },
+  {
+    "find": "Riverwalk",
+    "replace": "per-suburb estate from data"
+  },
+  {
+    "find": "Werribee",
+    "replace": "mapped Camden/South West Sydney suburb per page"
+  },
+  {
+    "find": "Victoria",
+    "replace": "New South Wales"
+  },
+  {
+    "find": "Wyndham",
+    "replace": "per-page LGA from suburbs-expanded.json"
+  },
+  {
+    "find": "Tarneit",
+    "replace": "mapped Camden/South West Sydney suburb per page"
+  },
+  {
+    "find": "Harpley",
+    "replace": "per-suburb estate from data"
+  },
+  {
+    "find": "E&T Co",
+    "replace": "Structure Co"
+  },
+  {
+    "find": "basalt",
+    "replace": "Wianamatta Shale / page-specific geology"
+  },
+  {
+    "find": "CoreX",
+    "replace": "Structure Co"
+  },
+  {
+    "find": "VIC",
+    "replace": "NSW"
+  }
+]

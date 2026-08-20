@@ -1,0 +1,1040 @@
+{
+  "schema_version": "2.0",
+  "generated_by": "scripts/46-public-media-gate.py",
+  "technical_audit_is_not_publication_approval": true,
+  "retired_brand_ids": [
+    159,
+    177,
+    306,
+    307,
+    422,
+    469,
+    472
+  ],
+  "band_b_unusable_ids": [
+    280,
+    1067
+  ],
+  "held_band_a_ids": [],
+  "band_a_denied_ids": [
+    480,
+    481,
+    482,
+    907,
+    956,
+    1187
+  ],
+  "other_excluded_ids": [
+    250,
+    272,
+    275,
+    276,
+    277,
+    278,
+    279,
+    308,
+    309,
+    323,
+    468,
+    471,
+    480,
+    481,
+    482,
+    907,
+    956,
+    1020,
+    1187
+  ],
+  "unauthorised_ai_ids": {
+    "159": "D24/C2PA or later AI provenance finding",
+    "177": "D24/C2PA or later AI provenance finding",
+    "272": "D24/C2PA or later AI provenance finding",
+    "308": "D24/C2PA or later AI provenance finding",
+    "309": "D24/C2PA or later AI provenance finding"
+  },
+  "denied_assets": [
+    {
+      "attachment_id": 159,
+      "filename": "chatgpt-image-jul-6-2026-01-52-19-pm-camden-159.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D24/D36 retired AI/source-brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 177,
+      "filename": "cropped-chatgpt-image-jul-6-2026-07-59-41-pm-camden-177.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D24/D36 retired AI/source-brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 250,
+      "filename": "corex-concreters-camden-logo-250.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "Astra product mark, not a Structure Co asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 272,
+      "filename": "cropped-chatgpt-image-jul-6-2026-01-52-19-pm-camden-272.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "D24 and C2PA/AI provenance finding"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 275,
+      "filename": "image-placeholder-hero-camden-275.jpeg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 276,
+      "filename": "image-contact-1-camden-276.jpg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 277,
+      "filename": "image-placeholder-hero-1-camden-277.jpeg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 278,
+      "filename": "image-placeholder-about-1-camden-278.jpeg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 279,
+      "filename": "image-placeholder-about-camden-279.jpeg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 280,
+      "filename": "image-testemonials-camden-280.jpeg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-recorded Band B verdict; build/45-media-remediation.csv"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 306,
+      "filename": "corex-concreters-camden-logo-306.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D18/D36 retired E&T brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 307,
+      "filename": "corex-concreters-camden-logo-307.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D18/D36 retired E&T brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 308,
+      "filename": "corex-concreters-camden-logo-308.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "D24 and C2PA/AI provenance finding"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 309,
+      "filename": "corex-concreters-camden-logo-309.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "D24 and C2PA/AI provenance finding"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 323,
+      "filename": "about-2-hero-camden-323.jpg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 422,
+      "filename": "corex-concreters-camden-logo-422.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D18/D36 retired E&T brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 468,
+      "filename": "corex-concreters-camden-logo-468.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "E&T Concreters Melbourne wordmark; duplicate contract requires pair treatment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 469,
+      "filename": "corex-concreters-camden-logo-469.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D18/D36 retired E&T brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 471,
+      "filename": "corex-concreters-camden-logo-471.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "E&T Concreters Melbourne wordmark; duplicate contract requires pair treatment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 472,
+      "filename": "corex-concreters-camden-logo-472.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D18/D36 retired E&T brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 480,
+      "filename": "oran-park1-480.webp",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 481,
+      "filename": "oran-park2-481.webp",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 482,
+      "filename": "oran-park3-482.webp",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 907,
+      "filename": "camden-town-centre-907.jpg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 956,
+      "filename": "south-west-sydney-growth-corridor-956.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1020,
+      "filename": "wianamatta-shale-clay-camden-1020.jpg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "D19 removes the Tarneit soil photograph and retains its containing sections"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1067,
+      "filename": "verified-badge-e1784545689665-camden-1067.avif",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-recorded Band B verdict; build/45-media-remediation.csv"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1187,
+      "filename": "leppington-new-estates-1187.jpg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    }
+  ],
+  "generic_assets": [
+    {
+      "attachment_id": 17,
+      "source_filename": "concrete-project-detail-camden-17.jpg",
+      "target_filename": "concrete-project-detail-17.jpg",
+      "target_title": "Concrete project detail",
+      "target_alt": "Concrete project detail",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 18,
+      "source_filename": "concrete-project-detail-camden-18.jpg",
+      "target_filename": "concrete-project-detail-18.jpg",
+      "target_title": "Concrete project detail",
+      "target_alt": "Concrete project detail",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 19,
+      "source_filename": "concrete-project-detail-camden-19.jpg",
+      "target_filename": "concrete-project-detail-19.jpg",
+      "target_title": "Concrete project detail",
+      "target_alt": "Concrete project detail",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 46,
+      "source_filename": "concrete-tesimonial-4-camden-46.webp",
+      "target_filename": "exposed-aggregate-front-paths-46.webp",
+      "target_title": "Exposed aggregate front paths",
+      "target_alt": "Exposed aggregate paths leading to a home's front entry",
+      "elementor_references": 7,
+      "usage_restriction": "Decorative only; never customer evidence or recent work",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 47,
+      "source_filename": "concrete-testimonial-6-camden-47.webp",
+      "target_filename": "fresh-concrete-backyard-slab-47.webp",
+      "target_title": "Fresh concrete backyard slab",
+      "target_alt": "Freshly poured concrete slab beside a two-storey home",
+      "elementor_references": 8,
+      "usage_restriction": "Decorative only; never customer evidence or recent work",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 48,
+      "source_filename": "concrete-testimonial-3-camden-48.webp",
+      "target_filename": "exposed-aggregate-residential-driveway-48.webp",
+      "target_title": "Exposed aggregate residential driveway",
+      "target_alt": "Exposed aggregate driveway leading to a carport",
+      "elementor_references": 7,
+      "usage_restriction": "Decorative only; never customer evidence or recent work",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 49,
+      "source_filename": "concrete-testimonial-1-camden-49.webp",
+      "target_filename": "fresh-concrete-pool-surround-49.webp",
+      "target_title": "Fresh concrete beside a swimming pool",
+      "target_alt": "Freshly poured concrete beside a swimming pool",
+      "elementor_references": 8,
+      "usage_restriction": "Decorative only; never customer evidence or recent work",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 50,
+      "source_filename": "exposed-aggregate-concrete-camden-50.jpg",
+      "target_filename": "exposed-aggregate-concrete-50.jpg",
+      "target_title": "Exposed aggregate concrete",
+      "target_alt": "Exposed aggregate concrete",
+      "elementor_references": 69,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 51,
+      "source_filename": "concrete-testimonial-2-camden-51.webp",
+      "target_filename": "concrete-stepping-slabs-garden-path-51.webp",
+      "target_title": "Concrete stepping slabs in a garden",
+      "target_alt": "Concrete stepping slabs laid through a garden",
+      "elementor_references": 7,
+      "usage_restriction": "Decorative only; never customer evidence or recent work",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 52,
+      "source_filename": "concrete-testimonial-1-1-camden-52.webp",
+      "target_filename": "fresh-concrete-pool-surround-52.webp",
+      "target_title": "Fresh concrete beside a swimming pool",
+      "target_alt": "Freshly poured concrete beside a swimming pool",
+      "elementor_references": 7,
+      "usage_restriction": "Decorative only; never customer evidence or recent work",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 53,
+      "source_filename": "patiosandpathways-camden-53.webp",
+      "target_filename": "patiosandpathways-53.webp",
+      "target_title": "Patiosandpathways",
+      "target_alt": "Patiosandpathways",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 54,
+      "source_filename": "coloured-detailed-concrete-camden-54.jpg",
+      "target_filename": "coloured-detailed-concrete-54.jpg",
+      "target_title": "Coloured detailed concrete",
+      "target_alt": "Coloured detailed concrete",
+      "elementor_references": 8,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 55,
+      "source_filename": "patiosconcrete-camden-55.jpg",
+      "target_filename": "patiosconcrete-55.jpg",
+      "target_title": "Patiosconcrete",
+      "target_alt": "Patiosconcrete",
+      "elementor_references": 8,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 121,
+      "source_filename": "reinforcedheavydutyconcrete-camden-121.webp",
+      "target_filename": "reinforcedheavydutyconcrete-121.webp",
+      "target_title": "Reinforcedheavydutyconcrete",
+      "target_alt": "Reinforcedheavydutyconcrete",
+      "elementor_references": 5,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 144,
+      "source_filename": "paths-and-pathwaysconcrete-camden-144.jpg",
+      "target_filename": "paths-and-pathwaysconcrete-144.jpg",
+      "target_title": "Paths and pathwaysconcrete",
+      "target_alt": "Paths and pathwaysconcrete",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 145,
+      "source_filename": "patiosandalfrescoconcrete-camden-145.jpg",
+      "target_filename": "patiosandalfrescoconcrete-145.jpg",
+      "target_title": "Patiosandalfrescoconcrete",
+      "target_alt": "Patiosandalfrescoconcrete",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 146,
+      "source_filename": "concretepoolsurronds-camden-146.jpg",
+      "target_filename": "concretepoolsurronds-146.jpg",
+      "target_title": "Concretepoolsurronds",
+      "target_alt": "Concretepoolsurronds",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 166,
+      "source_filename": "shedslabconcrete-camden-166.jpg",
+      "target_filename": "shedslabconcrete-166.jpg",
+      "target_title": "Shedslabconcrete",
+      "target_alt": "Shedslabconcrete",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 167,
+      "source_filename": "garage-slabs-concrete-camden-167.jpg",
+      "target_filename": "garage-slabs-concrete-167.jpg",
+      "target_title": "Garage slabs concrete",
+      "target_alt": "Garage slabs concrete",
+      "elementor_references": 5,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 168,
+      "source_filename": "extension-and-floor-slabs-concrete-camden-168.jpg",
+      "target_filename": "extension-and-floor-slabs-concrete-168.jpg",
+      "target_title": "Extension and floor slabs concrete",
+      "target_alt": "Extension and floor slabs concrete",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 181,
+      "source_filename": "side-access-paths-concrete-camden-181.jpg",
+      "target_filename": "side-access-paths-concrete-181.jpg",
+      "target_title": "Side access paths concrete",
+      "target_alt": "Side access paths concrete",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 182,
+      "source_filename": "concrete-garden-paths-and-connecting-paths-concrete-camden-182.jpg",
+      "target_filename": "concrete-garden-paths-and-connecting-paths-concrete-182.jpg",
+      "target_title": "Concrete garden paths and connecting paths concrete",
+      "target_alt": "Concrete garden paths and connecting paths concrete",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 183,
+      "source_filename": "front-and-entry-paths-concrete-camden-183.jpg",
+      "target_filename": "front-and-entry-paths-concrete-183.jpg",
+      "target_title": "Front and entry paths concrete",
+      "target_alt": "Front and entry paths concrete",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 184,
+      "source_filename": "accessible-paths-concrete-camden-184.jpg",
+      "target_filename": "accessible-paths-concrete-184.jpg",
+      "target_title": "Accessible paths concrete",
+      "target_alt": "Accessible paths concrete",
+      "elementor_references": 8,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 226,
+      "source_filename": "concretejob2camden-226.jpg",
+      "target_filename": "fresh-concrete-side-yard-slab-226.jpg",
+      "target_title": "Fresh concrete side yard slab",
+      "target_alt": "Freshly finished concrete slab in a residential side yard",
+      "elementor_references": 8,
+      "usage_restriction": "decorative/non-evidential only; no Camden/South West Sydney, completed project, customer, testimonial, premises, equipment-ownership or NSW-operator implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 227,
+      "source_filename": "backyard-patio-concreter-camden-227.jpg",
+      "target_filename": "backyard-patio-concreter-227.jpg",
+      "target_title": "Backyard patio concreter",
+      "target_alt": "Backyard patio concreter",
+      "elementor_references": 9,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 228,
+      "source_filename": "concretejob1camden-228.jpg",
+      "target_filename": "fresh-concrete-side-yard-slab-228.jpg",
+      "target_title": "Fresh concrete side-yard slab",
+      "target_alt": "Freshly poured concrete slab along a side boundary",
+      "elementor_references": 10,
+      "usage_restriction": "Decorative only; never customer evidence or recent work",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 609,
+      "source_filename": "exposed-aggregate-south-west-sydney-609.jpg",
+      "target_filename": "exposed-aggregate-residential-driveway-609.jpg",
+      "target_title": "Exposed aggregate residential driveway",
+      "target_alt": "Exposed aggregate driveway leading to a home",
+      "elementor_references": 8,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 906,
+      "source_filename": "driveway-excavation-camden-906.jpg",
+      "target_filename": "residential-site-excavation-906.jpg",
+      "target_title": "Residential site excavation",
+      "target_alt": "Excavated residential area prepared for concrete work",
+      "elementor_references": 9,
+      "usage_restriction": "decorative/non-evidential only; no Camden/South West Sydney, completed project, customer, testimonial, premises, equipment-ownership or NSW-operator implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 908,
+      "source_filename": "oran-park-growth-estate-908.jpg",
+      "target_filename": "aerial-new-housing-estate-908.jpg",
+      "target_title": "Aerial new housing estate",
+      "target_alt": "Aerial view of a developing suburban housing estate",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential only; no Camden/South West Sydney, completed project, customer, testimonial, premises, equipment-ownership or NSW-operator implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 909,
+      "source_filename": "control-joints-and-cracks-camden-909.jpg",
+      "target_filename": "control-joints-and-cracks-909.jpg",
+      "target_title": "Control joints and cracks",
+      "target_alt": "Control joints and cracks",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 924,
+      "source_filename": "coloured-concrete-south-west-sydney-924.png",
+      "target_filename": "coloured-concrete-patio-924.png",
+      "target_title": "Coloured concrete patio",
+      "target_alt": "Coloured concrete patio beside a home",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential only; no Camden/South West Sydney, completed project, customer, testimonial, premises, equipment-ownership or NSW-operator implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 925,
+      "source_filename": "stencil-concrete-south-west-sydney-925.webp",
+      "target_filename": "stencilled-concrete-driveway-925.webp",
+      "target_title": "Stencilled concrete driveway",
+      "target_alt": "Stencilled concrete driveway with a block pattern",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential only; no Camden/South West Sydney, completed project, customer, testimonial, premises, equipment-ownership or NSW-operator implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 926,
+      "source_filename": "stamped-concrete-south-west-sydney-926.jpg",
+      "target_filename": "stamped-concrete-driveway-926.jpg",
+      "target_title": "Stamped concrete driveway",
+      "target_alt": "Stamped concrete driveway beside a brick home",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential only; no Camden/South West Sydney, completed project, customer, testimonial, premises, equipment-ownership or NSW-operator implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 927,
+      "source_filename": "honed-and-polished-concrete-camden-927.webp",
+      "target_filename": "honed-and-polished-concrete-927.webp",
+      "target_title": "Honed and polished concrete",
+      "target_alt": "Honed and polished concrete",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1056,
+      "source_filename": "south-creek-drainage-corridor-1056.jpg",
+      "target_filename": "aerial-waterway-residential-area-1056.jpg",
+      "target_title": "Aerial waterway beside a residential area",
+      "target_alt": "Aerial view of a waterway beside a residential area",
+      "elementor_references": 8,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1065,
+      "source_filename": "concrete-slabs-camden-1065.jpg",
+      "target_filename": "concrete-slabs-1065.jpg",
+      "target_title": "Concrete slabs",
+      "target_alt": "Concrete slabs",
+      "elementor_references": 8,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1066,
+      "source_filename": "pouring-a-concrete-slab-camden-1066.jpg",
+      "target_filename": "pouring-a-concrete-slab-1066.jpg",
+      "target_title": "Pouring a concrete slab",
+      "target_alt": "Pouring a concrete slab",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1068,
+      "source_filename": "what-is-a-concrete-slab-camden-1068.jpg",
+      "target_filename": "what-is-a-concrete-slab-1068.jpg",
+      "target_title": "What is a concrete slab",
+      "target_alt": "What is a concrete slab",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1109,
+      "source_filename": "what-is-exposed-aggregate-camden-1109.jpg",
+      "target_filename": "what-is-exposed-aggregate-1109.jpg",
+      "target_title": "What is exposed aggregate",
+      "target_alt": "What is exposed aggregate",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1150,
+      "source_filename": "established-home-mount-annan-1150.jpg",
+      "target_filename": "single-storey-brick-home-driveway-1150.jpg",
+      "target_title": "Single storey brick home driveway",
+      "target_alt": "Single-storey brick home with a concrete driveway",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential only; no Camden/South West Sydney, completed project, customer, testimonial, premises, equipment-ownership or NSW-operator implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1151,
+      "source_filename": "reactive-clay-concreter-camden-1151.jpg",
+      "target_filename": "dry-cracked-ground-1151.jpg",
+      "target_title": "Dry cracked ground",
+      "target_alt": "Dry cracked ground surface",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1152,
+      "source_filename": "mount-annan-established-housing-1152.jpg",
+      "target_filename": "aerial-suburban-park-and-housing-1152.jpg",
+      "target_title": "Aerial suburban park and housing",
+      "target_alt": "Aerial view of a landscaped park surrounded by housing",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential only; no Camden/South West Sydney, completed project, customer, testimonial, premises, equipment-ownership or NSW-operator implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1153,
+      "source_filename": "camden-council-driveway-crossing-1153.jpg",
+      "target_filename": "concrete-vehicle-crossing-1153.jpg",
+      "target_title": "Concrete vehicle crossing",
+      "target_alt": "Concrete vehicle crossing between a kerb and property boundary",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1185,
+      "source_filename": "council-crossing-south-west-sydney-1185.jpg",
+      "target_filename": "dark-concrete-driveway-crossing-1185.jpg",
+      "target_title": "Dark concrete driveway crossing",
+      "target_alt": "Dark concrete driveway crossing between a kerb and property",
+      "elementor_references": 9,
+      "usage_restriction": "decorative/non-evidential only; no Camden/South West Sydney, completed project, customer, testimonial, premises, equipment-ownership or NSW-operator implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1186,
+      "source_filename": "gregory-hills-commercial-concreting-1186.webp",
+      "target_filename": "commercial-building-concrete-hardstand-1186.webp",
+      "target_title": "Commercial building concrete hardstand",
+      "target_alt": "Modern commercial building with a concrete hardstand",
+      "elementor_references": 10,
+      "usage_restriction": "decorative/non-evidential only; no Camden/South West Sydney, completed project, customer, testimonial, premises, equipment-ownership or NSW-operator implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1188,
+      "source_filename": "reactive-clay-concreter-1-camden-1188.jpg",
+      "target_filename": "dry-cracked-ground-1188.jpg",
+      "target_title": "Dry cracked ground",
+      "target_alt": "Dry cracked ground surface",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1230,
+      "source_filename": "shrinkage-cracks-camden-1230.jpg",
+      "target_filename": "shrinkage-cracks-1230.jpg",
+      "target_title": "Shrinkage cracks",
+      "target_alt": "Shrinkage cracks",
+      "elementor_references": 4,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1231,
+      "source_filename": "settlement-cracks-camden-1231.jpg",
+      "target_filename": "settlement-cracks-1231.jpg",
+      "target_title": "Settlement cracks",
+      "target_alt": "Settlement cracks",
+      "elementor_references": 5,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1232,
+      "source_filename": "heave-cracks-camden-1232.jpg",
+      "target_filename": "heave-cracks-1232.jpg",
+      "target_title": "Heave cracks",
+      "target_alt": "Heave cracks",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1233,
+      "source_filename": "structural-cracks-camden-1233.jpg",
+      "target_filename": "structural-cracks-1233.jpg",
+      "target_title": "Structural cracks",
+      "target_alt": "Structural cracks",
+      "elementor_references": 6,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1345,
+      "source_filename": "concrete-sealing-camden-1345.jpg",
+      "target_filename": "concrete-sealing-1345.jpg",
+      "target_title": "Concrete sealing",
+      "target_alt": "Concrete sealing",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1359,
+      "source_filename": "concrete-driveway-cracks-camden-1359.jpg",
+      "target_filename": "concrete-driveway-cracks-1359.jpg",
+      "target_title": "Concrete driveway cracks",
+      "target_alt": "Concrete driveway cracks",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1361,
+      "source_filename": "concrete-driveway-cracks-1-camden-1361.jpg",
+      "target_filename": "concrete-driveway-cracks-1-1361.jpg",
+      "target_title": "Concrete driveway cracks 1",
+      "target_alt": "Concrete driveway cracks 1",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1362,
+      "source_filename": "concrete-driveway-cracks-2-camden-1362.jpg",
+      "target_filename": "concrete-driveway-cracks-2-1362.jpg",
+      "target_title": "Concrete driveway cracks 2",
+      "target_alt": "Concrete driveway cracks 2",
+      "elementor_references": 7,
+      "usage_restriction": "decorative/non-evidential; no geographic or completed-project implication",
+      "result": "PASS"
+    }
+  ],
+  "false_geographic_remediated": [
+    {
+      "attachment_id": 609,
+      "source_filename": "exposed-aggregate-south-west-sydney-609.jpg",
+      "target_filename": "exposed-aggregate-residential-driveway-609.jpg",
+      "target_alt": "Exposed aggregate driveway leading to a home",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1056,
+      "source_filename": "south-creek-drainage-corridor-1056.jpg",
+      "target_filename": "aerial-waterway-residential-area-1056.jpg",
+      "target_alt": "Aerial view of a waterway beside a residential area",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1151,
+      "source_filename": "reactive-clay-concreter-camden-1151.jpg",
+      "target_filename": "dry-cracked-ground-1151.jpg",
+      "target_alt": "Dry cracked ground surface",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1153,
+      "source_filename": "camden-council-driveway-crossing-1153.jpg",
+      "target_filename": "concrete-vehicle-crossing-1153.jpg",
+      "target_alt": "Concrete vehicle crossing between a kerb and property boundary",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1188,
+      "source_filename": "reactive-clay-concreter-1-camden-1188.jpg",
+      "target_filename": "dry-cracked-ground-1188.jpg",
+      "target_alt": "Dry cracked ground surface",
+      "result": "PASS"
+    }
+  ],
+  "band_a_rule": "Only exact recorded owner verdicts are accepted; the 20 August 2026 Report 49 mapping is 10 GENERIC and 6 UNUSABLE, with zero HOLD assets",
+  "duplicate_rule": "Never collapse byte duplicates when distinct attachment IDs are referenced"
+}

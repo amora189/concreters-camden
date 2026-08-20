@@ -1,0 +1,34 @@
+{
+  "post_name": {
+    "from": "concreter-werribee",
+    "to": "concreters-oran-park"
+  },
+  "title": {
+    "from": "Concreters in Werribee",
+    "to": "Concreters Oran Park"
+  },
+  "rank_math_title": {
+    "from": "Concreters Werribee | Driveways, Slabs &amp; Exposed Aggregate",
+    "to": "Concreters Oran Park | Driveways, Slabs & Crossovers"
+  },
+  "rank_math_description": {
+    "from": "Concreters in Werribee for driveways, exposed aggregate, slabs &amp; paths. Local Wyndham jobs, free on-site fixed-price quotes. No obligation.",
+    "to": "Concreting in Oran Park — driveways, alfresco and shed slabs built to Camden Council spec. We know the 800mm footpath allocation. Free on-site quote."
+  },
+  "rank_math_focus_keyword": {
+    "from": "Concreter Werribe",
+    "to": "concreters oran park"
+  },
+  "rank_math_breadcrumb_title": {
+    "from": "Werribee",
+    "to": "Oran Park"
+  },
+  "delete_meta_keys": [
+    "_elementor_element_cache",
+    "rank_math_schema_Service"
+  ],
+  "robots": {
+    "to": "noindex,follow",
+    "reason": "Module 8 contains [[REAL_PHOTO_PENDING]] placeholders"
+  }
+}

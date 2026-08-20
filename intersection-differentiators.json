@@ -1,0 +1,369 @@
+{
+  "$schema_version": "1.0",
+  "governing_document": "expansion-300-pages.md §4",
+  "correction": "expansion-300-pages.md §1 budgeted 180 intersection pages. That figure was a target, not a validated count. Only 35 intersections currently have a factual differentiator. The remaining 145 are unlocked only by researching the 45 suburbs marked REQUIRED-RESEARCH in suburbs-expanded.json, and only where real material exists there.",
+  "buildable_now": 35,
+  "hard_rule": "Build ONLY the intersections listed here. Do not generate additional intersection pages for any suburb or service not present in this file. Do not invent a differentiator to unlock one.",
+  "revised_page_budget": {
+    "home": 1,
+    "utility": 4,
+    "services": 10,
+    "suburbs": 60,
+    "intersections": 35,
+    "guides": 35,
+    "cost_and_comparison": 10,
+    "total": 155
+  },
+  "intersections": [
+    {
+      "url": "/concrete-crossovers-and-laybacks-oran-park/",
+      "suburb": "oran-park",
+      "service": "concrete-crossovers-and-laybacks",
+      "differentiator": "The footpath allocation in Oran Park starts 800mm from the property boundary, not the 900mm that applies across the rest of the Camden LGA. The allocation is 1200mm wide either way. Get the layback set-out wrong by that 100mm and the crossover fails inspection.",
+      "parent_service": "/concrete-crossovers-and-laybacks-south-west-sydney/",
+      "parent_suburb": "/concreters-oran-park/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-driveways-oran-park/",
+      "suburb": "oran-park",
+      "service": "concrete-driveways",
+      "differentiator": "Oran Park builders hand over with the house complete and the driveway not poured. The first job on almost every lot is a two-car driveway from kerb to double garage on a 350-450sqm block — not a replacement, a first pour onto a finished house.",
+      "parent_service": "/concrete-driveways-south-west-sydney/",
+      "parent_suburb": "/concreters-oran-park/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/shed-and-garage-slabs-oran-park/",
+      "suburb": "oran-park",
+      "service": "shed-and-garage-slabs",
+      "differentiator": "Compaction testing at subdivision stage was done for the house footprint, not the whole lot. Fill that is sound under the house pad is often softer where a rear-yard shed is going, which is why shed slabs here settle differentially in a way no amount of mesh prevents.",
+      "parent_service": "/shed-and-garage-slabs-south-west-sydney/",
+      "parent_suburb": "/concreters-oran-park/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/exposed-aggregate-oran-park/",
+      "suburb": "oran-park",
+      "service": "exposed-aggregate",
+      "differentiator": "The Hermitage and the newer premium releases already have exposed aggregate through the streetscape, so owners specify it to match rather than to stand out. Matching an existing street's stone and finish is the actual brief here.",
+      "parent_service": "/exposed-aggregate-south-west-sydney/",
+      "parent_suburb": "/concreters-oran-park/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-crossovers-and-laybacks-leppington/",
+      "suburb": "leppington",
+      "service": "concrete-crossovers-and-laybacks",
+      "differentiator": "Leppington straddles the Camden and Liverpool council boundary. Two lots on opposite sides of the same street can require two different crossover applications, two fee schedules and two inspection processes. The lot has to be checked on the NSW Planning Portal before anyone quotes.",
+      "parent_service": "/concrete-crossovers-and-laybacks-south-west-sydney/",
+      "parent_suburb": "/concreters-leppington/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-slabs-leppington/",
+      "suburb": "leppington",
+      "service": "concrete-slabs",
+      "differentiator": "Streets affected by Upper South Creek carry a flood planning level that governs slab height and fall. On those lots the finished level is a design input set before anything else, not something adjusted on the day.",
+      "parent_service": "/concrete-slabs-south-west-sydney/",
+      "parent_suburb": "/concreters-leppington/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-driveways-leppington/",
+      "suburb": "leppington",
+      "service": "concrete-driveways",
+      "differentiator": "Leppington was built by at least four developers running concurrently between Ingleburn Road and Heath Road, so handover specs, kerb profiles and estate design guidelines differ street by street rather than across one masterplan.",
+      "parent_service": "/concrete-driveways-south-west-sydney/",
+      "parent_suburb": "/concreters-leppington/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/commercial-concreting-gregory-hills/",
+      "suburb": "gregory-hills",
+      "service": "commercial-concreting",
+      "differentiator": "The Turner Road business precinct and Smeaton Grange sit directly alongside residential Gregory Hills. Forklift-rated floors, loading dock aprons and truck hardstands get quoted off the same drive as a domestic driveway — different mix design, different reinforcement, different jointing, and a subgrade that needs CBR verification.",
+      "parent_service": "/commercial-concreting-south-west-sydney/",
+      "parent_suburb": "/concreters-gregory-hills/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-slabs-gregory-hills/",
+      "suburb": "gregory-hills",
+      "service": "concrete-slabs",
+      "differentiator": "A warehouse floor and a residential slab are not the same product. Commercial slabs here need a thicker reinforced section over a verified subgrade; quoting one off a residential rate is the most common costing error in this suburb.",
+      "parent_service": "/concrete-slabs-south-west-sydney/",
+      "parent_suburb": "/concreters-gregory-hills/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-slabs-gledswood-hills/",
+      "suburb": "gledswood-hills",
+      "service": "concrete-slabs",
+      "differentiator": "Lots backing onto the South Creek riparian corridor and the Sydney Water Upper Canal sit near documented sulfate and chloride concentrations. This is where the Western Sydney Salinity Code of Practice and the CCAA saline-environments guide change the mix and the cover you specify, not just the paperwork.",
+      "parent_service": "/concrete-slabs-south-west-sydney/",
+      "parent_suburb": "/concreters-gledswood-hills/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/exposed-aggregate-gledswood-hills/",
+      "suburb": "gledswood-hills",
+      "service": "exposed-aggregate",
+      "differentiator": "Lots run 350-600sqm with wide frontages, so driveway areas are large enough that the per-square-metre premium on exposed aggregate becomes a material line item rather than a rounding difference.",
+      "parent_service": "/exposed-aggregate-south-west-sydney/",
+      "parent_suburb": "/concreters-gledswood-hills/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-patios-gledswood-hills/",
+      "suburb": "gledswood-hills",
+      "service": "concrete-patios",
+      "differentiator": "Cumberland Plain Woodland conservation overlays restrict truck access on parts of the estate, so alfresco and outdoor-kitchen slabs are placed by line pump or boom pump rather than direct chute. That is a cost input, not an afterthought.",
+      "parent_service": "/concrete-patios-south-west-sydney/",
+      "parent_suburb": "/concreters-gledswood-hills/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-driveways-austral/",
+      "suburb": "austral",
+      "service": "concrete-driveways",
+      "differentiator": "Austral is old five-acre market-garden blocks being cut up lot by lot, not a masterplanned estate. That produces 40 to 60 metre battle-axe handle driveways — high volume per job, terrible access, and almost always a line pump.",
+      "parent_service": "/concrete-driveways-south-west-sydney/",
+      "parent_suburb": "/concreters-austral/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-slabs-austral/",
+      "suburb": "austral",
+      "service": "concrete-slabs",
+      "differentiator": "Decades of market-garden use left undocumented fill across much of the suburb. Assuming a Class M site here without testing is how a granny flat slab ends up cracking within two years.",
+      "parent_service": "/concrete-slabs-south-west-sydney/",
+      "parent_suburb": "/concreters-austral/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-crossovers-and-laybacks-austral/",
+      "suburb": "austral",
+      "service": "concrete-crossovers-and-laybacks",
+      "differentiator": "Dual occupancies are the dominant development type, and each approved parking facility needs its own crossing. Liverpool City Council wants the crossing to match what was approved on the DA or CDC, which catches people who added a second dwelling after the fact.",
+      "parent_service": "/concrete-crossovers-and-laybacks-south-west-sydney/",
+      "parent_suburb": "/concreters-austral/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/exposed-aggregate-harrington-park/",
+      "suburb": "harrington-park",
+      "service": "exposed-aggregate",
+      "differentiator": "Under the Harrington Grove schedule of the Camden DCP a driveway must be built across its full width in stencilled or stamped concrete, clay pavers or exposed aggregate — no portion may be uncoloured concrete. Anyone quoting a plain broom finish here has not read the controls.",
+      "parent_service": "/exposed-aggregate-south-west-sydney/",
+      "parent_suburb": "/concreters-harrington-park/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/decorative-concrete-harrington-park/",
+      "suburb": "harrington-park",
+      "service": "decorative-concrete",
+      "differentiator": "The same Harrington Grove schedule sets width at 3m to 5.5m, average grade at 1:6, and requires the driveway to sit at least 500mm clear of kerb drainage structures and side fencing. The decorative finish is mandated, not optional, which changes the baseline price rather than the upgrade price.",
+      "parent_service": "/decorative-concrete-south-west-sydney/",
+      "parent_suburb": "/concreters-harrington-park/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-driveway-replacement-harrington-park/",
+      "suburb": "harrington-park",
+      "service": "concrete-driveway-replacement",
+      "differentiator": "The 1995-2010 stock is now 20 to 30 years old and failing at the edges and at the layback rather than mid-slab. Those driveways were poured thinner and with less reinforcement than current Camden spec, which is why replacement rather than resurfacing is usually the honest answer.",
+      "parent_service": "/concrete-driveway-replacement-south-west-sydney/",
+      "parent_suburb": "/concreters-harrington-park/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-driveways-catherine-field/",
+      "suburb": "catherine-field",
+      "service": "concrete-driveways",
+      "differentiator": "Catherine Field is mid-transition. On one street it is a 4.5m urban crossover to Camden's 32 MPa, 125mm, SL72 standard; two streets over it is an RU acreage lot needing a Council standard dish crossing aligned to the table drain invert plus a bitumen shoulder seal back to the pavement. Two completely different specs in one suburb.",
+      "parent_service": "/concrete-driveways-south-west-sydney/",
+      "parent_suburb": "/concreters-catherine-field/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/shed-and-garage-slabs-catherine-field/",
+      "suburb": "catherine-field",
+      "service": "shed-and-garage-slabs",
+      "differentiator": "The retained acreage lots carry machinery, floats and delivery trucks that a suburban shed slab never sees. Section thickness and access-run design are sized for that traffic, not for a garden shed.",
+      "parent_service": "/shed-and-garage-slabs-south-west-sydney/",
+      "parent_suburb": "/concreters-catherine-field/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-paths-edmondson-park/",
+      "suburb": "edmondson-park",
+      "service": "concrete-paths",
+      "differentiator": "A meaningful share of work here is strata rather than residential — common-area paths, bin-store slabs and shared driveway aprons where the client is an owners corporation. That means a committee resolution before work starts, different insurance requirements, and repeat work if the first job goes well.",
+      "parent_service": "/concrete-paths-south-west-sydney/",
+      "parent_suburb": "/concreters-edmondson-park/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-patios-edmondson-park/",
+      "suburb": "edmondson-park",
+      "service": "concrete-patios",
+      "differentiator": "Terraces and townhouses with no truck access mean courtyard slabs go in by barrow, kibble or line pump. That has to be priced at quote rather than discovered on the day.",
+      "parent_service": "/concrete-patios-south-west-sydney/",
+      "parent_suburb": "/concreters-edmondson-park/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-driveways-edmondson-park/",
+      "suburb": "edmondson-park",
+      "service": "concrete-driveways",
+      "differentiator": "Shared driveway aprons across lot boundaries raise a question no detached suburb raises: who pays. The answer sits in the strata plan or the easement, and it needs settling before anyone pours.",
+      "parent_service": "/concrete-driveways-south-west-sydney/",
+      "parent_suburb": "/concreters-edmondson-park/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/commercial-concreting-narellan/",
+      "suburb": "narellan",
+      "service": "commercial-concreting",
+      "differentiator": "Narellan Town Centre and Smeaton Grange make this the LGA's commercial spine. The highest-value jobs are carpark slabs, loading aprons and warehouse floors that have to be poured overnight or in staged sections so the tenancy keeps trading.",
+      "parent_service": "/commercial-concreting-south-west-sydney/",
+      "parent_suburb": "/concreters-narellan/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-driveway-replacement-narellan/",
+      "suburb": "narellan",
+      "service": "concrete-driveway-replacement",
+      "differentiator": "Narellan and Narellan Vale residential stock dates from the 1980s and 90s and is at end of life. Unlike the growth corridor, nearly all residential work here is breaking out and rebuilding rather than pouring new.",
+      "parent_service": "/concrete-driveway-replacement-south-west-sydney/",
+      "parent_suburb": "/concreters-narellan/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-driveway-replacement-mount-annan/",
+      "suburb": "mount-annan",
+      "service": "concrete-driveway-replacement",
+      "differentiator": "Mount Annan was built out through the 1990s, so its concrete is now 25 to 30 years old — exactly the age where driveways fail at the edges and settle at the layback. The real question homeowners ask is resurface or replace, and the answer depends on whether the failure is surface-level or structural.",
+      "parent_service": "/concrete-driveway-replacement-south-west-sydney/",
+      "parent_suburb": "/concreters-mount-annan/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-driveways-spring-farm/",
+      "suburb": "spring-farm",
+      "service": "concrete-driveways",
+      "differentiator": "Spring Farm sits on genuinely sloping ground, which the flat growth-corridor releases do not. Camden requires an average driveway grade of 1:6 with controlled vertical curves, so blocks here regularly need stepped pours, integrated retaining and a scratch or broom finish for traction rather than a smooth decorative one.",
+      "parent_service": "/concrete-driveways-south-west-sydney/",
+      "parent_suburb": "/concreters-spring-farm/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-crossovers-and-laybacks-spring-farm/",
+      "suburb": "spring-farm",
+      "service": "concrete-crossovers-and-laybacks",
+      "differentiator": "Where the grade cannot meet Camden's standard specification the job goes to a Non-Standard Driveway Application with a written explanation of why. On the steeper Spring Farm blocks that is the normal path, not the exception.",
+      "parent_service": "/concrete-crossovers-and-laybacks-south-west-sydney/",
+      "parent_suburb": "/concreters-spring-farm/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-patios-elderslie/",
+      "suburb": "elderslie",
+      "service": "concrete-patios",
+      "differentiator": "Elderslie stock is mostly 2000s-era, which puts it in an awkward middle age — old enough that owners are upgrading outdoor areas, young enough that the driveway is still structurally sound. The work skews to adding rather than replacing: alfresco slabs, pergola bases, extended side access.",
+      "parent_service": "/concrete-patios-south-west-sydney/",
+      "parent_suburb": "/concreters-elderslie/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-crossovers-and-laybacks-currans-hill/",
+      "suburb": "currans-hill",
+      "service": "concrete-crossovers-and-laybacks",
+      "differentiator": "Currans Hill lots are noticeably smaller than Mount Annan or Harrington Park, so driveways are short, single-width and heavily trafficked. The dominant failure is settlement at the layback rather than mid-slab cracking, which changes whether you are repairing the crossover or the driveway.",
+      "parent_service": "/concrete-crossovers-and-laybacks-south-west-sydney/",
+      "parent_suburb": "/concreters-currans-hill/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-driveway-replacement-currans-hill/",
+      "suburb": "currans-hill",
+      "service": "concrete-driveway-replacement",
+      "differentiator": "Because the driveways are short, a full replacement here is often cheaper than the staged repair people expect to be quoted — the demolition and disposal is a smaller share of the job than on a longer drive.",
+      "parent_service": "/concrete-driveway-replacement-south-west-sydney/",
+      "parent_suburb": "/concreters-currans-hill/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-driveways-cobbitty/",
+      "suburb": "cobbitty",
+      "service": "concrete-driveways",
+      "differentiator": "Most Cobbitty frontages have no kerb and gutter, so Council requires a standard concrete dish crossing aligned to the table drain invert, plus a bitumen shoulder seal from the dish back to the edge of existing pavement. A pipe crossing is only permitted where a dish will not give suitable access, and only with Council approval. Three scope items most quotes leave off.",
+      "parent_service": "/concrete-driveways-south-west-sydney/",
+      "parent_suburb": "/concreters-cobbitty/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/commercial-concreting-cobbitty/",
+      "suburb": "cobbitty",
+      "service": "commercial-concreting",
+      "differentiator": "Machinery shed floors, stable slabs and workshop hardstands on acreage carry loads a residential slab never sees, on undisturbed profiles with no engineered fill. Section thickness and crossfall are sized for delivery trucks and plant.",
+      "parent_service": "/commercial-concreting-south-west-sydney/",
+      "parent_suburb": "/concreters-cobbitty/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/commercial-concreting-bringelly/",
+      "suburb": "bringelly",
+      "service": "commercial-concreting",
+      "differentiator": "Bringelly is the closest residential locality to the Aerotropolis build-out. Western Sydney International opens to freight from July 2026 and passengers in October 2026, and private project value around the Aerotropolis has risen from $9.8bn to $21.6bn in fourteen months. The work here is industrial floors, hardstands and yard slabs for clients who tender rather than take a homeowner quote.",
+      "parent_service": "/commercial-concreting-south-west-sydney/",
+      "parent_suburb": "/concreters-bringelly/",
+      "status_on_import": "draft",
+      "wave": 5
+    },
+    {
+      "url": "/concrete-slabs-bringelly/",
+      "suburb": "bringelly",
+      "service": "concrete-slabs",
+      "differentiator": "Documented sulfate concentrations near western Sydney creek lines make aggressivity assessment under AS 2159 a real design input on industrial slabs here, not a formality skipped to save a week.",
+      "parent_service": "/concrete-slabs-south-west-sydney/",
+      "parent_suburb": "/concreters-bringelly/",
+      "status_on_import": "draft",
+      "wave": 5
+    }
+  ]
+}

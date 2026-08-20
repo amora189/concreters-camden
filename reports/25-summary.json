@@ -1,0 +1,197 @@
+{
+ "pages_measured": 156,
+ "calculator": "DEFERRED TO STAGE 31 — not yet built",
+ "total_distinct_shingles": 90713,
+ "shingles_over_cap": 1761,
+ "pages_touched_by_over_cap_shingles": 156,
+ "max_shingle_page_count": 145,
+ "top_shingles": [
+  [
+   "get your free quote today",
+   145
+  ],
+  [
+   "call us 03 4517 6915",
+   118
+  ],
+  [
+   "your free quote today call",
+   99
+  ],
+  [
+   "free quote today call us",
+   99
+  ],
+  [
+   "quote today call us 03",
+   99
+  ],
+  [
+   "today call us 03 4517",
+   99
+  ],
+  [
+   "keeps it open related sources",
+   80
+  ],
+  [
+   "it open related sources for",
+   80
+  ],
+  [
+   "shed garage extension and house",
+   61
+  ],
+  [
+   "garage extension and house slabs",
+   61
+  ]
+ ],
+ "class_stats": {
+  "cost_comparison": {
+   "pages": 10,
+   "metric_a_min": 0.6718,
+   "metric_a_median": 0.8948,
+   "metric_a_max": 0.9357,
+   "metric_b_median": 0.0,
+   "sourced_threshold": null,
+   "enforced": false,
+   "would_fail_metric_a": 0,
+   "below_50pct_metric_a": 0,
+   "worst_pair_overlap": 0.1532
+  },
+  "guide": {
+   "pages": 35,
+   "metric_a_min": 0.6492,
+   "metric_a_median": 0.8742,
+   "metric_a_max": 0.9171,
+   "metric_b_median": 0.0,
+   "sourced_threshold": 0.85,
+   "enforced": false,
+   "would_fail_metric_a": 11,
+   "below_50pct_metric_a": 0,
+   "worst_pair_overlap": 0.2588
+  },
+  "guide_hub": {
+   "pages": 1,
+   "metric_a_min": 0.9298,
+   "metric_a_median": 0.9298,
+   "metric_a_max": 0.9298,
+   "metric_b_median": 0.1053,
+   "sourced_threshold": null,
+   "enforced": false,
+   "would_fail_metric_a": 0,
+   "below_50pct_metric_a": 0,
+   "worst_pair_overlap": 0.0
+  },
+  "home": {
+   "pages": 1,
+   "metric_a_min": 0.8746,
+   "metric_a_median": 0.8746,
+   "metric_a_max": 0.8746,
+   "metric_b_median": 0.1034,
+   "sourced_threshold": null,
+   "enforced": false,
+   "would_fail_metric_a": 0,
+   "below_50pct_metric_a": 0,
+   "worst_pair_overlap": 0.0
+  },
+  "intersection": {
+   "pages": 35,
+   "metric_a_min": 0.6521,
+   "metric_a_median": 0.8708,
+   "metric_a_max": 0.9345,
+   "metric_b_median": 0.0037,
+   "sourced_threshold": 0.5,
+   "enforced": false,
+   "would_fail_metric_a": 0,
+   "below_50pct_metric_a": 0,
+   "worst_pair_overlap": 0.2287
+  },
+  "service": {
+   "pages": 10,
+   "metric_a_min": 0.7556,
+   "metric_a_median": 0.8683,
+   "metric_a_max": 0.9152,
+   "metric_b_median": 0.0057,
+   "sourced_threshold": null,
+   "enforced": false,
+   "would_fail_metric_a": 0,
+   "below_50pct_metric_a": 0,
+   "worst_pair_overlap": 0.2009
+  },
+  "suburb": {
+   "pages": 60,
+   "metric_a_min": 0.0645,
+   "metric_a_median": 0.0879,
+   "metric_a_max": 0.8647,
+   "metric_b_median": 0.0,
+   "sourced_threshold": 0.6,
+   "enforced": false,
+   "would_fail_metric_a": 58,
+   "below_50pct_metric_a": 45,
+   "worst_pair_overlap": 0.9247
+  },
+  "utility": {
+   "pages": 4,
+   "metric_a_min": 0.6622,
+   "metric_a_median": 0.759,
+   "metric_a_max": 0.8077,
+   "metric_b_median": 0.0545,
+   "sourced_threshold": null,
+   "enforced": false,
+   "would_fail_metric_a": 0,
+   "below_50pct_metric_a": 0,
+   "worst_pair_overlap": 0.2703
+  }
+ },
+ "pair_failures": 1491,
+ "worst_pair": {
+  "suburb": [
+   0.9247,
+   "concreters-hoxton-park",
+   "concreters-horningsea-park"
+  ],
+  "home": [
+   0.0,
+   null,
+   null
+  ],
+  "utility": [
+   0.2703,
+   "contact",
+   "gallery"
+  ],
+  "service": [
+   0.2009,
+   "concrete-paths-south-west-sydney",
+   "commercial-concreting-south-west-sydney"
+  ],
+  "guide_hub": [
+   0.0,
+   null,
+   null
+  ],
+  "guide": [
+   0.2588,
+   "exposed-aggregate-cost",
+   "commercial-hardstand-cost"
+  ],
+  "intersection": [
+   0.2287,
+   "concrete-patios-edmondson-park",
+   "concrete-patios-elderslie"
+  ],
+  "cost_comparison": [
+   0.1532,
+   "exposed-aggregate-vs-plain-concrete",
+   "exposed-aggregate-driveway-cost"
+  ]
+ },
+ "differentiator_failures": 45,
+ "differentiator_fail_by_class": {
+  "suburb": 45
+ },
+ "opening_failures": 1245,
+ "unthresholded_built": 26
+}

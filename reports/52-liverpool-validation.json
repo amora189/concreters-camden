@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "phase": "D",
+  "requirements": 13,
+  "source_citations_validated_against_pdf": 0,
+  "resolved_fields": 12,
+  "pages": 4,
+  "false_fidelity_residue": {
+    "reproduced without alteration": 0,
+    "Liverpool REQUIRED-RESEARCH": 0,
+    "verified project record": 0,
+    "researched job record": 0
+  },
+  "outside_phase_d_false_fidelity_residue": {
+    "reproduced without alteration": 11,
+    "Liverpool REQUIRED-RESEARCH": 0,
+    "verified project record": 0,
+    "researched job record": 0
+  },
+  "qualifications": [
+    "confirm with Council that the March 2026 form and fee schedule are still current",
+    "Council assesses each application and site",
+    "approval and any site-specific requirements must be confirmed before work",
+    "does not state that Structure Co holds the contractor licence or insurance"
+  ],
+  "calculator": "ABSENT — unbuilt and excluded",
+  "source_html": {
+    "forms_page_checked": false,
+    "portal_checked": false
+  },
+  "errors": []
+}

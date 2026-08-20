@@ -1,0 +1,577 @@
+{
+ "counts": {
+  "exact": 77,
+  "case": 0,
+  "copy_only": 0,
+  "thumb_only": 0,
+  "absent": 6
+ },
+ "delivered": 190,
+ "extras": [
+  {
+   "name": "1970s-home-hoppers-crossing - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 40785
+  },
+  {
+   "name": "22d688903186d76070a16bfae68d96e22e496089 - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 215840
+  },
+  {
+   "name": "371487147fc7f2da19984667e588262ce5db8f35 - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 177802
+  },
+  {
+   "name": "68feeabbfa09c5bf3b7f0adf662d0139c330665a - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 232604
+  },
+  {
+   "name": "About-2-Hero - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 2818
+  },
+  {
+   "name": "ApexFrame_Case_Study-1.pdf",
+   "class": "non-image",
+   "bytes": 11371
+  },
+  {
+   "name": "ApexFrame_Case_Study-2.pdf",
+   "class": "non-image",
+   "bytes": 11371
+  },
+  {
+   "name": "ApexFrame_Case_Study-3 - Copy.pdf",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 13356
+  },
+  {
+   "name": "ApexFrame_Case_Study-3.pdf",
+   "class": "non-image",
+   "bytes": 13356
+  },
+  {
+   "name": "ApexFrame_Case_Study.pdf",
+   "class": "non-image",
+   "bytes": 11371
+  },
+  {
+   "name": "B2B_Outreach_Framework.pdf",
+   "class": "non-image",
+   "bytes": 12843
+  },
+  {
+   "name": "CLAUDE.md",
+   "class": "non-image",
+   "bytes": 6956
+  },
+  {
+   "name": "CODEX-BUILD-2.md",
+   "class": "non-image",
+   "bytes": 19368
+  },
+  {
+   "name": "ChatGPT-Image-Jul-6-2026-01_52_19-PM - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 1056605
+  },
+  {
+   "name": "Image-Contact-1 - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 5000
+  },
+  {
+   "name": "Image-Testemonials - Copy.jpeg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 1510
+  },
+  {
+   "name": "Image_Placeholder-about - Copy.jpeg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 2643
+  },
+  {
+   "name": "Image_Placeholder-about-1 - Copy.jpeg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 2643
+  },
+  {
+   "name": "Image_Placeholder_Hero - Copy.jpeg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 4045
+  },
+  {
+   "name": "Image_Placeholder_Hero-1 - Copy.jpeg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 4045
+  },
+  {
+   "name": "Objection_Handling_Playbook-1 - Copy.pdf",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 13906
+  },
+  {
+   "name": "Objection_Handling_Playbook-1.pdf",
+   "class": "non-image",
+   "bytes": 13906
+  },
+  {
+   "name": "Objection_Handling_Playbook.pdf",
+   "class": "non-image",
+   "bytes": 11641
+  },
+  {
+   "name": "README.md",
+   "class": "non-image",
+   "bytes": 14047
+  },
+  {
+   "name": "Screenshot 2026-08-18 061842.png",
+   "class": "surplus-image",
+   "bytes": 135722
+  },
+  {
+   "name": "Screenshot 2026-08-18 061943.png",
+   "class": "surplus-image",
+   "bytes": 55505
+  },
+  {
+   "name": "Shaun_Gunar_Resume - Copy.pdf",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 52963
+  },
+  {
+   "name": "Shaun_Gunar_Resume.pdf",
+   "class": "non-image",
+   "bytes": 52963
+  },
+  {
+   "name": "Shaun_Gunar_Resume_Upwork - Copy.pdf",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 51698
+  },
+  {
+   "name": "Shaun_Gunar_Resume_Upwork.pdf",
+   "class": "non-image",
+   "bytes": 51698
+  },
+  {
+   "name": "TARNEIT-SOIL - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 56300
+  },
+  {
+   "name": "accessible-paths-concrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 98985
+  },
+  {
+   "name": "backyard-patio-concreter (1) - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 99651
+  },
+  {
+   "name": "backyard-patio-concreter (1).jpg",
+   "class": "surplus-image",
+   "bytes": 99651
+  },
+  {
+   "name": "cocnretejob1weribee (1) - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 33709
+  },
+  {
+   "name": "cocnretejob1weribee (1).jpg",
+   "class": "surplus-image",
+   "bytes": 33709
+  },
+  {
+   "name": "colourdanddetailedconcrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 42499
+  },
+  {
+   "name": "coloured-concrete-melbourne - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 598550
+  },
+  {
+   "name": "concrete-driveway-cracks - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 88619
+  },
+  {
+   "name": "concrete-driveway-cracks-2 - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 103273
+  },
+  {
+   "name": "concrete-drivewya-cracks-1 - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 82246
+  },
+  {
+   "name": "concrete-garden-paths-and-connecting-paths-concrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 57890
+  },
+  {
+   "name": "concrete-sealing - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 18329
+  },
+  {
+   "name": "concrete-slabs - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 38814
+  },
+  {
+   "name": "concrete-tesimonial-4 - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 97124
+  },
+  {
+   "name": "concrete-testimonial-1 - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 205494
+  },
+  {
+   "name": "concrete-testimonial-1-1 - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 205494
+  },
+  {
+   "name": "concrete-testimonial-2 - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 226982
+  },
+  {
+   "name": "concrete-testimonial-3 - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 325268
+  },
+  {
+   "name": "concretejob2werribee (1) - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 31714
+  },
+  {
+   "name": "concretejob2werribee (1).jpg",
+   "class": "surplus-image",
+   "bytes": 31714
+  },
+  {
+   "name": "concretepoolsurronds - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 1379067
+  },
+  {
+   "name": "concrtee-testimonial-6 - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 94814
+  },
+  {
+   "name": "control-joints-and-cracks - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 38329
+  },
+  {
+   "name": "cropped-ChatGPT-Image-Jul-6-2026-01_52_19-PM - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 623185
+  },
+  {
+   "name": "cropped-ChatGPT-Image-Jul-6-2026-07_59_41-PM - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 256347
+  },
+  {
+   "name": "cropped-e-t-co-logo-512 - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 141390
+  },
+  {
+   "name": "cropped-e-t-co-logo-transparent - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 104719
+  },
+  {
+   "name": "cropped-e_t_co_concreters_favicon_512_symbol_only - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 184277
+  },
+  {
+   "name": "cropped-e_t_co_concreters_favicon_512_symbol_only-1 - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 184171
+  },
+  {
+   "name": "cropped-eandtcologo - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 1230021
+  },
+  {
+   "name": "crossovers - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 28587
+  },
+  {
+   "name": "crossovers-concrete-truganina - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 36693
+  },
+  {
+   "name": "davis-creek-tarneit - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 206224
+  },
+  {
+   "name": "e-t-co-logo-512 (1) - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 302716
+  },
+  {
+   "name": "e-t-co-logo-512 (1).png",
+   "class": "surplus-image",
+   "bytes": 302716
+  },
+  {
+   "name": "e-t-co-logo-transparent (1) - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 302716
+  },
+  {
+   "name": "e-t-co-logo-transparent (1).png",
+   "class": "surplus-image",
+   "bytes": 302716
+  },
+  {
+   "name": "e_t_co_concreters_favicon_512_symbol_only - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 185375
+  },
+  {
+   "name": "eamptcoconcretersmelbourne.WordPress.2026-08-18 - Copy.xml",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 236687
+  },
+  {
+   "name": "eamptcoconcretersmelbourne.WordPress.2026-08-18.xml",
+   "class": "non-image",
+   "bytes": 236687
+  },
+  {
+   "name": "eandtcologo - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 1394814
+  },
+  {
+   "name": "excavation-werribee - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 58185
+  },
+  {
+   "name": "exension-and-floor-slabs-concrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 54748
+  },
+  {
+   "name": "exposed-aggregate-adelaide (1) - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 692544
+  },
+  {
+   "name": "exposed-aggregate-adelaide (1).jpg",
+   "class": "surplus-image",
+   "bytes": 692544
+  },
+  {
+   "name": "exposed-aggregate-concrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 660388
+  },
+  {
+   "name": "front-and-entry-paths-concrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 62544
+  },
+  {
+   "name": "garage-slabs-concrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 43902
+  },
+  {
+   "name": "heave-cracks - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 23926
+  },
+  {
+   "name": "honed-and-polished-concrete - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 126142
+  },
+  {
+   "name": "hoppers-crossing-aerial-shot - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 95921
+  },
+  {
+   "name": "logo-3 - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 1275
+  },
+  {
+   "name": "melbournes-west - Copy.png",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 401632
+  },
+  {
+   "name": "new-estates-truganina - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 42050
+  },
+  {
+   "name": "new-estates-werribee - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 52016
+  },
+  {
+   "name": "pathsandpathwasyconcrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 54379
+  },
+  {
+   "name": "patiosandalfrescoconcrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 45648
+  },
+  {
+   "name": "patiosandpathways - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 170056
+  },
+  {
+   "name": "patiosconcrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 70241
+  },
+  {
+   "name": "pointcook1 - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 292200
+  },
+  {
+   "name": "pointcook2 - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 186250
+  },
+  {
+   "name": "pointcook3 - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 188520
+  },
+  {
+   "name": "pouring-a-concrete-slab - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 58277
+  },
+  {
+   "name": "reactive-clay-concreter - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 87152
+  },
+  {
+   "name": "reactive-clay-concreter-1 - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 87152
+  },
+  {
+   "name": "reinforcedheavydutycocnreer - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 198238
+  },
+  {
+   "name": "settlement-cracks - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 9471
+  },
+  {
+   "name": "shedslabconcrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 58642
+  },
+  {
+   "name": "shrinkage-cracks - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 42536
+  },
+  {
+   "name": "side-access-paths-concrete - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 44253
+  },
+  {
+   "name": "stamped-copncrete-melbourne - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 39319
+  },
+  {
+   "name": "stencil-concrete-melbourne - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 26490
+  },
+  {
+   "name": "structural-cracks - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 38274
+  },
+  {
+   "name": "truganina-commercial - Copy.webp",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 85660
+  },
+  {
+   "name": "verified-badge - Copy.avif",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 44358
+  },
+  {
+   "name": "verified-badge-e1784545609908 - Copy.avif",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 46237
+  },
+  {
+   "name": "verified-badge-e1784545609908.avif",
+   "class": "surplus-image",
+   "bytes": 46237
+  },
+  {
+   "name": "verified-badge-e1784545689665 - Copy.avif",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 43549
+  },
+  {
+   "name": "verified-badge.avif",
+   "class": "surplus-image",
+   "bytes": 44358
+  },
+  {
+   "name": "werribee-town - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 34375
+  },
+  {
+   "name": "what-is-a-concrete-slab - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 38673
+  },
+  {
+   "name": "what-is-exposed-aggregate - Copy.jpg",
+   "class": "duplicate-copy-of-delivered",
+   "bytes": 82904
+  }
+ ]
+}

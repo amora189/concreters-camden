@@ -1,0 +1,296 @@
+{
+  "/concreters-oran-park/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 92.29098805646036,
+    "shared_components": 0.0,
+    "failing_pairs": [],
+    "unique_variable": "The footpath allocation in Oran Park starts 800mm from the property boundary, not the 900mm that applies across the rest of the Camden LGA. Get the layback set-out wrong and the crossover fails inspection.",
+    "resulting_status": "publish"
+  },
+  "/concreters-leppington/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 75.92752372735116,
+    "shared_components": 2.596314907872697,
+    "failing_pairs": [],
+    "unique_variable": "Leppington straddles the Camden and Liverpool council boundary. Two lots on opposite sides of the same street can require two different crossover applications, two fee schedules and two inspection processes. Check the lot on the NSW Planning Portal before quoting.",
+    "resulting_status": "publish"
+  },
+  "/concreters-gregory-hills/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 71.41645462256149,
+    "shared_components": 5.2842273819055245,
+    "failing_pairs": [],
+    "unique_variable": "Gregory Hills is the one Camden growth suburb where residential and light-industrial work sit side by side. The Turner Road business precinct and the Smeaton Grange estate next door mean forklift-rated slabs, loading-dock aprons and truck hardstands are quoted off the same drive as a domestic driveway — different mix design, different reinforcement, different jointing.",
+    "resulting_status": "publish"
+  },
+  "/concreters-gledswood-hills/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 74.50819672131148,
+    "shared_components": 5.116279069767442,
+    "failing_pairs": [],
+    "unique_variable": "Parts of Gledswood Hills back onto the South Creek riparian corridor and the Sydney Water Upper Canal. Sulfate and chloride levels in subsoil near western Sydney creek lines can be aggressive to concrete and reinforcement — this is the suburb where the Western Sydney Salinity Code of Practice and the CCAA saline-environments guide actually change the mix and the cover you specify, not just the paperwork.",
+    "resulting_status": "publish"
+  },
+  "/concreters-austral/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 70.28862478777589,
+    "shared_components": 2.555647155812036,
+    "failing_pairs": [],
+    "unique_variable": "Austral is not a masterplanned estate — it is old five-acre market-garden blocks being cut up lot by lot. That produces work no growth-corridor estate produces: 40–60 metre battle-axe handle driveways, double crossovers for dual occupancies, and second-dwelling slabs squeezed behind an existing house. Volume per job is high, access is usually terrible, and the pour almost always needs a line pump.",
+    "resulting_status": "publish"
+  },
+  "/concreters-harrington-park/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 78.47003154574132,
+    "shared_components": 4.932735426008969,
+    "failing_pairs": [],
+    "unique_variable": "Under the Harrington Grove schedule of the Camden DCP, a driveway must be built across its full width in stencilled or stamped concrete, clay pavers or exposed aggregate — no portion may be uncoloured concrete. Width is 3m to 5.5m, average grade 1:6, and it must sit at least 500mm clear of kerb drainage structures and side fencing. Anyone quoting you a plain broom finish here has not read the controls.",
+    "resulting_status": "publish"
+  },
+  "/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 93.34600760456274,
+    "shared_components": 0.0,
+    "failing_pairs": [],
+    "unique_variable": "Homepage owns Camden township, heritage-conservation and Nepean flood-planning context.",
+    "resulting_status": "publish"
+  },
+  "/contact/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 83.08823529411765,
+    "shared_components": 0.0,
+    "failing_pairs": [],
+    "unique_variable": "Approved utility purpose: contact.",
+    "resulting_status": "publish"
+  },
+  "/quote/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 87.3015873015873,
+    "shared_components": 0.0,
+    "failing_pairs": [],
+    "unique_variable": "Approved utility purpose: quote.",
+    "resulting_status": "publish"
+  },
+  "/about/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 77.94117647058823,
+    "shared_components": 0.0,
+    "failing_pairs": [],
+    "unique_variable": "Approved utility purpose: about.",
+    "resulting_status": "publish"
+  },
+  "/gallery/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 74.57627118644068,
+    "shared_components": 0.0,
+    "failing_pairs": [],
+    "unique_variable": "Approved utility purpose: gallery.",
+    "resulting_status": "publish"
+  },
+  "/concrete-driveways-south-west-sydney/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 84.40835266821345,
+    "shared_components": 1.5952597994530537,
+    "failing_pairs": [],
+    "unique_variable": "new residential driveways, finished levels and lawful street connections",
+    "resulting_status": "publish"
+  },
+  "/concrete-driveway-replacement-south-west-sydney/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 84.75665748393021,
+    "shared_components": 1.5787099684258006,
+    "failing_pairs": [],
+    "unique_variable": "removal, subgrade inspection and replacement of failed existing driveways",
+    "resulting_status": "publish"
+  },
+  "/concrete-slabs-south-west-sydney/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 83.94431554524363,
+    "shared_components": 1.5952597994530537,
+    "failing_pairs": [],
+    "unique_variable": "residential floor, extension and general-purpose reinforced slabs",
+    "resulting_status": "publish"
+  },
+  "/shed-and-garage-slabs-south-west-sydney/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 85.26745240253854,
+    "shared_components": 1.55902004454343,
+    "failing_pairs": [],
+    "unique_variable": "slabs for sheds, garages and workshops with the support checked at the actual footprint",
+    "resulting_status": "publish"
+  },
+  "/exposed-aggregate-south-west-sydney/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 86.54731457800511,
+    "shared_components": 1.7552657973921766,
+    "failing_pairs": [],
+    "unique_variable": "textured decorative concrete where aggregate selection and sealing form part of the finish brief",
+    "resulting_status": "publish"
+  },
+  "/decorative-concrete-south-west-sydney/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 86.06719367588933,
+    "shared_components": 3.330161750713606,
+    "failing_pairs": [],
+    "unique_variable": "coloured, stencilled and other specified finishes matched to the site's use",
+    "resulting_status": "publish"
+  },
+  "/concrete-patios-south-west-sydney/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 85.07306889352819,
+    "shared_components": 1.7902813299232736,
+    "failing_pairs": [],
+    "unique_variable": "outdoor living slabs coordinated with thresholds, drainage and the proposed finish",
+    "resulting_status": "publish"
+  },
+  "/concrete-paths-south-west-sydney/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 78.74933757286698,
+    "shared_components": 1.8172377985462098,
+    "failing_pairs": [],
+    "unique_variable": "side access, garden and pedestrian paths set to usable falls and widths",
+    "resulting_status": "publish"
+  },
+  "/concrete-crossovers-and-laybacks-south-west-sydney/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 86.50268054241565,
+    "shared_components": 1.0903426791277258,
+    "failing_pairs": [],
+    "unique_variable": "vehicle crossings whose application, geometry and inspections depend on the governing council",
+    "resulting_status": "publish"
+  },
+  "/commercial-concreting-south-west-sydney/": {
+    "allowed": true,
+    "conditions": {
+      "unique_body": true,
+      "pairwise_overlap": true,
+      "sourced_unique_variable": true,
+      "shared_components": true
+    },
+    "unique_body": 78.40222944728286,
+    "shared_components": 1.5967153284671534,
+    "failing_pairs": [],
+    "unique_variable": "documented commercial floors, hardstands, aprons and external pavement scopes",
+    "resulting_status": "publish"
+  }
+}

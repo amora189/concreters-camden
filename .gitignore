@@ -1,0 +1,19 @@
+# Local environment and credential files
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Private key and certificate material
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Python runtime and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local scratch space
+/tmp/

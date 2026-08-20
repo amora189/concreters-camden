@@ -1,0 +1,762 @@
+{
+  "result": "PASS",
+  "public_intake_files": 55,
+  "derived_attachment_records": 55,
+  "elementor_media_references": 440,
+  "independent_elementor_media_references": 440,
+  "elementor_media_detectors_reconciled": true,
+  "unresolved_elementor_media_references": [],
+  "manifest_actions": {
+    "EXCLUDE": 28,
+    "RENAME": 55
+  },
+  "denied_assets": [
+    {
+      "attachment_id": 159,
+      "filename": "chatgpt-image-jul-6-2026-01-52-19-pm-camden-159.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D24/D36 retired AI/source-brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 177,
+      "filename": "cropped-chatgpt-image-jul-6-2026-07-59-41-pm-camden-177.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D24/D36 retired AI/source-brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 250,
+      "filename": "corex-concreters-camden-logo-250.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "Astra product mark, not a Structure Co asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 272,
+      "filename": "cropped-chatgpt-image-jul-6-2026-01-52-19-pm-camden-272.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "D24 and C2PA/AI provenance finding"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 275,
+      "filename": "image-placeholder-hero-camden-275.jpeg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 276,
+      "filename": "image-contact-1-camden-276.jpg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 277,
+      "filename": "image-placeholder-hero-1-camden-277.jpeg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 278,
+      "filename": "image-placeholder-about-1-camden-278.jpeg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 279,
+      "filename": "image-placeholder-about-camden-279.jpeg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 280,
+      "filename": "image-testemonials-camden-280.jpeg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-recorded Band B verdict; build/45-media-remediation.csv"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 306,
+      "filename": "corex-concreters-camden-logo-306.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D18/D36 retired E&T brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 307,
+      "filename": "corex-concreters-camden-logo-307.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D18/D36 retired E&T brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 308,
+      "filename": "corex-concreters-camden-logo-308.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "D24 and C2PA/AI provenance finding"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 309,
+      "filename": "corex-concreters-camden-logo-309.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "D24 and C2PA/AI provenance finding"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 323,
+      "filename": "about-2-hero-camden-323.jpg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-approved Report 49 zero-new-photograph plan; blank placeholder asset"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 422,
+      "filename": "corex-concreters-camden-logo-422.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D18/D36 retired E&T brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 468,
+      "filename": "corex-concreters-camden-logo-468.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "E&T Concreters Melbourne wordmark; duplicate contract requires pair treatment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 469,
+      "filename": "corex-concreters-camden-logo-469.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D18/D36 retired E&T brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 471,
+      "filename": "corex-concreters-camden-logo-471.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "E&T Concreters Melbourne wordmark; duplicate contract requires pair treatment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 472,
+      "filename": "corex-concreters-camden-logo-472.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "RETIRED",
+      "reasons": [
+        "D18/D36 retired E&T brand attachment"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 480,
+      "filename": "oran-park1-480.webp",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 481,
+      "filename": "oran-park2-481.webp",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 482,
+      "filename": "oran-park3-482.webp",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 907,
+      "filename": "camden-town-centre-907.jpg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 956,
+      "filename": "south-west-sydney-growth-corridor-956.png",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1020,
+      "filename": "wianamatta-shale-clay-camden-1020.jpg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "D19 removes the Tarneit soil photograph and retains its containing sections"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1067,
+      "filename": "verified-badge-e1784545689665-camden-1067.avif",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner-recorded Band B verdict; build/45-media-remediation.csv"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1187,
+      "filename": "leppington-new-estates-1187.jpg",
+      "payload_action": "EXCLUDE",
+      "verdict": "UNUSABLE",
+      "reasons": [
+        "owner approval dated 20 August 2026; exact Report 49 UNUSABLE mapping"
+      ],
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "quarantine_path": "source-inputs/media-retired",
+      "quarantined": true,
+      "result": "PASS"
+    }
+  ],
+  "band_a": [
+    {
+      "attachment_id": 907,
+      "filename": "camden-town-centre-907.jpg",
+      "target_filename": "",
+      "claim_made": "Filename and alt assert this is Camden town centre.",
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 924,
+      "filename": "coloured-concrete-south-west-sydney-924.png",
+      "target_filename": "coloured-concrete-patio-924.png",
+      "claim_made": "Filename and alt assert South West Sydney.",
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "present_in_public_intake": true,
+      "present_in_derived_wxr": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 226,
+      "filename": "concretejob2camden-226.jpg",
+      "target_filename": "fresh-concrete-side-yard-slab-226.jpg",
+      "claim_made": "Filename asserts the job is in Camden.",
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "present_in_public_intake": true,
+      "present_in_derived_wxr": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1185,
+      "filename": "council-crossing-south-west-sydney-1185.jpg",
+      "target_filename": "dark-concrete-driveway-crossing-1185.jpg",
+      "claim_made": "Filename and alt assert a council crossing in South West Sydney.",
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "present_in_public_intake": true,
+      "present_in_derived_wxr": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 906,
+      "filename": "driveway-excavation-camden-906.jpg",
+      "target_filename": "residential-site-excavation-906.jpg",
+      "claim_made": "Filename and alt assert the excavation is in Camden.",
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "present_in_public_intake": true,
+      "present_in_derived_wxr": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1150,
+      "filename": "established-home-mount-annan-1150.jpg",
+      "target_filename": "single-storey-brick-home-driveway-1150.jpg",
+      "claim_made": "Filename and alt assert an established home in Mount Annan, NSW.",
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "present_in_public_intake": true,
+      "present_in_derived_wxr": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1186,
+      "filename": "gregory-hills-commercial-concreting-1186.webp",
+      "target_filename": "commercial-building-concrete-hardstand-1186.webp",
+      "claim_made": "Filename and alt assert commercial concreting in Gregory Hills, NSW.",
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "present_in_public_intake": true,
+      "present_in_derived_wxr": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1187,
+      "filename": "leppington-new-estates-1187.jpg",
+      "target_filename": "",
+      "claim_made": "Filename and alt assert new estates in Leppington, NSW.",
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1152,
+      "filename": "mount-annan-established-housing-1152.jpg",
+      "target_filename": "aerial-suburban-park-and-housing-1152.jpg",
+      "claim_made": "Filename and alt assert established housing in Mount Annan, NSW.",
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "present_in_public_intake": true,
+      "present_in_derived_wxr": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 908,
+      "filename": "oran-park-growth-estate-908.jpg",
+      "target_filename": "aerial-new-housing-estate-908.jpg",
+      "claim_made": "Filename and alt assert an Oran Park growth estate.",
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "present_in_public_intake": true,
+      "present_in_derived_wxr": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 480,
+      "filename": "oran-park1-480.webp",
+      "target_filename": "",
+      "claim_made": "Filename asserts Oran Park, NSW.",
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 481,
+      "filename": "oran-park2-481.webp",
+      "target_filename": "",
+      "claim_made": "Filename asserts Oran Park, NSW.",
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 482,
+      "filename": "oran-park3-482.webp",
+      "target_filename": "",
+      "claim_made": "Filename asserts Oran Park, NSW.",
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 956,
+      "filename": "south-west-sydney-growth-corridor-956.png",
+      "target_filename": "",
+      "claim_made": "Filename and alt assert the South West Sydney growth corridor.",
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "present_in_public_intake": false,
+      "present_in_derived_wxr": false,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 926,
+      "filename": "stamped-concrete-south-west-sydney-926.jpg",
+      "target_filename": "stamped-concrete-driveway-926.jpg",
+      "claim_made": "Filename and alt assert South West Sydney.",
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "present_in_public_intake": true,
+      "present_in_derived_wxr": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 925,
+      "filename": "stencil-concrete-south-west-sydney-925.webp",
+      "target_filename": "stencilled-concrete-driveway-925.webp",
+      "claim_made": "Filename and alt assert South West Sydney.",
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "present_in_public_intake": true,
+      "present_in_derived_wxr": true,
+      "result": "PASS"
+    }
+  ],
+  "band_a_generic_placement_contract": {
+    "expected": 75,
+    "actual": 75,
+    "reconciled": true
+  },
+  "band_b": [
+    {
+      "attachment_id": 46,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "filename": "exposed-aggregate-front-paths-46.webp",
+      "present": true,
+      "derived_wxr_remediated": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 52,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "filename": "fresh-concrete-pool-surround-52.webp",
+      "present": true,
+      "derived_wxr_remediated": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 49,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "filename": "fresh-concrete-pool-surround-49.webp",
+      "present": true,
+      "derived_wxr_remediated": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 51,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "filename": "concrete-stepping-slabs-garden-path-51.webp",
+      "present": true,
+      "derived_wxr_remediated": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 48,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "filename": "exposed-aggregate-residential-driveway-48.webp",
+      "present": true,
+      "derived_wxr_remediated": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 47,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "filename": "fresh-concrete-backyard-slab-47.webp",
+      "present": true,
+      "derived_wxr_remediated": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 228,
+      "verdict": "GENERIC",
+      "payload_action": "RENAME",
+      "filename": "fresh-concrete-side-yard-slab-228.jpg",
+      "present": true,
+      "derived_wxr_remediated": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 280,
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "filename": null,
+      "present": false,
+      "derived_wxr_remediated": true,
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1067,
+      "verdict": "UNUSABLE",
+      "payload_action": "EXCLUDE",
+      "filename": null,
+      "present": false,
+      "derived_wxr_remediated": true,
+      "result": "PASS"
+    }
+  ],
+  "false_geographic_remediated": [
+    {
+      "attachment_id": 609,
+      "source_filename": "exposed-aggregate-south-west-sydney-609.jpg",
+      "target_filename": "exposed-aggregate-residential-driveway-609.jpg",
+      "target_alt": "Exposed aggregate driveway leading to a home",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1056,
+      "source_filename": "south-creek-drainage-corridor-1056.jpg",
+      "target_filename": "aerial-waterway-residential-area-1056.jpg",
+      "target_alt": "Aerial view of a waterway beside a residential area",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1151,
+      "source_filename": "reactive-clay-concreter-camden-1151.jpg",
+      "target_filename": "dry-cracked-ground-1151.jpg",
+      "target_alt": "Dry cracked ground surface",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1153,
+      "source_filename": "camden-council-driveway-crossing-1153.jpg",
+      "target_filename": "concrete-vehicle-crossing-1153.jpg",
+      "target_alt": "Concrete vehicle crossing between a kerb and property boundary",
+      "result": "PASS"
+    },
+    {
+      "attachment_id": 1188,
+      "source_filename": "reactive-clay-concreter-1-camden-1188.jpg",
+      "target_filename": "dry-cracked-ground-1188.jpg",
+      "target_alt": "Dry cracked ground surface",
+      "result": "PASS"
+    }
+  ],
+  "duplicate_groups_found": [
+    {
+      "sha256": "4BC279F2E00CDB60383855802D1AE16DA370823951DBD07553A87B07A3785895",
+      "members": [
+        {
+          "attachment_id": 49,
+          "filename": "fresh-concrete-pool-surround-49.webp"
+        },
+        {
+          "attachment_id": 52,
+          "filename": "fresh-concrete-pool-surround-52.webp"
+        }
+      ]
+    },
+    {
+      "sha256": "6DE585AA2DC6E85DE6AB04C65FCF398AE092E5331E9E1FD8601E1A2D66990267",
+      "members": [
+        {
+          "attachment_id": 1151,
+          "filename": "dry-cracked-ground-1151.jpg"
+        },
+        {
+          "attachment_id": 1188,
+          "filename": "dry-cracked-ground-1188.jpg"
+        }
+      ]
+    }
+  ],
+  "duplicate_contracts": [
+    {
+      "attachment_ids": [
+        49,
+        52
+      ],
+      "present_ids": [
+        49,
+        52
+      ],
+      "required_treatment": "preserve both IDs and both generic filenames; decoration only",
+      "result": "PASS"
+    },
+    {
+      "attachment_ids": [
+        468,
+        471
+      ],
+      "present_ids": [],
+      "required_treatment": "exclude both E&T source identities together; never collapse one reference target",
+      "result": "PASS"
+    }
+  ],
+  "errors": []
+}

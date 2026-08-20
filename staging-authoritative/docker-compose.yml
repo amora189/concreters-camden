@@ -1,0 +1,105 @@
+# Stage 29 — AUTHORITATIVE staging environment.
+#
+# NOT the disposable environment in ../staging/. That one runs PHP 8.4 and logs
+# an Elementor deprecation; this one pins PHP 8.3 per CODEX-BUILD-2.1.md §4.29.1.
+#
+# THIS FILE IS NOT RUN IN THIS WORK BLOCK. Stage 29 builds the scaffolding and
+# writes the plan; it does not execute it. Nothing starts until Gate 28 returns
+# GO, and Gate 28 currently returns NO-GO.
+#
+# Every version is pinned explicitly. No floating tags, no :latest.
+
+services:
+  db:
+    image: mariadb:11.4.5
+    container_name: camden-auth-db
+    restart: "no"
+    # Loopback only. Never expose the database off-host.
+    ports:
+      - "127.0.0.1:33107:3306"
+    environment:
+      MARIADB_DATABASE: camden_authoritative
+      MARIADB_USER: camden
+      MARIADB_PASSWORD_FILE: /run/secrets/db_password
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./checkpoints:/checkpoints
+    secrets:
+      - db_password
+      - db_root_password
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  wordpress:
+    image: wordpress:6.8.1-php8.3-apache
+    container_name: camden-auth-wp
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+    # Loopback only. An authoritative staging site must never be reachable
+    # off-host: it carries unfinished copy and must never be crawled.
+    ports:
+      - "127.0.0.1:8099:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: camden_authoritative
+      WORDPRESS_DB_USER: camden
+      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_password
+      WORDPRESS_CONFIG_EXTRA: |
+        /* Enforced global noindex. Not a setting a human can toggle in wp-admin. */
+        define( 'WP_ENVIRONMENT_TYPE', 'staging' );
+        define( 'DISALLOW_FILE_EDIT', true );
+        define( 'WP_DEBUG', true );
+        define( 'WP_DEBUG_LOG', true );
+        define( 'WP_DEBUG_DISPLAY', false );
+        /* Block remote media fetching at the WordPress level (§4.29.2). */
+        define( 'WP_HTTP_BLOCK_EXTERNAL', true );
+        define( 'WP_ACCESSIBLE_HOSTS', '' );
+    volumes:
+      - wp_data:/var/www/html
+      - ./uploads:/var/www/html/wp-content/uploads
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins:ro
+      - ./apache-host-guard.conf:/etc/apache2/conf-enabled/host-guard.conf:ro
+      - ./import:/import:ro
+
+  # WP-CLI runs one-shot commands. It does NOT start with the stack; it is
+  # invoked explicitly by the runbook, one step at a time, with a rollback
+  # point after every mutating step.
+  cli:
+    image: wordpress:cli-2.11-php8.3
+    container_name: camden-auth-cli
+    profiles: ["cli"]
+    depends_on:
+      - wordpress
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: camden_authoritative
+      WORDPRESS_DB_USER: camden
+      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_password
+    volumes:
+      - wp_data:/var/www/html
+      - ./uploads:/var/www/html/wp-content/uploads
+      - ./import:/import:ro
+      - ./checkpoints:/checkpoints
+    secrets:
+      - db_password
+    entrypoint: ["wp"]
+    command: ["--info"]
+
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt
+  db_root_password:
+    file: ./secrets/db_root_password.txt
+
+volumes:
+  db_data:
+    name: camden_auth_db_data
+  wp_data:
+    name: camden_auth_wp_data

@@ -1,0 +1,640 @@
+{
+  "$schema_version": "1.0",
+  "site": {
+    "domain": "concreterscamden.com.au",
+    "brand": "[[BRAND_NAME]]",
+    "primary_market": "Camden LGA and South West Sydney Growth Area",
+    "hq_locality": "[[HQ_SUBURB]]",
+    "hq_postcode": "[[HQ_POSTCODE]]",
+    "phone_e164": "[[TWILIO_E164]]",
+    "phone_display": "[[TWILIO_DISPLAY]]",
+    "email": "[[EMAIL]]",
+    "abn": "[[ABN]]",
+    "nsw_builder_licence": "[[NSW_FAIR_TRADING_LICENCE_NO]]",
+    "hbcf_insured": "[[true|false]]",
+    "note": "Every [[PLACEHOLDER]] must be replaced with a real, verified value before any page is indexed. Do not publish placeholder NAP data — inconsistent NAP is the single fastest way to poison local ranking."
+  },
+
+  "geo_facts_shared": {
+    "geology": "Wianamatta Group shale-derived residual clay across most of the Camden LGA. Typically classifies M to H1 under AS 2870-2011, H2 in some profiles.",
+    "salinity": "South West Sydney has documented urban salinity. Investigation guidance is the Western Sydney Salinity Code of Practice (WSROC) and DLWC 'Site Investigations for Urban Salinity'. Sulfate and chloride concentrations near creek lines can be aggressive to concrete and reinforcement under AS 2159-2009. Reference standard for footings in these conditions: CCAA 'Guide to Residential Slabs and Footings in Saline Environments'.",
+    "camden_driveway_spec": {
+      "source": "Camden Council Design and Construction Specification — Access Driveways",
+      "urban_residential_width_min_m": 4.0,
+      "urban_residential_width_max_m": 5.5,
+      "concrete_strength_mpa": 32,
+      "slab_thickness_mm": 125,
+      "reinforcement": "SL72 fabric",
+      "footpath_allocation_offset_mm": 900,
+      "footpath_allocation_offset_mm_oran_park": 800,
+      "footpath_allocation_width_mm": 1200,
+      "footpath_crossfall_percent": 4.0,
+      "max_batter_across_footpath": "1V:6H",
+      "application_paths": [
+        "Standard Residential Driveway Crossing Application",
+        "Non-Standard Driveway Application (Residential/Commercial/Industrial) — used when the standard spec cannot be achieved"
+      ],
+      "licence_note": "Licence and public liability insurance details are not mandatory at lodgement but MUST be supplied before work commences.",
+      "rural_note": "Rural residential access uses a Council standard concrete dish crossing aligned to existing kerb/gutter or table drain invert. Pipe crossings only by Council approval. A bitumen shoulder seal is required from the dish crossing to the edge of existing pavement."
+    },
+    "verification_required": [
+      "Confirm current Camden Council driveway specification version and fee schedule directly at camden.nsw.gov.au before publishing any numeric spec.",
+      "Confirm Liverpool City Council vehicle crossing process separately — it is a different application to Camden's.",
+      "Confirm suburb-to-LGA assignment on the NSW Planning Portal Spatial Viewer for split suburbs (Leppington, Bringelly, Denham Court)."
+    ]
+  },
+
+  "services": [
+    { "slug": "concrete-driveways", "name": "Concrete Driveways", "primary_kw": "concrete driveways sydney south west" },
+    { "slug": "driveway-crossovers", "name": "Driveway Crossovers & Council Layback", "primary_kw": "driveway crossover camden council" },
+    { "slug": "house-slabs", "name": "House Slabs & Footings", "primary_kw": "concrete house slab sydney" },
+    { "slug": "shed-and-garage-slabs", "name": "Shed & Garage Slabs", "primary_kw": "shed slab concrete sydney" },
+    { "slug": "exposed-aggregate", "name": "Exposed Aggregate Concrete", "primary_kw": "exposed aggregate driveway sydney" },
+    { "slug": "stencilled-and-stamped-concrete", "name": "Stencilled & Stamped Concrete", "primary_kw": "stencilled concrete driveway sydney" },
+    { "slug": "coloured-concrete", "name": "Coloured Concrete", "primary_kw": "coloured concrete driveway sydney" },
+    { "slug": "alfresco-and-patio-slabs", "name": "Alfresco & Patio Slabs", "primary_kw": "alfresco concrete slab sydney" },
+    { "slug": "concrete-paths-and-footpaths", "name": "Paths & Footpaths", "primary_kw": "concrete path cost sydney" },
+    { "slug": "concrete-removal-and-replacement", "name": "Concrete Removal & Replacement", "primary_kw": "concrete driveway replacement sydney" },
+    { "slug": "commercial-concreting", "name": "Commercial Concreting & Hardstands", "primary_kw": "commercial concreting western sydney" }
+  ],
+
+  "suburbs": [
+    {
+      "slug": "oran-park",
+      "name": "Oran Park",
+      "postcode": "2570",
+      "lga": "Camden Council",
+      "tier": 1,
+      "url": "/concreters-oran-park/",
+      "title_tag": "Concreters Oran Park | Driveways, Slabs & Crossovers",
+      "meta_description": "Concreting in Oran Park — driveways, alfresco and shed slabs built to Camden Council spec. We know the 800mm footpath allocation and the estate design guidelines. Free on-site quote.",
+      "h1": "Concreters in Oran Park",
+      "primary_keyword": "concreters oran park",
+      "secondary_keywords": [
+        "concreter oran park",
+        "concreting oran park",
+        "concrete driveway oran park",
+        "exposed aggregate oran park",
+        "concrete slab oran park",
+        "driveway crossover oran park",
+        "shed slab oran park",
+        "concrete contractors oran park nsw"
+      ],
+      "local_entities": {
+        "estates_developers": ["Oran Park Town (Greenfields Development Company)", "The Hermitage"],
+        "streets_roads": ["Oran Park Drive", "Peter Brock Drive", "Central Avenue", "Dick Johnson Drive"],
+        "landmarks": ["Oran Park Podium", "Julia Reserve", "Oran Park Library", "Oran Park Anglican College", "Oran Park Public School", "Oran Park Homestead (State Heritage Register, 1837–1946)", "former Oran Park Raceway"],
+        "planning_instruments": ["Oran Park Precinct DCP 2007", "Oran Park Estate Design Guidelines", "Camden Growth Centres LEP 2008"]
+      },
+      "unique_local_variable": "The footpath allocation in Oran Park starts 800mm from the property boundary, not the 900mm that applies across the rest of the Camden LGA. Get the layback set-out wrong and the crossover fails inspection.",
+      "ground_conditions": "Wianamatta Shale residual clay on engineered fill across most releases. Slab and footing design under AS 2870. Post-handover works often sit on fill placed at subdivision stage — compaction testing matters before pouring a shed slab.",
+      "approval_path": "Camden Council Standard Residential Driveway Crossing Application. For new dwellings the driveway finish must be submitted with the DA, and the estate design guidelines require the driveway to be complete before the Occupation Certificate is issued.",
+      "typical_jobs": ["Two-car driveway and crossover at handover (350–450sqm lots)", "Alfresco and side-path slabs post-handover", "Colorbond shed slabs in rear yards", "Exposed aggregate upgrades on the Hermitage releases"],
+      "housing_stock_era": "2011–present, masterplanned",
+      "job_mix_weighting": { "new_build": 0.75, "replacement": 0.10, "decorative": 0.10, "commercial": 0.05 },
+      "faq_angles": [
+        "Do I need the driveway finished before I can get my Occupation Certificate in Oran Park?",
+        "Why is the footpath set-out different in Oran Park to the rest of Camden?",
+        "Can I pour a shed slab straight onto the fill in my Oran Park backyard?"
+      ],
+      "internal_links_out": ["catherine-field", "gledswood-hills", "gregory-hills", "harrington-park"]
+    },
+
+    {
+      "slug": "leppington",
+      "name": "Leppington",
+      "postcode": "2179",
+      "lga": "Camden Council / Liverpool City Council (split — verify per lot)",
+      "tier": 1,
+      "url": "/concreters-leppington/",
+      "title_tag": "Concreters Leppington | Driveways & Slabs, Both Councils",
+      "meta_description": "Concreting in Leppington. The suburb is split between Camden and Liverpool councils, so the crossover application depends on your lot. We handle both. Free quote.",
+      "h1": "Concreters in Leppington",
+      "primary_keyword": "concreters leppington",
+      "secondary_keywords": [
+        "concreter leppington",
+        "concreting leppington nsw",
+        "concrete driveway leppington",
+        "concrete slab leppington",
+        "exposed aggregate leppington",
+        "driveway crossover leppington",
+        "leppington concrete contractors"
+      ],
+      "local_entities": {
+        "estates_developers": ["Crownland Developments", "Rawson Communities", "Creation Homes", "Seed Projects", "Valley Rise Estate"],
+        "streets_roads": ["Camden Valley Way", "Ingleburn Road", "Heath Road", "Rickard Road", "Bringelly Road"],
+        "landmarks": ["Leppington railway station (South West Rail Link terminus)", "HomeWorld Leppington display village", "Leppington Public School"],
+        "planning_instruments": ["Camden Growth Centres LEP 2008", "Liverpool LEP 2008", "Austral and Leppington North Precinct DCP"]
+      },
+      "unique_local_variable": "Leppington straddles the Camden and Liverpool council boundary. Two lots on opposite sides of the same street can require two different crossover applications, two fee schedules and two inspection processes. Check the lot on the NSW Planning Portal before quoting.",
+      "ground_conditions": "Reactive Wianamatta clay with Upper South Creek drainage running through parts of the suburb. Flood-affected streets have a specified flood planning level that governs slab height and fall — this is a design input, not an afterthought.",
+      "approval_path": "Camden Council Standard/Non-Standard Driveway Crossing Application OR Liverpool City Council vehicle crossing application, depending on which LGA the lot falls in.",
+      "typical_jobs": ["High-volume new-build driveways across the 2016–present release area", "Crossovers for house-and-land handovers", "Alfresco slabs", "Retaining and stepped driveways on the Ingleburn Road grade"],
+      "housing_stock_era": "2016–present, multi-developer release",
+      "job_mix_weighting": { "new_build": 0.80, "replacement": 0.05, "decorative": 0.10, "commercial": 0.05 },
+      "faq_angles": [
+        "Is my Leppington block in Camden or Liverpool council?",
+        "How does the Upper South Creek flood planning level affect my slab height?",
+        "Do the two councils charge different crossover fees?"
+      ],
+      "internal_links_out": ["austral", "catherine-field", "edmondson-park", "oran-park"],
+      "competitor_note": "westernsydneytrades.com.au already runs a Leppington concreters page using Wianamatta clay, AS 2870 and the crossover-permit angle. Beat it on specificity, real photos and a genuine local operator — not on word count."
+    },
+
+    {
+      "slug": "gregory-hills",
+      "name": "Gregory Hills",
+      "postcode": "2557",
+      "lga": "Camden Council",
+      "tier": 1,
+      "url": "/concreters-gregory-hills/",
+      "title_tag": "Concreters Gregory Hills | Driveways, Slabs & Hardstands",
+      "meta_description": "Concreting in Gregory Hills — residential driveways and slabs, plus commercial hardstands and warehouse floors for the Turner Road and Smeaton Grange business precincts.",
+      "h1": "Concreters in Gregory Hills",
+      "primary_keyword": "concreters gregory hills",
+      "secondary_keywords": [
+        "concreter gregory hills",
+        "concrete driveway gregory hills",
+        "concrete slab gregory hills",
+        "commercial concreting gregory hills",
+        "warehouse slab gregory hills",
+        "shed slab gregory hills"
+      ],
+      "local_entities": {
+        "estates_developers": ["Gregory Hills Estate (Dart West Developments)"],
+        "streets_roads": ["Gregory Hills Drive", "Badgally Road", "Rodeo Road", "Turner Road"],
+        "landmarks": ["Gregory Hills Town Centre", "Turner Road Precinct", "Smeaton Grange industrial estate (adjacent)", "Mater Dei", "Gregory Hills Public School"],
+        "planning_instruments": ["Turner Road Precinct DCP", "Camden Growth Centres LEP 2008"]
+      },
+      "unique_local_variable": "Gregory Hills is the one Camden growth suburb where residential and light-industrial work sit side by side. The Turner Road business precinct and the Smeaton Grange estate next door mean forklift-rated slabs, loading-dock aprons and truck hardstands are quoted off the same drive as a domestic driveway — different mix design, different reinforcement, different jointing.",
+      "ground_conditions": "Shale-derived clay on engineered fill. Commercial hardstand areas need subgrade CBR testing and a thicker reinforced section than a residential driveway — do not quote a warehouse apron off a residential rate.",
+      "approval_path": "Residential: Camden Council Standard Driveway Crossing Application. Commercial/industrial: Non-Standard Driveway Application, plus any DA conditions attached to the site.",
+      "typical_jobs": ["Residential driveways on the more affordable Dart West stock", "Warehouse and factory floor slabs", "Loading dock aprons and truck hardstands", "Carpark slabs and kerbing"],
+      "housing_stock_era": "2013–present residential; ongoing industrial build-out",
+      "job_mix_weighting": { "new_build": 0.45, "replacement": 0.05, "decorative": 0.10, "commercial": 0.40 },
+      "faq_angles": [
+        "What thickness does a forklift-rated warehouse slab need in Gregory Hills?",
+        "Can you pour a commercial hardstand while the tenancy is operating?",
+        "What's the difference between a residential driveway mix and a hardstand mix?"
+      ],
+      "internal_links_out": ["gledswood-hills", "narellan", "oran-park", "currans-hill"]
+    },
+
+    {
+      "slug": "gledswood-hills",
+      "name": "Gledswood Hills",
+      "postcode": "2557",
+      "lga": "Camden Council",
+      "tier": 1,
+      "url": "/concreters-gledswood-hills/",
+      "title_tag": "Concreters Gledswood Hills | Exposed Aggregate & Slabs",
+      "meta_description": "Concreting in Gledswood Hills — exposed aggregate driveways, pool surrounds and alfresco slabs on 350–600sqm lots. Salinity-aware mix specs near the South Creek corridor.",
+      "h1": "Concreters in Gledswood Hills",
+      "primary_keyword": "concreters gledswood hills",
+      "secondary_keywords": [
+        "concreter gledswood hills",
+        "exposed aggregate driveway gledswood hills",
+        "concrete pool surround gledswood hills",
+        "concrete driveway gledswood hills",
+        "alfresco slab gledswood hills"
+      ],
+      "local_entities": {
+        "estates_developers": ["Gledswood Hills Estate (Sekisui House)", "The Crest", "Norman Estates", "Eden"],
+        "streets_roads": ["Raby Road", "Camden Valley Way", "Gregory Hills Drive"],
+        "landmarks": ["Camden Lakeside Golf Course", "Gledswood Homestead & Winery (heritage)", "Harrington Park Homestead", "Orielton Homestead", "Sydney Water Upper Canal", "South Creek riparian corridor"],
+        "planning_instruments": ["Camden Growth Centres LEP 2008", "Gledswood Hills Voluntary Planning Agreement", "Cumberland Plain Woodland conservation areas"]
+      },
+      "unique_local_variable": "Parts of Gledswood Hills back onto the South Creek riparian corridor and the Sydney Water Upper Canal. Sulfate and chloride levels in subsoil near western Sydney creek lines can be aggressive to concrete and reinforcement — this is the suburb where the Western Sydney Salinity Code of Practice and the CCAA saline-environments guide actually change the mix and the cover you specify, not just the paperwork.",
+      "ground_conditions": "Clay over shale, larger lots (350–600sqm), some Cumberland Plain Woodland conservation overlays restricting access and requiring line-pump or boom-pump placement rather than direct chute.",
+      "approval_path": "Camden Council Standard Driveway Crossing Application. Check estate design guidelines for permitted driveway finishes before quoting a plain broom finish.",
+      "typical_jobs": ["Exposed aggregate driveways on premium lots", "Pool surrounds and coping", "Large alfresco and outdoor kitchen slabs", "Pumped pours where tree protection restricts truck access"],
+      "housing_stock_era": "2014–present, premium masterplanned",
+      "job_mix_weighting": { "new_build": 0.55, "replacement": 0.05, "decorative": 0.35, "commercial": 0.05 },
+      "faq_angles": [
+        "Do I need a salinity-rated concrete mix near the South Creek corridor?",
+        "Can you get a truck in if my lot has a tree protection zone?",
+        "What finishes are allowed under the Gledswood Hills design guidelines?"
+      ],
+      "internal_links_out": ["gregory-hills", "harrington-park", "catherine-field", "oran-park"]
+    },
+
+    {
+      "slug": "austral",
+      "name": "Austral",
+      "postcode": "2179",
+      "lga": "Liverpool City Council",
+      "tier": 1,
+      "url": "/concreters-austral/",
+      "title_tag": "Concreters Austral | Battle-Axe & Dual Occupancy Driveways",
+      "meta_description": "Concreting in Austral — long battle-axe driveways, dual-occupancy crossovers and granny flat slabs on subdivided acreage lots. Liverpool Council crossings handled.",
+      "h1": "Concreters in Austral",
+      "primary_keyword": "concreters austral",
+      "secondary_keywords": [
+        "concreter austral nsw",
+        "concrete driveway austral",
+        "battle axe driveway austral",
+        "granny flat slab austral",
+        "dual occupancy driveway austral",
+        "concrete slab austral 2179"
+      ],
+      "local_entities": {
+        "estates_developers": ["Austral and Leppington North Precinct releases", "multiple small-scale subdividers"],
+        "streets_roads": ["Fifteenth Avenue", "Edmondson Avenue", "Kelvin Park Drive", "Bringelly Road", "Eighth Avenue"],
+        "landmarks": ["Austral Public School", "Leppington North Precinct", "Western Sydney Airport corridor"],
+        "planning_instruments": ["Liverpool LEP 2008", "Austral and Leppington North Precinct DCP"]
+      },
+      "unique_local_variable": "Austral is not a masterplanned estate — it is old five-acre market-garden blocks being cut up lot by lot. That produces work no growth-corridor estate produces: 40–60 metre battle-axe handle driveways, double crossovers for dual occupancies, and second-dwelling slabs squeezed behind an existing house. Volume per job is high, access is usually terrible, and the pour almost always needs a line pump.",
+      "ground_conditions": "Reactive clay with variable historic fill from decades of market-garden use. Undocumented fill is common — test before you assume a Class M site.",
+      "approval_path": "Liverpool City Council vehicle crossing application — a different process and fee schedule to Camden. Dual occupancies typically require the crossing to match the approved parking facility on the DA or CDC.",
+      "typical_jobs": ["Long battle-axe handle driveways", "Dual occupancy double crossovers", "Granny flat and secondary dwelling slabs", "Rear-yard hardstand and shed slabs"],
+      "housing_stock_era": "Mixed — 1960s–90s acreage housing plus 2015–present infill subdivision",
+      "job_mix_weighting": { "new_build": 0.60, "replacement": 0.15, "decorative": 0.10, "commercial": 0.15 },
+      "faq_angles": [
+        "How much does a 50-metre battle-axe driveway cost in Austral?",
+        "Do I need a second crossover for a dual occupancy?",
+        "What happens if there's undocumented fill on my old market-garden block?"
+      ],
+      "internal_links_out": ["leppington", "edmondson-park", "bringelly", "catherine-field"]
+    },
+
+    {
+      "slug": "harrington-park",
+      "name": "Harrington Park",
+      "postcode": "2567",
+      "lga": "Camden Council",
+      "tier": 1,
+      "url": "/concreters-harrington-park/",
+      "title_tag": "Concreters Harrington Park | Driveway Replacement & Upgrades",
+      "meta_description": "Concreting in Harrington Park — replacing 20-year-old driveways and meeting the Harrington Grove rule that no part of a driveway may be uncoloured concrete.",
+      "h1": "Concreters in Harrington Park",
+      "primary_keyword": "concreters harrington park",
+      "secondary_keywords": [
+        "concreter harrington park",
+        "driveway replacement harrington park",
+        "stencilled concrete harrington park",
+        "exposed aggregate harrington park",
+        "concrete resurfacing harrington park",
+        "concrete driveway harrington grove"
+      ],
+      "local_entities": {
+        "estates_developers": ["Harrington Park Estate", "Harrington Grove"],
+        "streets_roads": ["The Parkway", "Harrington Parkway", "Camden Valley Way", "Kirkham Lane"],
+        "landmarks": ["Harrington Park Lake", "Harrington Park Homestead (heritage)", "Harrington Park Public School", "Kirkham"],
+        "planning_instruments": ["Camden LEP 2010", "Camden DCP — Harrington Grove site-specific residential controls"]
+      },
+      "unique_local_variable": "Under the Harrington Grove schedule of the Camden DCP, a driveway must be built across its full width in stencilled or stamped concrete, clay pavers or exposed aggregate — no portion may be uncoloured concrete. Width is 3m to 5.5m, average grade 1:6, and it must sit at least 500mm clear of kerb drainage structures and side fencing. Anyone quoting you a plain broom finish here has not read the controls.",
+      "ground_conditions": "Established suburb on shale-derived clay. The 1990s–2000s driveways are now at 20–30 years and showing edge failure, settlement at the crossover, and cracking where the original slab was under-reinforced by today's standards.",
+      "approval_path": "Camden Council Standard Driveway Crossing Application for a new or altered crossover. Like-for-like replacement inside the property boundary generally does not, but confirm before starting.",
+      "typical_jobs": ["Full driveway removal and replacement", "Decorative upgrades from plain to exposed aggregate or stencil", "Pool surround replacement", "Crossover repair where the layback has settled"],
+      "housing_stock_era": "1995–2010 established, plus Harrington Grove 2010–present",
+      "job_mix_weighting": { "new_build": 0.15, "replacement": 0.45, "decorative": 0.35, "commercial": 0.05 },
+      "faq_angles": [
+        "Can I put plain grey concrete on my Harrington Grove driveway?",
+        "Is it cheaper to resurface or replace a 25-year-old driveway?",
+        "Do I need council approval to replace an existing driveway?"
+      ],
+      "internal_links_out": ["gledswood-hills", "narellan", "mount-annan", "camden"]
+    },
+
+    {
+      "slug": "catherine-field",
+      "name": "Catherine Field",
+      "postcode": "2557",
+      "lga": "Camden Council",
+      "tier": 2,
+      "url": "/concreters-catherine-field/",
+      "title_tag": "Concreters Catherine Field | New Release & Acreage Driveways",
+      "meta_description": "Concreting in Catherine Field — new-release driveways and slabs plus long rural access driveways with Council dish crossings on the remaining acreage lots.",
+      "h1": "Concreters in Catherine Field",
+      "primary_keyword": "concreters catherine field",
+      "secondary_keywords": [
+        "concreter catherine field",
+        "concrete driveway catherine field",
+        "rural driveway catherine field",
+        "shed slab catherine field",
+        "concrete slab catherine field 2557"
+      ],
+      "local_entities": {
+        "estates_developers": ["Catherine Park Estate", "new release stages"],
+        "streets_roads": ["Camden Valley Way", "Oran Park Drive", "Catherine Field Road", "Sussex Street"],
+        "landmarks": ["Catherine Park House", "Western Sydney Aerotropolis corridor", "St Benedict's Catholic College"],
+        "planning_instruments": ["Camden Growth Centres LEP 2008", "Catherine Field (Part) Precinct DCP"]
+      },
+      "unique_local_variable": "Catherine Field is mid-transition. On one street you're pouring a 4.5m urban crossover to Camden's 32 MPa / 125mm / SL72 standard; two streets over you're on an RU acreage lot where Council requires a standard concrete dish crossing aligned to the table drain invert and a bitumen shoulder seal back to the existing pavement. Two completely different specs in the same suburb.",
+      "ground_conditions": "Shale clay, engineered fill in the new releases, undisturbed profile on the remaining acreage. Rural lots often need a longer, thicker access section to carry delivery and machinery traffic.",
+      "approval_path": "Urban lots: Camden Standard Residential Driveway Crossing Application. Rural lots: rural residential driveway spec with dish crossing; pipe crossings only by Council approval.",
+      "typical_jobs": ["New-release urban driveways and crossovers", "Long rural access driveways with dish crossings", "Machinery and shed hardstand on acreage", "Alfresco slabs"],
+      "housing_stock_era": "2018–present new release alongside retained rural acreage",
+      "job_mix_weighting": { "new_build": 0.70, "replacement": 0.05, "decorative": 0.10, "commercial": 0.15 },
+      "faq_angles": [
+        "Do I need a dish crossing or a pipe crossing on my acreage block?",
+        "How thick should a rural access driveway be for truck traffic?",
+        "Does the bitumen shoulder seal come with the driveway quote?"
+      ],
+      "internal_links_out": ["oran-park", "leppington", "gledswood-hills", "cobbitty"]
+    },
+
+    {
+      "slug": "edmondson-park",
+      "name": "Edmondson Park",
+      "postcode": "2174",
+      "lga": "Liverpool City Council",
+      "tier": 2,
+      "url": "/concreters-edmondson-park/",
+      "title_tag": "Concreters Edmondson Park | Small Lot & Strata Concreting",
+      "meta_description": "Concreting in Edmondson Park — compact driveways, courtyard slabs and strata common-area paths around Ed.Square. Liverpool Council crossings handled.",
+      "h1": "Concreters in Edmondson Park",
+      "primary_keyword": "concreters edmondson park",
+      "secondary_keywords": [
+        "concreter edmondson park",
+        "concrete driveway edmondson park",
+        "courtyard concrete edmondson park",
+        "strata concrete path edmondson park",
+        "concrete slab edmondson park 2174"
+      ],
+      "local_entities": {
+        "estates_developers": ["Ed.Square (Frasers Property)", "Bardia releases"],
+        "streets_roads": ["Soldiers Parade", "Campbelltown Road", "Croatia Avenue", "Bardia Avenue"],
+        "landmarks": ["Ed.Square Town Centre", "Edmondson Park railway station", "Edmondson Park South", "Bardia Public School"],
+        "planning_instruments": ["Liverpool LEP 2008", "Edmondson Park South Precinct DCP"]
+      },
+      "unique_local_variable": "Edmondson Park is the densest suburb in this corridor — terraces, townhouses and small lots rather than 450sqm detached blocks. The jobs are small, access is tight, and a meaningful share of the work is strata: common-area paths, bin-store slabs and shared driveway aprons where the client is a strata committee, not a homeowner. Different sales cycle, different insurance requirements, repeat work if you do it well.",
+      "ground_conditions": "Clay over shale on engineered fill. Tight access means barrow, kibble or line pump on most jobs — factor it into the quote rather than discovering it on the day.",
+      "approval_path": "Liverpool City Council vehicle crossing application. Strata common property works need owners corporation approval and usually a committee resolution before you start.",
+      "typical_jobs": ["Compact single driveways and aprons", "Courtyard and alfresco slabs", "Strata common-area paths and bin store slabs", "Shared driveway repair"],
+      "housing_stock_era": "2016–present, medium density",
+      "job_mix_weighting": { "new_build": 0.45, "replacement": 0.15, "decorative": 0.15, "commercial": 0.25 },
+      "faq_angles": [
+        "Who pays for concrete repairs on a shared driveway?",
+        "Can you pour in a courtyard with no truck access?",
+        "What approvals does a strata need before common-area concreting?"
+      ],
+      "internal_links_out": ["austral", "leppington", "denham-court", "bringelly"]
+    },
+
+    {
+      "slug": "narellan",
+      "name": "Narellan",
+      "postcode": "2567",
+      "lga": "Camden Council",
+      "tier": 2,
+      "url": "/concreters-narellan/",
+      "title_tag": "Concreters Narellan | Residential & Commercial Concreting",
+      "meta_description": "Concreting in Narellan and Narellan Vale — driveway replacement for established homes plus carparks, aprons and hardstands across Smeaton Grange.",
+      "h1": "Concreters in Narellan",
+      "primary_keyword": "concreters narellan",
+      "secondary_keywords": [
+        "concreter narellan",
+        "concrete driveway narellan",
+        "concreters narellan vale",
+        "commercial concreting smeaton grange",
+        "carpark concrete narellan",
+        "concrete slab narellan 2567"
+      ],
+      "local_entities": {
+        "estates_developers": ["Narellan Vale", "Smeaton Grange industrial estate"],
+        "streets_roads": ["Narellan Road", "Camden Valley Way", "Hartley Road", "Anderson Road", "Waterworth Drive"],
+        "landmarks": ["Narellan Town Centre", "Narellan Sports Hub", "Smeaton Grange", "Elizabeth Macarthur High School"],
+        "planning_instruments": ["Camden LEP 2010", "Camden DCP 2019"]
+      },
+      "unique_local_variable": "Narellan is the LGA's commercial spine. Smeaton Grange sits directly north and Narellan Town Centre anchors the retail strip, which means the highest-value jobs here aren't driveways — they're carpark slabs, loading aprons and warehouse floors that have to be poured overnight or in staged sections so the tenancy keeps trading.",
+      "ground_conditions": "Established shale clay. Older residential driveways from the 1980s–90s are at end of life. Commercial subgrades need CBR verification, especially where existing pavement is being broken out.",
+      "approval_path": "Camden Council Standard Driveway Crossing Application for residential. Commercial and industrial crossings use the Non-Standard Driveway Application.",
+      "typical_jobs": ["Retail and industrial carpark slabs", "Loading dock aprons", "Established-home driveway replacement", "Kerb and channel, wheel stops, line-marked bays"],
+      "housing_stock_era": "1980s–2000s established residential; ongoing commercial",
+      "job_mix_weighting": { "new_build": 0.10, "replacement": 0.35, "decorative": 0.15, "commercial": 0.40 },
+      "faq_angles": [
+        "Can you pour a carpark overnight so we don't lose trading days?",
+        "How long before a new commercial slab can take vehicle traffic?",
+        "What's involved in breaking out and replacing an old asphalt carpark?"
+      ],
+      "internal_links_out": ["harrington-park", "mount-annan", "currans-hill", "gregory-hills"]
+    },
+
+    {
+      "slug": "mount-annan",
+      "name": "Mount Annan",
+      "postcode": "2567",
+      "lga": "Camden Council",
+      "tier": 2,
+      "url": "/concreters-mount-annan/",
+      "title_tag": "Concreters Mount Annan | Driveway Replacement & Repair",
+      "meta_description": "Concreting in Mount Annan — replacing and upgrading 25-to-30-year-old driveways, plus new paths, shed slabs and alfresco areas for established homes.",
+      "h1": "Concreters in Mount Annan",
+      "primary_keyword": "concreters mount annan",
+      "secondary_keywords": [
+        "concreter mount annan",
+        "driveway replacement mount annan",
+        "concrete repair mount annan",
+        "concrete driveway mount annan",
+        "shed slab mount annan"
+      ],
+      "local_entities": {
+        "estates_developers": ["Mount Annan 1990s subdivisions"],
+        "streets_roads": ["Welling Drive", "Waterworth Drive", "Main Street", "Narellan Road"],
+        "landmarks": ["Australian Botanic Garden Mount Annan", "Mount Annan Leisure Centre", "Mount Annan High School", "Mount Annan Christian College"],
+        "planning_instruments": ["Camden LEP 2010", "Camden DCP 2019"]
+      },
+      "unique_local_variable": "Mount Annan was built out through the 1990s, which means its concrete is now 25 to 30 years old — the exact age where original driveways start failing at the edges and settling at the layback. Almost nothing here is a new pour. The question homeowners actually ask is whether to resurface or replace, and the honest answer depends on whether the failure is surface-level or structural.",
+      "ground_conditions": "Shale clay, sloping topography in parts. Original 1990s driveways were often poured thinner and with less reinforcement than current Camden spec, which is why edge cracking is the dominant failure mode.",
+      "approval_path": "Like-for-like replacement inside the boundary generally doesn't need a new crossing application, but a widened or relocated crossover does — Camden Standard Driveway Crossing Application.",
+      "typical_jobs": ["Full driveway removal and replacement", "Resurfacing and overlays where the base is sound", "Path and side-access renewal", "Shed and pergola slabs"],
+      "housing_stock_era": "1992–2005 established",
+      "job_mix_weighting": { "new_build": 0.10, "replacement": 0.55, "decorative": 0.25, "commercial": 0.10 },
+      "faq_angles": [
+        "Should I resurface or replace a cracked 1990s driveway?",
+        "Why do so many Mount Annan driveways crack at the edges?",
+        "Can you widen an existing driveway without a new council crossing?"
+      ],
+      "internal_links_out": ["currans-hill", "narellan", "harrington-park", "camden"]
+    },
+
+    {
+      "slug": "spring-farm",
+      "name": "Spring Farm",
+      "postcode": "2570",
+      "lga": "Camden Council",
+      "tier": 2,
+      "url": "/concreters-spring-farm/",
+      "title_tag": "Concreters Spring Farm | Sloped Driveways & Retaining",
+      "meta_description": "Concreting in Spring Farm — stepped and sloped driveways on Evergreen and Spring Farm Estate blocks, plus retaining and non-standard driveway applications.",
+      "h1": "Concreters in Spring Farm",
+      "primary_keyword": "concreters spring farm",
+      "secondary_keywords": [
+        "concreter spring farm nsw",
+        "sloped driveway spring farm",
+        "concrete driveway spring farm",
+        "retaining wall concrete spring farm",
+        "concrete slab spring farm 2570"
+      ],
+      "local_entities": {
+        "estates_developers": ["Evergreen Estate (AVJennings)", "Spring Farm Estate (Cornish Group)"],
+        "streets_roads": ["Spring Farm Parkway", "Richardson Road", "Elizabeth Macarthur Avenue"],
+        "landmarks": ["Spring Farm Public School", "Nepean River corridor", "Mount Annan Botanic Garden (adjacent)"],
+        "planning_instruments": ["Camden LEP 2010", "Camden DCP 2019"]
+      },
+      "unique_local_variable": "Spring Farm sits on genuinely sloping ground, and that is what makes it different from the flat growth-corridor releases. Camden requires an average driveway grade of 1:6 with controlled vertical curves — on a steep Spring Farm block you either engineer the grade properly or you lodge a Non-Standard Driveway Application. Blocks here regularly need stepped pours, integrated retaining and a scratch or broom finish for traction rather than a smooth decorative one.",
+      "ground_conditions": "Shale clay on graded fill benches. Retaining and drainage behind the driveway matter more here than anywhere else in the LGA — water tracking behind a slab on a slope is the failure mode.",
+      "approval_path": "Camden Standard Driveway Crossing Application where the grade complies; Non-Standard Driveway Application where it cannot, with an explanation of why the standard spec can't be met.",
+      "typical_jobs": ["Stepped and graded driveways", "Concrete retaining and edge beams", "High-traction finishes on steep approaches", "Terraced alfresco slabs"],
+      "housing_stock_era": "2016–2021 affordable release plus 2000s stock",
+      "job_mix_weighting": { "new_build": 0.55, "replacement": 0.15, "decorative": 0.10, "commercial": 0.20 },
+      "faq_angles": [
+        "How steep is too steep for a concrete driveway in Camden?",
+        "What finish gives the best grip on a sloped driveway?",
+        "When do I need a Non-Standard Driveway Application?"
+      ],
+      "internal_links_out": ["camden", "elderslie", "mount-annan", "currans-hill"]
+    },
+
+    {
+      "slug": "camden",
+      "name": "Camden",
+      "postcode": "2570",
+      "lga": "Camden Council",
+      "tier": 2,
+      "url": "/concreters-camden-town/",
+      "title_tag": "Concreters Camden | Heritage Area & Flood-Aware Concreting",
+      "meta_description": "Concreting in Camden and Camden South — driveways and slabs for older homes, including work inside the Argyle Street heritage conservation area and near the Nepean.",
+      "h1": "Concreters in Camden",
+      "primary_keyword": "concreters camden",
+      "secondary_keywords": [
+        "concreter camden nsw",
+        "concrete driveway camden",
+        "concreters camden south",
+        "heritage driveway camden",
+        "concrete slab camden 2570"
+      ],
+      "local_entities": {
+        "estates_developers": ["Established Camden township", "Camden South"],
+        "streets_roads": ["Argyle Street", "John Street", "Murray Street", "Oxley Street", "Cawdor Road"],
+        "landmarks": ["Camden Town Farm", "Camden Hospital", "Macarthur Park", "Onslow Park", "Nepean River", "Camden Museum"],
+        "planning_instruments": ["Camden LEP 2010", "Camden Town Centre Heritage Conservation Area", "Nepean River flood planning controls"]
+      },
+      "unique_local_variable": "Camden's town centre sits inside a heritage conservation area covering the Argyle, John, Murray and Oxley Street precincts, and much of the low-lying land is subject to Nepean River flood planning controls. Both change the job: heritage controls push you toward a DA rather than exempt development and restrict finishes, and flood planning levels dictate slab heights and how you fall the surface. Neither applies to a single block in the growth corridor suburbs.",
+      "ground_conditions": "Alluvial soils on the river flats differing markedly from the shale clay uphill. Older homes frequently have no documented footing design at all — expect to core or expose before committing to a spec.",
+      "approval_path": "Camden Standard or Non-Standard Driveway Crossing Application, plus a Development Application where heritage conservation or flood controls apply. Do not assume exempt development in the conservation area.",
+      "typical_jobs": ["Driveway replacement on pre-1980 homes", "Heritage-sympathetic finishes and edging", "Flood-aware slab levels and falls", "Path, patio and garage slab renewal"],
+      "housing_stock_era": "Pre-1900 through 1980s, mixed",
+      "job_mix_weighting": { "new_build": 0.10, "replacement": 0.55, "decorative": 0.20, "commercial": 0.15 },
+      "faq_angles": [
+        "Do I need a DA to replace a driveway in Camden's heritage conservation area?",
+        "How does the Nepean flood planning level affect my slab height?",
+        "What finishes suit a heritage streetscape?"
+      ],
+      "internal_links_out": ["elderslie", "spring-farm", "cobbitty", "harrington-park"]
+    },
+
+    {
+      "slug": "currans-hill",
+      "name": "Currans Hill",
+      "postcode": "2567",
+      "lga": "Camden Council",
+      "tier": 3,
+      "url": "/concreters-currans-hill/",
+      "title_tag": "Concreters Currans Hill | Driveway Repair & Replacement",
+      "meta_description": "Concreting in Currans Hill — replacing ageing 1990s driveways, plus paths, shed slabs and side access for established Camden homes.",
+      "h1": "Concreters in Currans Hill",
+      "primary_keyword": "concreters currans hill",
+      "secondary_keywords": ["concreter currans hill", "concrete driveway currans hill", "driveway replacement currans hill", "shed slab currans hill"],
+      "local_entities": {
+        "estates_developers": ["Currans Hill 1990s subdivision"],
+        "streets_roads": ["Kellerman Drive", "Narellan Road", "Waterworth Drive"],
+        "landmarks": ["Currans Hill Public School", "Narellan Town Centre (adjacent)"],
+        "planning_instruments": ["Camden LEP 2010", "Camden DCP 2019"]
+      },
+      "unique_local_variable": "Currans Hill was one of the first 1990s Camden subdivisions and its lots are noticeably smaller than Mount Annan or Harrington Park. Driveways are short, single-width and heavily trafficked, and the common failure is settlement at the layback rather than mid-slab cracking — which changes whether you're repairing the crossover or the driveway.",
+      "ground_conditions": "Shale clay, compact lots, tight side access.",
+      "approval_path": "Camden Standard Driveway Crossing Application where the crossover is altered or widened.",
+      "typical_jobs": ["Short driveway replacement", "Crossover and layback repair", "Side path and gate access", "Small shed slabs"],
+      "housing_stock_era": "1990–2000",
+      "job_mix_weighting": { "new_build": 0.05, "replacement": 0.60, "decorative": 0.25, "commercial": 0.10 },
+      "faq_angles": ["Why does my driveway sink at the gutter?", "Can I widen a single driveway to double on a small lot?", "How long does a small driveway replacement take?"],
+      "internal_links_out": ["mount-annan", "narellan", "harrington-park", "camden"]
+    },
+
+    {
+      "slug": "elderslie",
+      "name": "Elderslie",
+      "postcode": "2570",
+      "lga": "Camden Council",
+      "tier": 3,
+      "url": "/concreters-elderslie/",
+      "title_tag": "Concreters Elderslie | Driveways, Slabs & Outdoor Areas",
+      "meta_description": "Concreting in Elderslie — driveways, alfresco slabs and outdoor areas for 2000s-era homes between Camden town and Spring Farm.",
+      "h1": "Concreters in Elderslie",
+      "primary_keyword": "concreters elderslie",
+      "secondary_keywords": ["concreter elderslie nsw", "concrete driveway elderslie", "alfresco slab elderslie", "concrete slab elderslie 2570"],
+      "local_entities": {
+        "estates_developers": ["Elderslie 2000s releases"],
+        "streets_roads": ["Camden Valley Way", "Macquarie Grove Road", "Lodges Road"],
+        "landmarks": ["Elderslie Public School", "Nepean River corridor", "Camden Airport (Macquarie Grove)"],
+        "planning_instruments": ["Camden LEP 2010", "Camden DCP 2019"]
+      },
+      "unique_local_variable": "Elderslie homes are mostly 2000s-era, which puts their concrete in an awkward middle age — old enough that owners are ready to upgrade the outdoor areas, young enough that the driveway itself is usually still structurally sound. The work here skews to adding rather than replacing: alfresco slabs, pergola bases, extended side access.",
+      "ground_conditions": "Shale clay transitioning to Nepean alluvial closer to the river. Check flood mapping on the lower lots.",
+      "approval_path": "Camden Standard Driveway Crossing Application for new or altered crossovers.",
+      "typical_jobs": ["Alfresco and pergola slabs", "Side access and path extensions", "Driveway widening", "Shed slabs"],
+      "housing_stock_era": "2000–2012",
+      "job_mix_weighting": { "new_build": 0.15, "replacement": 0.25, "decorative": 0.45, "commercial": 0.15 },
+      "faq_angles": ["Can I tie a new alfresco slab into an existing house slab?", "What's the lead time on a pergola base?", "Do I need approval to widen my driveway?"],
+      "internal_links_out": ["camden", "spring-farm", "cobbitty", "narellan"]
+    },
+
+    {
+      "slug": "cobbitty",
+      "name": "Cobbitty",
+      "postcode": "2570",
+      "lga": "Camden Council",
+      "tier": 3,
+      "url": "/concreters-cobbitty/",
+      "title_tag": "Concreters Cobbitty | Rural Driveways & Machinery Slabs",
+      "meta_description": "Concreting in Cobbitty — long rural access driveways with Council dish crossings, shed floors and machinery hardstands on acreage blocks.",
+      "h1": "Concreters in Cobbitty",
+      "primary_keyword": "concreters cobbitty",
+      "secondary_keywords": ["concreter cobbitty", "rural driveway cobbitty", "shed slab cobbitty", "machinery hardstand cobbitty", "concrete acreage driveway camden"],
+      "local_entities": {
+        "estates_developers": ["Cobbitty new release", "RU1 acreage holdings"],
+        "streets_roads": ["Cobbitty Road", "The Northern Road", "Werombi Road"],
+        "landmarks": ["Cobbitty Village", "Heritage Cobbitty church precinct", "University of Sydney Camden campus", "Western Sydney Airport corridor"],
+        "planning_instruments": ["Camden LEP 2010", "Camden Growth Centres LEP 2008", "Rural residential driveway specification"]
+      },
+      "unique_local_variable": "Cobbitty is where Camden's rural driveway specification actually bites. There's no kerb and gutter on most frontages, so Council requires a standard concrete dish crossing aligned to the table drain invert, plus a bitumen shoulder seal from the dish back to the edge of the existing road pavement. A pipe crossing is only permitted where a dish won't provide suitable access, and only with Council approval. That's three separate scope items most quotes leave off.",
+      "ground_conditions": "Undisturbed shale and alluvial profiles, no engineered fill. Long access runs need a thicker section and proper crossfall to survive delivery trucks and machinery.",
+      "approval_path": "Rural residential driveway specification via Camden Council. Dish crossing standard; pipe crossing by approval only. Bitumen shoulder seal required.",
+      "typical_jobs": ["Long rural access driveways", "Dish crossings and shoulder seals", "Machinery shed floors and hardstands", "Stable and workshop slabs"],
+      "housing_stock_era": "Rural acreage plus emerging new release",
+      "job_mix_weighting": { "new_build": 0.35, "replacement": 0.10, "decorative": 0.05, "commercial": 0.50 },
+      "faq_angles": ["Do I need a dish crossing or a pipe crossing?", "Who pays for the bitumen shoulder seal?", "How thick should a machinery shed floor be?"],
+      "internal_links_out": ["camden", "catherine-field", "bringelly", "elderslie"]
+    },
+
+    {
+      "slug": "bringelly",
+      "name": "Bringelly",
+      "postcode": "2556",
+      "lga": "VERIFY — Liverpool City Council / Camden Council boundary",
+      "tier": 3,
+      "url": "/concreters-bringelly/",
+      "title_tag": "Concreters Bringelly | Aerotropolis Slabs & Rural Driveways",
+      "meta_description": "Concreting in Bringelly — rural driveways, shed floors and industrial slabs across the Aerotropolis and Western Sydney Airport corridor.",
+      "h1": "Concreters in Bringelly",
+      "primary_keyword": "concreters bringelly",
+      "secondary_keywords": ["concreter bringelly", "industrial slab bringelly", "rural driveway bringelly", "hardstand aerotropolis", "warehouse floor western sydney airport"],
+      "local_entities": {
+        "estates_developers": ["Western Sydney Aerotropolis precincts", "Bradfield City Centre"],
+        "streets_roads": ["The Northern Road", "Bringelly Road", "Greendale Road"],
+        "landmarks": ["Western Sydney International (Nancy-Bird Walton) Airport", "Bradfield City Centre", "Sydney Metro Western Sydney Airport line", "M12 Motorway"],
+        "planning_instruments": ["Western Sydney Aerotropolis SEPP", "Liverpool LEP 2008"]
+      },
+      "unique_local_variable": "Bringelly is the closest residential locality to the Aerotropolis build-out. Western Sydney International opens to freight from July 2026 and passengers in October 2026, and private project value around the Aerotropolis has risen from $9.8bn to $21.6bn in fourteen months. That reshapes the work here from domestic driveways to industrial floors, hardstands and yard slabs — and toward B2B clients who tender rather than take a homeowner quote.",
+      "ground_conditions": "Rural profiles with documented sulfate concentrations near creek lines in western Sydney. Salinity and aggressivity assessment under AS 2159 is a real input on industrial slabs here, not a formality.",
+      "approval_path": "VERIFY the governing LGA per lot on the NSW Planning Portal before quoting. Industrial slabs typically sit under DA conditions rather than a standalone driveway application.",
+      "typical_jobs": ["Industrial and warehouse floor slabs", "Truck hardstands and yard slabs", "Rural access driveways", "Shed and workshop floors"],
+      "housing_stock_era": "Rural acreage in transition to employment lands",
+      "job_mix_weighting": { "new_build": 0.15, "replacement": 0.05, "decorative": 0.02, "commercial": 0.78 },
+      "faq_angles": ["What slab spec does a warehouse floor need near the Aerotropolis?", "Do I need a salinity assessment before pouring an industrial slab?", "Can you handle staged pours on a large yard?"],
+      "internal_links_out": ["cobbitty", "austral", "leppington", "catherine-field"]
+    }
+  ]
+}

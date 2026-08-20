@@ -1,0 +1,1262 @@
+{
+  "direct_transformations": {
+    "homepage": {
+      "target_slug": "homepage",
+      "url": "/",
+      "status": "publish",
+      "type": "home"
+    },
+    "contact": {
+      "target_slug": "contact",
+      "url": "/contact/",
+      "status": "publish",
+      "type": "utility"
+    },
+    "concrete-driveways-melbourne": {
+      "target_slug": "concrete-driveways-south-west-sydney",
+      "url": "/concrete-driveways-south-west-sydney/",
+      "status": "publish",
+      "type": "service"
+    },
+    "exposed-aggregate-melbourne": {
+      "target_slug": "exposed-aggregate-south-west-sydney",
+      "url": "/exposed-aggregate-south-west-sydney/",
+      "status": "publish",
+      "type": "service"
+    },
+    "concrete-slabs-melbourne": {
+      "target_slug": "concrete-slabs-south-west-sydney",
+      "url": "/concrete-slabs-south-west-sydney/",
+      "status": "publish",
+      "type": "service"
+    },
+    "concrete-paths-melbourne": {
+      "target_slug": "concrete-paths-south-west-sydney",
+      "url": "/concrete-paths-south-west-sydney/",
+      "status": "publish",
+      "type": "service"
+    },
+    "concrete-patios-melbourne": {
+      "target_slug": "concrete-patios-south-west-sydney",
+      "url": "/concrete-patios-south-west-sydney/",
+      "status": "publish",
+      "type": "service"
+    },
+    "decorative-concrete-melbourne": {
+      "target_slug": "decorative-concrete-south-west-sydney",
+      "url": "/decorative-concrete-south-west-sydney/",
+      "status": "publish",
+      "type": "service"
+    },
+    "concreter-werribee": {
+      "target_slug": "concreters-oran-park",
+      "url": "/concreters-oran-park/",
+      "status": "publish",
+      "type": "suburb"
+    },
+    "concreter-point-cook": {
+      "target_slug": "concreters-leppington",
+      "url": "/concreters-leppington/",
+      "status": "publish",
+      "type": "suburb"
+    },
+    "concreter-tarneit": {
+      "target_slug": "concreters-gregory-hills",
+      "url": "/concreters-gregory-hills/",
+      "status": "publish",
+      "type": "suburb"
+    },
+    "concreters-hoppers-crossing": {
+      "target_slug": "concreters-harrington-park",
+      "url": "/concreters-harrington-park/",
+      "status": "publish",
+      "type": "suburb"
+    },
+    "concreters-truganina": {
+      "target_slug": "concreters-austral",
+      "url": "/concreters-austral/",
+      "status": "publish",
+      "type": "suburb"
+    },
+    "concrete-driveway-cost-melbourne": {
+      "target_slug": "concrete-driveway-cost-nsw",
+      "url": "/guides/concrete-driveway-cost-nsw/",
+      "status": "draft",
+      "type": "guide"
+    },
+    "wyndham-council-vehicle-crossing": {
+      "target_slug": "camden-council-driveway-crossing",
+      "url": "/guides/camden-council-driveway-crossing/",
+      "status": "draft",
+      "type": "guide"
+    },
+    "why-does-concrete-crack": {
+      "target_slug": "why-concrete-cracks",
+      "url": "/guides/why-concrete-cracks/",
+      "status": "draft",
+      "type": "guide"
+    }
+  },
+  "new_pages": [
+    {
+      "target_slug": "quote",
+      "url": "/quote/",
+      "source_template": "contact",
+      "status": "publish",
+      "type": "utility",
+      "post_id": 1363
+    },
+    {
+      "target_slug": "about",
+      "url": "/about/",
+      "source_template": "contact",
+      "status": "publish",
+      "type": "utility",
+      "post_id": 1364
+    },
+    {
+      "target_slug": "gallery",
+      "url": "/gallery/",
+      "source_template": "contact",
+      "status": "publish",
+      "type": "utility",
+      "post_id": 1365
+    },
+    {
+      "target_slug": "concrete-driveway-replacement-south-west-sydney",
+      "url": "/concrete-driveway-replacement-south-west-sydney/",
+      "source_template": "concrete-driveways-melbourne",
+      "status": "publish",
+      "type": "service",
+      "post_id": 1366
+    },
+    {
+      "target_slug": "shed-and-garage-slabs-south-west-sydney",
+      "url": "/shed-and-garage-slabs-south-west-sydney/",
+      "source_template": "concrete-slabs-melbourne",
+      "status": "publish",
+      "type": "service",
+      "post_id": 1367
+    },
+    {
+      "target_slug": "concrete-crossovers-and-laybacks-south-west-sydney",
+      "url": "/concrete-crossovers-and-laybacks-south-west-sydney/",
+      "source_template": "wyndham-council-vehicle-crossing",
+      "status": "publish",
+      "type": "service",
+      "post_id": 1368
+    },
+    {
+      "target_slug": "commercial-concreting-south-west-sydney",
+      "url": "/commercial-concreting-south-west-sydney/",
+      "source_template": "concrete-slabs-melbourne",
+      "status": "publish",
+      "type": "service",
+      "post_id": 1369
+    },
+    {
+      "target_slug": "concreters-gledswood-hills",
+      "url": "/concreters-gledswood-hills/",
+      "source_template": "concreter-werribee",
+      "status": "publish",
+      "type": "suburb",
+      "post_id": 1370
+    },
+    {
+      "target_slug": "concreters-catherine-field",
+      "url": "/concreters-catherine-field/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1371
+    },
+    {
+      "target_slug": "concreters-narellan",
+      "url": "/concreters-narellan/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1372
+    },
+    {
+      "target_slug": "concreters-narellan-vale",
+      "url": "/concreters-narellan-vale/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1373
+    },
+    {
+      "target_slug": "concreters-smeaton-grange",
+      "url": "/concreters-smeaton-grange/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1374
+    },
+    {
+      "target_slug": "concreters-mount-annan",
+      "url": "/concreters-mount-annan/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1375
+    },
+    {
+      "target_slug": "concreters-currans-hill",
+      "url": "/concreters-currans-hill/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1376
+    },
+    {
+      "target_slug": "concreters-spring-farm",
+      "url": "/concreters-spring-farm/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1377
+    },
+    {
+      "target_slug": "concreters-elderslie",
+      "url": "/concreters-elderslie/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1378
+    },
+    {
+      "target_slug": "concreters-cobbitty",
+      "url": "/concreters-cobbitty/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1379
+    },
+    {
+      "target_slug": "concreters-camden-south",
+      "url": "/concreters-camden-south/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1380
+    },
+    {
+      "target_slug": "concreters-kirkham",
+      "url": "/concreters-kirkham/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1381
+    },
+    {
+      "target_slug": "concreters-grasmere",
+      "url": "/concreters-grasmere/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1382
+    },
+    {
+      "target_slug": "concreters-ellis-lane",
+      "url": "/concreters-ellis-lane/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1383
+    },
+    {
+      "target_slug": "concreters-theresa-park",
+      "url": "/concreters-theresa-park/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1384
+    },
+    {
+      "target_slug": "concreters-camden-park",
+      "url": "/concreters-camden-park/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1385
+    },
+    {
+      "target_slug": "concreters-cawdor",
+      "url": "/concreters-cawdor/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1386
+    },
+    {
+      "target_slug": "concreters-edmondson-park",
+      "url": "/concreters-edmondson-park/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1387
+    },
+    {
+      "target_slug": "concreters-bringelly",
+      "url": "/concreters-bringelly/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1388
+    },
+    {
+      "target_slug": "concreters-rossmore",
+      "url": "/concreters-rossmore/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1389
+    },
+    {
+      "target_slug": "concreters-middleton-grange",
+      "url": "/concreters-middleton-grange/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1390
+    },
+    {
+      "target_slug": "concreters-west-hoxton",
+      "url": "/concreters-west-hoxton/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1391
+    },
+    {
+      "target_slug": "concreters-hoxton-park",
+      "url": "/concreters-hoxton-park/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1392
+    },
+    {
+      "target_slug": "concreters-carnes-hill",
+      "url": "/concreters-carnes-hill/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1393
+    },
+    {
+      "target_slug": "concreters-horningsea-park",
+      "url": "/concreters-horningsea-park/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1394
+    },
+    {
+      "target_slug": "concreters-elizabeth-hills",
+      "url": "/concreters-elizabeth-hills/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1395
+    },
+    {
+      "target_slug": "concreters-len-waters-estate",
+      "url": "/concreters-len-waters-estate/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1396
+    },
+    {
+      "target_slug": "concreters-cecil-hills",
+      "url": "/concreters-cecil-hills/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1397
+    },
+    {
+      "target_slug": "concreters-prestons",
+      "url": "/concreters-prestons/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1398
+    },
+    {
+      "target_slug": "concreters-casula",
+      "url": "/concreters-casula/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1399
+    },
+    {
+      "target_slug": "concreters-moorebank",
+      "url": "/concreters-moorebank/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1400
+    },
+    {
+      "target_slug": "concreters-chipping-norton",
+      "url": "/concreters-chipping-norton/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1401
+    },
+    {
+      "target_slug": "concreters-wattle-grove",
+      "url": "/concreters-wattle-grove/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1402
+    },
+    {
+      "target_slug": "concreters-kemps-creek",
+      "url": "/concreters-kemps-creek/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1403
+    },
+    {
+      "target_slug": "concreters-cecil-park",
+      "url": "/concreters-cecil-park/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1404
+    },
+    {
+      "target_slug": "concreters-campbelltown",
+      "url": "/concreters-campbelltown/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1405
+    },
+    {
+      "target_slug": "concreters-leumeah",
+      "url": "/concreters-leumeah/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1406
+    },
+    {
+      "target_slug": "concreters-minto",
+      "url": "/concreters-minto/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1407
+    },
+    {
+      "target_slug": "concreters-ingleburn",
+      "url": "/concreters-ingleburn/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1408
+    },
+    {
+      "target_slug": "concreters-glenfield",
+      "url": "/concreters-glenfield/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1409
+    },
+    {
+      "target_slug": "concreters-macquarie-fields",
+      "url": "/concreters-macquarie-fields/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1410
+    },
+    {
+      "target_slug": "concreters-raby",
+      "url": "/concreters-raby/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1411
+    },
+    {
+      "target_slug": "concreters-eagle-vale",
+      "url": "/concreters-eagle-vale/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1412
+    },
+    {
+      "target_slug": "concreters-bradbury",
+      "url": "/concreters-bradbury/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1413
+    },
+    {
+      "target_slug": "concreters-glen-alpine",
+      "url": "/concreters-glen-alpine/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1414
+    },
+    {
+      "target_slug": "concreters-gilead",
+      "url": "/concreters-gilead/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1415
+    },
+    {
+      "target_slug": "concreters-menangle-park",
+      "url": "/concreters-menangle-park/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1416
+    },
+    {
+      "target_slug": "concreters-wilton",
+      "url": "/concreters-wilton/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1417
+    },
+    {
+      "target_slug": "concreters-picton",
+      "url": "/concreters-picton/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1418
+    },
+    {
+      "target_slug": "concreters-tahmoor",
+      "url": "/concreters-tahmoor/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1419
+    },
+    {
+      "target_slug": "concreters-appin",
+      "url": "/concreters-appin/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1420
+    },
+    {
+      "target_slug": "concreters-douglas-park",
+      "url": "/concreters-douglas-park/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1421
+    },
+    {
+      "target_slug": "concreters-menangle",
+      "url": "/concreters-menangle/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1422
+    },
+    {
+      "target_slug": "concreters-the-oaks",
+      "url": "/concreters-the-oaks/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1423
+    },
+    {
+      "target_slug": "concreters-bargo",
+      "url": "/concreters-bargo/",
+      "source_template": "concreter-werribee",
+      "status": "draft",
+      "type": "suburb",
+      "post_id": 1424
+    },
+    {
+      "target_slug": "liverpool-council-vehicle-crossing",
+      "url": "/guides/liverpool-council-vehicle-crossing/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1425
+    },
+    {
+      "target_slug": "campbelltown-council-driveway-crossing",
+      "url": "/guides/campbelltown-council-driveway-crossing/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1426
+    },
+    {
+      "target_slug": "wollondilly-council-driveway-crossing",
+      "url": "/guides/wollondilly-council-driveway-crossing/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1427
+    },
+    {
+      "target_slug": "driveway-crossover-cost-nsw",
+      "url": "/guides/driveway-crossover-cost-nsw/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1428
+    },
+    {
+      "target_slug": "do-i-need-council-approval-driveway-nsw",
+      "url": "/guides/do-i-need-council-approval-driveway-nsw/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1429
+    },
+    {
+      "target_slug": "reactive-clay-slabs-as2870",
+      "url": "/guides/reactive-clay-slabs-as2870/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1430
+    },
+    {
+      "target_slug": "salinity-and-concrete-western-sydney",
+      "url": "/guides/salinity-and-concrete-western-sydney/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1431
+    },
+    {
+      "target_slug": "engineered-fill-and-why-new-estate-slabs-crack",
+      "url": "/guides/engineered-fill-and-why-new-estate-slabs-crack/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1432
+    },
+    {
+      "target_slug": "site-classification-explained",
+      "url": "/guides/site-classification-explained/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1433
+    },
+    {
+      "target_slug": "concrete-strength-grades-explained",
+      "url": "/guides/concrete-strength-grades-explained/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1434
+    },
+    {
+      "target_slug": "sl72-vs-sl82-reinforcement",
+      "url": "/guides/sl72-vs-sl82-reinforcement/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1435
+    },
+    {
+      "target_slug": "slab-thickness-for-driveways-vs-sheds",
+      "url": "/guides/slab-thickness-for-driveways-vs-sheds/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1436
+    },
+    {
+      "target_slug": "control-joints-and-saw-cut-timing",
+      "url": "/guides/control-joints-and-saw-cut-timing/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1437
+    },
+    {
+      "target_slug": "concrete-slab-cost-per-m2",
+      "url": "/guides/concrete-slab-cost-per-m2/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1438
+    },
+    {
+      "target_slug": "exposed-aggregate-cost",
+      "url": "/guides/exposed-aggregate-cost/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1439
+    },
+    {
+      "target_slug": "stencilled-vs-stamped-concrete-cost",
+      "url": "/guides/stencilled-vs-stamped-concrete-cost/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1440
+    },
+    {
+      "target_slug": "shed-slab-cost",
+      "url": "/guides/shed-slab-cost/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1441
+    },
+    {
+      "target_slug": "commercial-hardstand-cost",
+      "url": "/guides/commercial-hardstand-cost/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1442
+    },
+    {
+      "target_slug": "what-actually-moves-a-concrete-quote",
+      "url": "/guides/what-actually-moves-a-concrete-quote/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1443
+    },
+    {
+      "target_slug": "exposed-aggregate-vs-stencil",
+      "url": "/guides/exposed-aggregate-vs-stencil/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1444
+    },
+    {
+      "target_slug": "coloured-concrete-explained",
+      "url": "/guides/coloured-concrete-explained/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1445
+    },
+    {
+      "target_slug": "honed-and-polished-concrete",
+      "url": "/guides/honed-and-polished-concrete/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1446
+    },
+    {
+      "target_slug": "broom-finish-concrete",
+      "url": "/guides/broom-finish-concrete/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1447
+    },
+    {
+      "target_slug": "non-slip-finishes-for-pools-and-slopes",
+      "url": "/guides/non-slip-finishes-for-pools-and-slopes/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1448
+    },
+    {
+      "target_slug": "sealing-and-resealing-concrete",
+      "url": "/guides/sealing-and-resealing-concrete/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1449
+    },
+    {
+      "target_slug": "concrete-vs-pavers-vs-asphalt",
+      "url": "/guides/concrete-vs-pavers-vs-asphalt/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1450
+    },
+    {
+      "target_slug": "concrete-crack-types-and-which-matter",
+      "url": "/guides/concrete-crack-types-and-which-matter/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1451
+    },
+    {
+      "target_slug": "concrete-repair-vs-replace",
+      "url": "/guides/concrete-repair-vs-replace/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1452
+    },
+    {
+      "target_slug": "how-long-before-you-can-drive-on-concrete",
+      "url": "/guides/how-long-before-you-can-drive-on-concrete/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1453
+    },
+    {
+      "target_slug": "curing-concrete-in-summer-vs-winter",
+      "url": "/guides/curing-concrete-in-summer-vs-winter/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1454
+    },
+    {
+      "target_slug": "concrete-efflorescence",
+      "url": "/guides/concrete-efflorescence/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1455
+    },
+    {
+      "target_slug": "removing-oil-stains-and-tyre-marks-from-concrete",
+      "url": "/guides/removing-oil-stains-and-tyre-marks-from-concrete/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide",
+      "post_id": 1456
+    },
+    {
+      "target_slug": "driveway-cost-calculator",
+      "url": "/driveway-cost-calculator/",
+      "source_template": "concrete-driveway-cost-melbourne",
+      "status": "draft",
+      "type": "cost_comparison",
+      "post_id": 1457
+    },
+    {
+      "target_slug": "slab-volume-calculator",
+      "url": "/slab-volume-calculator/",
+      "source_template": "concrete-driveway-cost-melbourne",
+      "status": "draft",
+      "type": "cost_comparison",
+      "post_id": 1458
+    },
+    {
+      "target_slug": "concrete-vs-pavers",
+      "url": "/concrete-vs-pavers/",
+      "source_template": "concrete-driveway-cost-melbourne",
+      "status": "draft",
+      "type": "cost_comparison",
+      "post_id": 1459
+    },
+    {
+      "target_slug": "concrete-vs-asphalt",
+      "url": "/concrete-vs-asphalt/",
+      "source_template": "concrete-driveway-cost-melbourne",
+      "status": "draft",
+      "type": "cost_comparison",
+      "post_id": 1460
+    },
+    {
+      "target_slug": "exposed-aggregate-vs-plain-concrete",
+      "url": "/exposed-aggregate-vs-plain-concrete/",
+      "source_template": "concrete-driveway-cost-melbourne",
+      "status": "draft",
+      "type": "cost_comparison",
+      "post_id": 1461
+    },
+    {
+      "target_slug": "diy-concrete-vs-hiring-a-concreter",
+      "url": "/diy-concrete-vs-hiring-a-concreter/",
+      "source_template": "concrete-driveway-cost-melbourne",
+      "status": "draft",
+      "type": "cost_comparison",
+      "post_id": 1462
+    },
+    {
+      "target_slug": "plain-concrete-driveway-cost",
+      "url": "/plain-concrete-driveway-cost/",
+      "source_template": "concrete-driveway-cost-melbourne",
+      "status": "draft",
+      "type": "cost_comparison",
+      "post_id": 1463
+    },
+    {
+      "target_slug": "exposed-aggregate-driveway-cost",
+      "url": "/exposed-aggregate-driveway-cost/",
+      "source_template": "concrete-driveway-cost-melbourne",
+      "status": "draft",
+      "type": "cost_comparison",
+      "post_id": 1464
+    },
+    {
+      "target_slug": "coloured-concrete-driveway-cost",
+      "url": "/coloured-concrete-driveway-cost/",
+      "source_template": "concrete-driveway-cost-melbourne",
+      "status": "draft",
+      "type": "cost_comparison",
+      "post_id": 1465
+    },
+    {
+      "target_slug": "stencilled-concrete-driveway-cost",
+      "url": "/stencilled-concrete-driveway-cost/",
+      "source_template": "concrete-driveway-cost-melbourne",
+      "status": "draft",
+      "type": "cost_comparison",
+      "post_id": 1466
+    },
+    {
+      "target_slug": "concrete-crossovers-and-laybacks-oran-park",
+      "url": "/concrete-crossovers-and-laybacks-oran-park/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-oran-park/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1467
+    },
+    {
+      "target_slug": "concrete-driveways-oran-park",
+      "url": "/concrete-driveways-oran-park/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-oran-park/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1468
+    },
+    {
+      "target_slug": "shed-and-garage-slabs-oran-park",
+      "url": "/shed-and-garage-slabs-oran-park/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-oran-park/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1469
+    },
+    {
+      "target_slug": "exposed-aggregate-oran-park",
+      "url": "/exposed-aggregate-oran-park/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-oran-park/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1470
+    },
+    {
+      "target_slug": "concrete-crossovers-and-laybacks-leppington",
+      "url": "/concrete-crossovers-and-laybacks-leppington/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-leppington/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1471
+    },
+    {
+      "target_slug": "concrete-slabs-leppington",
+      "url": "/concrete-slabs-leppington/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-leppington/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1472
+    },
+    {
+      "target_slug": "concrete-driveways-leppington",
+      "url": "/concrete-driveways-leppington/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-leppington/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1473
+    },
+    {
+      "target_slug": "commercial-concreting-gregory-hills",
+      "url": "/commercial-concreting-gregory-hills/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-gregory-hills/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1474
+    },
+    {
+      "target_slug": "concrete-slabs-gregory-hills",
+      "url": "/concrete-slabs-gregory-hills/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-gregory-hills/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1475
+    },
+    {
+      "target_slug": "concrete-slabs-gledswood-hills",
+      "url": "/concrete-slabs-gledswood-hills/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-gledswood-hills/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1476
+    },
+    {
+      "target_slug": "exposed-aggregate-gledswood-hills",
+      "url": "/exposed-aggregate-gledswood-hills/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-gledswood-hills/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1477
+    },
+    {
+      "target_slug": "concrete-patios-gledswood-hills",
+      "url": "/concrete-patios-gledswood-hills/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-gledswood-hills/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1478
+    },
+    {
+      "target_slug": "concrete-driveways-austral",
+      "url": "/concrete-driveways-austral/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-austral/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1479
+    },
+    {
+      "target_slug": "concrete-slabs-austral",
+      "url": "/concrete-slabs-austral/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-austral/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1480
+    },
+    {
+      "target_slug": "concrete-crossovers-and-laybacks-austral",
+      "url": "/concrete-crossovers-and-laybacks-austral/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-austral/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1481
+    },
+    {
+      "target_slug": "exposed-aggregate-harrington-park",
+      "url": "/exposed-aggregate-harrington-park/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-harrington-park/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1482
+    },
+    {
+      "target_slug": "decorative-concrete-harrington-park",
+      "url": "/decorative-concrete-harrington-park/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-harrington-park/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1483
+    },
+    {
+      "target_slug": "concrete-driveway-replacement-harrington-park",
+      "url": "/concrete-driveway-replacement-harrington-park/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-harrington-park/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1484
+    },
+    {
+      "target_slug": "concrete-driveways-catherine-field",
+      "url": "/concrete-driveways-catherine-field/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-catherine-field/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1485
+    },
+    {
+      "target_slug": "shed-and-garage-slabs-catherine-field",
+      "url": "/shed-and-garage-slabs-catherine-field/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-catherine-field/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1486
+    },
+    {
+      "target_slug": "concrete-paths-edmondson-park",
+      "url": "/concrete-paths-edmondson-park/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-edmondson-park/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1487
+    },
+    {
+      "target_slug": "concrete-patios-edmondson-park",
+      "url": "/concrete-patios-edmondson-park/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-edmondson-park/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1488
+    },
+    {
+      "target_slug": "concrete-driveways-edmondson-park",
+      "url": "/concrete-driveways-edmondson-park/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-edmondson-park/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1489
+    },
+    {
+      "target_slug": "commercial-concreting-narellan",
+      "url": "/commercial-concreting-narellan/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-narellan/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1490
+    },
+    {
+      "target_slug": "concrete-driveway-replacement-narellan",
+      "url": "/concrete-driveway-replacement-narellan/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-narellan/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1491
+    },
+    {
+      "target_slug": "concrete-driveway-replacement-mount-annan",
+      "url": "/concrete-driveway-replacement-mount-annan/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-mount-annan/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1492
+    },
+    {
+      "target_slug": "concrete-driveways-spring-farm",
+      "url": "/concrete-driveways-spring-farm/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-spring-farm/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1493
+    },
+    {
+      "target_slug": "concrete-crossovers-and-laybacks-spring-farm",
+      "url": "/concrete-crossovers-and-laybacks-spring-farm/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-spring-farm/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1494
+    },
+    {
+      "target_slug": "concrete-patios-elderslie",
+      "url": "/concrete-patios-elderslie/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-elderslie/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1495
+    },
+    {
+      "target_slug": "concrete-crossovers-and-laybacks-currans-hill",
+      "url": "/concrete-crossovers-and-laybacks-currans-hill/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-currans-hill/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1496
+    },
+    {
+      "target_slug": "concrete-driveway-replacement-currans-hill",
+      "url": "/concrete-driveway-replacement-currans-hill/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-currans-hill/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1497
+    },
+    {
+      "target_slug": "concrete-driveways-cobbitty",
+      "url": "/concrete-driveways-cobbitty/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-cobbitty/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1498
+    },
+    {
+      "target_slug": "commercial-concreting-cobbitty",
+      "url": "/commercial-concreting-cobbitty/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-cobbitty/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1499
+    },
+    {
+      "target_slug": "commercial-concreting-bringelly",
+      "url": "/commercial-concreting-bringelly/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-bringelly/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1500
+    },
+    {
+      "target_slug": "concrete-slabs-bringelly",
+      "url": "/concrete-slabs-bringelly/",
+      "source_template": "intersection",
+      "parent_suburb": "/concreters-bringelly/",
+      "status": "draft",
+      "type": "intersection",
+      "post_id": 1501
+    },
+    {
+      "target_slug": "guides",
+      "url": "/guides/",
+      "source_template": "why-does-concrete-crack",
+      "status": "draft",
+      "type": "guide_hub",
+      "post_id": 1502
+    }
+  ],
+  "deletions": [
+    "hello-world",
+    "privacy-policy",
+    "__trashed-3"
+  ]
+}

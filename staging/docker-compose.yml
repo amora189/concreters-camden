@@ -1,0 +1,70 @@
+name: camden-concreting-smoke
+
+services:
+  database:
+    image: public.ecr.aws/docker/library/mariadb:10.11
+    environment:
+      MARIADB_DATABASE: camden_smoke
+      MARIADB_USER: camden_smoke
+      MARIADB_PASSWORD: disposable-local-only
+      MARIADB_ROOT_PASSWORD: disposable-local-root-only
+    volumes:
+      - database_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: "no"
+
+  wordpress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: camden-concreting-local-wordpress:stage11
+    entrypoint: ["/usr/local/bin/entrypoint-wordpress.sh"]
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8088:80"
+    environment:
+      WORDPRESS_DB_HOST: database
+      WORDPRESS_DB_NAME: camden_smoke
+      WORDPRESS_DB_USER: camden_smoke
+      WORDPRESS_DB_PASSWORD: disposable-local-only
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins:ro
+    restart: "no"
+
+  cli:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: camden-concreting-local-wordpress:stage11
+    profiles: ["tools"]
+    depends_on:
+      database:
+        condition: service_healthy
+      wordpress:
+        condition: service_started
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: database
+      WORDPRESS_DB_NAME: camden_smoke
+      WORDPRESS_DB_USER: camden_smoke
+      WORDPRESS_DB_PASSWORD: disposable-local-only
+      WORDPRESS_TABLE_PREFIX: wp_
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins:ro
+      - ..:/workspace:ro
+    working_dir: /var/www/html
+    entrypoint: ["wp"]
+
+volumes:
+  database_data:
+    name: camden_concreting_smoke_database
+  wordpress_data:
+    name: camden_concreting_smoke_wordpress

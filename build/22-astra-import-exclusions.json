@@ -1,0 +1,21 @@
+{
+ "generated": "2026-08-19",
+ "authority": "owner decision 19 August 2026; reports/41-astra-export-audit.md §4",
+ "source_file": "source-inputs/astra/astra-export.dat",
+ "source_sha256": "F4841CF538810C9A7A2CBCBD28B145AACD4DF45AA8C6407E4EEA45356DB7AA01",
+ "source_file_edited": false,
+ "principle": "the supplied export stays byte-identical as received. These keys are excluded at import. Gates scan the EFFECTIVE import payload, not the raw file, because a gate that fails on a string which will never be imported asserts nothing useful.",
+ "excluded_keys": [
+  {
+   "key": "wp_css",
+   "reason": "pre-rename snapshot: byte-identical to the WXR's custom_css post 893 except the comment, which reads '/* Local Werribee project cards */' instead of '/* Local Camden project cards */'",
+   "supplied_instead_by": "the WXR custom_css record, post_id 893",
+   "removes": "the only importable Werribee string in the build"
+  },
+  {
+   "key": "mods.nav_menu_locations.footer_menu",
+   "reason": "maps to term 13 (Footer Blogs), all 6 targets withdrawn and draft",
+   "replaced_by": "term 11 (Footer Services) — see build/22-menu-assignment.json"
+  }
+ ]
+}

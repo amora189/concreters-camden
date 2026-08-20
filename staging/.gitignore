@@ -1,0 +1,6 @@
+backups/*
+!backups/.gitkeep
+screenshots/*
+!screenshots/.gitkeep
+vendor/*
+!vendor/.gitkeep

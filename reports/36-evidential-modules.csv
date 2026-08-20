@@ -1,0 +1,17 @@
+post_id,slug,cls,status,words,real_photo_pending,evidential_headings
+221,concreters-leppington,suburb,publish,1232,3,
+474,concreters-oran-park,suburb,publish,1881,3,"{""$$type"": ""html-v3"", ""value"": {""content"": {""$$type"": ""string"", ""value"": ""Local Work Completed""}, ""children"": []}}"
+969,concreters-gregory-hills,suburb,publish,1257,3,
+1126,concreters-harrington-park,suburb,publish,1374,3,
+1163,concreters-austral,suburb,publish,1249,3,
+1365,gallery,utility,publish,108,2,"{""$$type"": ""html-v3"", ""value"": {""content"": {""$$type"": ""string"", ""value"": ""Camden Concrete Project Gallery""}, ""children"": []}}; {""$$type"": ""html-v3"", ""value"": {""content"": {""$$type"": ""string"", ""value"": ""Camden Concrete Project Gallery details""}, ""children"": []}}"
+1370,concreters-gledswood-hills,suburb,publish,1329,3,
+1371,concreters-catherine-field,suburb,draft,1266,3,
+1372,concreters-narellan,suburb,draft,1166,3,
+1375,concreters-mount-annan,suburb,draft,1243,3,
+1376,concreters-currans-hill,suburb,draft,1124,3,
+1377,concreters-spring-farm,suburb,draft,1306,3,
+1378,concreters-elderslie,suburb,draft,1046,3,
+1379,concreters-cobbitty,suburb,draft,1194,3,
+1387,concreters-edmondson-park,suburb,draft,1258,3,
+1388,concreters-bringelly,suburb,draft,1242,3,

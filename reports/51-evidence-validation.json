@@ -1,0 +1,95 @@
+{
+  "result": "PASS",
+  "sections": {
+    "owner_attestation": {
+      "result": "PASS",
+      "checks": {
+        "public_label": true,
+        "email": true,
+        "phone": true,
+        "address": true,
+        "staffed": true,
+        "not_open_to_visitors": true,
+        "not_customer_facing": true,
+        "operating_model": true,
+        "no_contract": true,
+        "no_abn": true,
+        "no_legal_entity": true,
+        "no_credential": true,
+        "service_areas_unverified": true
+      }
+    },
+    "contact_consistency": {
+      "result": "PASS",
+      "counts": {
+        "public_phone": 78,
+        "public_phone_uri": 65,
+        "public_email": 14,
+        "administrative_address": 12,
+        "no_contract_disclosure": 13
+      },
+      "form_adjacencies": {
+        "contact": {
+          "form_id": 3,
+          "adjacent_disclosure": "Submitting an enquiry does not create a construction contract."
+        },
+        "quote": {
+          "form_id": 3,
+          "adjacent_disclosure": "Submitting an enquiry does not create a construction contract."
+        },
+        "about": {
+          "form_id": 3,
+          "adjacent_disclosure": "Submitting an enquiry does not create a construction contract."
+        },
+        "gallery": {
+          "form_id": 3,
+          "adjacent_disclosure": "Submitting an enquiry does not create a construction contract."
+        }
+      }
+    },
+    "liverpool_sources": {
+      "result": "PASS",
+      "official_sources": [
+        "https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms",
+        "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+        "https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx"
+      ],
+      "pdf_sha256": "43F74C0F01C5EA6F0C89919BE8C1859F758F96AF549A9CF71ADA5F87DD7CAF33",
+      "verified_requirements": 13,
+      "page_evidence_placements": {
+        "concreters-austral": 3,
+        "concreters-bringelly": 3,
+        "concreters-edmondson-park": 3,
+        "concreters-leppington": 3
+      }
+    },
+    "privacy_markers": {
+      "result": "PASS",
+      "blocking_markers": [
+        "[[PLACEHOLDER: accountable legal entity for privacy obligations]]",
+        "[[PLACEHOLDER: owner-decided retention period]]",
+        "[[PLACEHOLDER: publication date]]",
+        "[[VERIFY: confirm which analytics or tracking scripts are installed before publication and describe them here, or state that none are present.]]",
+        "[[VERIFY: form delivery, authenticated sending domain, database storage and access controls before publication.]]"
+      ],
+      "blocking_count": 5
+    },
+    "schema": {
+      "result": "PASS",
+      "graphs": 76,
+      "service_nodes": 70,
+      "organization": 0,
+      "localbusiness": 0,
+      "providers": 0
+    },
+    "claims": {
+      "result": "PASS",
+      "legacy_occurrences": 232,
+      "legacy_unsupported_dispositioned": 228,
+      "additional_blind_spot_occurrences_dispositioned": 309,
+      "current_supported": 16,
+      "current_unsupported": 0
+    }
+  },
+  "errors": []
+}

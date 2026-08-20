@@ -1,0 +1,3016 @@
+{
+ "schema_version": "1.0",
+ "generated_at": "2026-08-21",
+ "purpose": "Resolved Stage 21 specification for the combined 157-page Camden WordPress architecture: 156 immutable pages in the validated main WXR plus one future calculator page in a supplementary WXR. Import status is not launch or indexing approval.",
+ "authority_order": [
+  "CODEX-BUILD-2.1.md as the single governing instruction for Stages 21–32, especially §§2–3 and §4.11",
+  "CONTEXT.md for current project state",
+  "intersection-differentiators.json for the intersection allow-list and revised count",
+  "suburbs-expanded.json for the 60-suburb list and legacy tier/status/wave metadata",
+  "suburbs.json for the 15 researched suburbs' deep content",
+  "expansion-300-pages.md except its superseded 300/180 totals and legacy wave totals",
+  "camden-site-structure-and-silo.md for URLs, links and the built 11-module suburb template",
+  "oran-park-gold-standard.md for the implemented suburb template and register",
+  "camden-concreting-seo-spec.md sections 5, 6, 7 and 10 only",
+  "codex-clone-prompt.md for Elementor mutation constraints",
+  "camden-concreting-import.xml for artifact observations only"
+ ],
+ "citations": {
+  "B2-PRECEDENCE-TOTAL": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§2, Total page count",
+   "exact_rule": "The combined architecture is 157 pages: 156 in the immutable main WXR plus one supplementary calculator page."
+  },
+  "B2-PRECEDENCE-INTERSECTIONS": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§2, intersections outside intersection-differentiators.json",
+   "exact_rule": "An intersection not listed in intersection-differentiators.json does not exist."
+  },
+  "B2-PRECEDENCE-SERVICES": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§2, service-page count",
+   "exact_rule": "Build 10 service pages."
+  },
+  "B2-PRECEDENCE-MODULES": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§2, suburb-module conflict",
+   "exact_rule": "The structure document's 11 built suburb modules win over the SEO specification's 10-module numbering."
+  },
+  "B2-PRECEDENCE-GUIDES": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§2, guide-count conflict",
+   "exact_rule": "Build 35 guides plus the guide hub."
+  },
+  "B2-PRECEDENCE-UNIQUE": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§2, uniqueness-rule conflict",
+   "exact_rule": "A 5-gram on more than 2 pages fails; suburb pages require at least 60% unique body words, intersections 50%, guides 85%, and no pair in a class may exceed 40% overlap."
+  },
+  "B2-PRECEDENCE-WAVES": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§2, wave-table conflict; §4.27",
+   "exact_rule": "Legacy 300-page waves must be recomputed against the combined 157; Stage 27 owns the final wave plan."
+  },
+  "B2-PRECEDENCE-CAMDEN": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§2, forbidden Camden suburb URLs",
+   "exact_rule": "Never build /concreters-camden/ or /concreters-camden-town/; the homepage owns concreters camden."
+  },
+  "B2-HARD-2": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§3, standing rule 2",
+   "exact_rule": "A page without a real suburb/intersection differentiator remains draft plus noindex and does not count toward a live total."
+  },
+  "B2-HARD-4": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§3, standing rule 4",
+   "exact_rule": "WXR publish status is not launch approval; do not remove noindex."
+  },
+  "B2-STAGE27": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§4.27",
+   "exact_rule": "Wave 1 is blocker-gated; Tier 1 suburbs and Gallery retain noindex until evidence/photo gates pass; the hub ships with guides; 45 unresearched suburbs cannot enter a wave."
+  },
+  "AMEND-B1": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§4.11.1",
+   "exact_rule": "The immutable validated main WXR remains 156 pages; the calculator is a separate camden-calculator-import.xml artifact imported afterwards, with a globally unique post ID, no menu items and no unjustified attachment references."
+  },
+  "AMEND-B2": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§4.11.2",
+   "exact_rule": "The calculator slug, title, module outline, word-count target and Rank Math shape must be derived from the ten existing cost/comparison pages and approved before body construction."
+  },
+  "AMEND-B5": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§4.11.5",
+   "exact_rule": "The calculator imports draft plus noindex, defaults to Wave 4, and may be proposed for Wave 2 only after all four LGA data sets are verified with sighted sources and the owner approves promotion."
+  },
+  "AMEND-B7": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§4.11.7",
+   "exact_rule": "The cost/comparison class becomes 11 and the combined architecture becomes 157; the main WXR and Stage 9 manifest remain an expected 156-page subset."
+  },
+  "AMEND-B8": {
+   "source": "CODEX-BUILD-2.1.md",
+   "clause": "§4.11.8",
+   "exact_rule": "The supplementary page receives its own structural gates and combined cross-page gates; its measured uniqueness has no enforced percentage until owner approval and is flagged below 50%."
+  },
+  "EXP-1": {
+   "source": "expansion-300-pages.md",
+   "clause": "§1 The honest math",
+   "exact_rule": "Defines 1 home, 4 utilities, 10 services, 60 suburbs, 35 guides and 10 cost/comparison pages; its 180-intersection and 300-total figures are superseded."
+  },
+  "EXP-2": {
+   "source": "expansion-300-pages.md",
+   "clause": "§2 Suburb expansion",
+   "exact_rule": "Defines 60 named suburbs across Camden, Liverpool, Campbelltown and Wollondilly and deliberately excludes Camden itself."
+  },
+  "EXP-3": {
+   "source": "expansion-300-pages.md",
+   "clause": "§3 Service pages",
+   "exact_rule": "Defines the final 10 service concepts."
+  },
+  "EXP-4": {
+   "source": "expansion-300-pages.md",
+   "clause": "§4 Suburb × service",
+   "exact_rule": "Defines /{service-slug}-{suburb-slug}/ and the intersection content shape: H1, differentiator-led intro, differentiator section, shared specification, cost, two-question FAQ and both parent links."
+  },
+  "EXP-5": {
+   "source": "expansion-300-pages.md",
+   "clause": "§5 Guides",
+   "exact_rule": "Defines 35 guides in five topic groups."
+  },
+  "EXP-6": {
+   "source": "expansion-300-pages.md",
+   "clause": "§6 Cost & comparison pages",
+   "exact_rule": "Defines 10 commercial-investigation pages, including two calculators, four comparisons and four finish-cost pages."
+  },
+  "EXP-7": {
+   "source": "expansion-300-pages.md",
+   "clause": "§7 Publishing waves",
+   "exact_rule": "Legacy candidates: home, utilities, services and six Tier 1 suburbs in Wave 1; 15 guides in Wave 2; later suburbs in Waves 3/4; 20 guides and the original 10 cost pages in Wave 4; intersections in Wave 5. The legacy membership is superseded pending the 157-page Stage 27 plan."
+  },
+  "EXP-8": {
+   "source": "expansion-300-pages.md",
+   "clause": "§8 Uniqueness enforcement",
+   "exact_rule": "Defines class thresholds, 40% pairwise cap, differentiator assertion and the first-80-word test; its more permissive >3-page shingle trigger is superseded."
+  },
+  "SUBEXP-LIST": {
+   "source": "suburbs-expanded.json",
+   "clause": "suburbs[] and supersedes",
+   "exact_rule": "The 60-record suburb list is authoritative; suburbs.json remains deep-content authority for the researched records."
+  },
+  "SUBEXP-STATUS": {
+   "source": "suburbs-expanded.json",
+   "clause": "hard_rules[4] and suburbs[].status_on_import",
+   "exact_rule": "Only the six Tier 1 suburbs import as publish; the other 54 import as draft."
+  },
+  "SUBEXP-WAVES": {
+   "source": "suburbs-expanded.json",
+   "clause": "suburbs[].wave and suburbs[].research_status",
+   "exact_rule": "Legacy distribution is Wave 1: 6, Wave 3: 9, Wave 4: 45; 15 records are researched and 45 are REQUIRED-RESEARCH."
+  },
+  "INTER-ALLOWLIST": {
+   "source": "intersection-differentiators.json",
+   "clause": "buildable_now, hard_rule and intersections[]",
+   "exact_rule": "Exactly the 35 listed intersection URLs may exist; every record specifies draft status and Wave 5."
+  },
+  "STRUCT-5-1": {
+   "source": "camden-site-structure-and-silo.md",
+   "clause": "§5.1 Suburb page",
+   "exact_rule": "Defines the built 11-module suburb template and requires modules 1, 3, 4, 5, 7, 8, 10 and 11 to be genuinely unique."
+  },
+  "STRUCT-5-2": {
+   "source": "camden-site-structure-and-silo.md",
+   "clause": "§5.2 Service page",
+   "exact_rule": "Defines the service-page sequence from H1/CTA through finishes, ground, reinforcement, process, drainage, replacement, comparison, maintenance, service areas and cost-guide link."
+  },
+  "STRUCT-5-3": {
+   "source": "camden-site-structure-and-silo.md",
+   "clause": "§5.3 Guide page",
+   "exact_rule": "Names the cost-guide source template and requires its second source H1 to become H2. It does not define a complete generic guide module contract."
+  },
+  "SEO-5": {
+   "source": "camden-concreting-seo-spec.md",
+   "clause": "§5 Page module system",
+   "exact_rule": "Defines the semantic 10-module suburb model, 60% body-word floor, first-80-word test, and real-data integrity requirements for semantic modules 6 and 7."
+  },
+  "SEO-6": {
+   "source": "camden-concreting-seo-spec.md",
+   "clause": "§6 Title tags and meta descriptions",
+   "exact_rule": "Defines title/description constraints and forbids silent fallback templates."
+  },
+  "CODEX-STAGE5": {
+   "source": "CODEX-BUILD.md",
+   "clause": "Stage 5",
+   "exact_rule": "Defines the homepage content responsibilities, contact transformation, quote/about contact clones and service transformations."
+  },
+  "CODEX-STAGE6": {
+   "source": "CODEX-BUILD.md",
+   "clause": "Stage 6",
+   "exact_rule": "Defines the guide clone sources and one-H1 correction; its six-guide count is superseded."
+  },
+  "GOLD-1-11": {
+   "source": "oran-park-gold-standard.md",
+   "clause": "Modules 1–11 and Uniqueness audit",
+   "exact_rule": "Provides the implemented 11-module copy pattern, register and a 9-of-11 unique reference page."
+  },
+  "WXR-HOME": {
+   "source": "camden-concreting-import.xml",
+   "clause": "page post_id 12, _elementor_data",
+   "exact_rule": "Artifact observation: homepage Elementor sections cover hero, services, Camden conditions, scoping, trust, areas and FAQ."
+  },
+  "WXR-UTILITY": {
+   "source": "camden-concreting-import.xml",
+   "clause": "page post_ids 321, 1363, 1364 and 1365, _elementor_data",
+   "exact_rule": "Artifact observation: four utility pages use the contact-style Elementor template; Gallery is noindex pending real media."
+  },
+  "WXR-GUIDE-HUB": {
+   "source": "camden-concreting-import.xml",
+   "clause": "page post_id 1502, _elementor_data and wp:post_parent",
+   "exact_rule": "Artifact observation: the draft /guides/ hub groups links into the five expansion taxonomy sections and parents 35 guide children."
+  },
+  "WXR-GUIDE": {
+   "source": "camden-concreting-import.xml",
+   "clause": "35 pages with wp:post_parent 1502",
+   "exact_rule": "Artifact observation: guide clones use a topic-led H1 plus answer, verification, site-input, authority/source, mistakes and FAQ sections."
+  },
+  "WXR-COST": {
+   "source": "camden-concreting-import.xml",
+   "clause": "10 cost_comparison pages identified by build/stage9-page-manifest.json",
+   "exact_rule": "Artifact observation: current shells use topic-led H1 plus inputs, inclusions, limits, site variables and next-step sections."
+  },
+  "WXR-ACTUAL": {
+   "source": "camden-concreting-import.xml",
+   "clause": "all wp:post_type=page items, joined by post_id to build/stage9-page-manifest.json",
+   "exact_rule": "Direct parse result: 156 pages with class/status split 1 home publish, 4 utility publish, 10 service publish, 6/54 suburb publish/draft, 1 hub draft, 35 guides draft, 35 intersections draft and 10 cost/comparison drafts."
+  },
+  "DEC02-D10": {
+   "source": "DECISION-02-evidence-markers.md",
+   "clause": "§D10",
+   "exact_rule": "The marker register is undercounted. Working total is 170 occurrences: 163 recorded + 4 REQUIRED-RESEARCH + 3 bare VERIFY found in rendered page copy. The Stage 23 register is built by scanning the rendered body copy of all 156 pages for every marker token; reports/placeholders.md becomes a cross-check, not a source. Report the divergence; do not silently reconcile."
+  },
+  "DEC02-D11": {
+   "source": "DECISION-02-evidence-markers.md",
+   "clause": "§D11",
+   "exact_rule": "A sentence asserting that a specification, figure, price or standard is reproduced, verified, confirmed or unaltered where the underlying value is a marker is a false-fidelity claim: a distinct register category from a missing fact, and a consumer-law exposure. Such a sentence may stand only if the inserted value is verbatim from the cited source with source_url and sighted_date recorded; if approximated, summarised or carried from another LGA it must be rewritten, not merely completed."
+  },
+  "DEC02-D12": {
+   "source": "DECISION-02-evidence-markers.md",
+   "clause": "§D12",
+   "exact_rule": "The Liverpool City Council vehicle crossing specification (widths, strength, fee schedule) is a single owner question unblocking four pages and is ranked accordingly. It may not be filled from a neighbouring suburb, from Camden Council, or from any other LGA. The same figures are required by the Stage 31 calculator via data/council-specs.yml; one verification clears both and the dependency is recorded so it is neither researched twice nor satisfied twice with different numbers."
+  },
+  "DEC02-D13": {
+   "source": "DECISION-02-evidence-markers.md",
+   "clause": "§D13",
+   "exact_rule": "The Liverpool specification joins Wave 1's release gate. Wave 1 cannot release Leppington or Austral until it is verified and inserted verbatim. Both pages already sit noindex,follow under the Tier 1 photography gate, so the effective indexable Wave 1 count of 14 is unchanged. Leppington and Austral carry two independent blockers and clearing one does not release the page."
+  },
+  "DEC02-D14": {
+   "source": "DECISION-02-evidence-markers.md",
+   "clause": "§D14",
+   "exact_rule": "Standing guidance belongs in build/21-spec-ledger.json or a numbered report, never appended to CLAUDE.md, CODEX-BUILD-2.1.md or any decision record. Standing rule 7 applies to every agent working this repo, including the one that wrote the guidance."
+  },
+  "RB01-D1": {
+   "source": "RUN-BLOCK-01.md",
+   "clause": "§A D1",
+   "exact_rule": "The 31A/31B split is declined. Adopted ordering is 21 through 32 sequential and unchanged. Stage 23 gives the calculator a readiness row flagged 'Build status: not yet built — §4.31' with Index-ready no. Stage 24 uses denominator 157 and states the calculator contributes zero image references. Stage 25 measures 156 and records the calculator as 'DEFERRED TO STAGE 31 — not yet built', never as passing and never as exempt. Stage 27 includes it in Wave 4 marked not-yet-built with effective indexable counts unaffected. Stage 28 runs against both XMLs and reports a missing supplementary artifact as a genuine NO-GO reason, never special-cased, suppressed or advisory. A bounded delta pass reports/31-delta.md follows Stage 31 and is part of Gate 31."
+  },
+  "RB01-D2": {
+   "source": "RUN-BLOCK-01.md",
+   "clause": "§A D2",
+   "exact_rule": "The schema builder resolves a dangling #localbusiness by omission, never by emitting an undefined reference. Strict order: (1) #localbusiness defined, Service.provider references it; (2) not defined but #organization defined from verified legal entity name plus domain, reference #organization; (3) neither defined, Service omits provider entirely. Never invent an address to define #localbusiness. Never assert 'CoreX Concreters Camden' as a legal entity to define #organization. Build-failing check: zero references to any @id not defined in the same emitted graph. Report the count of Service nodes omitting provider, per page class."
+  },
+  "RB01-D3": {
+   "source": "RUN-BLOCK-01.md",
+   "clause": "§A D3",
+   "exact_rule": "Classes with no sourced uniqueness threshold total 27: 10 service + 11 cost/comparison + 1 guide hub + 1 homepage + 4 utility. Of those 27, 26 are currently built. Everything else in §4.25.5 stands."
+  },
+  "RB01-D4": {
+   "source": "RUN-BLOCK-01.md",
+   "clause": "§A D4",
+   "exact_rule": "The readiness superset joins on slug, normalised to leading-slash, trailing-slash and lowercase before comparison. Add post_id as a new column sourced from build/stage9-page-manifest.json. Report any slug in one file and not the other, and any slug not resolving to exactly one manifest entry. Non-unique or unmatched is stop-and-ask, not best-effort."
+  },
+  "RB01-D5": {
+   "source": "RUN-BLOCK-01.md",
+   "clause": "§A D5",
+   "exact_rule": "Module order is frozen as built in camden-concreting-import.xml. Reorder nothing. Structure doc §7 mitigation 4 (vary module order) is recorded as NOT APPLIED and carried in CONTEXT.md as a residual footprint risk — shared section order with the source site — not as a task. Mitigation 5 (Elementor kit palette) is checked and recorded identically if the kit is unchanged from source. These are disclosed risks, not defects to fix by mutating a validated artifact."
+  },
+  "RB01-D6": {
+   "source": "RUN-BLOCK-01.md",
+   "clause": "§A D6",
+   "exact_rule": "Link Rule A (Home to all service pages) covers 10 services, not 7. Rules B through G are unchanged in scope. Stage 27 asserts that the homepage links to all ten service pages."
+  },
+  "RB01-D7": {
+   "source": "RUN-BLOCK-01.md",
+   "clause": "§A D7",
+   "exact_rule": "Reuse of the 83 re-encoded images across Camden pages is permitted per expansion §9 subject to the ~15-page cap. 'Original' in seo-spec §5 means not stock and not byte-identical to the source site after re-encoding; it does not forbid reuse within the site. No REAL_PHOTO_PENDING slot may be filled by a re-encoded source-site image. This is a top-of-report item at Stage 24."
+  },
+  "RB01-D8": {
+   "source": "RUN-BLOCK-01.md",
+   "clause": "§A D8",
+   "exact_rule": "Unlisted-conflict items 1-5, 9, 10, 12, 15, 16 and 18 are accepted as recorded, with three additions. Item 12: enumerate exactly which page classes lack a normative module contract and what each is missing in reports/21-module-contracts-gap.md, proposing contracts marked 'AWAITING APPROVAL — not enforced'; do not enforce an unapproved contract and do not treat its absence as a pass. Item 16 is not a conflict: 0 index-ready is present state and 14 is a conditional future Wave 1 count; both are true and must never be presented as alternatives. Item 18: renumber Stage 31 from §4.11 to §4.31 in the ledger clause map, retaining §4.11 as an alias so existing citations resolve."
+  },
+  "RB01-D9": {
+   "source": "RUN-BLOCK-01.md",
+   "clause": "§A D9",
+   "exact_rule": "Governing-document restoration is accepted as recorded. Semantic restoration with a one-byte difference and no prior checksum is the honest outcome; byte-exact restoration must not be claimed. The Gate 21 hash is the baseline from here and standing rule 7 prevents recurrence."
+  },
+  "DEC03-D15": {
+   "source": "DECISION-03-coherence-and-dispositions.md",
+   "clause": "§D15",
+   "exact_rule": "The uniqueness gate has no coherence check; that is a specification defect, not an execution error. scripts/34-coherence.py scans all 156 pages for templated subject-predicate substitution, slug or URL-fragment subjects, intra-sentence clause repetition, verbless noun-phrase chains, and sentences that assert nothing. Coherence is a build-failing gate: any page above the filler threshold cannot enter any wave regardless of uniqueness, evidence or media status. Measure and report only; fix nothing at this stage."
+  },
+  "DEC03-D16": {
+   "source": "DECISION-03-coherence-and-dispositions.md",
+   "clause": "§D16",
+   "exact_rule": "All 35 intersection pages are WITHDRAWN. They are marked withdrawn in reports/23-page-readiness-v2.csv and excluded at import; they are NOT deleted from the immutable WXR. Combined architecture becomes 157 minus 35 = 122. intersection-differentiators.json remains authoritative as a rebuild input; the 35 differentiators are real research and are not discarded. Wave 5 is now empty."
+  },
+  "DEC03-D17": {
+   "source": "DECISION-03-coherence-and-dispositions.md",
+   "clause": "§D17",
+   "exact_rule": "The 10 service pages are the Wave 1 critical path and their rewrite is the principal remaining work, ahead of images and suburb research. Every real specification is preserved: 32 MPa, 125mm, SL72, the 800/900/1200mm allocations, 4.0-5.5m, 4%, 1:6. No service page may enter Wave 1 until it passes the coherence gate and the §4.25 uniqueness measurement on its rewritten body. Produce the rebuild brief only; write no replacement copy."
+  },
+  "DEC03-D18": {
+   "source": "DECISION-03-coherence-and-dispositions.md",
+   "clause": "§D18",
+   "exact_rule": "The 16 REPLACE briefs are approved as specifications but sourcing is HELD until after D17. The three logo files are held: a brand asset cannot come from a stock library, and the source business's favicon serving as the CoreX mark is a cross-domain footprint link between two sites presented as unrelated; commission a distinct mark and ship with no logo until then. Attachments 1151, 1188 and 1056 are renamed honestly with no geographic or geological assertion. The Stage 24 place detector is extended beyond suburb names to watercourses, parks, estates, roads, councils, geological formations and any proper noun asserting place, and re-run against all 83."
+  },
+  "DEC03-D19": {
+   "source": "DECISION-03-coherence-and-dispositions.md",
+   "clause": "§D19",
+   "exact_rule": "The soil image (attachment 1020) is removed; its containing sections are retained. The Wianamatta text survives subject to the owner confirming a geological source. The Leppington 'the verified project record says' sentence is rewritten regardless, per D11."
+  },
+  "DEC03-D20": {
+   "source": "DECISION-03-coherence-and-dispositions.md",
+   "clause": "§D20",
+   "exact_rule": "Alt text is auto-generated from the attachment title, so false geography is inherited. Every rename must update filename, attachment title and per-page alt text as one operation, verified together. A renamed file with its original title still asserts the same place."
+  },
+  "DEC04-D21": {
+   "source": "DECISION-04-scope-reduction.md",
+   "clause": "§D21",
+   "exact_rule": "All 35 guides, all 10 built cost/comparison pages and the guide hub are WITHDRAWN, marked withdrawn in reports/23-page-readiness-v2.csv and excluded at import but NOT deleted from the immutable WXR. The guide hub goes because §4.27 forbids publishing it without its first approved guides and there are none. Combined architecture becomes 122 minus 46 = 76: 1 homepage, 4 utility, 10 service, 60 suburb, plus the calculator as a separate build target under §4.31. Waves 2, 4 and 5 are empty. Every withdrawn page's research inputs are retained as rebuild material; the expansion-300-pages.md §5 guide taxonomy stays valid and only the generated copy is discarded."
+  },
+  "DEC04-D22": {
+   "source": "DECISION-04-scope-reduction.md",
+   "clause": "§D22",
+   "exact_rule": "The 45 unresearched suburbs stay in the architecture as draft plus noindex. They enter no wave, count toward no live total, and are not rewritten. The decision is deferred, not dropped, and is revisited once the core is live. It is recorded in CONTEXT.md as an explicit open scope decision so it is not silently resolved by inaction."
+  },
+  "DEC04-D23": {
+   "source": "DECISION-04-scope-reduction.md",
+   "clause": "§D23",
+   "exact_rule": "No service page copy is written until data/service-specs.yml is populated. That file is an empty required structure of ten services by nine-plus fields, every field verified:false, and it MUST NOT be populated from the existing pages, from the other nine services, or from Australian Standards general knowledge; the owner or a qualified engineer supplies every value. Every field where a value currently appears on a page but is not attested is flagged as an unattributed specification published as fact. The rebuild brief states surviving content, what must be written, target word count, the 40% pairwise cap against the other nine rewritten bodies, and the coherence and uniqueness gates. Authorship is decided separately once the matrix exists."
+  },
+  "DEC04-D24": {
+   "source": "DECISION-04-scope-reduction.md",
+   "clause": "§D24",
+   "exact_rule": "Attachment 272, an AI-generated image live on 14 pages, is REMOVED and is not replaced from stock until the pages it sits on are rebuilt. Attachments 159 and 177 are investigated against the Elementor kit and Astra theme mods and reported without classification or action. The 60 naming-convention artefacts are reversed per D20 as one operation across filename, attachment title and per-page alt text, and are not treated as substitutions. Pixel-level verification is recorded as a REQUIRED step at media intake, not as complete: every audit so far has read filenames, titles and alt text only."
+  },
+  "DEC04-D25": {
+   "source": "DECISION-04-scope-reduction.md",
+   "clause": "§D25",
+   "exact_rule": "The corrected re-encode driver is a P0 blocker alongside the media binaries and the Astra export, because reencode-images.sh has never parsed and no image has ever been stripped. scripts/22-media-audit.py carries a fail-closed EXIF assertion: zero GPS tags, zero owner/artist/serial fields and zero original-datetime on every file, verified after re-encode and before import. The assertion must be shown to catch a known-dirty test file before it is trusted on the real set."
+  },
+  "RB01-C": {
+   "source": "RUN-BLOCK-01.md",
+   "clause": "§C",
+   "exact_rule": "Eight non-negotiable stop conditions halt the batch where it stands. A stage failing its own gate is not a stop condition; Stage 28 returning NO-GO is the expected outcome, not a failure of the run."
+  },
+  "DEC05-D26": {
+   "source": "DECISION-05-figures-mark-pause.md",
+   "clause": "§D26",
+   "exact_rule": "The CODEX-BUILD-2.1.md §2 specification-figure clause is WITHDRAWN. That clause protected unattested numbers from correction. No figure is protected by virtue of appearing in a planning document; protection comes from attestation - a source, a sighted date, or an owner/engineer sign-off. Every numeric specification on a page is unattested until entered in data/service-specs.yml with verified:true and a source. Unattested figures are NOT deleted and NOT rounded: they are flagged in place and reported, because deletion loses information that may prove correct and alteration invents a second wrong number. Two populations are tracked separately and never merged: council-sourced-pending-verification (800mm, 900mm, 1200mm, 4.0-5.5m, 4%, 1:6) and template-artefact-unattested (32 MPa, 125mm, SL72, SL82). Any page carrying an unattested figure is blocked from every wave until its figures are attested."
+  },
+  "DEC05-D27": {
+   "source": "DECISION-05-figures-mark-pause.md",
+   "clause": "§D27",
+   "exact_rule": "The site mark is a TEXT WORDMARK. No image mark ships. Attachment 177 is removed as site icon and 272 is removed per D24; 159, 306, 307 and 422 are left unreferenced and none is deleted from the immutable WXR. The wordmark is specified but NOT implemented, because the Astra export governs header rendering and does not exist. It carries the trading name only: no ABN, no licence number, no claim of establishment, and no 'licensed' or 'insured' wording until verified. If the Astra export shows the header logo slot referencing any held attachment, report it and do not act."
+  },
+  "DEC05-D28": {
+   "source": "DECISION-05-figures-mark-pause.md",
+   "clause": "§D28",
+   "exact_rule": "The build PAUSES. Every remaining task is owner-supplied and no further agent stage can proceed without inputs that do not exist. CONTEXT.md records the pause as pending owner inputs rather than blocked on technical work. reports/35-owner-input-pack.md is the handover. The seven immutable hashes are confirmed a final time and recorded as the pause baseline. Nothing further is done: the service rebuild does not begin, no image is sourced, and no verified:false field is populated."
+  },
+  "DEC06-D29": {
+   "source": "DECISION-06-resolvable-items.md",
+   "clause": "§D29",
+   "exact_rule": "The homepage sentence asserting 'the recorded specification is' followed by seven unattested figures is rewritten. Preferred: cut the numbers entirely. The figures may remain only if reframed as general indicative practice rather than a recorded specification, and only until the matrix lands. The four utility pages are scanned for the same construction. All rewrites are post-import edits; the WXR is immutable."
+  },
+  "DEC06-D30": {
+   "source": "DECISION-06-resolvable-items.md",
+   "clause": "§D30",
+   "exact_rule": "site_name is corrected at import, not in the artifact. The post-import runbook carries an explicit verified step for site_name, the WordPress site title and any tagline carrying the source name. A preflight assertion requires zero occurrences of the source business name in kit settings, theme mods, site title, tagline or any rendered page. The same terms are swept across every artifact that is not the immutable WXR. Correcting the name replaces an incorrect claim with an unverified one; the identity blocker stands."
+  },
+  "DEC06-D31": {
+   "source": "DECISION-06-resolvable-items.md",
+   "clause": "§D31",
+   "exact_rule": "A privacy policy is added as a fifth utility page, architecture 76 to 77, built as a supplementary artifact with the same post-ID discipline and validation table as the calculator, not by editing the main WXR. Every field requiring a legal entity or contact address stays a blocking marker: a privacy policy naming no accountable entity is not a privacy policy. Neither it nor the form is published until the identity blocker clears; this unblocks the page's existence, not its release."
+  },
+  "DEC06-D32": {
+   "source": "DECISION-06-resolvable-items.md",
+   "clause": "§D32",
+   "exact_rule": "No Camden job photographs exist: fulfilment is Pakenham, no Camden pour has been completed and none is scheduled. 'No genuine local photography available' is a SETTLED FACT, not a pending input, and is removed from the owner input pack. Every module whose function is to evidence completed local work is REMOVED, not just its image, because a stock photograph in an evidential slot is a false claim however it was licensed. Decorative slots may take generic licensed imagery under the held Phase 2 briefs. Reopens only if a Camden job is completed and photographed."
+  },
+  "DEC07-D33": {
+   "source": "DECISION-07-image-sourcing-tooling.md",
+   "clause": "§D33",
+   "exact_rule": "The SerpApi Google Images API with licenses=fmc is PERMITTED as a discovery mechanism. It is a paid, terms-compliant query against Google's own usage-rights filter, not a scraper. Selenium and requests-based Google Images scrapers remain PROHIBITED, as does any tool returning images without a retrievable source page. Mandatory conditions: licenses=fmc is a discovery filter, NOT a licence determination - it reflects what the hosting page declares about itself. Every candidate's licence is verified on its page_url, the hosting page and not the image URL, BEFORE download, with no exceptions and no batch approval. Any candidate whose licence cannot be established on the source page is discarded; absence of a stated licence is not permission. Unsplash, Pexels and Openverse remain preferred. reports/33-licence-register.csv records licence, source URL, photographer, retrieval date and attribution requirement for every image shipped, regardless of source, as a permanent build artifact. No REAL_PHOTO_PENDING slot is filled from any of these sources."
+  },
+  "DEC07-D34": {
+   "source": "DECISION-07-image-sourcing-tooling.md",
+   "clause": "§D34",
+   "exact_rule": "When Phase F runs: copy find_images.py from ~/camden-images/ in WSL into scripts/ under version control, because a build tool living outside the repo has no provenance and cannot be audited - the same reasoning that moved standing guidance out of agent-local memory under D14. Update it to read the REGENERATED spec CSV; the existing reports/33-image-replacement-spec.csv describes 228 page-slots of which 110 are on withdrawn pages. Broaden the briefs to decorative subjects, because narrow briefs return almost nothing under fmc. ImageMagick is recorded as a documented environment requirement alongside PHP 8.3 and the pinned Docker versions, not as an ad-hoc install."
+  },
+  "DEC08-D35": {
+   "source": "DECISION-08-trading-name-brand-nap.md",
+   "clause": "D35 — trading name",
+   "exact_rule": "The trading name is \"Structure Co Concreters Camden\", superseding both \"CoreX Concreters Camden\" and \"E&T Co Concreters Camden\". Renamed at import, never in the immutable artifact. The rename does NOT clear the identity blocker: Structure Co has no verified legal entity, ABN or NSW licence either."
+  },
+  "DEC08-D36": {
+   "source": "DECISION-08-trading-name-brand-nap.md",
+   "clause": "D36 — brand assets",
+   "exact_rule": "Supplied brand assets supersede attachments 177 (AI favicon), 159 (its orphaned original) and 306/307/422 (E&T symbol) under D27. Favicon and header logo assignment are post-import runbook steps. NOT implemented — the Astra Customizer export does not exist."
+  },
+  "DEC08-D37": {
+   "source": "DECISION-08-trading-name-brand-nap.md",
+   "clause": "D37 — partial NAP",
+   "exact_rule": "Email info@concreterscamden.com.au and address 15 Murray Street Camden NSW 2570 are recorded in data/verified-facts.yml. Address stays verified false and is_staffed unknown until owner attestation. Phone outstanding. NO LocalBusiness schema — D2's ladder resolves to outcome 3."
+  },
+  "DEC08-D38": {
+   "source": "DECISION-08-trading-name-brand-nap.md",
+   "clause": "D38 — image-only intake",
+   "exact_rule": "source-inputs/media/ must contain only image binaries. scripts/22-media-audit.py fails on ANY non-image file, with no per-name exemption. The directory feeds a public web server."
+  },
+  "OWNER-2026-08-19-DECISIONS": {
+   "source": "owner instruction, 19 August 2026 (session record)",
+   "clause": "five decisions answering reports/38-trading-name-rename-plan.md §10",
+   "exact_rule": "1) attachment filenames keep the corex- prefix as a deliberate acceptance; 2) update the lib/ generator string constants; 3) retarget build/global-replace.json to Structure Co; 4) the email is attested — set verified true with a 19 August 2026 sighted date, address NOT attested and is_staffed stays unknown; 5) REMOVE the tagline rather than rename it."
+  },
+  "OWNER-2026-08-19-CORRECTIONS": {
+   "source": "owner instruction, 19 August 2026 (session record, correcting the same day)",
+   "clause": "corrections to the five decisions",
+   "exact_rule": "the 16-row photograph spec is NOT retired — it and the ten brand slots are CONCURRENT Phase F targets, not one replacing the other; 306/307/422 are retired and replaced by the Structure Co wordmark (horizontal in-page, reversed on dark); #AEB6C6 is a reversed-context tint, not a brand colour; favicon PNGs supplied at 512/270/192/180/32; global-replace.json is to be reordered longest-find-first across the whole file."
+  },
+  "OWNER-2026-08-19-ASTRA": {
+   "source": "owner instruction, 19 August 2026 (session record)",
+   "clause": "Astra Customizer export supplied; audit and reconcile four points",
+   "exact_rule": "run scripts/22-astra-audit.py and the precondition check; reconcile custom_logo 469 / site_icon 472 against the retired set including AI and C2PA classification; reconcile custom_css_post_id 893 against the WXR custom CSS record; report whether the .local-work-card rules are dead after D32 and register the Werribee comment as a footprint string; report which two menus have no location and whether that is correct for Wave 1. Do not import, re-encode or implement."
+  },
+  "OWNER-2026-08-20-BAND-B": {
+   "source": "owner instruction, 20 August 2026 (session record; carrying HANDOVER-2026-08-19.md Part 2 verdicts)",
+   "clause": "testimonial-text investigation and Band B disposition",
+    "exact_rule": "Investigate all text alongside attachments 46, 47, 48, 49, 51, 52 and 228 without changing the immutable WXR. If fabricated customer quotes exist, register them as a distinct Australian Consumer Law false-fidelity category. Apply tiles 17-23 as GENERIC with testimonial/Camden removed from filenames and subject-only alt text; never use them beside a customer quote or recent-work module. Apply tiles 24 and 25 as UNUSABLE: remove every slot and do not replace."
+   },
+   "OWNER-2026-08-21-IDENTITY-CLAIMS-LIVERPOOL": {
+    "source": "owner instruction and attestation, 21 August 2026 (session record)",
+    "clause": "public identity, operating model, claim remediation, address/schema limits and Liverpool evidence",
+    "exact_rule": "Public label Structure Co Concreters Camden; monitored email info@concreterscamden.com.au; public telephone (03) 4328 3392 / tel:+61343283392 without a local-number claim; staffed administrative correspondence office at 15 Murray Street, Camden NSW 2570, not open to customers or visitors. No ABN, legal entity, specific NSW contractor, licence or insurance is authorised. Structure Co manages enquiries and coordinates suitable independent providers; submitting an enquiry creates no construction contract. Remove unsupported claims occurrence by occurrence. Apply only facts supported by Liverpool City Council's March 2026 vehicular-crossing form, current forms page and online portal, sighted 21 August 2026."
+   }
+ },
+ "clause_map": {
+  "note": "Per RB01-D8 item 18. Stage 31 is renumbered §4.31; §4.11 is retained as an alias so every existing citation continues to resolve. No instruction document was edited to renumber it.",
+  "canonical": {
+   "§4.31": {
+    "aliases": [
+     "§4.11"
+    ],
+    "stage": 31,
+    "title": "The eleventh cost page (crossover requirements calculator)"
+   },
+   "§4.31.1": {
+    "aliases": [
+     "§4.11.1"
+    ]
+   },
+   "§4.31.2": {
+    "aliases": [
+     "§4.11.2"
+    ]
+   },
+   "§4.31.3": {
+    "aliases": [
+     "§4.11.3"
+    ]
+   },
+   "§4.31.4": {
+    "aliases": [
+     "§4.11.4"
+    ]
+   },
+   "§4.31.5": {
+    "aliases": [
+     "§4.11.5"
+    ]
+   },
+   "§4.31.6": {
+    "aliases": [
+     "§4.11.6"
+    ]
+   },
+   "§4.31.7": {
+    "aliases": [
+     "§4.11.7"
+    ]
+   },
+   "§4.31.8": {
+    "aliases": [
+     "§4.11.8"
+    ]
+   }
+  },
+  "source_refs": [
+   "RB01-D8"
+  ]
+ },
+ "global_uniqueness_rule": {
+  "max_pages_sharing_any_5gram": {
+   "value": 2,
+   "source_refs": [
+    "B2-PRECEDENCE-UNIQUE"
+   ]
+  },
+  "max_pairwise_overlap_within_class": {
+   "value": 0.4,
+   "comparison": "less_than_or_equal",
+   "source_refs": [
+    "B2-PRECEDENCE-UNIQUE",
+    "EXP-8"
+   ]
+  }
+ },
+ "page_classes": [
+  {
+   "class": "home",
+   "count": {
+    "value": 1,
+    "source_refs": [
+     "B2-PRECEDENCE-TOTAL",
+     "EXP-1",
+     "WXR-ACTUAL"
+    ]
+   },
+   "url_pattern": {
+    "value": "/",
+    "source_refs": [
+     "B2-PRECEDENCE-CAMDEN",
+     "CODEX-STAGE5",
+     "WXR-HOME"
+    ]
+   },
+   "module_template": {
+    "value": [
+     "hero",
+     "services",
+     "Camden local conditions",
+     "job scoping",
+     "trust",
+     "service areas",
+     "FAQ/CTA"
+    ],
+    "contract_status": "partly specified; exact section implementation is artifact-derived",
+    "source_refs": [
+     "CODEX-STAGE5",
+     "WXR-HOME"
+    ]
+   },
+   "uniqueness_threshold": {
+    "minimum_unique_body_words": {
+     "value": null,
+     "reason": "No class-specific percentage is specified.",
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pairwise_overlap": {
+     "value": 0.4,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pages_sharing_any_5gram": {
+     "value": 2,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    }
+   },
+   "status_on_import": {
+    "value": {
+     "publish": 1,
+     "draft": 0
+    },
+    "source_refs": [
+     "EXP-7",
+     "WXR-ACTUAL"
+    ]
+   },
+   "wave": {
+    "value": "Wave 1 candidate; final membership pending Stage 27",
+    "source_refs": [
+     "EXP-7",
+     "B2-PRECEDENCE-WAVES",
+     "B2-STAGE27"
+    ]
+   }
+  },
+  {
+   "class": "utility",
+   "count": {
+    "value": 4,
+    "source_refs": [
+     "B2-PRECEDENCE-TOTAL",
+     "EXP-1",
+     "WXR-ACTUAL"
+    ]
+   },
+   "url_pattern": {
+    "value": [
+     "/about/",
+     "/contact/",
+     "/quote/",
+     "/gallery/"
+    ],
+    "source_refs": [
+     "EXP-1",
+     "CODEX-STAGE5",
+     "WXR-UTILITY"
+    ]
+   },
+   "module_template": {
+    "value": "Contact-style Elementor template; Gallery is the same layout pending real media.",
+    "contract_status": "No governing document defines a complete utility module sequence.",
+    "source_refs": [
+     "CODEX-STAGE5",
+     "WXR-UTILITY"
+    ]
+   },
+   "uniqueness_threshold": {
+    "minimum_unique_body_words": {
+     "value": null,
+     "reason": "No class-specific percentage is specified.",
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pairwise_overlap": {
+     "value": 0.4,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pages_sharing_any_5gram": {
+     "value": 2,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    }
+   },
+   "status_on_import": {
+    "value": {
+     "publish": 4,
+     "draft": 0,
+     "gallery_robots": "noindex,follow"
+    },
+    "source_refs": [
+     "EXP-7",
+     "WXR-UTILITY",
+     "WXR-ACTUAL",
+     "B2-HARD-4"
+    ]
+   },
+   "wave": {
+    "value": "Wave 1 candidates; Gallery remains noindex until its evidence and photography gates pass; final membership pending Stage 27",
+    "source_refs": [
+     "EXP-7",
+     "B2-STAGE27"
+    ]
+   }
+  },
+  {
+   "class": "service",
+   "count": {
+    "value": 10,
+    "source_refs": [
+     "B2-PRECEDENCE-SERVICES",
+     "EXP-3",
+     "WXR-ACTUAL"
+    ]
+   },
+   "url_pattern": {
+    "value": "/{service-slug}-south-west-sydney/",
+    "source_refs": [
+     "EXP-3",
+     "STRUCT-5-2"
+    ]
+   },
+   "module_template": {
+    "value": [
+     "H1/intro/CTA",
+     "finish or service variants",
+     "local failure/ground issue",
+     "thickness and reinforcement",
+     "build process",
+     "drainage and levels",
+     "replacement or service-specific concern",
+     "size/comparison",
+     "maintenance",
+     "areas served",
+     "cost/guide link"
+    ],
+    "source_refs": [
+     "STRUCT-5-2"
+    ]
+   },
+   "uniqueness_threshold": {
+    "minimum_unique_body_words": {
+     "value": null,
+     "reason": "No class-specific percentage is specified.",
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pairwise_overlap": {
+     "value": 0.4,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pages_sharing_any_5gram": {
+     "value": 2,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    }
+   },
+   "status_on_import": {
+    "value": {
+     "publish": 10,
+     "draft": 0
+    },
+    "source_refs": [
+     "EXP-7",
+     "WXR-ACTUAL"
+    ]
+   },
+   "wave": {
+    "value": "Wave 1 candidates; final membership pending Stage 27",
+    "source_refs": [
+     "EXP-7",
+     "B2-PRECEDENCE-WAVES",
+     "B2-STAGE27"
+    ]
+   }
+  },
+  {
+   "class": "suburb",
+   "count": {
+    "value": 60,
+    "source_refs": [
+     "B2-PRECEDENCE-TOTAL",
+     "EXP-2",
+     "SUBEXP-LIST",
+     "WXR-ACTUAL"
+    ]
+   },
+   "url_pattern": {
+    "value": "/concreters-{suburb-slug}/",
+    "exclusions": [
+     "/concreters-camden/",
+     "/concreters-camden-town/"
+    ],
+    "source_refs": [
+     "EXP-2",
+     "B2-PRECEDENCE-CAMDEN",
+     "SUBEXP-LIST"
+    ]
+   },
+   "module_template": {
+    "value": [
+     "Hero",
+     "Our Services",
+     "Local build context",
+     "Ground conditions",
+     "Ground preparation",
+     "Drainage/levels/crack control",
+     "Council crossovers",
+     "Local Work Completed",
+     "Why Customers Choose Us",
+     "Areas We Cover",
+     "CTA + FAQ"
+    ],
+    "research_hold_variant": "A page without researched differentiators remains a draft/noindex shell and does not qualify for a live wave.",
+    "source_refs": [
+     "B2-PRECEDENCE-MODULES",
+     "STRUCT-5-1",
+     "GOLD-1-11",
+     "B2-HARD-2"
+    ]
+   },
+   "uniqueness_threshold": {
+    "minimum_unique_body_words": {
+     "value": 0.6,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE",
+      "SEO-5",
+      "EXP-8"
+     ]
+    },
+    "minimum_unique_built_modules": {
+     "value": 8,
+     "out_of": 11,
+     "source_refs": [
+      "STRUCT-5-1"
+     ]
+    },
+    "max_pairwise_overlap": {
+     "value": 0.4,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pages_sharing_any_5gram": {
+     "value": 2,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "opening_test_words": {
+     "value": 80,
+     "source_refs": [
+      "SEO-5",
+      "EXP-8"
+     ]
+    }
+   },
+   "status_on_import": {
+    "value": {
+     "publish": 6,
+     "draft": 54,
+     "robots_noindex_follow": 60
+    },
+    "source_refs": [
+     "SUBEXP-STATUS",
+     "WXR-ACTUAL",
+     "B2-HARD-2",
+     "B2-HARD-4"
+    ]
+   },
+   "wave": {
+    "legacy_value": {
+     "wave_1": 6,
+     "wave_3": 9,
+     "wave_4": 45
+    },
+    "resolved_pre_stage27": {
+     "wave_1_candidates": 6,
+     "later_researched_candidates": 9,
+     "held_without_wave_pending_research": 45
+    },
+    "final_status": "pending Stage 27",
+    "source_refs": [
+     "SUBEXP-WAVES",
+     "B2-STAGE27",
+     "B2-PRECEDENCE-WAVES"
+    ]
+   }
+  },
+  {
+   "class": "intersection",
+   "count": {
+    "value": 35,
+    "source_refs": [
+     "B2-PRECEDENCE-TOTAL",
+     "B2-PRECEDENCE-INTERSECTIONS",
+     "INTER-ALLOWLIST",
+     "WXR-ACTUAL"
+    ]
+   },
+   "url_pattern": {
+    "value": "/{service-slug}-{suburb-slug}/",
+    "allow_list_only": true,
+    "source_refs": [
+     "EXP-4",
+     "B2-PRECEDENCE-INTERSECTIONS",
+     "INTER-ALLOWLIST"
+    ]
+   },
+   "module_template": {
+    "value": [
+     "H1 and differentiator-led intro",
+     "unique differentiator section",
+     "shared service specification",
+     "local cost inputs",
+     "two-question FAQ",
+     "links to parent service and parent suburb"
+    ],
+    "target_length_words": 700,
+    "shared_specification_budget_words": 150,
+    "source_refs": [
+     "EXP-4"
+    ]
+   },
+   "uniqueness_threshold": {
+    "minimum_unique_body_words": {
+     "value": 0.5,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE",
+      "EXP-8"
+     ]
+    },
+    "max_pairwise_overlap": {
+     "value": 0.4,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pages_sharing_any_5gram": {
+     "value": 2,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "opening_test_words": {
+     "value": 80,
+     "source_refs": [
+      "EXP-8"
+     ]
+    },
+    "differentiator_required": {
+     "value": true,
+     "source_refs": [
+      "INTER-ALLOWLIST",
+      "B2-HARD-2"
+     ]
+    }
+   },
+   "status_on_import": {
+    "value": {
+     "publish": 0,
+     "draft": 35,
+     "robots_noindex_follow": 35
+    },
+    "source_refs": [
+     "INTER-ALLOWLIST",
+     "WXR-ACTUAL",
+     "B2-HARD-4"
+    ]
+   },
+   "wave": {
+    "value": "Wave 5 candidates in gated batches; exact batches pending Stage 27",
+    "source_refs": [
+     "INTER-ALLOWLIST",
+     "EXP-7",
+     "B2-PRECEDENCE-WAVES"
+    ]
+   }
+  },
+  {
+   "class": "guide_hub",
+   "count": {
+    "value": 1,
+    "source_refs": [
+     "B2-PRECEDENCE-TOTAL",
+     "B2-PRECEDENCE-GUIDES",
+     "WXR-GUIDE-HUB",
+     "WXR-ACTUAL"
+    ]
+   },
+   "url_pattern": {
+    "value": "/guides/",
+    "source_refs": [
+     "WXR-GUIDE-HUB"
+    ]
+   },
+   "module_template": {
+    "value": [
+     "H1/intro",
+     "Council & approvals",
+     "Ground & engineering",
+     "Cost",
+     "Finishes & materials",
+     "Problems & maintenance"
+    ],
+    "contract_status": "Taxonomy is specified; exact Elementor module sequence is artifact-derived.",
+    "source_refs": [
+     "EXP-5",
+     "WXR-GUIDE-HUB"
+    ]
+   },
+   "uniqueness_threshold": {
+    "minimum_unique_body_words": {
+     "value": null,
+     "reason": "Shared index component; no percentage is specified.",
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pairwise_overlap": {
+     "value": 0.4,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pages_sharing_any_5gram": {
+     "value": 2,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    }
+   },
+   "status_on_import": {
+    "value": {
+     "publish": 0,
+     "draft": 1,
+     "robots_noindex_follow": 1
+    },
+    "source_refs": [
+     "WXR-GUIDE-HUB",
+     "WXR-ACTUAL",
+     "B2-HARD-4"
+    ]
+   },
+   "wave": {
+    "value": "Wave 2 candidate only when its first approved guide batch publishes with it; pending Stage 27",
+    "source_refs": [
+     "B2-STAGE27",
+     "EXP-7"
+    ]
+   }
+  },
+  {
+   "class": "guide",
+   "count": {
+    "value": 35,
+    "source_refs": [
+     "B2-PRECEDENCE-GUIDES",
+     "EXP-5",
+     "WXR-ACTUAL"
+    ]
+   },
+   "url_pattern": {
+    "value": "/guides/{topic-slug}/",
+    "wordpress_hierarchy": "child of page ID 1502 with final-segment-only post_name",
+    "source_refs": [
+     "EXP-5",
+     "WXR-GUIDE"
+    ]
+   },
+   "module_template": {
+    "value": [
+     "topic-led H1",
+     "short answer",
+     "facts requiring verification",
+     "site inputs",
+     "council/engineering records",
+     "common mistakes",
+     "FAQ"
+    ],
+    "contract_status": "The generic sequence is artifact-derived; governing documents specify taxonomy and source clones but not one complete generic guide contract.",
+    "source_refs": [
+     "STRUCT-5-3",
+     "CODEX-STAGE6",
+     "EXP-5",
+     "WXR-GUIDE"
+    ]
+   },
+   "uniqueness_threshold": {
+    "minimum_unique_body_words": {
+     "value": 0.85,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE",
+      "EXP-8"
+     ]
+    },
+    "max_pairwise_overlap": {
+     "value": 0.4,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pages_sharing_any_5gram": {
+     "value": 2,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    }
+   },
+   "status_on_import": {
+    "value": {
+     "publish": 0,
+     "draft": 35,
+     "robots_noindex_follow": 35
+    },
+    "source_refs": [
+     "EXP-7",
+     "WXR-ACTUAL",
+     "B2-HARD-4"
+    ]
+   },
+   "wave": {
+    "value": "Legacy split is 15 Wave 2 and 20 Wave 4; exact membership pending Stage 27",
+    "source_refs": [
+     "EXP-7",
+     "B2-PRECEDENCE-WAVES",
+     "B2-STAGE27"
+    ]
+   }
+  },
+  {
+   "class": "cost_comparison",
+   "count": {
+    "value": 11,
+    "artifact_split": {
+     "main_wxr": 10,
+     "supplementary_wxr_planned": 1
+    },
+    "source_refs": [
+     "AMEND-B7",
+     "AMEND-B1",
+     "EXP-6",
+     "WXR-ACTUAL"
+    ]
+   },
+   "url_pattern": {
+    "value": "The ten existing pages use root-level topic slugs; the calculator slug remains pending Stage 31 inventory and owner approval.",
+    "source_refs": [
+     "EXP-6",
+     "WXR-COST",
+     "AMEND-B2"
+    ]
+   },
+   "module_template": {
+    "value": [
+     "topic-led H1",
+     "inputs",
+     "inclusions",
+     "limits",
+     "site variables",
+     "next step"
+    ],
+    "contract_status": "The existing ten-page sequence is artifact-derived. The calculator must match the observed template, but its final outline requires the Stage 31 inventory and owner approval before construction.",
+    "source_refs": [
+     "EXP-6",
+     "WXR-COST",
+     "AMEND-B2"
+    ]
+   },
+   "uniqueness_threshold": {
+    "minimum_unique_body_words": {
+     "value": null,
+     "reason": "No class-specific percentage is approved for cost/comparison pages or the calculator. The calculator result must be measured and flagged below 50%, with any proposed threshold awaiting owner approval.",
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE",
+      "AMEND-B8"
+     ]
+    },
+    "max_pairwise_overlap": {
+     "value": 0.4,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    },
+    "max_pages_sharing_any_5gram": {
+     "value": 2,
+     "source_refs": [
+      "B2-PRECEDENCE-UNIQUE"
+     ]
+    }
+   },
+   "status_on_import": {
+    "value": {
+     "publish": 0,
+     "draft": 11,
+     "robots_noindex_follow": 11
+    },
+    "artifact_state": "Ten draft/noindex pages exist in the main WXR; the eleventh is planned for the supplementary WXR.",
+    "source_refs": [
+     "EXP-7",
+     "WXR-ACTUAL",
+     "B2-HARD-4",
+     "AMEND-B1",
+     "AMEND-B5"
+    ]
+   },
+   "wave": {
+    "value": "All eleven default to Wave 4. The calculator alone is eligible for an owner-approved promotion proposal to Wave 2 after every required figure for all four LGAs is verified with source URL and sighted date.",
+    "source_refs": [
+     "EXP-7",
+     "B2-PRECEDENCE-WAVES",
+     "AMEND-B5"
+    ]
+   }
+  }
+ ],
+ "coherence_gate": {
+  "status": "BUILD-FAILING",
+  "script": "scripts/34-coherence.py",
+  "data": "reports/34-coherence.csv",
+  "threshold_filler_pct": 0.2,
+  "rule": "Any page whose filler body-word percentage exceeds the threshold cannot enter any wave, regardless of uniqueness, evidence or media status.",
+  "detectors": {
+   "T1": "sentence subject is a slug or URL fragment",
+   "T2": "clause-head templating, 4 or more clauses sharing a subject phrase in a block",
+   "T3": "the same subject repeats inside one sentence",
+   "T4": "a clause of 8+ words with no finite verb (weak signal; not counted alone)",
+   "T5": "bookkeeping verb over an abstract object, asserting nothing checkable"
+  },
+  "counting_rule": "A sentence counts as filler only if it trips T1, T2, T3 or T5. T4 alone fires on legitimate headings and UI labels and is recorded but not counted.",
+  "severity": {
+   "SEVERE": "at least half of counted sentences have a slug or URL-fragment subject; machine-generated word salad",
+   "MODERATE": "templated or nominalised prose with a real subject; stilted but carrying checkable content",
+   "BELOW THRESHOLD": "flagged sentences exist but the page is under the threshold",
+   "CLEAN": "no counted filler"
+  },
+  "result_2026_08_18": {
+   "pages_scanned": 156,
+   "SEVERE": 90,
+   "MODERATE": 49,
+   "BELOW_THRESHOLD": 12,
+   "CLEAN": 5,
+   "corpus_filler_pct": 0.8244,
+   "severe_filler_words": 145064,
+   "severe_by_class": {
+    "service": 10,
+    "intersection": 35,
+    "guide": 35,
+    "cost_comparison": 10
+   },
+   "clean_pages": [
+    "homepage",
+    "about",
+    "contact",
+    "quote",
+    "gallery"
+   ]
+  },
+  "source_refs": [
+   "DEC03-D15"
+  ]
+ },
+ "resolved_totals": {
+  "by_class": {
+   "home": 1,
+   "utility": 4,
+   "service": 10,
+   "suburb": 60,
+   "intersection": 0,
+   "guide_hub": 0,
+   "guide": 0,
+   "cost_comparison": 1
+  },
+  "total": 76,
+  "composition": "1 homepage + 4 utility + 10 service + 60 suburb = 75 in the main WXR, plus 1 calculator as a separate build target under §4.31",
+  "superseded_totals": [
+   157,
+   122
+  ],
+  "withdrawn": {
+   "intersection": 35,
+   "guide": 35,
+   "guide_hub": 1,
+   "cost_comparison_built": 10,
+   "total_withdrawn": 81,
+   "reason": "SEVERE coherence failure. Withdrawn from the architecture and excluded at import; NOT deleted from the immutable WXR.",
+   "authority": "DECISION-03 D16 for the 35 intersections; DECISION-04 D21 for the 35 guides, 10 built cost/comparison pages and the guide hub",
+   "guide_hub_reason": "§4.27 forbids publishing the hub without its first approved guides, and there are none",
+   "rebuild_inputs_retained": [
+    "intersection-differentiators.json — 35 differentiators, real research",
+    "expansion-300-pages.md §5 — guide taxonomy stays valid; only the generated copy is discarded"
+   ],
+   "empty_waves": [
+    2,
+    4,
+    5
+   ],
+   "source_refs": [
+    "DEC03-D16",
+    "DEC04-D21"
+   ]
+  },
+  "deferred_scope": {
+   "unresearched_suburbs": {
+    "count": 45,
+    "state": "draft + noindex, in the architecture, in no wave, counting toward no live total, not rewritten",
+    "status": "DEFERRED, NOT DROPPED — revisit once the core is live",
+    "recorded_in_context": true,
+    "source_refs": [
+     "DEC04-D22"
+    ]
+   }
+  },
+  "realistic_wave_1": {
+   "value": 30,
+   "composition": "1 homepage + 4 utility + 10 rewritten service pages + 15 researched suburb pages",
+   "source_refs": [
+    "DEC04-D21"
+   ]
+  },
+  "artifact_note": "The main WXR still physically contains 156 pages including the 35 withdrawn intersections. The architecture is 122. Manifest-vs-XML parity is unaffected; the withdrawal is recorded in the readiness record and enforced at import.",
+  "artifact_split": {
+   "camden-concreting-import.xml": 156,
+   "camden-calculator-import.xml_planned": 1
+  },
+  "status_on_import": {
+   "publish": 21,
+   "draft": 136
+  },
+  "index_ready": 0,
+  "source_refs": [
+   "AMEND-B7",
+   "AMEND-B1",
+   "WXR-ACTUAL"
+  ]
+ },
+ "evidence_markers": {
+  "recorded_in_register": {
+   "value": 163,
+   "breakdown": {
+    "PLACEHOLDER": 111,
+    "REAL_PHOTO_PENDING": 47,
+    "VERIFY": 5
+   },
+   "source_refs": [
+    "DEC02-D10"
+   ]
+  },
+  "found_in_rendered_copy_unregistered": {
+   "value": 7,
+   "breakdown": {
+    "REQUIRED-RESEARCH": 4,
+    "VERIFY_bare_unbracketed": 3
+   },
+   "source": "found-in-rendered-copy",
+   "source_refs": [
+    "DEC02-D10"
+   ]
+  },
+  "working_total": {
+   "value": 170,
+   "arithmetic": "163 recorded + 4 REQUIRED-RESEARCH + 3 bare VERIFY = 170",
+   "verification": "Independent scan of the rendered body copy of all 156 pages in camden-concreting-import.xml returned exactly 170 marker-token occurrences: 163 bracketed [[...]] and 7 bare. Confirms D10 without adjustment.",
+   "settled": false,
+   "settled_note": "D10 states this total is not to be treated as settled. Stage 23 re-scans and reports any further divergence.",
+   "source_refs": [
+    "DEC02-D10"
+   ]
+  },
+  "register_method": {
+   "value": "Scan the rendered body copy of all 156 pages for every marker token (PLACEHOLDER, REAL_PHOTO_PENDING, VERIFY, REQUIRED-RESEARCH, and any other bracketed or upper-case marker convention found in the corpus). reports/placeholders.md is a cross-check, not a source; report every occurrence it missed.",
+   "supersedes": "The prior method of reading reports/placeholders.md and reconciling to it.",
+   "applies_to_stage": 23,
+   "source_refs": [
+    "DEC02-D10"
+   ]
+  },
+  "false_fidelity_claims": {
+   "category": "Distinct from a missing fact. A sentence asserting reproduction, verification, confirmation or non-alteration of a value that is itself a marker.",
+   "found": {
+    "value": 6,
+    "pages": [
+     "concreters-leppington",
+     "concreters-austral",
+     "concreters-edmondson-park",
+     "concreters-bringelly"
+    ],
+    "anticipated_by_D11": 4,
+    "additional_found": 2,
+    "additional_note": "Two further instances on Bringelly of a construction D11 did not describe: 'The verified approval path for Bringelly is: VERIFY ...' and 'For Bringelly, the verified project record says: VERIFY ...'. Neither is fillable; both require rewriting regardless of what the owner supplies.",
+    "report": "reports/23-false-fidelity.md"
+   },
+   "councils_named": {
+    "Liverpool": 4,
+    "Campbelltown": 0,
+    "Wollondilly": 0,
+    "Camden": 0
+   },
+   "source_refs": [
+    "DEC02-D11",
+    "B2-HARD-2"
+   ]
+  },
+  "liverpool_specification_dependency": {
+   "value": "Liverpool City Council vehicle crossing specification: widths, strength, fee schedule.",
+   "unblocks_pages": 4,
+   "pages": [
+    "concreters-leppington",
+    "concreters-austral",
+    "concreters-edmondson-park",
+    "concreters-bringelly"
+   ],
+   "may_not_be_sourced_from": [
+    "a neighbouring suburb",
+    "Camden Council",
+    "any other LGA"
+   ],
+   "leppington_second_reason": "Leppington straddles the Camden/Liverpool boundary per intersection-differentiators.json, so a Camden figure is wrong there for a second, independent reason.",
+   "shared_with": "data/council-specs.yml at Stage 31; one verification clears both, and must not be satisfied twice with different numbers.",
+   "source_refs": [
+    "DEC02-D12",
+    "INTER-ALLOWLIST"
+   ]
+  },
+  "wave1_impact": {
+   "release_set": 21,
+   "held_noindex_follow": {
+    "tier_1_suburbs": 6,
+    "gallery": 1
+   },
+   "effective_indexable": {
+    "value": 14,
+    "unchanged_by_D13": true,
+    "verification": "Confirmed against the artifacts, not assumed. Leppington and Austral are members of the already-held 6-page Tier 1 set, so the Liverpool blocker is a second independent hold on pages already held and removes nothing from the indexable set."
+   },
+   "two_independent_blockers": {
+    "pages": [
+     "concreters-leppington",
+     "concreters-austral"
+    ],
+    "blockers": [
+     "Tier 1 photography and evidence gate",
+     "Liverpool City Council specification"
+    ],
+    "rule": "Clearing one does not release the page."
+   },
+   "source_refs": [
+    "DEC02-D13",
+    "B2-STAGE27",
+    "B2-HARD-4"
+   ]
+  }
+ },
+ "run_block_01": {
+  "authorisation": "RUN-BLOCK-01.md §B: Stages 22, 23, 24, 25, 26, 27, 28, 29, 30 and 32 run continuously without pausing for approval between them. Stage 31 is excluded and not run.",
+  "stage_ordering": {
+   "value": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+   ],
+   "split_declined": "31A/31B",
+   "source_refs": [
+    "RB01-D1"
+   ]
+  },
+  "calculator_handling_per_stage": {
+   "stage_23": {
+    "treatment": "readiness row present, flagged 'Build status: not yet built — §4.31', Index-ready no",
+    "source_refs": [
+     "RB01-D1"
+    ]
+   },
+   "stage_24": {
+    "treatment": "denominator 157; calculator contributes zero image references, stated not omitted",
+    "source_refs": [
+     "RB01-D1",
+     "RB01-D7"
+    ]
+   },
+   "stage_25": {
+    "treatment": "measure 156; calculator recorded 'DEFERRED TO STAGE 31 — not yet built', never passing and never exempt",
+    "source_refs": [
+     "RB01-D1"
+    ]
+   },
+   "stage_27": {
+    "treatment": "included in Wave 4 marked not-yet-built; effective indexable counts unaffected because it is noindex on import",
+    "source_refs": [
+     "RB01-D1"
+    ]
+   },
+   "stage_28": {
+    "treatment": "preflight runs against both XMLs; the missing supplementary artifact is a genuine NO-GO reason reported as one",
+    "source_refs": [
+     "RB01-D1"
+    ]
+   },
+   "stage_31_delta": {
+    "treatment": "bounded delta pass reports/31-delta.md re-running only calculator-scoped checks from Stages 23, 24, 25, 27 and 28; part of Gate 31; NOT RUN in this block",
+    "source_refs": [
+     "RB01-D1"
+    ]
+   }
+  },
+  "readiness_join_key": {
+   "value": "slug, normalised to leading-slash + trailing-slash + lowercase",
+   "adds_column": "post_id from build/stage9-page-manifest.json",
+   "failure_mode": "any slug in one file and not the other, or not resolving to exactly one manifest entry, is stop-and-ask",
+   "source_refs": [
+    "RB01-D4"
+   ]
+  },
+  "link_rule_a_scope": {
+   "value": 10,
+   "supersedes": 7,
+   "assertion_stage": 27,
+   "rules_b_to_g": "unchanged in scope",
+   "source_refs": [
+    "RB01-D6",
+    "B2-PRECEDENCE-SERVICES"
+   ]
+  },
+  "image_reuse_policy": {
+   "reuse_permitted": true,
+   "cap_pages_per_image": 15,
+   "original_means": "not stock and not byte-identical to the source site after re-encoding; reuse within the site is not forbidden",
+   "hard_rule": "no REAL_PHOTO_PENDING slot may be filled by a re-encoded source-site image",
+   "report_position": "top of the Stage 24 report",
+   "source_refs": [
+    "RB01-D7",
+    "EXP-8"
+   ]
+  },
+  "governing_doc_restoration": {
+   "claim": "semantic restoration only; byte-exact restoration is NOT claimed",
+   "byte_difference": 1,
+   "baseline_from_here": "E4FBC42D3BBFFB8E0745CA87B4751064F09CF67447F9F6A3BC79D03136785FC5",
+   "recurrence_prevention": "standing rule 7",
+   "source_refs": [
+    "RB01-D9"
+   ]
+  },
+  "stop_conditions": {
+   "count": 8,
+   "not_a_stop_condition": "A stage failing its own gate. Stage 28 returning NO-GO is the expected outcome, not a failure of the run.",
+   "source_refs": [
+    "RB01-C"
+   ]
+  }
+ },
+ "unthresholded_classes": {
+  "value": 27,
+  "arithmetic": "10 service + 11 cost/comparison + 1 guide hub + 1 homepage + 4 utility = 27",
+  "currently_built": 26,
+  "not_yet_built": {
+   "count": 1,
+   "page": "crossover requirements calculator",
+   "state": "DEFERRED TO STAGE 31 — not yet built"
+  },
+  "supersedes": "The §4.25.5 figure of 26, which was an arithmetic error.",
+  "enforcement": "AWAITING APPROVAL — not enforced. Measure and propose; do not fail or hold a page against an unapproved threshold, and do not record an unapproved threshold as sourced.",
+  "source_refs": [
+   "RB01-D3",
+   "B2-PRECEDENCE-UNIQUE"
+  ]
+ },
+ "schema_provider_resolution": {
+  "order": [
+   {
+    "rank": 1,
+    "condition": "#localbusiness is defined",
+    "action": "Service.provider references #localbusiness"
+   },
+   {
+    "rank": 2,
+    "condition": "#localbusiness not defined but #organization defined from verified legal entity name plus domain",
+    "action": "Service.provider references #organization"
+   },
+   {
+    "rank": 3,
+    "condition": "neither defined",
+    "action": "Service omits provider entirely"
+   }
+  ],
+  "prohibited": [
+   "Inventing an address to define #localbusiness.",
+   "Asserting 'CoreX Concreters Camden' as a legal entity to define #organization; that identity is an open P1 blocker."
+  ],
+  "expected_under_current_verification_state": "outcome 3 on every page; logged",
+  "build_failing_check": "zero references to any @id not defined in the same emitted graph",
+  "reporting": "count of Service nodes omitting provider, per page class",
+  "source_refs": [
+   "RB01-D2"
+  ]
+ },
+ "residual_footprint_risks": {
+  "note": "Per RB01-D5. Disclosed risks against an immutable validated artifact, not defects to fix by mutating it.",
+  "mitigation_4_module_order": {
+   "source": "camden-site-structure-and-silo.md §7 mitigation 4",
+   "intent": "vary module order against the source site",
+   "status": "NOT APPLIED",
+   "reason": "Conflicts with standing rule 6 (never restructure an Elementor layout). Both predate the validated WXR, which is now immutable.",
+   "residual_risk": "Shared section order with bestconcretersmelbourne.com.au.",
+   "source_refs": [
+    "RB01-D5",
+    "STRUCT-5-1"
+   ]
+  },
+  "mitigation_5_kit_palette": {
+   "source": "camden-site-structure-and-silo.md §7 mitigation 5",
+   "intent": "vary the Elementor kit palette against the source site",
+   "status": "checked at Stage 24; see reports/24-images.md",
+   "source_refs": [
+    "RB01-D5"
+   ]
+  }
+ },
+ "standing_guidance": {
+  "full_fidelity_reporting": {
+   "value": "Write every gate table and report to disk first, then re-read the file and display from that read-back. Never treat console output as the record: this environment's console is lossy. If a table is too wide to render, emit it one field per line; never trim, abbreviate or elide a value to make it fit. Confirm each report's byte count on disk after writing. Assert zero ellipsis characters in any gate artifact.",
+   "rationale": "An abbreviated SHA-256 is not a SHA-256. This is the same failure mode as the two Stage 21 assertions weakened to ASCII-stable substrings, and it recurred at handoff-state when digests were abbreviated in a rendered table.",
+   "recorded_here_because": "D14 requires standing guidance to live in this ledger or a numbered report, never in an instruction document or a decision record.",
+   "source_refs": [
+    "DEC02-D14",
+    "B2-HARD-4"
+   ]
+  },
+  "agent_local_memory_disclaimer": {
+   "value": "An agent-local memory file exists outside this repository at ~/.claude/projects/C--Users-Home-Documents-concreters-camden/memory/. It is a private convenience copy of the reporting guidance above. It carries no authority, is not a project artifact, and no gate may cite it. This ledger entry is the authoritative record.",
+   "source_refs": [
+    "DEC02-D14"
+   ]
+  }
+ },
+ "known_exclusions": {
+  "urls": [
+   "/concreters-camden/",
+   "/concreters-camden-town/"
+  ],
+  "unlisted_intersections": "all excluded",
+  "source_refs": [
+   "B2-PRECEDENCE-CAMDEN",
+   "B2-PRECEDENCE-INTERSECTIONS"
+  ]
+ },
+ "deferred_validation": {
+  "uniqueness": {
+   "stage": 25,
+   "reason": "The main artifact passed the older Stage 9 test, but the new stricter per-class and global 5-gram gates have not yet been run. The calculator joins the combined index after Stage 31 construction."
+  },
+  "intersection_content_trace_and_shared_component_length": {
+   "stage": 26
+  },
+  "evidence_register_full_corpus_scan": {
+   "stage": 23,
+   "reason": "D10.2-D10.4: all seven unregistered occurrences enter reports/23-evidence-register.csv sourced as found-in-rendered-copy; the register is rebuilt by corpus scan rather than by reconciling to reports/placeholders.md; the scanned-versus-recorded divergence is reported, not reconciled.",
+   "source_refs": [
+    "DEC02-D10"
+   ]
+  },
+  "false_fidelity_rescan_and_rewrites": {
+   "stage": 23,
+   "reason": "D11.1-D11.3: the six found instances are registered as false-fidelity claims; reports/23-false-fidelity.md was produced at handoff-state and must be re-run and confirmed or extended as part of the full Stage 23 register. Bringelly items 4 and 6 are not fillable and require rewriting.",
+   "source_refs": [
+    "DEC02-D11"
+   ]
+  },
+  "liverpool_owner_question_ranking": {
+   "stage": 23,
+   "reason": "D12.1: recorded in reports/23-owner-questions.md as a single question unblocking four pages, ranked by pages unblocked.",
+   "source_refs": [
+    "DEC02-D12"
+   ]
+  },
+  "page_readiness_v2_dual_blockers": {
+   "stage": 23,
+   "reason": "D13.3: Leppington and Austral carry two independent blockers in reports/23-page-readiness-v2.csv; clearing one does not release the page.",
+   "source_refs": [
+    "DEC02-D13"
+   ]
+  },
+  "final_wave_membership": {
+   "stage": 27,
+   "dec02_note": "D13.1: the Liverpool specification joins Wave 1's release gate in reports/27-wave-plan.md; effective indexable Wave 1 stays 14.",
+   "source_refs": [
+    "DEC02-D13",
+    "B2-STAGE27"
+   ]
+  },
+  "calculator_slug_title_module_and_supplementary_wxr": {
+   "stage": 31,
+   "source_refs": [
+    "AMEND-B1",
+    "AMEND-B2",
+    "AMEND-B8"
+   ]
+  },
+  "council_specs_liverpool_crosscheck": {
+   "stage": 31,
+   "reason": "D12.3: data/council-specs.yml requires the same Liverpool City Council figures as the four suburb pages. One verification clears both; record the dependency so the figures are not researched twice or satisfied twice with different numbers.",
+   "source_refs": [
+    "DEC02-D12"
+   ]
+  }
+ },
+ "figure_attestation": {
+  "withdrawn_clause": "CODEX-BUILD-2.1.md §2 closing paragraph, on reproducing specific figures exactly",
+  "withdrawal_authority": "DECISION-05 D26",
+  "instruction_document_edited": false,
+  "replacement_rule": "Protection comes from attestation, not from prior appearance in a planning document.",
+  "populations": {
+   "council-sourced-pending-verification": {
+    "figures": [
+     "800mm",
+     "900mm",
+     "1200mm",
+     "4.0-5.5m",
+     "4%",
+     "1:6"
+    ],
+    "rows": 137,
+    "verification_path": "the relevant council's current published specification, with source_url and sighted_date"
+   },
+   "template-artefact-unattested": {
+    "figures": [
+     "32 MPa",
+     "125mm",
+     "SL72",
+     "SL82"
+    ],
+    "rows": 77,
+    "verification_path": "owner or engineer attestation per service, entered in data/service-specs.yml"
+   }
+  },
+  "scan_result_2026_08_18": {
+   "rows": 214,
+   "distinct_pages": 29,
+   "active_pages_blocked": 22,
+   "withdrawn_pages_affected": 7,
+   "deleted": 0,
+   "rounded": 0,
+   "altered": 0,
+   "report": "reports/35-figure-provenance.md",
+   "data": "reports/35-figure-provenance.csv"
+  },
+  "wave_1_consequence": {
+   "before": 30,
+   "blocked_by_d26": 22,
+   "remaining": 8,
+   "remaining_composition": "4 utility + 4 suburbs, each of the 4 suburbs carrying its own separate blocker",
+   "effective": "4 utility pages"
+  },
+  "source_refs": [
+   "DEC05-D26"
+  ]
+ },
+ "site_mark": {
+  "decision": "AMENDED by DEC08-D36. D27 chose a text wordmark BECAUSE no honest mark existed; brand assets have now been supplied, removing that premise. Constraint retained: the mark carries the trading name only — no ABN, no licence number, no establishment or licensed/insured wording until verified.",
+  "implemented": false,
+  "blocked_by": [
+   "the identity question - which trading name",
+   "the missing Astra Customizer export"
+  ],
+  "trading_name_conflict": {
+   "elementor_kit_site_name": "E&T Co Concreters Camden",
+   "copy_uses": "CoreX Concreters Camden",
+   "corex_occurrences_in_main_wxr": 466,
+   "et_co_occurrences_in_source_wxr": 6,
+   "note": "RESOLVED as to which name (DEC08-D35): Structure Co. NOT resolved as to verification — no legal entity, ABN or licence behind any of the three names.",
+   "classification": "residual footprint, harder signal than shared module order or kit palette",
+   "corrected_from": 345,
+   "resolved_to": "Structure Co Concreters Camden"
+  },
+  "removals_directed": {
+   "177": "CORRECTION to DEC05-D27 (19 Aug 2026): D27 directed 'remove attachment 177 as site icon', but the Astra export shows the site icon is 472, NOT 177. The WXR carries generated site_icon-* sizes for both, consistent with 177 being a FORMER site icon replaced by 472 before the export was taken. 177 is AI-generated and still retired; it was simply not the live favicon.",
+   "272": "remove per D24; AI-generated",
+   "159": "leave unreferenced",
+   "306": "RETIRED 19 August 2026, replaced by the Structure Co wordmark. Was live on 8 pages (contact, quote, about, gallery, concrete-patios-south-west-sydney — all publish — plus 3 draft patio pages), NOT unreferenced as DEC05-D27 recorded.",
+   "307": "RETIRED 19 August 2026, replaced by the Structure Co wordmark. Was live on 2 pages (concrete-paths-south-west-sydney publish, concrete-paths-edmondson-park draft), NOT unreferenced as DEC05-D27 recorded.",
+   "422": "RETIRED 19 August 2026. Genuinely orphaned, as DEC05-D27 recorded. Not deleted from the WXR.",
+   "deleted_from_wxr": "none"
+  },
+  "spec": "reports/35-site-mark-spec.md",
+  "source_refs": [
+   "DEC08-D36",
+   "DEC05-D27",
+   "DEC04-D24"
+  ],
+  "brand_assets": {
+   "declared_location": "source-inputs/brand/",
+   "declared_forms": [
+    "horizontal",
+    "reversed",
+    "single-colour",
+    "stacked",
+    "square-icon"
+   ],
+   "declared_formats": [
+    "SVG, text converted to outlines",
+    "PNG renders"
+   ],
+   "colours": {
+    "navy": "#1C244B",
+    "grey": "#7C8494",
+    "reversed_context_tint": "#AEB6C6"
+   },
+   "colour_note": "CORRECTED 19 August 2026. #1C244B is taken from the source site's INLINED PER-WIDGET PAGE STYLING (732 occurrences in page _elementor_data), NOT from the Elementor kit (zero occurrences there) as previously recorded. It remains a residual footprint inherited from the source site; only the provenance was misstated. #7C8494 is GENUINELY NEW — zero occurrences in the WXR — and #AEB6C6 is a lift of it, so also new. See corrections_register.",
+   "ON_DISK": "PRESENT AND VERIFIED, 19 August 2026 — 5 SVGs in source-inputs/brand/",
+   "verified": true,
+   "supersedes": {
+    "177": "AI-generated favicon, current site icon",
+    "159": "orphaned original of 177",
+    "306": "E&T symbol — NOT unreferenced: live on 8 pages, 5 of them publish",
+    "307": "E&T symbol — NOT unreferenced: live on 2 pages, 1 publish",
+    "422": "E&T symbol, orphaned",
+    "469": "custom_logo per the Astra export — the LIVE header logo. E&T source mark (cropped-e-t-co-logo-transparent.png, 507x296). 0 pages reference it because theme mods do not travel in a WXR. Replaced by structure-co-horizontal.svg.",
+    "472": "site_icon per the Astra export — the LIVE favicon. E&T source mark (cropped-e-t-co-logo-512.png, 512x512). Replaced by structure-co-icon-512.png (PNG, not SVG)."
+   },
+   "implemented": false,
+   "blocked_by": [
+    "the missing Astra Customizer export (header, footer, sticky and mobile slots only)"
+   ],
+   "source_refs": [
+    "DEC08-D36",
+    "DEC05-D27"
+   ],
+   "verification_report": "reports/39-brand-assets-and-image-slots.md",
+   "inventory": [
+    {
+     "file": "structure-co-horizontal.svg",
+     "bytes": 8879,
+     "viewBox": "0 0 773 260",
+     "paths": 27,
+     "sha256_16": "6E94B0700046E5A6",
+     "colours": [
+      "#1C244B",
+      "#7C8494"
+     ]
+    },
+    {
+     "file": "structure-co-horizontal-mono.svg",
+     "bytes": 8879,
+     "viewBox": "0 0 773 260",
+     "paths": 27,
+     "sha256_16": "CFC176F3A9856FEA",
+     "colours": [
+      "#000000"
+     ]
+    },
+    {
+     "file": "structure-co-horizontal-reversed.svg",
+     "bytes": 8926,
+     "viewBox": "0 0 773 260",
+     "paths": 27,
+     "sha256_16": "DFED6D255008AD56",
+     "colours": [
+      "#1C244B",
+      "#AEB6C6",
+      "#FFFFFF"
+     ]
+    },
+    {
+     "file": "structure-co-stacked.svg",
+     "bytes": 8607,
+     "viewBox": "0 0 527 308",
+     "paths": 27,
+     "sha256_16": "F55B37ABF35EF9C7",
+     "colours": [
+      "#1C244B",
+      "#7C8494"
+     ]
+    },
+    {
+     "file": "structure-co-icon.svg",
+     "bytes": 1761,
+     "viewBox": "0 0 512 512",
+     "paths": 2,
+     "sha256_16": "08E47165E9759327",
+     "colours": [
+      "#1C244B",
+      "#FFFFFF"
+     ]
+    }
+   ],
+   "claims_verified": {
+    "text_converted_to_outlines": "HOLDS — zero <text>/<tspan> in all five",
+    "no_font_dependency": "HOLDS — zero font-family references in all five",
+    "icon_512_square": "HOLDS — viewBox 0 0 512 512, width and height both 512",
+    "self_contained": "HOLDS — no external href, no embedded raster, no <image>, no <script>"
+   },
+   "deviations_from_brief": [
+    "filenames: brief named -reversed.svg and -mono.svg; on disk they are structure-co-horizontal-reversed.svg and structure-co-horizontal-mono.svg",
+    "the 32px favicon render is named structure-co-favicon-32.png while the other four are structure-co-icon-NNN.png — cosmetic only"
+   ],
+   "blocking_gap": "NONE — resolved 19 August 2026 by the supplied PNG renders",
+   "site_icon_note": "Settings > General > Site Icon is a WordPress core setting, not an Astra theme mod, so the favicon does NOT depend on the Customizer export.",
+   "favicon_png_renders": {
+    "supplied": "19 August 2026",
+    "files": {
+     "structure-co-icon-512.png": {
+      "dims": "512x512",
+      "bytes": 19460,
+      "sha256_12": "8243C074EF9A"
+     },
+     "structure-co-icon-270.png": {
+      "dims": "270x270",
+      "bytes": 22866,
+      "sha256_12": "832E028414DA"
+     },
+     "structure-co-icon-192.png": {
+      "dims": "192x192",
+      "bytes": 14891,
+      "sha256_12": "8F3665CEC3D1"
+     },
+     "structure-co-icon-180.png": {
+      "dims": "180x180",
+      "bytes": 15391,
+      "sha256_12": "FA138FCF6C9E"
+     },
+     "structure-co-favicon-32.png": {
+      "dims": "32x32",
+      "bytes": 2902,
+      "sha256_12": "1CA4E9C85A23"
+     }
+    },
+    "verified": "dimensions read from PNG headers not filenames; all five carry real artwork (mean luminance 0.4498-0.4502 across sizes, fully opaque); metadata clean — zero GPS, owner, camera and capture-time tags",
+    "svg_upload_plugin": "NOT installed and not to be installed — stored-XSS vector"
+   },
+   "site_icon_status": "UNBLOCKED independently of the Astra export — Settings > General > Site Icon is WordPress core, not an Astra theme mod. Waits only on the import."
+  },
+  "retirement_list": {
+   "as_at": "2026-08-19",
+   "ids": [
+    "159",
+    "177",
+    "306",
+    "307",
+    "422",
+    "469",
+    "472"
+   ],
+   "added_by_astra_export": [
+    "469",
+    "472"
+   ],
+   "note": "469 and 472 were not previously in the retired set because nothing in the WXR referenced them — theme mods do not travel in a WXR, so the only record that they are the live logo and favicon was in the export."
+  },
+  "ai_provenance": {
+   "c2pa_positive": {
+    "eandtcologo.png (308)": {
+     "claim_generator": "OpenAI Media Service API",
+     "software_agent": "gpt-image v2.0",
+     "digital_source_type": "trainedAlgorithmicMedia (IPTC code for AI-generated)",
+     "actions": "c2pa.created, c2pa.converted, c2pa.watermarked.unbound",
+     "when": "2026-07-07"
+    },
+    "ChatGPT-Image-Jul-6-2026-01_52_19-PM.png (159)": "gpt-image v2.0"
+   },
+   "c2pa_negative": [
+    "469",
+    "472",
+    "468",
+    "471",
+    "309 (cropped-eandtcologo.png)"
+   ],
+   "CRITICAL_CAVEAT": "absence of C2PA does NOT establish that an image is not AI-generated. cropped-eandtcologo.png (309) is a crop of the demonstrably AI-generated eandtcologo.png (308) and carries ZERO credentials — the crop stripped the manifest. 469 and 472 are themselves cropped derivatives, i.e. the exact transformation that erases the evidence. No positive evidence of AI generation; the negative cannot be established from the binaries.",
+   "lineage": "469/472 are NOT derived from eandtcologo.png — perceptual RMSE 0.65-0.67 at matched scale, a different mark entirely.",
+   "outcome_unaffected": "both are replaced by the Structure Co wordmark and icon regardless of provenance: they are the source Melbourne business's mark."
+  }
+ },
+ "build_state": {
+  "status": "PAUSED PENDING OWNER INPUTS",
+  "not": "blocked on technical work",
+  "as_at": "2026-08-18",
+  "stages_complete": [
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   32,
+   34,
+   35,
+   36
+  ],
+  "stage_31": "awaits approval; excluded from Run Block 01",
+  "architecture": 77,
+  "index_ready": 0,
+  "launch_gate": "NO-GO",
+  "effective_wave_1": "4 utility pages, each with its own further blocker",
+  "handover": "reports/35-owner-input-pack.md",
+  "owner_inputs_outstanding": 5,
+  "critical_path": [
+   "service specification matrix",
+   "media binaries + Astra export + re-encode driver"
+  ],
+  "source_refs": [
+   "DEC05-D28"
+  ]
+ },
+ "architecture_36": {
+  "total": 77,
+  "superseded_totals": [
+   157,
+   122,
+   76
+  ],
+  "change": "76 + 1 privacy policy utility page (D31)",
+  "by_class": {
+   "home": 1,
+   "utility": 5,
+   "service": 10,
+   "suburb": 60,
+   "cost_comparison_calculator": 1
+  },
+  "supplementary_artifacts": {
+   "camden-privacy-import.xml": {
+    "built": true,
+    "post_id": 1600,
+    "highest_main_id": 1567,
+    "collision": false,
+    "status": "draft",
+    "robots": "noindex",
+    "body_words": 427,
+    "blocking_markers": 11,
+    "xml_well_formed": true
+   },
+   "camden-calculator-import.xml": {
+    "built": false,
+    "stage": 31
+   }
+  },
+  "source_refs": [
+   "DEC06-D31"
+  ]
+ },
+ "evidential_module_removal": {
+  "settled_fact": "no Camden job completed, none scheduled, fulfilment is Pakenham",
+  "pages_affected": 16,
+  "real_photo_pending_slots": 47,
+  "words_lost": 427,
+  "pages_below_a_floor_after_removal": 0,
+  "tier1_photography_hold": "RELEASABLE on all six; other blockers remain on each",
+  "gallery": "108 words, 58 removed; owner decision - withdraw, repurpose, or keep empty",
+  "reopening_condition": "a Camden job completed AND photographed AND permission to publish obtained",
+  "report": "reports/36-photography-removal.md",
+  "source_refs": [
+   "DEC06-D32"
+  ]
+ },
+ "source_name_correction": {
+  "current_trading_name": "Structure Co Concreters Camden",
+  "superseded": [
+   "CoreX Concreters Camden",
+   "E&T Co Concreters Camden"
+  ],
+  "kit_site_name": "E&T Co Concreters Camden",
+  "kit_site_description": "Camden based Concrete Company Site",
+  "kit_site_description_note": "NOT a rename target. A location claim unsupportable from Pakenham per DEC06-D32. Rewrite or remove.",
+  "reaches_a_live_page": true,
+  "correctable_only_at_import": true,
+  "preflight_gate": "13. source business name — must now assert zero CoreX as well as zero E&T. Expected to FAIL until the post-import rename runs.",
+  "runbook_step": "reports/post-import-tasks.md steps 5a-5f; reports/29-staging-plan.md STEP 14",
+  "plan": "reports/38-trading-name-rename-plan.md",
+  "sweep_2026_08_19": {
+   "total_hits_all_forms": 6177,
+   "files": 94,
+   "reaching_a_reader": 366,
+   "provenance_do_not_rename": 5811,
+   "note": "D30 §2 principle retained: a provenance record naming a superseded value is not a defect, it is the mechanism."
+  },
+  "main_wxr_corex": {
+   "total": 466,
+   "full_phrase": 71,
+   "reader_visible": 366,
+   "non_visible_filenames_urls_slugs": 100,
+   "pages_with_corex_in_rendered_copy": 73,
+   "pages_with_corex_on_any_visible_surface": 111,
+   "of_pages": 156
+  },
+  "corrections": {
+   "prior_recorded_value": 345,
+   "actual": 466,
+   "note": "The 345 recorded in site_mark.trading_name_conflict was not reproducible from any corpus in the repo; nearest is build/stage9-all-pages.json at 352, a build intermediate. Recomputed from the immutable artifact with full attribution (sum equals total, no unattributed remainder)."
+  },
+  "caveat": "correcting the name replaces an incorrect claim with an unverified one; the identity blocker stands with every entry it had",
+  "source_refs": [
+   "DEC08-D35",
+   "DEC06-D30"
+  ],
+  "filename_prefix_acceptance": {
+   "decision": "attachment filenames keep the corex- prefix",
+   "occurrences": 100,
+   "type": "deliberate acceptance, owner decision 19 August 2026",
+   "excluded_from_gate": "yes — §5d names the exclusion explicitly rather than implicitly"
+  },
+  "tagline": {
+   "value": "Camden based Concrete Company Site",
+   "decision": "REMOVE, do not rename (owner, 19 August 2026)",
+   "rationale": "no trading name makes 'Camden based' supportable; fulfilment is Pakenham"
+  },
+  "generators_updated": {
+   "applied": true,
+   "replacements": 39,
+   "modules": 5,
+   "note": "changes what a regeneration emits, not any built artifact"
+  }
+ },
+ "image_sourcing": {
+  "contradiction_resolved": "IMAGE-REPLACEMENT-PROMPT.md §2.1 permitted only Unsplash, Pexels and Openverse and prohibited search-engine scrapers; a SerpApi finder was subsequently supplied. D33 resolves the contradiction in favour of SerpApi as a DISCOVERY mechanism only.",
+  "permitted_sources": {
+   "preferred": [
+    "Unsplash API",
+    "Pexels API",
+    "Openverse API (commercial-use filter)"
+   ],
+   "permitted_discovery": "SerpApi Google Images API with licenses=fmc",
+   "prohibited": [
+    "Selenium Google Images scrapers",
+    "requests-based Google Images scrapers",
+    "any tool returning images without a retrievable source page"
+   ]
+  },
+  "licence_rule": {
+   "fmc_is_not_a_licence": true,
+   "verify_on": "the hosting page_url, not the image URL",
+   "verify_when": "BEFORE download",
+   "batch_approval": "prohibited",
+   "no_stated_licence": "discard; absence of a stated licence is not permission"
+  },
+  "licence_register": {
+   "path": "reports/33-licence-register.csv",
+   "status": "not yet created",
+   "fields": [
+    "licence",
+    "source_url",
+    "photographer",
+    "retrieval_date",
+    "attribution_requirement"
+   ],
+   "scope": "every image shipped, regardless of source",
+   "permanence": "permanent build artifact"
+  },
+  "real_photo_pending": "no slot filled from any of these sources; superseded by D32 in any case - the evidential modules are removed, not restocked",
+  "tooling": {
+   "find_images.py": {
+    "location": "~/camden-images/find_images.py in WSL",
+    "bytes": 5802,
+    "in_repo": false,
+    "copy_when": "Phase F runs, per D34.1"
+   },
+   "venv": "~/camden-images/.venv with serpapi installed",
+   "SERPAPI_KEY": "not set in the WSL login shell as at 2026-08-18",
+   "paid_api": true,
+   "spend_condition": "no credits spent until Phase F is unblocked AND the spec CSV is regenerated"
+  },
+  "spec_staleness": {
+   "replace_rows": 16,
+   "page_slots_total": 228,
+   "page_slots_on_active_pages": 118,
+   "page_slots_on_withdrawn_pages": 110,
+   "action": "regenerate against the 77-page architecture before the finder runs"
+  },
+  "source_refs": [
+   "DEC07-D33",
+   "DEC07-D34",
+   "DEC06-D32",
+   "DEC04-D24"
+  ]
+ },
+ "environment_requirements": {
+  "document": "ENVIRONMENT.md",
+  "host": {
+   "ImageMagick": {
+    "required_by": "scripts/22-reencode-images.sh",
+    "gates": "Phase B step 3",
+    "state": "INSTALLED AND VERIFIED IN WSL (7.1.2-18 Q16), 19 August 2026. NOT installed on the Windows host. The re-encode driver and the EXIF assertion run in WSL.",
+    "substitute": "none - the 98%/82/strip parameters are the footprint contract"
+   },
+   "Docker": {
+    "gates": "Phase B step 5",
+    "state": "engine not running"
+   },
+   "SERPAPI_KEY": {
+    "gates": "Phase F",
+    "state": "not set"
+   },
+   "WSL": {
+    "gates": "Phase F",
+    "state": "launcher present"
+   },
+   "exiftool": {
+    "required_by": "D25.2 EXIF assertion, manual verification",
+    "gates": "Phase B step 3",
+    "state": "INSTALLED AND VERIFIED IN WSL (13.50), 19 August 2026"
+   }
+  },
+  "container": {
+   "wordpress": "6.8.1-php8.3-apache",
+   "mariadb": "11.4.5",
+   "wp-cli": "cli-2.11-php8.3"
+  },
+  "source_refs": [
+   "DEC07-D34"
+  ],
+  "known_defects": [
+   "scripts/37-preconditions.py phase_b() probes `command -v magick` via Windows bash, but the driver runs in WSL. It reports NOT INSTALLED permanently. Assertion NOT relaxed; probe needs correcting under its own approval. Phase B verdict unaffected — blocked on the Astra export either way."
+  ]
+ },
+ "identity": {
+  "trading_name": "Structure Co Concreters Camden",
+  "trading_name_verified": true,
+  "owner_attestation_date": "2026-08-21",
+  "verified_public_facts": [
+   "public brand/site-operator label",
+   "email",
+   "telephone and telephone URI",
+   "administrative correspondence address",
+   "staffed status",
+   "not open to customers or visitors",
+   "operating model: enquiry management and independent-provider coordination"
+  ],
+  "fields_still_absent": [
+   "legal_name",
+   "abn",
+   "entity_type",
+   "nsw_fair_trading_licence",
+   "insurance_public_liability",
+   "insurance_workers_compensation"
+  ],
+  "phone": {
+   "value": "(03) 4328 3392",
+   "uri": "tel:+61343283392",
+   "verified": true,
+   "status": "owner-attested public telephone",
+   "restriction": "must not be described as a local Camden or Sydney number"
+  },
+  "address": {
+   "value": "15 Murray Street, Camden NSW 2570",
+   "verified": true,
+   "staffed": true,
+   "type": "administrative correspondence office",
+   "open_to_customers_or_visitors": false,
+   "restrictions": ["no visit invitation", "no showroom claim", "no customer-service-location claim", "no walk-in claim"]
+  },
+  "operating_model": "Structure Co Concreters Camden manages concreting enquiries and coordinates suitable independent providers. Job-specific quotations, contractual terms, licensing, insurance and warranty information must be confirmed before work begins.",
+  "no_contract_disclosure": "Submitting an enquiry does not create a construction contract.",
+  "abn_treatment": "no ABN is published or asserted; no ABN has been verified",
+  "schema_consequence": "D2 ladder outcome 3 on every Service page: provider omitted. Organization is omitted because legal_name is unverified. LocalBusiness is omitted because the address is not customer-facing or open to visitors and legal_name is unverified; staffed status alone does not authorise the node.",
+  "verified_true_count": 11,
+  "source_refs": [
+   "DEC08-D35",
+   "DEC08-D37",
+   "RB01-D2",
+   "OWNER-2026-08-21-IDENTITY-CLAIMS-LIVERPOOL"
+  ],
+  "attested_fields": [
+   "legal_entity.trading_name",
+   "contact.email",
+   "contact.phone",
+   "contact.street_address",
+   "contact.is_staffed",
+   "contact.open_to_visitors=false",
+   "contact.customer_facing_premises=false",
+   "operating_model"
+  ],
+  "email": {
+   "value": "info@concreterscamden.com.au",
+   "verified": true,
+    "sighted_date": "2026-08-21",
+    "scope": "mailbox live and monitored; attests nothing about a legal entity"
+   }
+ },
+ "media_intake_assertion": {
+  "rule": "source-inputs/media/ contains image binaries only",
+  "enforced_by": "scripts/22-media-audit.py :: non_image_findings()",
+  "tests": [
+   "extension in {.jpg,.jpeg,.png,.webp,.gif,.avif}",
+   "magic bytes sniff as an image"
+  ],
+  "exemptions": "NONE — the prior readme.md/.gitkeep exemption was removed deliberately",
+  "rationale": "the directory is staged for upload to a public web server",
+  "state_2026_08_19": {
+   "quarantined_by_owner": [
+    "2 personal resume PDFs",
+    "1 unregistered WXR export"
+   ],
+   "directory_is_image_only": true,
+   "remaining_non_images": [],
+   "confirmed": "172 files, 0 non-images, verified by scripts/22-media-audit.py non_image_findings() on 19 August 2026",
+   "history": "delivered with 13 non-images (4 case-study PDFs, 2 playbook PDFs, 2 resume PDFs, 1 B2B framework PDF, 1 unregistered WXR, CLAUDE.md, CODEX-BUILD-2.md, README.md). Owner quarantined the resumes and the WXR, then the remaining PDFs and the three markdown files. Directory is now image-only."
+  },
+  "source_refs": [
+   "DEC08-D38"
+  ]
+ },
+ "owner_decisions_2026_08_19": {
+  "1_attachment_filenames": {
+   "decision": "attachment filenames, slugs, GUIDs and URLs keep the corex- prefix permanently",
+   "type": "DELIBERATE ACCEPTANCE",
+   "rationale": "breaking 1,085 Elementor image references for a string no reader sees is a bad trade",
+   "consequence_accepted": "100 occurrences remain visible in page source, image URLs and CDN logs for the life of the site",
+   "recorded_so": "it is never re-raised as an oversight; the §5d gate excludes filenames explicitly"
+  },
+  "2_lib_constants": {
+   "decision": "update the lib/ generator string constants",
+   "rationale": "the ten service pages are being rewritten, so regeneration is likely and a stale constant would reintroduce the old name",
+   "applied": true,
+   "replacements": {
+    "lib/site_builder.py": 27,
+    "lib/stage9.py": 6,
+    "lib/stage8.py": 3,
+    "lib/stage3_gate.py": 2,
+    "lib/stage18_readiness.py": 1,
+    "TOTAL": 39
+   },
+   "verification": "zero CoreX in any case remains in lib/; all five modules compile",
+   "caveat": "changes no built artifact, only what a regeneration emits. 'Structure Co' is 7 chars longer than 'CoreX' and fit_meta_title() truncates, so regenerated meta titles will differ in length and some will truncate differently."
+  },
+  "3_global_replace": {
+   "decision": "retarget build/global-replace.json to Structure Co",
+   "applied": true,
+   "rules": {
+    "before": 22,
+    "after": 25
+   },
+   "ordering": "brand rules inserted longest-find-first, which is required",
+   "placeholder_retired": "[[BRAND_NAME]] indirection retired for these rules; name resolved",
+   "PRE_EXISTING_DEFECT_NOT_FIXED": "SUPERSEDED — fixed 19 August 2026 on owner instruction. See global_replace_ordering below."
+  },
+  "4_email_attested": {
+   "decision": "email attested; address NOT attested; is_staffed stays unknown",
+   "applied": true,
+   "field": "contact.email",
+   "value": "info@concreterscamden.com.au",
+   "verified": true,
+   "sighted_date": "2026-08-19",
+   "significance": "FIRST field in verified-facts.yml to reach an attested state — 1 of 20",
+   "attestation_scope": "the mailbox is live and monitored. Attests nothing about a legal entity. Usable as a contact address and form recipient; NOT usable as evidence of a verified business.",
+   "phase_c_effect": "NONE — email is not among the seven required identity fields. Phase C remains BLOCKED. No LocalBusiness, no Organization, D2 outcome 3."
+  },
+  "5_tagline": {
+   "decision": "REMOVE the tagline 'Camden based Concrete Company Site'; do not rename it",
+   "rationale": "no trading name makes 'Camden based' supportable; fulfilment is Pakenham (D32)",
+   "applied": "runbook step 5b — set blogdescription empty, confirm Astra renders no fallback",
+   "verification": "zero occurrences of 'Camden based' in options, theme_mods, or any rendered page"
+  },
+  "source_refs": [
+   "OWNER-2026-08-19-DECISIONS",
+   "DEC08-D35",
+   "DEC08-D36"
+  ]
+ },
+ "phase_f_sourcing_target": {
+  "as_at": "2026-08-19",
+  "registered_by": "owner instruction, 19 August 2026",
+  "A_slots_from_306_307_removal": {
+   "total_slots": 10,
+   "on_active_pages": 6,
+   "on_withdrawn_pages": 4,
+   "active_pages": [
+    "/about/",
+    "/contact/",
+    "/quote/",
+    "/gallery/",
+    "/concrete-patios-south-west-sydney/",
+    "/concrete-paths-south-west-sydney/"
+   ],
+   "withdrawn_pages": [
+    "/concrete-patios-gledswood-hills/",
+    "/concrete-patios-edmondson-park/",
+    "/concrete-patios-elderslie/",
+    "/concrete-paths-edmondson-park/"
+   ],
+   "role": "logo/brand asset — NOT photography",
+   "likely_sourcing_cost": "ZERO. The existing spec held these as 'HOLD — LOGO, NOT PHOTOGRAPHY' pending owner direction to commission or supply a logo. That direction has arrived: the Structure Co brand assets. These are most likely a brand-placement task, not a Phase F job.",
+   "open": "the §4.22.4 sighting still applies: no slot is called correct until it has been looked at. The wordmark being the right asset does not establish it is the right size, position or context in each of the six placements.",
+   "status": "RESOLVED — direction given 19 August 2026",
+   "direction": {
+    "retired": [
+     "306",
+     "307",
+     "422"
+    ],
+    "replacement": "the Structure Co wordmark",
+    "in_page_brand_placement": "structure-co-horizontal.svg",
+    "on_dark_backgrounds": "structure-co-horizontal-reversed.svg",
+    "withdrawn_slots": "the 4 on withdrawn intersection pages need nothing",
+    "sourcing_cost": "ZERO — confirmed"
+   }
+  },
+  "B_false_geographic_claim_images": {
+   "status": "STANDS — confirmed by the owner 19 August 2026. NOT retired. Concurrent with target A.",
+   "rows": 16,
+   "source": "reports/33-image-replacement-spec.csv, disposition REPLACE",
+   "subject": "Victorian photographs renamed to specific NSW places",
+   "distinct_pages": 76,
+   "withdrawn": 38,
+   "still_active": 38,
+   "what_is_stale": "the PAGE ARITHMETIC, not the subject matter — half its coverage sits on withdrawn pages. D34.2 already requires regeneration against the 77-page architecture before any credit is spent.",
+   "warning": "retiring these 16 rows would drop the remediation for 38 ACTIVE pages that currently carry imagery whose filenames and alt text assert NSW locations the photographs do not show. The brand assets fix the logo slots and do nothing for these.",
+   "owner_question": "ANSWERED 19 August 2026: only the page arithmetic is stale, per D34.2. The replacement of the 16 Victorian photographs across 38 active pages stands.",
+   "sourcing_cost": "real — 16 replacement images"
+  },
+  "source_refs": [
+   "OWNER-2026-08-19-DECISIONS",
+   "DEC07-D34",
+   "DEC08-D36"
+  ],
+  "structure": "TWO CONCURRENT TARGETS, confirmed by the owner 19 August 2026. Neither replaces the other."
+ },
+ "corrections_register": {
+  "corex_count": {
+   "recorded": 345,
+   "actual": 466,
+   "where_recorded": "site_mark.trading_name_conflict, DECISION-06 D30, CONTEXT.md",
+   "method": "recomputed from camden-concreting-import.xml with attribution asserted complete; the classifier aborts on any unattributed remainder",
+   "note": "345 is not reproducible from any corpus in the repo; nearest is a build intermediate at 352",
+   "status": "CORRECTED 19 August 2026"
+  },
+  "attachments_306_307": {
+   "recorded": "DECISION-05 D27 recorded 306, 307 and 422 as unreferenced",
+   "actual": "422 is genuinely orphaned; 306 is live on 8 pages and 307 on 2 — 10 pages total, 6 in the architecture, 5 of those at publish status",
+   "consequence": "removing them empties 10 image slots; see phase_f_sourcing_target",
+   "status": "CORRECTED 19 August 2026"
+  },
+  "site_icon_attachment": {
+   "recorded": "177",
+   "corrected_from": "177",
+   "actual": "472",
+   "where_recorded": "DECISION-05 D27 — 'Remove attachment 177 as site icon'",
+   "evidence": "source-inputs/astra/astra-export.dat options.site_icon = '472'. The main WXR carries generated site_icon-* sizes for BOTH 177 and 472, consistent with 177 being a former favicon that 472 replaced before the export was taken.",
+   "why_it_was_missed": "theme mods do not travel in a WXR, so the only record of which attachment was the live favicon was in the Astra export, which did not exist until 19 August 2026",
+   "consequence": "D27's removal instruction named a former favicon. Both retire regardless: 177 is AI-generated, 472 is the source business's mark.",
+   "retirement_list_before": [
+    "159",
+    "177",
+    "306",
+    "307",
+    "422"
+   ],
+   "retirement_list_after": [
+    "159",
+    "177",
+    "306",
+    "307",
+    "422",
+    "469",
+    "472"
+   ],
+   "status": "CORRECTED 19 August 2026, owner-accepted"
+  },
+  "navy_1c244b_provenance": {
+   "recorded": "#1C244B taken from the Elementor kit",
+   "corrected_from": "taken from the Elementor kit",
+   "actual": "#1C244B appears 732 times in page _elementor_data and ZERO times in the Elementor kit. It is taken from the source site's inlined per-widget page styling.",
+   "where_recorded": "DECISION-08 D36; build/21-spec-ledger.json site_mark.brand_assets.colour_note; CONTEXT.md",
+   "evidence": "the kit's system_colors are Elementor factory defaults #6EC1E4 #54595F #7A7A7A #61CE70, each appearing exactly once in the whole WXR — in the kit, used nowhere",
+   "consequence": "the colour value is correct and unchanged; only the provenance sentence was wrong. It remains a residual footprint — inherited from the source site — but from page data, not from a governing kit.",
+   "status": "CORRECTED 19 August 2026, owner-accepted"
+  },
+  "grey_7c8494_origin": {
+   "recorded": "(not previously stated)",
+   "actual": "#7C8494 appears ZERO times in camden-concreting-import.xml",
+   "finding": "the brand grey is GENUINELY NEW — it is not inherited from the source site and is not a residual footprint. Unlike #1C244B it introduces nothing from E&T.",
+   "related": "#AEB6C6, the reversed-context tint, is a lift of #7C8494 and is therefore also new",
+   "status": "RECORDED 19 August 2026"
+  }
+ },
+ "global_replace_ordering": {
+  "fixed": "2026-08-19",
+  "instruction": "reorder longest-find-first across the whole file, not just the brand rules",
+  "method": "stable sort by descending len(find); pure permutation, asserted",
+  "containment_violations": {
+   "before": 3,
+   "after": 0
+  },
+  "violations_repaired": [
+   "'Wyndham' (idx 10) ran before 'Wyndham Vale' (idx 17)",
+   "'Werribee' (idx 11) ran before 'Werribee South' (idx 16)",
+   "'Werribee' (idx 11) ran before 'Werribee River' (idx 20)"
+  ],
+  "replacement_feeds_find_hazards": {
+   "before": 0,
+   "after": 0
+  },
+  "rules": {
+   "before": 25,
+   "after": 25,
+   "moved_index": 18
+  },
+  "behaviour_diff": {
+   "probed": 31,
+   "changed": 7,
+   "examples": {
+    "Werribee River": {
+     "before": "mapped Camden/South West Sydney suburb per page River",
+     "after": "per-suburb water feature",
+     "severity": "WRONG RULE — a suburb placeholder where a water feature was intended"
+    },
+    "Wyndham Vale": {
+     "before": "per-page LGA from suburbs-expanded.json Vale",
+     "after": "mapped Camden/South West Sydney suburb per page",
+     "severity": "WRONG RULE — the LGA rule instead of the suburb rule"
+    },
+    "Werribee South": {
+     "before": "mapped Camden/South West Sydney suburb per page South",
+     "after": "mapped Camden/South West Sydney suburb per page",
+     "severity": "dangling fragment"
+    }
+   }
+  },
+  "built_artifact_impact": {
+   "scanned": [
+    "camden-concreting-import.xml",
+    "camden-privacy-import.xml"
+   ],
+   "result": "NO HITS on any corrupted-output, residual-Victorian-token or placeholder probe",
+   "conclusion": "the defect was LATENT — it never fired on the built corpus. Nothing needs repairing in the artifacts. The fix protects future generations, which matters because the ten service pages are being rewritten and will regenerate through this contract."
+  },
+  "report": "reports/40-global-replace-ordering-fix.md",
+  "source_refs": [
+   "OWNER-2026-08-19-CORRECTIONS"
+  ]
+ },
+ "astra_export": {
+  "supplied": "2026-08-19",
+  "path": "source-inputs/astra/astra-export.dat",
+  "bytes": 2627,
+  "sha256": "F4841CF538810C9A7A2CBCBD28B145AACD4DF45AA8C6407E4EEA45356DB7AA01",
+  "format": "PHP-serialised Customizer export; parsed cleanly, 2627/2627 bytes, no remainder",
+  "genuine": true,
+  "audit_verdict": "FAIL — 1 of 7 required mod groups present",
+  "groups_present": [
+   "site-identity"
+  ],
+  "groups_absent": [
+   "colours",
+   "typography",
+   "layout",
+   "header",
+   "footer",
+   "buttons"
+  ],
+  "contents": {
+   "template": "astra",
+   "mods": {
+    "nav_menu_locations": {
+     "primary": 9,
+     "mobile_menu": 10,
+     "footer_menu": 13
+    },
+    "custom_css_post_id": 893,
+    "custom_logo": 469,
+    "stray": "integer key 0 => false, an export artifact"
+   },
+   "options": {
+    "site_icon": "472",
+    "astra_settings_keys": 8,
+    "astra_settings_note": "ALL EIGHT ARE EMPTY STRINGS — logo callback, retina and transparent-header slots with no values"
+   },
+   "wp_css_chars": 1832
+  },
+  "what_it_answers": "which attachment is the header logo (469) and the site icon (472)",
+  "what_it_does_NOT_answer": "how the header renders. No header-layouts, header-main-layout-width, transparent-header-enable, footer-layout, site-content-width, colour or typography mods. Astra falls back to defaults.",
+  "design_fidelity_restored": false,
+  "still_outstanding": "a full Customizer export carrying colours, typography, layout, header, footer and buttons",
+  "report": "reports/41-astra-export-audit.md",
+  "source_refs": [
+   "OWNER-2026-08-19-ASTRA"
+  ]
+ },
+ "astra_custom_css_conflict": {
+  "post_id": 893,
+  "id_reconciles": true,
+  "wxr_record": {
+   "post_type": "custom_css",
+   "post_id": 893,
+   "post_name": "astra",
+   "status": "publish",
+   "chars": 1830,
+   "sha256_16": "BC9C77D2378D64CF"
+  },
+  "export_wp_css": {
+   "chars": 1832,
+   "sha256_16": "4D4B798F9E306C49"
+  },
+  "identical": false,
+  "diff": "exactly one line: WXR has '/* Local Camden project cards */', the export has '/* Local Werribee project cards */'. Everything else byte-identical.",
+  "meaning": "the export is a PRE-RENAME snapshot; the WXR version has been through the rename",
+  "hazard": "Werribee appears ZERO times in the main WXR. This export is the only importable artifact in the build containing it. Importing it reintroduces a source-location footprint the build had already eliminated.",
+  "ordering_risk": "runbook step 2 imports the Astra settings, step 4 imports the WXR. Which version of post 893 survives depends on importer behaviour that has never been tested for this file; a mismatch could also leave two custom_css posts with custom_css_post_id pointing at the wrong one.",
+  "recommendation_NOT_executed": "correct the comment in the export to match the WXR, or strip wp_css from the export and let the WXR supply post 893. Owner decision — it means editing a supplied input."
+ },
+ "footprint_strings": {
+  "werribee_css_comment": {
+   "string": "/* Local Werribee project cards */",
+   "location": "source-inputs/astra/astra-export.dat, wp_css",
+   "registered": "2026-08-19",
+   "occurrences_in_main_wxr": 0,
+   "covered_by_post_import_rename_5a_5d": false,
+   "covered_by_preflight_gate_13": false,
+   "gate_13_note": "gate 13 asserts the source BUSINESS name, not source LOCATIONS",
+   "covered_by_global_replace": "yes — 'Werribee' is a rule, now at index 16 after the ordering fix. A REGENERATION would catch it; an IMPORT would not.",
+   "action_required": "needs its own assertion; no existing gate would have caught it"
+  }
+ },
+ "local_work_card_css": {
+  "selectors_in_custom_css_893": 10,
+  "class_usages_in_wxr": 45,
+  "pages": 15,
+  "page_status": "6 publish, 9 draft",
+  "dead_yet": false,
+  "conditional": "NOT dead today — the WXR is immutable so the D32 removal has not happened and all 45 usages will import. The rules become dead the moment D32 is executed post-import.",
+  "action": "remove the 1,832 bytes of rules in the SAME operation as the D32 module removal. Dead CSS styling a removed evidential module is a trace of the module having existed.",
+  "check": "this audit counts the CLASS (15 pages), D32 counts the MODULE (16 pages). Reconcile during that step."
+ },
+ "nav_menu_locations": {
+  "supplied_by": "astra-export.dat mods.nav_menu_locations",
+  "mapping": {
+   "primary": {
+    "term": 9,
+    "menu": "primary",
+    "items": 23
+   },
+   "mobile_menu": {
+    "term": 10,
+    "menu": "primary-2",
+    "items": 23
+   },
+   "footer_menu": {
+    "term": 13,
+    "menu": "footer-blogs",
+    "items": 6
+   }
+  },
+  "unassigned": {
+   "footer-services": {
+    "term": 11,
+    "items": 7
+   },
+   "footer-areas": {
+    "term": 12,
+    "items": 6
+   }
+  },
+  "three_of_five_correct_in_principle": "yes — Astra registers three theme locations in this export; the other two menus are placed by the Footer Builder or an Elementor widget, not a theme location",
+  "SAFE_FOR_WAVE_1": false,
+  "target_audit": {
+   "primary": {
+    "page_targets": 21,
+    "withdrawn": 7,
+    "draft": 7
+   },
+   "primary-2": {
+    "page_targets": 21,
+    "withdrawn": 7,
+    "draft": 7
+   },
+   "footer-services": {
+    "page_targets": 7,
+    "withdrawn": 0,
+    "draft": 0
+   },
+   "footer-areas": {
+    "page_targets": 6,
+    "withdrawn": 0,
+    "draft": 0
+   },
+   "footer-blogs": {
+    "page_targets": 6,
+    "withdrawn": 6,
+    "draft": 6
+   }
+  },
+  "breach": "footer_menu is assigned to footer-blogs, ALL SIX of whose targets are withdrawn AND draft. Applying it puts six links to withdrawn, draft, noindexed pages in the site footer on every page — a direct breach of the standing safeguard 'Do not expose draft guide links in Wave 1 menus'.",
+  "inversion": "the two menus with ZERO withdrawn and ZERO draft targets (footer-services, footer-areas) are the two the export leaves unassigned; the one that is 100% withdrawn is the one it assigns",
+  "stage_29_actions_NOT_executed": [
+   "do NOT apply footer_menu -> 13 as supplied",
+   "footer_menu should take footer-services (11) or footer-areas (12); which is an owner call",
+   "prune the 7 withdrawn/draft items from primary (9) and mobile_menu (10), or rebuild from build/stage9-menus.json against the 77-page architecture",
+   "add a preflight assertion: zero menu items in an ASSIGNED location may target a withdrawn, draft or noindexed page. No existing gate covers this — which is why the mapping arrived unflagged."
+  ],
+  "source_refs": [
+   "OWNER-2026-08-19-ASTRA"
+  ],
+  "RESOLVED": "2026-08-19, owner decision",
+  "assignment_to_apply": {
+   "primary": {
+    "term": 9,
+    "menu": "primary",
+    "items_after_prune": 10,
+    "source_items": 23,
+    "pruned": 13
+   },
+   "mobile_menu": {
+    "term": 10,
+    "menu": "primary-2",
+    "items_after_prune": 10,
+    "source_items": 23,
+    "pruned": 13
+   },
+   "footer_menu": {
+    "term": 11,
+    "menu": "footer-services",
+    "items": 7,
+    "pruned": 0,
+    "note": "fully clean — 7 of 7 retained by Wave 1 filtering"
+   }
+  },
+  "explicitly_unassigned": {
+   "footer-blogs": {
+    "term": 13,
+    "reason": "all 6 targets withdrawn AND draft; 0 of 6 retained"
+   },
+   "footer-areas": {
+    "term": 12,
+    "reason": "0 withdrawn and 0 draft, BUT all 6 targets are Tier 1 suburb pages held noindex,follow — Oran Park, Leppington, Gregory Hills, Gledswood Hills, Austral, Harrington Park. 0 of 6 retained by Wave 1 filtering. It fails on the THIRD condition, not the first two."
+   }
+  },
+  "superseded_supplied_mapping": {
+   "footer_menu": 13,
+   "note": "the export's footer_menu -> 13 is NOT applied"
+  },
+  "prune_source": "build/27-wave1-menus.json — 65 source items, 27 retained, 38 removed",
+  "footer_areas_lesson": "Footer Areas is why the new assertion must test all THREE conditions. A withdrawn+draft test alone would have passed it, and it is as unsafe for Wave 1 as Footer Blogs."
+ },
+ "design_carriage": {
+  "finding": "this site has no governing style layer",
+  "type": "INHERITED ARCHITECTURAL LIMITATION — a standing finding, not a task",
+  "registered": "2026-08-19",
+  "astra": "near-stock; every design mod group unset, not missing",
+  "elementor_kit": {
+   "system_colors": [
+    "#6EC1E4",
+    "#54595F",
+    "#7A7A7A",
+    "#61CE70"
+   ],
+   "note": "Elementor factory palette; each appears exactly once in the WXR — in the kit, used by nothing",
+   "system_typography": "Roboto / Roboto Slab / Roboto / Roboto — factory defaults, unused",
+   "custom_colors": "empty",
+   "custom_typography": "empty",
+   "button_settings": "NONE",
+   "site_logo": "empty",
+   "site_favicon": "empty"
+  },
+  "where_the_design_actually_is": {
+   "#1C244B": {
+    "kit": 0,
+    "page_elementor_data": 732
+   },
+   "#324A6D": {
+    "kit": 0,
+    "page_elementor_data": 901
+   },
+   "#467FF7": {
+    "kit": 0,
+    "page_elementor_data": 851
+   },
+   "typography": "Poppins x2,655 — one family, entirely in page data; the kit says Roboto"
+  },
+  "consequence": "the site CANNOT be restyled centrally. Any colour or type change is a mass edit across page data on 156 pages.",
+  "explicitly_not_a_task": "do NOT attempt to build a governing kit. That is a rebuild decision, not a Phase B one. Owner instruction, 19 August 2026.",
+  "report": "reports/42-astra-vs-elementor-design-carriage.md",
+  "source_refs": [
+   "OWNER-2026-08-19-ASTRA"
+  ]
+ },
+ "astra_import_exclusions": {
+  "registered": "2026-08-19, owner decision",
+  "principle": "the supplied export is left EXACTLY as received; exclusions are applied at import",
+  "file": "source-inputs/astra/astra-export.dat",
+  "sha256": "F4841CF538810C9A7A2CBCBD28B145AACD4DF45AA8C6407E4EEA45356DB7AA01",
+  "file_edited": false,
+  "exclusions": [
+   {
+    "key": "wp_css",
+    "action": "DO NOT IMPORT",
+    "reason": "its 1,832 chars are byte-identical to the WXR's custom_css post 893 except for one comment line: the export says '/* Local Werribee project cards */', the WXR says '/* Local Camden project cards */'. The export is a pre-rename snapshot.",
+    "effect": "removes the ONLY importable Werribee string in the build. Werribee appears 0 times in the main WXR.",
+    "supplied_by_instead": "the WXR's custom_css record, post_id 893, which already reads Camden",
+    "verification": "after import, assert zero occurrences of 'Werribee' in wp_posts and options"
+   },
+   {
+    "key": "mods.nav_menu_locations.footer_menu",
+    "action": "DO NOT APPLY AS SUPPLIED",
+    "reason": "maps to term 13 (Footer Blogs), all 6 targets withdrawn and draft",
+    "replace_with": "term 11 (Footer Services), 7 items, fully clean"
+   }
+  ],
+  "how": "apply the export, then correct; or filter the two keys before applying. Either way the file on disk stays as received so the audit trail matches what the owner supplied.",
+  "source_refs": [
+   "OWNER-2026-08-19-ASTRA"
+  ]
+ },
+ "phase_b_status": {
+  "as_at": "2026-08-19",
+  "precondition_gate": "RUNNABLE — the first phase in this build to clear its entry condition",
+  "precondition_evidence": "media 172/83; astra 1 file(s); driver present; ImageMagick installed in WSL",
+  "imagemagick_probe": "FIXED — probes WSL first, falls back to the local shell, reports which host",
+  "step_1_media_audit": "FAIL — expected=83 present=172 ok=0 missing=83 extras=172 non_images=0",
+  "step_1_reason": "name-space artifact: asserts post-rename Camden filenames against a pre-rename E&T directory. Clears only after the rename step, which needs approval for the six \" (1)\" collision-renamed files.",
+  "step_2_astra_audit": "PASS — required_groups 1/1, carriage PASS, consistency PASS, 0 failures",
+  "ENTRY_vs_COMPLETION": "the precondition is the ENTRY condition, not the completion condition. Phase B may now START. It is not complete and nothing is imported.",
+  "remaining_in_phase_b": [
+   "step 1: rename the six \" (1)\" files on approval, then 22-media-audit.py must PASS on its own terms",
+   "step 3: run the re-encode driver in WSL; D25.2 EXIF assertion must pass after it",
+   "step 4: §4.22.4 pixel-level sighting — never performed on any image in this build",
+   "step 5: build staging-authoritative/ per reports/29-staging-plan.md",
+   "steps 6-7: import in order with rollback points, then verify all 83 attachments"
+  ],
+  "source_refs": [
+   "OWNER-2026-08-19-ASTRA"
+  ]
+ },
+ "preflight_gates": {
+  "gate_10": {
+   "revised": "2026-08-19",
+   "was": "scanned the main WXR and supplementary WXR only",
+   "now": "scans EVERY importable artifact: main WXR, supplementary WXR, privacy WXR, Astra export",
+   "rationale": "the Astra export imports into the same database and was never scanned. It carried the only importable Werribee string in the build and no gate would have seen it. An artifact that imports but is not scanned is how the next one gets through.",
+   "fail_closed": "an unreadable artifact is reported UNSCANNED and fails the gate",
+   "current": "main WXR=0; supplementary=absent; privacy WXR=0; Astra export=1 — FAIL, correctly"
+  },
+  "gate_14": {
+   "added": "2026-08-19",
+   "rule": "no menu item in an ASSIGNED theme location may resolve to a withdrawn, draft or noindex-held page",
+   "three_conditions": {
+    "withdrawn": "readiness column \"Withdrawn\" == YES",
+    "draft": "the WXR wp:status",
+    "noindex_held": "\"is held noindex,follow\" reasons in build/27-wave1-menus.json"
+   },
+   "why_not_robots_columns": "both robots columns in the readiness CSV are uniform across all 157 rows because nothing is index-ready yet; matching on them flags every page and asserts nothing. A first implementation did exactly that and was corrected.",
+   "fail_closed": "if the noindex-held set cannot be derived, the gate FAILS rather than test two of three",
+   "current": "primary 13 unsafe, mobile_menu 13 unsafe, footer_menu->footer-services 0 unsafe — the 13s match 27-wave1-menus.json exactly; FAIL until the prune is applied"
+  }
+ },
+ "sighting": {
+  "brief": "reports/44-pixel-sighting-brief.md",
+  "worksheet": "reports/44-sighting-worksheet.csv",
+  "montage": "reports/sighting-montage/band-{A,B,C,D}.png",
+  "bands": {
+   "A geographic claim": 16,
+   "B testimonial/evidential": 9,
+   "C logo/brand": 5,
+   "D decorative": 53
+  },
+  "total": 83,
+  "owner_performs": "yes — §4.22.4 is not automatable and is explicitly owner work",
+  "status": "PARTIAL — all 9 Band B verdicts settled and applied to the media intake; 74 of 83 image verdicts remain outstanding, including all 16 Band A geographic claims"
+ },
+ "sighting_verdicts": {
+  "concrete-tesimonial-4-camden-46.webp": {
+   "attachment_id": "46",
+   "verdict": "GENERIC",
+   "target_filename": "exposed-aggregate-front-paths-46.webp",
+   "target_alt": "Exposed aggregate paths leading to a home's front entry",
+   "restriction": "decorative only; never customer evidence or recent work"
+  },
+  "concrete-testimonial-1-1-camden-52.webp": {
+   "attachment_id": "52",
+   "verdict": "GENERIC",
+   "target_filename": "fresh-concrete-pool-surround-52.webp",
+   "target_alt": "Freshly poured concrete beside a swimming pool",
+   "restriction": "decorative only; exact binary duplicate of attachment 49; never customer evidence or recent work"
+  },
+  "concrete-testimonial-1-camden-49.webp": {
+   "attachment_id": "49",
+   "verdict": "GENERIC",
+   "target_filename": "fresh-concrete-pool-surround-49.webp",
+   "target_alt": "Freshly poured concrete beside a swimming pool",
+   "restriction": "decorative only; exact binary duplicate of attachment 52; never customer evidence or recent work"
+  },
+  "concrete-testimonial-2-camden-51.webp": {
+   "attachment_id": "51",
+   "verdict": "GENERIC",
+   "target_filename": "concrete-stepping-slabs-garden-path-51.webp",
+   "target_alt": "Concrete stepping slabs laid through a garden",
+   "restriction": "decorative only; never customer evidence or recent work"
+  },
+  "concrete-testimonial-3-camden-48.webp": {
+   "attachment_id": "48",
+   "verdict": "GENERIC",
+   "target_filename": "exposed-aggregate-residential-driveway-48.webp",
+   "target_alt": "Exposed aggregate driveway leading to a carport",
+   "restriction": "decorative only; never customer evidence or recent work"
+  },
+  "concrete-testimonial-6-camden-47.webp": {
+   "attachment_id": "47",
+   "verdict": "GENERIC",
+   "target_filename": "fresh-concrete-backyard-slab-47.webp",
+   "target_alt": "Freshly poured concrete slab beside a two-storey home",
+   "restriction": "decorative only; never customer evidence or recent work"
+  },
+  "concretejob1camden-228.jpg": {
+   "attachment_id": "228",
+   "verdict": "GENERIC",
+   "target_filename": "fresh-concrete-side-yard-slab-228.jpg",
+   "target_alt": "Freshly poured concrete slab along a side boundary",
+   "restriction": "decorative only; never customer evidence or recent work"
+  },
+  "image-testemonials-camden-280.jpeg": {
+   "attachment_id": "280",
+   "verdict": "UNUSABLE",
+   "settled": "2026-08-20, owner-confirmed",
+   "dimensions": "62x62",
+   "bytes": 624,
+   "source_dimensions": "63x63",
+   "source_bytes": 1510,
+   "evidence": "not a failed encode — the E&T original is 63x63. It failed the media audit MIN_BYTES floor while present; exclusion from the public set now allows the active 81-file media audit to pass on its full terms.",
+   "display": "rendered as a plain Elementor image widget at width 69% / height 267px — roughly a 4x upscale of a 62px source",
+   "disposition": "REMOVE THE SLOT, do not replace. Owner decision 20 August 2026.",
+   "pages": 14,
+   "withdrawn": 6,
+   "active": 8,
+   "active_publish": 2,
+   "active_draft": 6,
+   "sourcing_cost": "ZERO — removal, not replacement",
+   "applied": "excluded from source-inputs/media; retained in source-inputs/media-retired; all 14 slot removals encoded fail-closed for post-import execution"
+  },
+  "verified-badge-e1784545689665-camden-1067.avif": {
+   "attachment_id": "1067",
+   "verdict": "UNUSABLE",
+   "settled": "2026-08-20, owner-confirmed",
+   "pages": 14,
+   "page_status": "1 publish, 13 draft",
+   "false_fidelity_register": "NT-1 in reports/23-false-fidelity.md",
+   "claim": "unsupported VERIFIED badge where no entity, credential or verifying body is verified",
+   "disposition": "REMOVE all 14 slots; do not replace and do not substitute another badge",
+   "applied": "excluded from source-inputs/media; retained in source-inputs/media-retired; all 14 slot removals encoded fail-closed for post-import execution"
+  }
+ },
+ "testimonial_text_investigation": {
+  "date": "2026-08-20",
+  "attachments": [46, 47, 48, 49, 51, 52, 228],
+  "placements": 110,
+  "actual_testimonial_widgets_in_wxr": 3,
+  "actual_testimonial_widgets_using_targets": 0,
+  "customer_name_quote_job_fields_alongside_targets": 0,
+  "rating_fields_alongside_targets": 0,
+  "fabricated_customer_quotes": 0,
+  "false_fidelity_action": "No invented-testimonial category created because the verified count is zero. Existing NT-1 badge category remains distinct.",
+  "local_work_card_occurrences": {
+   "count": 4,
+   "attachments": [46, 48, 49, 52],
+   "exact_text_type": "REAL_PHOTO_PENDING markers only; no customer name, quote, rating, date or job description",
+   "disposition": "removed with the 15 D32 local-work modules before GENERIC remediation is verified"
+  },
+  "attachment_228_correction": "14 pages, not 15; 16 placements because Bargo and Mount Annan each use it twice",
+  "report": "reports/45-testimonial-text-investigation.md",
+  "detail": "reports/45-testimonial-text-investigation.csv",
+  "source_refs": ["OWNER-2026-08-20-BAND-B"]
+ },
+ "band_b_media_application": {
+  "active_media_before": 83,
+  "active_media_after": 81,
+  "renamed_generic_assets": 7,
+  "excluded_unusable_assets": 2,
+  "retired_location": "source-inputs/media-retired/",
+  "media_audit": "PASS — expected 81, present 81, OK 81, missing 0, extras 0, non-images 0",
+  "post_import_expected": {
+   "d32_local_work_modules_removed": 15,
+   "generic_references_remediated": 106,
+   "generic_references_removed_with_modules": 4,
+   "unusable_references_removed": 28,
+   "surviving_elementor_image_references": 1014
+  },
+  "manifest": "build/45-media-remediation.csv",
+  "report": "reports/45-band-b-application.md",
+  "unusable_slot_register": "reports/45-band-b-unusable-slots.csv",
+  "transformer": "staging-authoritative/scripts/apply-band-b-remediation.php",
+  "execution_status": "media intake applied; database/page transformation NOT RUN because no import is authorised or present",
+   "source_refs": ["OWNER-2026-08-20-BAND-B", "DEC03-D20", "DEC06-D32"]
+  },
+  "owner_identity_claims_liverpool_2026_08_21": {
+   "facts_file": "data/verified-facts.yml",
+   "council_evidence_file": "data/council-specs.yml",
+   "claim_baseline": {"occurrences": 232, "unsupported": 228},
+   "claim_disposition_register": "build/51-claim-disposition-register.json",
+   "reader_visible_claim_result": {"supported": 16, "unsupported": 0},
+   "additional_blind_spot_occurrences_dispositioned": 309,
+   "liverpool_pages": ["concreters-leppington", "concreters-austral", "concreters-edmondson-park", "concreters-bringelly"],
+   "liverpool_fields_replaced_with_official_evidence": 12,
+   "official_sources_sighted": [
+    "https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms",
+    "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+    "https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx"
+   ],
+   "privacy_markers_remaining": 5,
+   "source_refs": ["OWNER-2026-08-21-IDENTITY-CLAIMS-LIVERPOOL", "DEC02-D11", "DEC02-D12", "RB01-D2"]
+  },
+  "phase_d_liverpool_completion_2026_08_21": {
+   "status": "COMPLETE",
+   "scope": "Phase D only — four Liverpool-affected active pages",
+   "official_source_access_date": "2026-08-21",
+   "official_pdf": {
+    "source_url": "https://www.liverpool.nsw.gov.au/__data/assets/pdf_file/0003/286329/VEHICULAR-CROSSING-APPLICATION-FORM-March-2026v1.pdf",
+    "sha256": "43F74C0F01C5EA6F0C89919BE8C1859F758F96AF549A9CF71ADA5F87DD7CAF33",
+    "page_count": 18,
+    "requirements_validated": 13
+   },
+   "supporting_sources": [
+    "https://www.liverpool.nsw.gov.au/council/Fees-Forms-Policies-and-Enforcement/forms",
+    "https://mycouncil.liverpool.nsw.gov.au/ePathway/Production/Web/Default.aspx"
+   ],
+   "affected_pages": [
+    {"page_id": 221, "slug": "concreters-leppington", "intended_status": "publish", "resolved_fields": 3},
+    {"page_id": 1163, "slug": "concreters-austral", "intended_status": "publish", "resolved_fields": 3},
+    {"page_id": 1387, "slug": "concreters-edmondson-park", "intended_status": "draft", "resolved_fields": 3},
+    {"page_id": 1388, "slug": "concreters-bringelly", "intended_status": "draft", "resolved_fields": 3}
+   ],
+   "resolved_fields": 12,
+   "field_register": "build/52-liverpool-field-register.json",
+   "validation_result": "reports/52-liverpool-validation.json",
+   "false_fidelity_residue_on_affected_pages": 0,
+   "qualifications_enforced": [
+    "site-specific Council assessment and directions",
+    "confirm the March 2026 form and current fee schedule before relying on them",
+    "Council inspection and approval before pouring",
+    "property owner must ensure the contractor is licensed and has at least $10 million current public-liability cover",
+    "no representation that Structure Co holds those contractor credentials"
+   ],
+   "citation_correction": {
+    "field": "utilities.source_pages",
+    "corrected_from": [6],
+    "corrected_to": [6, 7],
+    "reason": "electricity, communications and Sydney Water requirements are on page 6; stormwater and pram-ramp requirements continue on page 7"
+   },
+   "calculator": "ABSENT — unbuilt and excluded",
+   "derivative_wxr_sha256": "4D28AE2E24F6A6EE9BD34B4AA60497F30F8E93A7538E45606BAC809D130B6D18",
+   "source_refs": ["OWNER-2026-08-21-PHASE-D", "DEC02-D11", "DEC02-D12", "DEC02-D13", "DEC06-D26"]
+  }
+}

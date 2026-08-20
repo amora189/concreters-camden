@@ -1,0 +1,232 @@
+# Stage 30 — verified business facts.
+#
+# EVERY FIELD STARTS verified: false AND EMPTY. Nothing here may be filled by
+# inference, by carrying a figure from the source Melbourne business, or by
+# reading a neighbouring suburb. Standing rule 1.
+#
+# The schema builder (scripts/30-build-schema.py) reads this file and REFUSES to
+# emit any node whose required fields are unverified. It does not guess, and it
+# does not emit a partial node.
+#
+# To fill a field: set the value, set verified: true, and record source and
+# sighted_date. A value without verified: true is treated as absent.
+
+schema_version: "1.0"
+generated: "2026-08-21"
+authority: "CODEX-BUILD-2.1.md §4.30.1; RUN-BLOCK-01.md §A D2"
+
+legal_entity:
+  # The entity that will actually contract with customers. "CoreX Concreters
+  # Camden" is a trading name seen in the copy; the legal entity behind it is
+  # unknown and MUST NOT be assumed to be identical to it.
+  trading_name:
+    value: "Structure Co Concreters Camden"
+    verified: true
+    note: >
+      Owner-supplied 19 August 2026 (DECISION-08 D35). Supersedes "CoreX Concreters
+      Camden" (in the built copy, 466 occurrences in the main WXR) and "E&T Co
+      Concreters Camden" (the source Melbourne business, still declared in the
+      Elementor kit site_name). A trading name is NOT a legal entity and this value
+      does not define #organization. See reports/38-trading-name-rename-plan.md.
+    superseded_names:
+      - "CoreX Concreters Camden"
+      - "E&T Co Concreters Camden"
+    source: "owner attestation, 21 August 2026"
+    sighted_date: "2026-08-21"
+  legal_name:
+    value: ""
+    verified: false
+    required_for: ["Organization", "LocalBusiness"]
+    source: ""
+    sighted_date: ""
+  abn:
+    value: ""
+    verified: false
+    required_for: ["Organization"]
+    blocks_pages: 24
+    note: "Owner directed that no ABN is to be published or asserted; no ABN has been verified."
+    source: "owner attestation and non-assertion direction, 21 August 2026"
+    sighted_date: "2026-08-21"
+  entity_type:
+    value: ""
+    verified: false
+    note: "sole trader / partnership / Pty Ltd — determines who is liable"
+    source: ""
+    sighted_date: ""
+
+licensing:
+  nsw_fair_trading_licence:
+    value: ""
+    verified: false
+    licence_holder: ""
+    expiry: ""
+    source: ""
+    sighted_date: ""
+  insurance_public_liability:
+    value: ""
+    verified: false
+    insurer: ""
+    amount: ""
+    expiry: ""
+    source: ""
+    sighted_date: ""
+  insurance_workers_compensation:
+    value: ""
+    verified: false
+    source: ""
+    sighted_date: ""
+
+contact:
+  street_address:
+    value: "15 Murray Street, Camden NSW 2570"
+    verified: true
+    required_for: ["LocalBusiness"]
+    blocks_pages: 24
+    note: >
+      Staffed administrative correspondence office. It is not open to customers or
+      visitors and must not be described as a showroom, customer-service location or
+      walk-in office. Do not invite customers to visit. This does not authorise
+      LocalBusiness schema or a storefront/local-premises claim.
+    source: "owner attestation, 21 August 2026"
+    sighted_date: "2026-08-21"
+  is_staffed:
+    # DECISIVE for schema. §4.30.2 forbids emitting LocalBusiness without a
+    # verified STAFFED address. An unstaffed address is not a LocalBusiness
+    # location; asserting one is a false claim about where customers can find you.
+    #
+    # "unknown" is deliberately distinct from the previous null: null meant "not yet
+    # asked", unknown means "asked 19 August 2026, answer pending" (DECISION-08 D37).
+    # The schema builder treats both as unverified and emits nothing either way.
+    value: true
+    verified: true
+    required_for: ["LocalBusiness"]
+    source: "owner attestation, 21 August 2026"
+    sighted_date: "2026-08-21"
+  open_to_visitors:
+    value: false
+    verified: true
+    note: "No customer or visitor access; no visit invitation is permitted."
+    source: "owner attestation, 21 August 2026"
+    sighted_date: "2026-08-21"
+  customer_facing_premises:
+    value: false
+    verified: true
+    note: "Administrative correspondence office only; not a storefront or service location."
+    source: "owner attestation, 21 August 2026"
+    sighted_date: "2026-08-21"
+  office_type:
+    value: "staffed administrative correspondence office"
+    verified: true
+    source: "owner attestation, 21 August 2026"
+    sighted_date: "2026-08-21"
+  suburb:
+    value: "Camden"
+    verified: true
+    note: "Component of the owner-attested administrative correspondence address."
+    source: "owner attestation, 21 August 2026"
+    sighted_date: "2026-08-21"
+  postcode:
+    value: "2570"
+    verified: true
+    note: "Component of the owner-attested administrative correspondence address."
+    source: "owner attestation, 21 August 2026"
+    sighted_date: "2026-08-21"
+  phone:
+    value: "(03) 4328 3392"
+    uri: "tel:+61343283392"
+    verified: true
+    note: >
+      Owner-attested public telephone. It must not be described as a local Camden or
+      Sydney number; the (03) area code is retained exactly as supplied.
+    ownership_proven: true
+    routing_proven: true
+    source: "owner attestation, 21 August 2026"
+    sighted_date: "2026-08-21"
+  email:
+    value: "info@concreterscamden.com.au"
+    verified: true
+    note: >
+      ATTESTED by the owner 19 August 2026: the mailbox exists and is monitored.
+      This is the FIRST field in this file to reach an attested state.
+      SCOPE OF THE ATTESTATION: the address is live and monitored. It attests nothing
+      about a legal entity, and it does not license an Organization or LocalBusiness
+      node. It may now be used as a contact address and as a form recipient; it may NOT
+      be presented as evidence of a verified business.
+    source: "owner attestation, reaffirmed 21 August 2026"
+    sighted_date: "2026-08-21"
+
+operating_model:
+  value: >-
+    Structure Co Concreters Camden manages concreting enquiries and coordinates
+    suitable independent providers. Job-specific quotations, contractual terms,
+    licensing, insurance and warranty information must be confirmed before work begins.
+  verified: true
+  structure_co_direct_contractor: false
+  independent_providers: true
+  provider_network_size:
+    value: ""
+    verified: false
+  enquiry_contract_disclosure: "Submitting an enquiry does not create a construction contract."
+  note: >
+    No specific NSW contractor, licence or insurance policy is authorised for
+    publication. Do not use "extensive network of friends" or imply that Structure Co
+    directly performs regulated concreting work.
+  source: "owner attestation, 21 August 2026"
+  sighted_date: "2026-08-21"
+
+service_areas:
+  # Which suburbs the business will actually travel to and work in. Not the
+  # suburbs we built pages for.
+  value: []
+  verified: false
+  source: ""
+  sighted_date: ""
+
+pricing:
+  # The single highest-leverage owner answer in the build: 53 pages carry a
+  # pricing placeholder.
+  per_m2_ranges:
+    value: {}
+    verified: false
+    blocks_pages: 53
+    required_note: >
+      Per finish type, as a range the owner would stand behind in writing, based
+      on jobs actually quoted in the Camden area. Never carried from a Melbourne
+      figure. Never inferred from a competitor.
+    source: ""
+    sighted_date: ""
+  minimum_job_value:
+    value: ""
+    verified: false
+    source: ""
+    sighted_date: ""
+
+reviews:
+  # Real reviews only, with the reviewer's name as they agreed it may appear and
+  # explicit permission to publish. AggregateRating is NEVER emitted from an
+  # unverified set — that is a Google policy violation as well as a false claim.
+  value: []
+  verified: false
+  permission_to_publish: false
+  source: ""
+  sighted_date: ""
+
+completed_projects:
+  # Every "recent job" claim on every suburb page depends on this.
+  value: []
+  verified: false
+  source: ""
+  sighted_date: ""
+
+photography:
+  # 47 REAL_PHOTO_PENDING markers across 16 pages, plus 20 images that are
+  # Victorian photographs renamed to specific NSW places (Gate 24).
+  real_camden_photographs:
+    value: []
+    verified: false
+    blocks_pages: 16
+    source: ""
+    sighted_date: ""
+  permission_to_publish:
+    value: false
+    verified: false

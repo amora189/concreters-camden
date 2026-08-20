@@ -1,0 +1,57 @@
+{
+ "rows": 214,
+ "distinct_pages_with_any_unattested_figure": 29,
+ "pages_council_population": 26,
+ "pages_engineering_population": 26,
+ "active_pages_affected": 22,
+ "withdrawn_pages_affected": 7,
+ "by_figure": {
+  "1200mm": 24,
+  "1:6": 24,
+  "4%": 23,
+  "4.0-5.5m": 22,
+  "800mm": 22,
+  "900mm": 22,
+  "125mm": 24,
+  "32 MPa": 24,
+  "SL72": 26,
+  "SL82": 3
+ },
+ "by_population": {
+  "council-sourced-pending-verification": 137,
+  "template-artefact-unattested": 77
+ },
+ "active_by_class": {
+  "service": 91,
+  "suburb": 97,
+  "home": 7
+ },
+ "active_by_status": {
+  "publish": 132,
+  "draft": 63
+ },
+ "active_pages": [
+  "commercial-concreting-south-west-sydney",
+  "concrete-crossovers-and-laybacks-south-west-sydney",
+  "concrete-driveway-replacement-south-west-sydney",
+  "concrete-driveways-south-west-sydney",
+  "concrete-paths-south-west-sydney",
+  "concrete-patios-south-west-sydney",
+  "concrete-slabs-south-west-sydney",
+  "concreters-catherine-field",
+  "concreters-cobbitty",
+  "concreters-currans-hill",
+  "concreters-elderslie",
+  "concreters-gledswood-hills",
+  "concreters-gregory-hills",
+  "concreters-harrington-park",
+  "concreters-mount-annan",
+  "concreters-narellan",
+  "concreters-oran-park",
+  "concreters-spring-farm",
+  "decorative-concrete-south-west-sydney",
+  "exposed-aggregate-south-west-sydney",
+  "homepage",
+  "shed-and-garage-slabs-south-west-sydney"
+ ]
+}

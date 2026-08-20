@@ -1,0 +1,29 @@
+attachment_id,post_id,slug,status,widget_id,widget_type,removal_mode
+280,105,concrete-driveways-south-west-sydney,publish,fbc5b30,image,remove image widget
+280,1366,concrete-driveway-replacement-south-west-sydney,publish,ae99959,image,remove image widget
+280,1375,concreters-mount-annan,draft,0424a72,image,remove with D32 top-level local-work module
+280,1379,concreters-cobbitty,draft,a86c195,image-box,clear image setting; preserve title description and link
+280,1403,concreters-kemps-creek,draft,516941f,image-box,clear image setting; preserve title description and link
+280,1413,concreters-bradbury,draft,e6c2ed7,image-box,clear image setting; preserve title description and link
+280,1415,concreters-gilead,draft,f36a8f3,image-box,clear image setting; preserve title description and link
+280,1419,concreters-tahmoor,draft,516941f,image-box,clear image setting; preserve title description and link
+280,1425,liverpool-council-vehicle-crossing,draft,694de8b,image,remove image widget
+280,1440,stencilled-vs-stamped-concrete-cost,draft,694de8b,image,remove image widget
+280,1450,concrete-vs-pavers-vs-asphalt,draft,694de8b,image,remove image widget
+280,1461,exposed-aggregate-vs-plain-concrete,draft,694de8b,image,remove image widget
+280,1474,commercial-concreting-gregory-hills,draft,8aac8e0,image,remove image widget
+280,1476,concrete-slabs-gledswood-hills,draft,18063b5,image,remove image widget
+1067,221,concreters-leppington,publish,af8ef50,image,remove image widget
+1067,1372,concreters-narellan,draft,e5f56c0,image,remove with D32 top-level local-work module
+1067,1376,concreters-currans-hill,draft,0ca264b,image,remove image widget
+1067,1380,concreters-camden-south,draft,516941f,image-box,clear image setting; preserve title description and link
+1067,1391,concreters-west-hoxton,draft,a86c195,image-box,clear image setting; preserve title description and link
+1067,1414,concreters-glen-alpine,draft,e6c2ed7,image-box,clear image setting; preserve title description and link
+1067,1427,wollondilly-council-driveway-crossing,draft,37364f5,image,remove image widget
+1067,1429,do-i-need-council-approval-driveway-nsw,draft,37364f5,image,remove image widget
+1067,1445,coloured-concrete-explained,draft,37364f5,image,remove image widget
+1067,1456,removing-oil-stains-and-tyre-marks-from-concrete,draft,37364f5,image,remove image widget
+1067,1472,concrete-slabs-leppington,draft,aab2150,image,remove image widget
+1067,1485,concrete-driveways-catherine-field,draft,015aff8,image,remove image widget
+1067,1493,concrete-driveways-spring-farm,draft,7886294,image,remove image widget
+1067,1497,concrete-driveway-replacement-currans-hill,draft,fbc5b30,image,remove image widget

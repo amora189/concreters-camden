@@ -1,0 +1,9 @@
+# Preserve the seven immutable artifacts byte-for-byte on every checkout.
+*.xml binary
+/camden-concreting-import.xml binary
+/eamptcoconcretersmelbourne_WordPress_2026-08-14.xml binary
+/build/stage9-page-manifest.json -text
+/build/stage8-image-map.json -text
+/reports/08-image-rename-map.csv -text
+/CODEX-BUILD-2.1.md -text
+/archive/governing/CODEX-BUILD-2.md -text

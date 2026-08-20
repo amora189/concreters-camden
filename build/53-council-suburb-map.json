@@ -1,0 +1,1995 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "scripts/53-phase-a-evidence.py",
+  "access_date": "2026-08-21",
+  "authority_rule": "Official council locality lists plus the NSW Planning Portal for lot-level resolution; Liverpool crossing rules never propagate outside Liverpool.",
+  "counts": {
+    "active_suburb_pages": 60,
+    "split_localities": 8,
+    "artifact_contradictions": 2,
+    "lot_level_checks_required": 8
+  },
+  "artifact_divergences": [
+    {
+      "page_id": 1384,
+      "page_slug": "concreters-theresa-park",
+      "suburb_slug": "theresa-park",
+      "suburb": "Theresa Park",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "artifact-contradicted",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Corrects the artifact assignment; authoritative local-government evidence controls."
+    },
+    {
+      "page_id": 1385,
+      "page_slug": "concreters-camden-park",
+      "suburb_slug": "camden-park",
+      "suburb": "Camden Park",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "artifact-contradicted",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Corrects the artifact assignment; authoritative local-government evidence controls."
+    }
+  ],
+  "suburbs": [
+    {
+      "page_id": 474,
+      "page_slug": "concreters-oran-park",
+      "suburb_slug": "oran-park",
+      "suburb": "Oran Park",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 969,
+      "page_slug": "concreters-gregory-hills",
+      "suburb_slug": "gregory-hills",
+      "suburb": "Gregory Hills",
+      "postcode": "2557",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1370,
+      "page_slug": "concreters-gledswood-hills",
+      "suburb_slug": "gledswood-hills",
+      "suburb": "Gledswood Hills",
+      "postcode": "2557",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1371,
+      "page_slug": "concreters-catherine-field",
+      "suburb_slug": "catherine-field",
+      "suburb": "Catherine Field",
+      "postcode": "2557",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1126,
+      "page_slug": "concreters-harrington-park",
+      "suburb_slug": "harrington-park",
+      "suburb": "Harrington Park",
+      "postcode": "2567",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1372,
+      "page_slug": "concreters-narellan",
+      "suburb_slug": "narellan",
+      "suburb": "Narellan",
+      "postcode": "2567",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1373,
+      "page_slug": "concreters-narellan-vale",
+      "suburb_slug": "narellan-vale",
+      "suburb": "Narellan Vale",
+      "postcode": "2567",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1374,
+      "page_slug": "concreters-smeaton-grange",
+      "suburb_slug": "smeaton-grange",
+      "suburb": "Smeaton Grange",
+      "postcode": "2567",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1375,
+      "page_slug": "concreters-mount-annan",
+      "suburb_slug": "mount-annan",
+      "suburb": "Mount Annan",
+      "postcode": "2567",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1376,
+      "page_slug": "concreters-currans-hill",
+      "suburb_slug": "currans-hill",
+      "suburb": "Currans Hill",
+      "postcode": "2567",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1377,
+      "page_slug": "concreters-spring-farm",
+      "suburb_slug": "spring-farm",
+      "suburb": "Spring Farm",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1378,
+      "page_slug": "concreters-elderslie",
+      "suburb_slug": "elderslie",
+      "suburb": "Elderslie",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1379,
+      "page_slug": "concreters-cobbitty",
+      "suburb_slug": "cobbitty",
+      "suburb": "Cobbitty",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1380,
+      "page_slug": "concreters-camden-south",
+      "suburb_slug": "camden-south",
+      "suburb": "Camden South",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1381,
+      "page_slug": "concreters-kirkham",
+      "suburb_slug": "kirkham",
+      "suburb": "Kirkham",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1382,
+      "page_slug": "concreters-grasmere",
+      "suburb_slug": "grasmere",
+      "suburb": "Grasmere",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1383,
+      "page_slug": "concreters-ellis-lane",
+      "suburb_slug": "ellis-lane",
+      "suburb": "Ellis Lane",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Camden Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1384,
+      "page_slug": "concreters-theresa-park",
+      "suburb_slug": "theresa-park",
+      "suburb": "Theresa Park",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "artifact-contradicted",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Corrects the artifact assignment; authoritative local-government evidence controls."
+    },
+    {
+      "page_id": 1385,
+      "page_slug": "concreters-camden-park",
+      "suburb_slug": "camden-park",
+      "suburb": "Camden Park",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "artifact-contradicted",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Corrects the artifact assignment; authoritative local-government evidence controls."
+    },
+    {
+      "page_id": 1386,
+      "page_slug": "concreters-cawdor",
+      "suburb_slug": "cawdor",
+      "suburb": "Cawdor",
+      "postcode": "2570",
+      "artifact_lga": "Camden Council",
+      "evidence_supported_councils": [
+        "Camden Council",
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "split-locality",
+      "lot_level_check_required": true,
+      "public_wording_rule": "Do not name one council until the property's lot is checked in the NSW Planning Portal.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Shared locality; suburb name alone does not identify the road authority."
+    },
+    {
+      "page_id": 1163,
+      "page_slug": "concreters-austral",
+      "suburb_slug": "austral",
+      "suburb": "Austral",
+      "postcode": "2179",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 221,
+      "page_slug": "concreters-leppington",
+      "suburb_slug": "leppington",
+      "suburb": "Leppington",
+      "postcode": "2179",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Camden Council",
+        "Liverpool City Council"
+      ],
+      "assignment_status": "split-locality",
+      "lot_level_check_required": true,
+      "public_wording_rule": "Do not name one council until the property's lot is checked in the NSW Planning Portal.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Shared locality; suburb name alone does not identify the road authority."
+    },
+    {
+      "page_id": 1387,
+      "page_slug": "concreters-edmondson-park",
+      "suburb_slug": "edmondson-park",
+      "suburb": "Edmondson Park",
+      "postcode": "2174",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council",
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "split-locality",
+      "lot_level_check_required": true,
+      "public_wording_rule": "Do not name one council until the property's lot is checked in the NSW Planning Portal.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Shared locality; suburb name alone does not identify the road authority."
+    },
+    {
+      "page_id": 1388,
+      "page_slug": "concreters-bringelly",
+      "suburb_slug": "bringelly",
+      "suburb": "Bringelly",
+      "postcode": "2556",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Camden Council",
+        "Liverpool City Council"
+      ],
+      "assignment_status": "split-locality",
+      "lot_level_check_required": true,
+      "public_wording_rule": "Do not name one council until the property's lot is checked in the NSW Planning Portal.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Shared locality; suburb name alone does not identify the road authority."
+    },
+    {
+      "page_id": 1389,
+      "page_slug": "concreters-rossmore",
+      "suburb_slug": "rossmore",
+      "suburb": "Rossmore",
+      "postcode": "2557",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Camden Council",
+        "Liverpool City Council"
+      ],
+      "assignment_status": "split-locality",
+      "lot_level_check_required": true,
+      "public_wording_rule": "Do not name one council until the property's lot is checked in the NSW Planning Portal.",
+      "citations": [
+        {
+          "source_key": "camden_suburbs",
+          "title": "About Camden — suburbs",
+          "url": "https://www.camden.nsw.gov.au/council/about-us?stage=Live",
+          "access_date": "2026-08-21",
+          "source_page": "Suburbs within Camden LGA"
+        },
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Shared locality; suburb name alone does not identify the road authority."
+    },
+    {
+      "page_id": 1390,
+      "page_slug": "concreters-middleton-grange",
+      "suburb_slug": "middleton-grange",
+      "suburb": "Middleton Grange",
+      "postcode": "2171",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1391,
+      "page_slug": "concreters-west-hoxton",
+      "suburb_slug": "west-hoxton",
+      "suburb": "West Hoxton",
+      "postcode": "2171",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1392,
+      "page_slug": "concreters-hoxton-park",
+      "suburb_slug": "hoxton-park",
+      "suburb": "Hoxton Park",
+      "postcode": "2171",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1393,
+      "page_slug": "concreters-carnes-hill",
+      "suburb_slug": "carnes-hill",
+      "suburb": "Carnes Hill",
+      "postcode": "2171",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1394,
+      "page_slug": "concreters-horningsea-park",
+      "suburb_slug": "horningsea-park",
+      "suburb": "Horningsea Park",
+      "postcode": "2171",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1395,
+      "page_slug": "concreters-elizabeth-hills",
+      "suburb_slug": "elizabeth-hills",
+      "suburb": "Elizabeth Hills",
+      "postcode": "2171",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1396,
+      "page_slug": "concreters-len-waters-estate",
+      "suburb_slug": "len-waters-estate",
+      "suburb": "Len Waters Estate",
+      "postcode": "2171",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1397,
+      "page_slug": "concreters-cecil-hills",
+      "suburb_slug": "cecil-hills",
+      "suburb": "Cecil Hills",
+      "postcode": "2171",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1398,
+      "page_slug": "concreters-prestons",
+      "suburb_slug": "prestons",
+      "suburb": "Prestons",
+      "postcode": "2170",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1399,
+      "page_slug": "concreters-casula",
+      "suburb_slug": "casula",
+      "suburb": "Casula",
+      "postcode": "2170",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1400,
+      "page_slug": "concreters-moorebank",
+      "suburb_slug": "moorebank",
+      "suburb": "Moorebank",
+      "postcode": "2170",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1401,
+      "page_slug": "concreters-chipping-norton",
+      "suburb_slug": "chipping-norton",
+      "suburb": "Chipping Norton",
+      "postcode": "2170",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1402,
+      "page_slug": "concreters-wattle-grove",
+      "suburb_slug": "wattle-grove",
+      "suburb": "Wattle Grove",
+      "postcode": "2173",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Liverpool City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1403,
+      "page_slug": "concreters-kemps-creek",
+      "suburb_slug": "kemps-creek",
+      "suburb": "Kemps Creek",
+      "postcode": "2178",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council",
+        "Penrith City Council"
+      ],
+      "assignment_status": "split-locality",
+      "lot_level_check_required": true,
+      "public_wording_rule": "Do not name one council until the property's lot is checked in the NSW Planning Portal.",
+      "citations": [
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Shared locality; suburb name alone does not identify the road authority."
+    },
+    {
+      "page_id": 1404,
+      "page_slug": "concreters-cecil-park",
+      "suburb_slug": "cecil-park",
+      "suburb": "Cecil Park",
+      "postcode": "2178",
+      "artifact_lga": "Liverpool City Council",
+      "evidence_supported_councils": [
+        "Liverpool City Council",
+        "Fairfield City Council"
+      ],
+      "assignment_status": "split-locality",
+      "lot_level_check_required": true,
+      "public_wording_rule": "Do not name one council until the property's lot is checked in the NSW Planning Portal.",
+      "citations": [
+        {
+          "source_key": "fairfield_suburbs",
+          "title": "Fairfield City Profile — list of suburbs",
+          "url": "https://www.fairfieldcity.nsw.gov.au/Your-Council/Fairfield-City-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "List of suburbs in Fairfield City"
+        },
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Shared locality; suburb name alone does not identify the road authority."
+    },
+    {
+      "page_id": 1405,
+      "page_slug": "concreters-campbelltown",
+      "suburb_slug": "campbelltown",
+      "suburb": "Campbelltown",
+      "postcode": "2560",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Campbelltown City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1406,
+      "page_slug": "concreters-leumeah",
+      "suburb_slug": "leumeah",
+      "suburb": "Leumeah",
+      "postcode": "2560",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Campbelltown City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1407,
+      "page_slug": "concreters-minto",
+      "suburb_slug": "minto",
+      "suburb": "Minto",
+      "postcode": "2566",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Campbelltown City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1408,
+      "page_slug": "concreters-ingleburn",
+      "suburb_slug": "ingleburn",
+      "suburb": "Ingleburn",
+      "postcode": "2565",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council",
+        "Liverpool City Council"
+      ],
+      "assignment_status": "split-locality",
+      "lot_level_check_required": true,
+      "public_wording_rule": "Do not name one council until the property's lot is checked in the NSW Planning Portal.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "liverpool_suburbs",
+          "title": "Suburbs of Liverpool",
+          "url": "https://mylibrary.liverpool.nsw.gov.au/history/ourstories/suburbs-of-liverpool",
+          "access_date": "2026-08-21",
+          "source_page": "whole and shared suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Shared locality; suburb name alone does not identify the road authority."
+    },
+    {
+      "page_id": 1409,
+      "page_slug": "concreters-glenfield",
+      "suburb_slug": "glenfield",
+      "suburb": "Glenfield",
+      "postcode": "2167",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Campbelltown City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1410,
+      "page_slug": "concreters-macquarie-fields",
+      "suburb_slug": "macquarie-fields",
+      "suburb": "Macquarie Fields",
+      "postcode": "2564",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Campbelltown City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1411,
+      "page_slug": "concreters-raby",
+      "suburb_slug": "raby",
+      "suburb": "Raby",
+      "postcode": "2566",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Campbelltown City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1412,
+      "page_slug": "concreters-eagle-vale",
+      "suburb_slug": "eagle-vale",
+      "suburb": "Eagle Vale",
+      "postcode": "2558",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Campbelltown City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1413,
+      "page_slug": "concreters-bradbury",
+      "suburb_slug": "bradbury",
+      "suburb": "Bradbury",
+      "postcode": "2560",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Campbelltown City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1414,
+      "page_slug": "concreters-glen-alpine",
+      "suburb_slug": "glen-alpine",
+      "suburb": "Glen Alpine",
+      "postcode": "2560",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Campbelltown City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1415,
+      "page_slug": "concreters-gilead",
+      "suburb_slug": "gilead",
+      "suburb": "Gilead",
+      "postcode": "2560",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Campbelltown City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1416,
+      "page_slug": "concreters-menangle-park",
+      "suburb_slug": "menangle-park",
+      "suburb": "Menangle Park",
+      "postcode": "2563",
+      "artifact_lga": "Campbelltown City Council",
+      "evidence_supported_councils": [
+        "Campbelltown City Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Campbelltown City Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "campbelltown_suburbs",
+          "title": "Campbelltown Community Profile",
+          "url": "https://www.campbelltown.nsw.gov.au/About-Campbelltown/Campbelltown-Community-Profile",
+          "access_date": "2026-08-21",
+          "source_page": "suburb list"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1417,
+      "page_slug": "concreters-wilton",
+      "suburb_slug": "wilton",
+      "suburb": "Wilton",
+      "postcode": "2571",
+      "artifact_lga": "Wollondilly Shire Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1418,
+      "page_slug": "concreters-picton",
+      "suburb_slug": "picton",
+      "suburb": "Picton",
+      "postcode": "2571",
+      "artifact_lga": "Wollondilly Shire Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1419,
+      "page_slug": "concreters-tahmoor",
+      "suburb_slug": "tahmoor",
+      "suburb": "Tahmoor",
+      "postcode": "2573",
+      "artifact_lga": "Wollondilly Shire Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1420,
+      "page_slug": "concreters-appin",
+      "suburb_slug": "appin",
+      "suburb": "Appin",
+      "postcode": "2560",
+      "artifact_lga": "Wollondilly Shire Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1421,
+      "page_slug": "concreters-douglas-park",
+      "suburb_slug": "douglas-park",
+      "suburb": "Douglas Park",
+      "postcode": "2569",
+      "artifact_lga": "Wollondilly Shire Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1422,
+      "page_slug": "concreters-menangle",
+      "suburb_slug": "menangle",
+      "suburb": "Menangle",
+      "postcode": "2568",
+      "artifact_lga": "Wollondilly Shire Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1423,
+      "page_slug": "concreters-the-oaks",
+      "suburb_slug": "the-oaks",
+      "suburb": "The Oaks",
+      "postcode": "2570",
+      "artifact_lga": "Wollondilly Shire Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    },
+    {
+      "page_id": 1424,
+      "page_slug": "concreters-bargo",
+      "suburb_slug": "bargo",
+      "suburb": "Bargo",
+      "postcode": "2574",
+      "artifact_lga": "Wollondilly Shire Council",
+      "evidence_supported_councils": [
+        "Wollondilly Shire Council"
+      ],
+      "assignment_status": "group-list-supported",
+      "lot_level_check_required": false,
+      "public_wording_rule": "Council process may be described as Wollondilly Shire Council only after confirming the property lies within that LGA.",
+      "citations": [
+        {
+          "source_key": "wollondilly_suburbs",
+          "title": "Asset Maps & Community Profiles",
+          "url": "https://www.wollondilly.nsw.gov.au/events-and-community/asset-maps-and-community-profiles",
+          "access_date": "2026-08-21",
+          "source_page": "community-profile locality groups"
+        },
+        {
+          "source_key": "nsw_spatial",
+          "title": "NSW Planning Portal Spatial Viewer",
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/",
+          "access_date": "2026-08-21",
+          "source_page": "interactive cadastral and LGA layers"
+        }
+      ],
+      "notes": "Suburb-level assignment supports research routing, not a claim about an unverified job address."
+    }
+  ]
+}

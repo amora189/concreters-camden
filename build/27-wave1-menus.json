@@ -1,0 +1,767 @@
+{
+ "generated": "2026-08-18",
+ "authority": "CODEX-BUILD-2.1.md §4.27.5; RUN-BLOCK-01.md §A D1, D6",
+ "note": "Wave 1 menu structures containing zero links to draft or noindex-pending pages. _menu_item_menu_item_parent relationships are preserved for retained items.",
+ "owner_deferred_pages": [
+  {
+   "page_id": 1365,
+   "slug": "gallery",
+   "navigation_disposition": "excluded from all launch menu assignments",
+   "authority": "Owner approval dated 20 August 2026 — FINAL IMAGE REMEDIATION prompt"
+  }
+ ],
+ "source_menu_items": 65,
+ "retained": 27,
+ "removed": 38,
+ "menus": {
+  "Primary": {
+   "source_items": 23,
+   "retained": 10,
+   "removed": 13
+  },
+  "Primary (2)": {
+   "source_items": 23,
+   "retained": 10,
+   "removed": 13
+  },
+  "Footer Areas": {
+   "source_items": 6,
+   "retained": 0,
+   "removed": 6
+  },
+  "Footer Services": {
+   "source_items": 7,
+   "retained": 7,
+   "removed": 0
+  },
+  "Footer Blogs": {
+   "source_items": 6,
+   "retained": 0,
+   "removed": 6
+  }
+ },
+ "items": [
+  {
+   "post_id": 1503,
+   "title": "Services",
+   "menu_order": "1",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "1503",
+   "object": "custom",
+   "type": "custom",
+   "url": "#",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "custom link, not a page reference"
+  },
+  {
+   "post_id": 1504,
+   "title": "Concrete Driveways",
+   "menu_order": "2",
+   "_menu_item_menu_item_parent": "1503",
+   "object_id": "105",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1505,
+   "title": "Concrete Slabs",
+   "menu_order": "3",
+   "_menu_item_menu_item_parent": "1503",
+   "object_id": "163",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1506,
+   "title": "Exposed Aggregate Concrete",
+   "menu_order": "4",
+   "_menu_item_menu_item_parent": "1503",
+   "object_id": "129",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1507,
+   "title": "Decorative Concrete",
+   "menu_order": "5",
+   "_menu_item_menu_item_parent": "1503",
+   "object_id": "922",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1508,
+   "title": "Concrete Patios and Alfresco Slabs",
+   "menu_order": "6",
+   "_menu_item_menu_item_parent": "1503",
+   "object_id": "195",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1509,
+   "title": "Concrete Paths and Pathways",
+   "menu_order": "7",
+   "_menu_item_menu_item_parent": "1503",
+   "object_id": "178",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1510,
+   "title": "Commercial Concreting",
+   "menu_order": "8",
+   "_menu_item_menu_item_parent": "1503",
+   "object_id": "1369",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1511,
+   "title": "Areas",
+   "menu_order": "9",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "1511",
+   "object": "custom",
+   "type": "custom",
+   "url": "#",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "custom link, not a page reference"
+  },
+  {
+   "post_id": 1525,
+   "title": "Contact",
+   "menu_order": "23",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "321",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1526,
+   "title": "Services",
+   "menu_order": "1",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "1526",
+   "object": "custom",
+   "type": "custom",
+   "url": "#",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "custom link, not a page reference"
+  },
+  {
+   "post_id": 1527,
+   "title": "Concrete Driveways",
+   "menu_order": "2",
+   "_menu_item_menu_item_parent": "1526",
+   "object_id": "105",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1528,
+   "title": "Concrete Slabs",
+   "menu_order": "3",
+   "_menu_item_menu_item_parent": "1526",
+   "object_id": "163",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1529,
+   "title": "Exposed Aggregate Concrete",
+   "menu_order": "4",
+   "_menu_item_menu_item_parent": "1526",
+   "object_id": "129",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1530,
+   "title": "Decorative Concrete",
+   "menu_order": "5",
+   "_menu_item_menu_item_parent": "1526",
+   "object_id": "922",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1531,
+   "title": "Concrete Patios and Alfresco Slabs",
+   "menu_order": "6",
+   "_menu_item_menu_item_parent": "1526",
+   "object_id": "195",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1532,
+   "title": "Concrete Paths and Pathways",
+   "menu_order": "7",
+   "_menu_item_menu_item_parent": "1526",
+   "object_id": "178",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1533,
+   "title": "Commercial Concreting",
+   "menu_order": "8",
+   "_menu_item_menu_item_parent": "1526",
+   "object_id": "1369",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1534,
+   "title": "Areas",
+   "menu_order": "9",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "1534",
+   "object": "custom",
+   "type": "custom",
+   "url": "#",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "custom link, not a page reference"
+  },
+  {
+   "post_id": 1548,
+   "title": "Contact",
+   "menu_order": "23",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "321",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1555,
+   "title": "Concrete Driveways",
+   "menu_order": "1",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "105",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Footer Services"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1556,
+   "title": "Concrete Slabs",
+   "menu_order": "2",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "163",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Footer Services"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1557,
+   "title": "Exposed Aggregate Concrete",
+   "menu_order": "3",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "129",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Footer Services"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1558,
+   "title": "Decorative Concrete",
+   "menu_order": "4",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "922",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Footer Services"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1559,
+   "title": "Concrete Patios and Alfresco Slabs",
+   "menu_order": "5",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "195",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Footer Services"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1560,
+   "title": "Concrete Paths and Pathways",
+   "menu_order": "6",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "178",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Footer Services"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  },
+  {
+   "post_id": 1561,
+   "title": "Commercial Concreting",
+   "menu_order": "7",
+   "_menu_item_menu_item_parent": "0",
+   "object_id": "1369",
+   "object": "page",
+   "type": "post_type",
+   "url": "",
+   "nav_menu": [
+    "Footer Services"
+   ],
+   "reason": "publish, indexable, in Wave 1"
+  }
+ ],
+ "removed_items": [
+  {
+   "post_id": 1512,
+   "title": "Oran Park",
+   "object_id": "474",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /concreters-oran-park/ is held noindex,follow"
+  },
+  {
+   "post_id": 1513,
+   "title": "Leppington",
+   "object_id": "221",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /concreters-leppington/ is held noindex,follow"
+  },
+  {
+   "post_id": 1514,
+   "title": "Gregory Hills",
+   "object_id": "969",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /concreters-gregory-hills/ is held noindex,follow"
+  },
+  {
+   "post_id": 1515,
+   "title": "Gledswood Hills",
+   "object_id": "1370",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /concreters-gledswood-hills/ is held noindex,follow"
+  },
+  {
+   "post_id": 1516,
+   "title": "Austral",
+   "object_id": "1163",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /concreters-austral/ is held noindex,follow"
+  },
+  {
+   "post_id": 1517,
+   "title": "Harrington Park",
+   "object_id": "1126",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /concreters-harrington-park/ is held noindex,follow"
+  },
+  {
+   "post_id": 1518,
+   "title": "Blog",
+   "object_id": "1502",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /guides/ is draft"
+  },
+  {
+   "post_id": 1519,
+   "title": "Concrete Driveway Cost NSW",
+   "object_id": "555",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /concrete-driveway-cost-nsw/ is draft"
+  },
+  {
+   "post_id": 1520,
+   "title": "Camden Council Driveway Crossing",
+   "object_id": "706",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /camden-council-driveway-crossing/ is draft"
+  },
+  {
+   "post_id": 1521,
+   "title": "Liverpool Council Vehicle Crossing",
+   "object_id": "1425",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /liverpool-council-vehicle-crossing/ is draft"
+  },
+  {
+   "post_id": 1522,
+   "title": "Why Concrete Cracks",
+   "object_id": "1215",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /why-concrete-cracks/ is draft"
+  },
+  {
+   "post_id": 1523,
+   "title": "Reactive Clay Slabs AS 2870",
+   "object_id": "1430",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /reactive-clay-slabs-as2870/ is draft"
+  },
+  {
+   "post_id": 1524,
+   "title": "Salinity And Concrete Western Sydney",
+   "object_id": "1431",
+   "nav_menu": [
+    "Primary"
+   ],
+   "reason": "target /salinity-and-concrete-western-sydney/ is draft"
+  },
+  {
+   "post_id": 1535,
+   "title": "Oran Park",
+   "object_id": "474",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /concreters-oran-park/ is held noindex,follow"
+  },
+  {
+   "post_id": 1536,
+   "title": "Leppington",
+   "object_id": "221",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /concreters-leppington/ is held noindex,follow"
+  },
+  {
+   "post_id": 1537,
+   "title": "Gregory Hills",
+   "object_id": "969",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /concreters-gregory-hills/ is held noindex,follow"
+  },
+  {
+   "post_id": 1538,
+   "title": "Gledswood Hills",
+   "object_id": "1370",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /concreters-gledswood-hills/ is held noindex,follow"
+  },
+  {
+   "post_id": 1539,
+   "title": "Austral",
+   "object_id": "1163",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /concreters-austral/ is held noindex,follow"
+  },
+  {
+   "post_id": 1540,
+   "title": "Harrington Park",
+   "object_id": "1126",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /concreters-harrington-park/ is held noindex,follow"
+  },
+  {
+   "post_id": 1541,
+   "title": "Blog",
+   "object_id": "1502",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /guides/ is draft"
+  },
+  {
+   "post_id": 1542,
+   "title": "Concrete Driveway Cost NSW",
+   "object_id": "555",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /concrete-driveway-cost-nsw/ is draft"
+  },
+  {
+   "post_id": 1543,
+   "title": "Camden Council Driveway Crossing",
+   "object_id": "706",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /camden-council-driveway-crossing/ is draft"
+  },
+  {
+   "post_id": 1544,
+   "title": "Liverpool Council Vehicle Crossing",
+   "object_id": "1425",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /liverpool-council-vehicle-crossing/ is draft"
+  },
+  {
+   "post_id": 1545,
+   "title": "Why Concrete Cracks",
+   "object_id": "1215",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /why-concrete-cracks/ is draft"
+  },
+  {
+   "post_id": 1546,
+   "title": "Reactive Clay Slabs AS 2870",
+   "object_id": "1430",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /reactive-clay-slabs-as2870/ is draft"
+  },
+  {
+   "post_id": 1547,
+   "title": "Salinity And Concrete Western Sydney",
+   "object_id": "1431",
+   "nav_menu": [
+    "Primary (2)"
+   ],
+   "reason": "target /salinity-and-concrete-western-sydney/ is draft"
+  },
+  {
+   "post_id": 1549,
+   "title": "Oran Park",
+   "object_id": "474",
+   "nav_menu": [
+    "Footer Areas"
+   ],
+   "reason": "target /concreters-oran-park/ is held noindex,follow"
+  },
+  {
+   "post_id": 1550,
+   "title": "Leppington",
+   "object_id": "221",
+   "nav_menu": [
+    "Footer Areas"
+   ],
+   "reason": "target /concreters-leppington/ is held noindex,follow"
+  },
+  {
+   "post_id": 1551,
+   "title": "Gregory Hills",
+   "object_id": "969",
+   "nav_menu": [
+    "Footer Areas"
+   ],
+   "reason": "target /concreters-gregory-hills/ is held noindex,follow"
+  },
+  {
+   "post_id": 1552,
+   "title": "Gledswood Hills",
+   "object_id": "1370",
+   "nav_menu": [
+    "Footer Areas"
+   ],
+   "reason": "target /concreters-gledswood-hills/ is held noindex,follow"
+  },
+  {
+   "post_id": 1553,
+   "title": "Austral",
+   "object_id": "1163",
+   "nav_menu": [
+    "Footer Areas"
+   ],
+   "reason": "target /concreters-austral/ is held noindex,follow"
+  },
+  {
+   "post_id": 1554,
+   "title": "Harrington Park",
+   "object_id": "1126",
+   "nav_menu": [
+    "Footer Areas"
+   ],
+   "reason": "target /concreters-harrington-park/ is held noindex,follow"
+  },
+  {
+   "post_id": 1562,
+   "title": "Concrete Driveway Cost NSW",
+   "object_id": "555",
+   "nav_menu": [
+    "Footer Blogs"
+   ],
+   "reason": "target /concrete-driveway-cost-nsw/ is draft"
+  },
+  {
+   "post_id": 1563,
+   "title": "Camden Council Driveway Crossing",
+   "object_id": "706",
+   "nav_menu": [
+    "Footer Blogs"
+   ],
+   "reason": "target /camden-council-driveway-crossing/ is draft"
+  },
+  {
+   "post_id": 1564,
+   "title": "Liverpool Council Vehicle Crossing",
+   "object_id": "1425",
+   "nav_menu": [
+    "Footer Blogs"
+   ],
+   "reason": "target /liverpool-council-vehicle-crossing/ is draft"
+  },
+  {
+   "post_id": 1565,
+   "title": "Why Concrete Cracks",
+   "object_id": "1215",
+   "nav_menu": [
+    "Footer Blogs"
+   ],
+   "reason": "target /why-concrete-cracks/ is draft"
+  },
+  {
+   "post_id": 1566,
+   "title": "Reactive Clay Slabs AS 2870",
+   "object_id": "1430",
+   "nav_menu": [
+    "Footer Blogs"
+   ],
+   "reason": "target /reactive-clay-slabs-as2870/ is draft"
+  },
+  {
+   "post_id": 1567,
+   "title": "Salinity And Concrete Western Sydney",
+   "object_id": "1431",
+   "nav_menu": [
+    "Footer Blogs"
+   ],
+   "reason": "target /salinity-and-concrete-western-sydney/ is draft"
+  }
+ ]
+}
