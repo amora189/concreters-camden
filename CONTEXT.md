@@ -1152,3 +1152,24 @@ After those inputs pass audit, rebuild clean authoritative staging, import and v
 ## Updating this file
 
 Update `CONTEXT.md` whenever a major gate changes. Record the date, the latest completed stage, what was actually verified, the remaining blockers, and the next safe action. Never describe a generated artifact, smoke test, or WXR publish status as a live-site launch.
+
+## 21 August 2026 — master execution recovery and fail-closed stop
+
+The owner operating instructions received on 21 August 2026 are recorded in
+`reports/54-full-site-completion.md`. They authorise the Structure Co Concreters Camden
+public model, independent-provider coordination, the administrative-only Camden address,
+the public email and telephone, no ABN/licence/insurance assertions, the zero-new-
+photograph plan, deferred gallery, withdrawn 81 pages and absent calculator.
+
+The baseline checkpoint is `a6024340bd6c3f02b52606c1f089ff626d73a8b1`; the worktree is clean.
+The 31-test recovery suite passes. All seven immutable hashes remain MATCH. Media intake,
+Astra, Phase D Liverpool and preflight gates 1–6, 8–11 and 13–19 pass.
+
+The full preflight remains **NO-GO**: Gate 7 reports 1,761 repeated five-grams and 1,491
+over-threshold pairs; Gate 12 reports 90 severe pages, 139 above threshold and a 0.8244
+filler ratio. Phase A/D23 remains blocked at 88/90 research cells with the Concrete Slabs
+and Shed and Garage Slabs curing cells unresolved and `data/service-specs.yml` still empty.
+Phase E, staging and release were not started. Index-ready remains 0. The next safe action
+is to obtain the two qualified provider/engineer or owner attestations, then rebuild and
+re-run the mandatory gates. No production, DNS, sitemap, indexability or remote Git action
+occurred.

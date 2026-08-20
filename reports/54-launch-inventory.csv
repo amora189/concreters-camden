@@ -1,0 +1,13 @@
+scope,path_or_set,status,release_wave,notes
+active,/ (homepage),held,none,No page approved by this run; index-ready remains no
+active,75 main active pages,held,none,Architecture parity passes but content and release gates remain blocked
+active,/privacy/,held,none,Privacy is present in the approved 76-page architecture
+service,10 active service pages,blocked,none,Phase E requires D23 completion and substantive rewrite
+suburb,60 active suburb pages,blocked,none,No suburb page promoted while mandatory content gates fail
+withdrawn,81 withdrawn pages,excluded,none,Physically excluded and remain absent
+calculator,calculator artifact,excluded,none,Not built and absent by governing rule
+wave,Wave 1,blocked,1,No pages approved; effective index-ready count is 0
+wave,Wave 2,not entered,2,Conditional plan only
+wave,Wave 3,not entered,3,Conditional plan only
+wave,Wave 4,not entered,4,Conditional plan only; calculator absent
+wave,Wave 5,not entered,5,Conditional plan only; withdrawn intersections remain excluded

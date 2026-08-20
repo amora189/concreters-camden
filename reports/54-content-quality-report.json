@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-21",
+  "verdict": "NO-GO",
+  "active_pages": 76,
+  "main_pages": 75,
+  "privacy_pages": 1,
+  "withdrawn_pages": 81,
+  "calculator": "absent",
+  "phase_a": {"status": "BLOCKED", "resolved_cells": 88, "total_cells": 90, "unresolved_cells": ["Concrete Slabs curing", "Shed and Garage Slabs curing"]},
+  "phase_d": {"status": "PASS", "citations": 13, "fields": 12, "pages": 4, "false_fidelity": 0},
+  "gate_7_uniqueness": {"status": "FAIL", "repeated_fivegrams": 1761, "over_threshold_pairs": 1491},
+  "gate_12_coherence": {"status": "FAIL", "severe_pages": 90, "above_threshold_pages": 139, "corpus_filler_ratio": 0.8244},
+  "recovery_tests": {"status": "PASS", "passed": 31},
+  "preflight": "NO-GO",
+  "staging": "NOT STARTED",
+  "production": "NOT TOUCHED",
+  "index_ready": 0
+}
