@@ -167,7 +167,10 @@ def analyse_block(block: str) -> tuple[list[dict], int, int]:
 
 def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8")
-    tree = ET.parse(str(ROOT / "camden-concreting-import.xml"))
+    source = ROOT / "build" / "46-active-main-import.xml"
+    if not source.exists():
+        source = ROOT / "camden-concreting-import.xml"
+    tree = ET.parse(str(source))
     mani = {int(r["post_id"]): r for r in json.loads(
         (ROOT / "build/stage9-page-manifest.json").read_text(encoding="utf-8", errors="strict"))}
 

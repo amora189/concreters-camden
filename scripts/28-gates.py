@@ -16,6 +16,9 @@ from collections import Counter, defaultdict
 from itertools import combinations
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from lib.active_content import load_page_bodies, quality_text, QUALITY_EXEMPT_SLUGS
+
 ROOT = Path(__file__).resolve().parents[1]
 WP = "{http://wordpress.org/export/1.2/}"
 CONTENT = "{http://purl.org/rss/1.0/modules/content/}"
@@ -211,7 +214,12 @@ def main() -> int:
       f"unresolved refs={unresolved}")
 
     # ---- 7. uniqueness gates -------------------------------------------------
-    words = {pid: re.findall(r"[a-z0-9']+", p["body"].lower()) for pid, p in pages.items()}
+    # Quality gates evaluate the actual mutable active derivative, not the
+    # immutable 156-page source WXR that still contains withdrawn copy.
+    quality_source = ROOT / "build" / "46-active-main-import.xml"
+    quality_pages = load_page_bodies(quality_source) if quality_source.exists() else pages
+    quality_pages = {pid: p for pid, p in quality_pages.items() if p.get("slug") not in QUALITY_EXEMPT_SLUGS}
+    words = {pid: re.findall(r"[a-z0-9']+", quality_text(p["body"]).lower()) for pid, p in quality_pages.items()}
     shing = {pid: {tuple(w[i:i+5]) for i in range(len(w)-4)} for pid, w in words.items()}
     owner: Counter = Counter()
     for s in shing.values():
@@ -219,7 +227,7 @@ def main() -> int:
             owner[sh] += 1
     over = sum(1 for c in owner.values() if c > 2)
     bycls = defaultdict(list)
-    for pid in pages:
+    for pid in quality_pages:
         bycls[mani[pid]["page_type"]].append(pid)
     pairfail = 0
     for cls, ids in bycls.items():
@@ -316,7 +324,8 @@ def main() -> int:
     # of scope: a rename map is supposed to record the original filename.
     SRC_NAME = re.compile(r"E&(?:amp;)*T\s*Co|e_t_co|eandtco|E&(?:amp;)*T", re.I)
     kit_hits, body_hits, ident_hits = 0, 0, []
-    for it in items:
+    identity_items = ET.parse(quality_source).getroot().findall("./channel/item") if quality_source.exists() else items
+    for it in identity_items:
         pt = (it.findtext(WP + "post_type") or "").strip()
         if pt == "elementor_library":
             for pm in it.findall(WP + "postmeta"):
@@ -326,7 +335,8 @@ def main() -> int:
                     m = re.search(rf's:\d+:"{key}";s:\d+:"([^"]*)"', v)
                     if m and SRC_NAME.search(m.group(1)):
                         ident_hits.append(f"{key}={m.group(1)!r}")
-    for pid, p_ in pages.items():
+    identity_pages = load_page_bodies(quality_source) if quality_source.exists() else {pid: {"body": p_["body"]} for pid, p_ in pages.items()}
+    for pid, p_ in identity_pages.items():
         body_hits += len(SRC_NAME.findall(p_["body"]))
     supp_hits = 0
     if SUPP.exists():

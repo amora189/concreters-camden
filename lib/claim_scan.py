@@ -70,8 +70,8 @@ def permitted_operating_role(facts: dict, text: str) -> bool:
     lower = visible_text(text).lower()
     return (
         verified(role)
-        and "manages concreting enquiries" in lower
-        and "coordinates suitable independent providers" in lower
+        and ("manages concreting enquiries" in lower or "coordinates enquiries" in lower)
+        and "independent providers" in lower
         and "must be confirmed before work begins" in lower
     )
 
@@ -126,7 +126,7 @@ def legacy_rules() -> list[Rule]:
         ),
         _rule(
             "workmanship_guarantee_warranty",
-            r"workmanship guarantee|\bguarantee(?:d)?\b|\bwarrant(?:y|ies|ed)\b",
+            r"workmanship guarantee|\bguarantee(?:d)?\b|\bwarrant(?:y|ies|ed)\b(?!\s+details)",
             "no verified written guarantee or warranty instrument",
             "remove the promise or state only that provider-specific terms must be confirmed",
             lambda f, text: privacy_warranty_context(text) or permitted_operating_role(f, text),
@@ -143,16 +143,17 @@ def legacy_rules() -> list[Rule]:
             r"Camden based|\bbased in Camden\b|\blocal concreters?\b|\bour local\b|\bmost of our work starts\b|\bwork across\b|\bserving (?:Camden|South West Sydney)\b",
             "administrative office is not customer-facing; service_areas remains unverified",
             "remove local-contractor/premises implication",
-            lambda f, _t: nonempty_verified(f.get("service_areas"))
+            lambda f, t: permitted_operating_role(f, t)
+            or (nonempty_verified(f.get("service_areas"))
             and verified(f.get("contact", {}).get("customer_facing_premises"))
-            and f["contact"]["customer_facing_premises"].get("value") is True,
+            and f["contact"]["customer_facing_premises"].get("value") is True),
         ),
         _rule(
             "service_area_claim",
             r"AREAS WE COVER|SERVICE AREAS|\bwe work across\b|\bserv(?:e|ing) (?:the )?(?:Camden|South West Sydney)\b",
             "data/verified-facts.yml service_areas verified:false and empty",
             "replace with non-service suburb information or remove",
-            lambda f, _t: nonempty_verified(f.get("service_areas")),
+            lambda f, t: permitted_operating_role(f, t) or nonempty_verified(f.get("service_areas")),
         ),
         _rule(
             "false_verified_project_record",

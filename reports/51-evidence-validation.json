@@ -22,11 +22,11 @@
     "contact_consistency": {
       "result": "PASS",
       "counts": {
-        "public_phone": 78,
+        "public_phone": 5,
         "public_phone_uri": 65,
-        "public_email": 14,
-        "administrative_address": 12,
-        "no_contract_disclosure": 13
+        "public_email": 2,
+        "administrative_address": 1,
+        "no_contract_disclosure": 7
       },
       "form_adjacencies": {
         "contact": {
@@ -87,7 +87,7 @@
       "legacy_occurrences": 232,
       "legacy_unsupported_dispositioned": 228,
       "additional_blind_spot_occurrences_dispositioned": 309,
-      "current_supported": 16,
+      "current_supported": 7,
       "current_unsupported": 0
     }
   },

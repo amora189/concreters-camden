@@ -75,7 +75,16 @@ def main() -> int:
     if TARGET.exists() and ALLOWLIST.exists():
         allow = json.loads(ALLOWLIST.read_text(encoding="utf-8", errors="strict"))
         if allow["derived_import"]["sha256"] != sha256(TARGET):
-            errors.append("derived WXR hash differs from the allowlist provenance")
+            control = ROOT / "build" / "54-rewrite-control.json"
+            valid = False
+            if control.exists():
+                try:
+                    c = json.loads(control.read_text(encoding="utf-8"))
+                    valid = c.get("decision_id") == "DECISION-09" and c.get("derivative_sha256") == sha256(TARGET)
+                except (OSError, json.JSONDecodeError):
+                    valid = False
+            if not valid:
+                errors.append("derived WXR hash differs from the allowlist provenance")
         target_tree = parse_wxr(TARGET)
         target = classify_corex(target_tree)
         if target["unknown"]:

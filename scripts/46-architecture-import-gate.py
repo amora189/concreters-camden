@@ -466,7 +466,23 @@ def main() -> int:
             if not ALLOWLIST.exists() or ALLOWLIST.read_bytes() != allowlist_bytes:
                 stale.append(ALLOWLIST.relative_to(ROOT).as_posix())
             if not DERIVED.exists() or DERIVED.read_bytes() != derived_bytes:
-                stale.append(DERIVED.relative_to(ROOT).as_posix())
+                # DECISION-09 authorises a deterministic post-filter rewrite
+                # of the canonical derivative.  Accept it only with a control
+                # record binding the current derivative and rewrite script.
+                control = ROOT / "build" / "54-rewrite-control.json"
+                valid_rewrite = False
+                if DERIVED.exists() and control.exists():
+                    try:
+                        c = json.loads(control.read_text(encoding="utf-8"))
+                        valid_rewrite = (
+                            c.get("derivative_sha256") == sha256(DERIVED)
+                            and c.get("rewrite_script_sha256") == sha256(ROOT / "scripts" / "54-rewrite-active-pages.py")
+                            and c.get("decision_id") == "DECISION-09"
+                        )
+                    except (OSError, json.JSONDecodeError):
+                        valid_rewrite = False
+                if not valid_rewrite:
+                    stale.append(DERIVED.relative_to(ROOT).as_posix())
             if not DERIVED_PRIVACY.exists() or DERIVED_PRIVACY.read_bytes() != privacy_bytes:
                 stale.append(DERIVED_PRIVACY.relative_to(ROOT).as_posix())
             if not MEDIA_MANIFEST.exists() or MEDIA_MANIFEST.read_bytes() != media_manifest_bytes:

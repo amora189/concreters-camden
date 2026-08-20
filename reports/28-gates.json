@@ -17,8 +17,8 @@
   },
   {
    "name": "7. uniqueness gates",
-   "result": "FAIL",
-   "detail": "5-grams on >2 pages=1761; within-class pairs over 40% overlap=1491"
+   "result": "PASS",
+   "detail": "5-grams on >2 pages=0; within-class pairs over 40% overlap=0"
   },
   {
    "name": "8. intersection audit",
@@ -37,8 +37,8 @@
   },
   {
    "name": "13. source business name",
-   "result": "FAIL",
-   "detail": "kit settings=1, page bodies=0, supplementary=0; identity fields=[\"site_name='E&amp;T Co Concreters Camden'\"]"
+   "result": "PASS",
+   "detail": "kit settings=0, page bodies=0, supplementary=0; identity fields=clean"
   },
   {
    "name": "14. menu targets in assigned locations",

@@ -1,141 +1,122 @@
 {
- "pages_scanned": 156,
+ "pages_scanned": 75,
  "threshold": 0.2,
  "severity_counts": {
-  "SEVERE": 90,
-  "MODERATE": 49,
-  "BELOW THRESHOLD": 12,
+  "MODERATE": 9,
+  "BELOW THRESHOLD": 61,
   "CLEAN": 5
  },
  "severity_by_class": {
-  "cost_comparison": {
-   "SEVERE": 10
-  },
-  "guide": {
-   "SEVERE": 35
-  },
-  "guide_hub": {
-   "BELOW THRESHOLD": 1
-  },
   "home": {
    "CLEAN": 1
   },
-  "intersection": {
-   "SEVERE": 35
-  },
   "service": {
-   "SEVERE": 10
+   "MODERATE": 8,
+   "BELOW THRESHOLD": 2
   },
   "suburb": {
-   "MODERATE": 49,
-   "BELOW THRESHOLD": 11
+   "MODERATE": 1,
+   "BELOW THRESHOLD": 59
   },
   "utility": {
    "CLEAN": 4
   }
  },
- "severe_pages": 90,
- "severe_filler_words": 145064,
- "pages_over_threshold": 139,
- "pages_with_any_filler": 151,
+ "severe_pages": 0,
+ "severe_filler_words": 0,
+ "pages_over_threshold": 9,
+ "pages_with_any_filler": 70,
  "pages_clean": 5,
- "total_body_words": 181571,
- "total_filler_words": 149686,
- "corpus_filler_pct": 0.8244,
+ "total_body_words": 28589,
+ "total_filler_words": 2645,
+ "corpus_filler_pct": 0.0925,
  "over_by_class": {
-  "guide": 35,
-  "cost_comparison": 10,
-  "intersection": 35,
-  "service": 10,
-  "suburb": 49
+  "service": 8,
+  "suburb": 1
  },
  "all_by_class": {
-  "guide": 35,
-  "cost_comparison": 10,
-  "intersection": 35,
   "service": 10,
   "suburb": 60,
-  "guide_hub": 1,
   "home": 1,
   "utility": 4
  },
  "worst": [
   [
-   "camden-council-driveway-crossing",
-   "guide",
-   "0.9716"
+   "commercial-concreting-south-west-sydney",
+   "service",
+   "0.3065"
   ],
   [
-   "driveway-cost-calculator",
-   "cost_comparison",
-   "0.9701"
+   "concreters-len-waters-estate",
+   "suburb",
+   "0.2880"
   ],
   [
-   "slab-volume-calculator",
-   "cost_comparison",
-   "0.9701"
+   "concrete-driveways-south-west-sydney",
+   "service",
+   "0.2484"
   ],
   [
-   "coloured-concrete-driveway-cost",
-   "cost_comparison",
-   "0.9670"
+   "concrete-driveway-replacement-south-west-sydney",
+   "service",
+   "0.2416"
   ],
   [
-   "exposed-aggregate-driveway-cost",
-   "cost_comparison",
-   "0.9670"
+   "concrete-paths-south-west-sydney",
+   "service",
+   "0.2355"
   ],
   [
-   "plain-concrete-driveway-cost",
-   "cost_comparison",
-   "0.9670"
+   "exposed-aggregate-south-west-sydney",
+   "service",
+   "0.2347"
   ],
   [
-   "stencilled-concrete-driveway-cost",
-   "cost_comparison",
-   "0.9670"
+   "decorative-concrete-south-west-sydney",
+   "service",
+   "0.2295"
   ],
   [
-   "concrete-crossovers-and-laybacks-spring-farm",
-   "intersection",
-   "0.9562"
+   "concrete-patios-south-west-sydney",
+   "service",
+   "0.2286"
   ],
   [
-   "concrete-crossovers-and-laybacks-austral",
-   "intersection",
-   "0.9560"
+   "concrete-crossovers-and-laybacks-south-west-sydney",
+   "service",
+   "0.2210"
   ],
   [
-   "concrete-crossovers-and-laybacks-leppington",
-   "intersection",
-   "0.9555"
+   "concrete-slabs-south-west-sydney",
+   "service",
+   "0.1921"
   ],
   [
-   "concrete-driveway-cost-nsw",
-   "guide",
-   "0.9554"
+   "shed-and-garage-slabs-south-west-sydney",
+   "service",
+   "0.1905"
   ],
   [
-   "concrete-crossovers-and-laybacks-currans-hill",
-   "intersection",
-   "0.9537"
+   "concreters-casula",
+   "suburb",
+   "0.1566"
   ]
  ],
  "best": [
   [
-   "concreters-mount-annan",
+   "concreters-austral",
    "suburb",
-   "0.1577"
+   "0.0409"
   ],
   [
-   "concreters-oran-park",
+   "concreters-edmondson-park",
    "suburb",
-   "0.1451"
+   "0.0384"
   ],
   [
-   "guides",
-   "guide_hub",
-   "0.0515"
+   "concreters-bringelly",
+   "suburb",
+   "0.0047"
   ],
   [
    "homepage",

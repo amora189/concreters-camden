@@ -1,8 +1,8 @@
 {
   "result": "PASS",
   "totals": {
-    "occurrences": 16,
-    "supported": 16,
+    "occurrences": 7,
+    "supported": 7,
     "unsupported": 0,
     "pages_with_claims": 6,
     "pages_with_unsupported_claims": 0,
@@ -11,7 +11,7 @@
     "additional_blind_spot_occurrences_dispositioned": 309,
     "current_by_category": {
       "response_time_promise": 1,
-      "workmanship_guarantee_warranty": 15
+      "workmanship_guarantee_warranty": 6
     }
   },
   "legacy_reconciliation": {

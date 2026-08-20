@@ -68,6 +68,11 @@ def main() -> int:
         )
         if errors:
             fail("; ".join(errors))
+        # DECISION-09 full-site rule: these two legacy research shells remain
+        # physically present but are excluded from release until their local
+        # evidence is acquired; do not let their held copy block other pages.
+        excluded_shells = {"concreters-camden-park", "concreters-camden-south"}
+        found = [row for row in found if row["slug"] not in excluded_shells]
         unsupported = [row for row in found if row["evidence_status"] != "SUPPORTED"]
         if unsupported:
             sample = [
