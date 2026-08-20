@@ -3,6 +3,7 @@
 Date: 21 August 2026 (Australia/Sydney)
 
 - Source: approved mutable derivative `build/46-active-main-import.xml`.
+- Export method: reproducible local static builder (`scripts/56-build-static-export.py`) from the approved derivative. The official Simply Static plugin was not run because the private PHP 8.3 WordPress staging/import environment was not available; this remains a production-release blocker requiring plugin-based parity verification.
 - Output: `build/cloudflare-pages/`.
 - Static HTML pages: 76.
 - Permitted media copied: 55.
