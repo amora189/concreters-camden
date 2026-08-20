@@ -5,7 +5,9 @@
   "status": "PASS",
   "errors": [],
   "derivative": {
-    "status": "NOT_RUN"
+    "service_pages": 10,
+    "bad_pages": {},
+    "status": "PASS"
   },
   "numeric_output_prohibited_without_evidence": true,
   "ledger_decision_id": "DECISION-09"

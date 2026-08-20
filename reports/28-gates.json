@@ -17,8 +17,8 @@
   },
   {
    "name": "7. uniqueness gates",
-   "result": "PASS",
-   "detail": "5-grams on >2 pages=0; within-class pairs over 40% overlap=0"
+   "result": "FAIL",
+   "detail": "5-grams on >2 pages=446; within-class pairs over 40% overlap=1395"
   },
   {
    "name": "8. intersection audit",
