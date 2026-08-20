@@ -1,224 +1,184 @@
-# Stage 34 — service specification matrix.
+# Stage 54 — independent-provider specification model.
+# Authority: DECISION-09-independent-provider-specification.md (21 August 2026).
 #
-# Authority: DECISION-04-scope-reduction.md §D23.
-#
-# EVERY FIELD IS EMPTY AND verified: false. THIS FILE MUST NOT BE POPULATED BY
-# AN AGENT.
-#
-# D23.2 is explicit: not from the existing pages, not from the other nine
-# services, not from Australian Standards general knowledge. The owner or a
-# qualified engineer supplies every value.
-#
-# WHY THIS FILE EXISTS
-# The ten service pages currently carry an IDENTICAL nine-value specification
-# set: 32 MPa, 125mm, SL72, 800mm, 900mm, 1200mm, 4.0-5.5m, 4%, 1:6. A patio
-# slab and a commercial hardstand do not share thickness and mesh. The uniform
-# set is a property of the copy generator, not of concreting practice, so every
-# one of those values is currently an UNATTRIBUTED SPECIFICATION PUBLISHED AS
-# FACT on ten published pages. See reports/34-service-rebuild-brief.md §2.
-#
-# HOW TO FILL A FIELD
-#   value:        the figure, with its unit, exactly as it should appear
-#   verified:     set true only when attested
-#   attested_by:  owner | engineer | Australian Standard with clause number
-#   source:       document, standard clause, or "owner attestation"
-#   sighted_date: YYYY-MM-DD
-#
-# A value without verified: true is treated as absent and MUST NOT be published.
+# This is a claim-disposition matrix, not a catalogue of Structure Co methods.
+# Every public technical field is conditional and numeric output is prohibited
+# unless a future evidenced-fixed-value cell supplies exact authority.
 
-schema_version: "1.0"
-generated: "2026-08-18"
-authority: "DECISION-04-scope-reduction.md §D23"
-populated: false
-blocks: "the entire Wave 1 service page rebuild"
+schema_version: "2.0"
+generated: "2026-08-21"
+authority: "DECISION-09-independent-provider-specification.md"
+operating_model: "independent-provider-coordination"
+populated: true
+resolution_model: "claim-removed-or-evidenced-fixed-value"
+evidence_register: "reports/53-service-specification-matrix.csv"
+owner_decision_ledger: "build/54-independent-provider-decision.json"
+numeric_output_prohibited_without_evidence: true
 
-# Field template applied to every service below.
-_field_template:
-  value: ""
-  verified: false
-  attested_by: ""
-  source: ""
-  sighted_date: ""
+required_fields:
+  - concrete thickness
+  - concrete strength/grade
+  - reinforcement/mesh
+  - base preparation
+  - joint type and spacing
+  - curing requirements
+  - drainage/fall
+  - edges/formwork
+  - service-specific requirements
 
-_required_fields:
-  - slab_thickness
-  - concrete_grade
-  - reinforcement
-  - base_preparation
-  - control_joint_spacing
-  - cure_time
-  - fall_and_drainage
-  - edge_treatment
-  - service_specific_requirement
+approved_public_wording:
+  design-specific: "The appointed provider and project designer must confirm the applicable requirement for the actual design before work begins."
+  council-specific: "The controlling council's current requirements and approved documents must be checked for the actual property before work begins."
+  product-specific: "The selected product or finish supplier and appointed provider must confirm the applicable requirement before it is specified."
+  site-specific: "The appointed provider must assess and confirm the applicable requirement for the actual site before quoting."
+  provider-confirmed: "The appointed provider must confirm the applicable requirement for the selected system and project conditions before work begins."
+  not-applicable: "This field is not applicable to the service scope; no technical value is emitted."
+
+disposition_rules:
+  claim-removed:
+    verified: false
+    public_numeric_output: false
+    requires: [classification, evidence_or_operating_model_authority, approved_conditional_wording, derivative_claim_scan]
+  evidenced-fixed-value:
+    verified: true
+    public_numeric_output: true
+    requires: [source, sighted_date, exact_value]
 
 services:
-
   concrete-driveways-south-west-sydney:
     display_name: "Concrete Driveways"
-    slab_thickness:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    concrete_grade:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    reinforcement:             {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    base_preparation:          {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    control_joint_spacing:     {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    cure_time:                 {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    fall_and_drainage:         {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    edge_treatment:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    service_specific_requirement:
-      note: "vehicle loading class; crossover interface with the council layback"
-      value: "", verified: false, attested_by: "", source: "", sighted_date: ""
-
-  concrete-driveway-replacement-south-west-sydney:
-    display_name: "Concrete Driveway Replacement"
-    slab_thickness:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    concrete_grade:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    reinforcement:             {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    base_preparation:          {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    control_joint_spacing:     {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    cure_time:                 {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    fall_and_drainage:         {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    edge_treatment:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    service_specific_requirement:
-      note: "demolition and spoil removal; subgrade condition after breakout"
-      value: "", verified: false, attested_by: "", source: "", sighted_date: ""
-
-  concrete-slabs-south-west-sydney:
-    display_name: "Concrete Slabs"
-    slab_thickness:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    concrete_grade:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    reinforcement:             {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    base_preparation:          {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    control_joint_spacing:     {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    cure_time:                 {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    fall_and_drainage:         {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    edge_treatment:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    service_specific_requirement:
-      note: "site classification and footing system; AS 2870 applies where the slab is structural"
-      value: "", verified: false, attested_by: "", source: "", sighted_date: ""
-
-  shed-and-garage-slabs-south-west-sydney:
-    display_name: "Shed & Garage Slabs"
-    slab_thickness:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    concrete_grade:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    reinforcement:             {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    base_preparation:          {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    control_joint_spacing:     {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    cure_time:                 {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    fall_and_drainage:         {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    edge_treatment:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    service_specific_requirement:
-      note: "shed anchor/rebate detail; engineer's slab design where the shed supplier requires one"
-      value: "", verified: false, attested_by: "", source: "", sighted_date: ""
-
-  concrete-paths-south-west-sydney:
-    display_name: "Concrete Paths & Pathways"
-    slab_thickness:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    concrete_grade:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    reinforcement:             {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    base_preparation:          {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    control_joint_spacing:     {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    cure_time:                 {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    fall_and_drainage:         {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    edge_treatment:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    service_specific_requirement:
-      note: "pedestrian-only loading; accessible-path gradient where applicable"
-      value: "", verified: false, attested_by: "", source: "", sighted_date: ""
-
-  concrete-patios-south-west-sydney:
-    display_name: "Concrete Patios & Alfresco"
-    slab_thickness:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    concrete_grade:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    reinforcement:             {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    base_preparation:          {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    control_joint_spacing:     {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    cure_time:                 {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    fall_and_drainage:         {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    edge_treatment:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    service_specific_requirement:
-      note: "fall away from the dwelling; slab-to-house interface and damp detail"
-      value: "", verified: false, attested_by: "", source: "", sighted_date: ""
-
+    cells:
+      concrete thickness: site-specific
+      concrete strength/grade: design-specific
+      reinforcement/mesh: design-specific
+      base preparation: site-specific
+      joint type and spacing: design-specific
+      curing requirements: provider-confirmed
+      drainage/fall: site-specific
+      edges/formwork: design-specific
+      service-specific requirements: site-specific
   exposed-aggregate-south-west-sydney:
     display_name: "Exposed Aggregate"
-    slab_thickness:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    concrete_grade:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    reinforcement:             {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    base_preparation:          {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    control_joint_spacing:     {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    cure_time:                 {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    fall_and_drainage:         {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    edge_treatment:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    service_specific_requirement:
-      note: "aggregate type and size; exposure method; sealer specification and re-seal interval"
-      value: "", verified: false, attested_by: "", source: "", sighted_date: ""
-
+    cells:
+      concrete thickness: site-specific
+      concrete strength/grade: design-specific
+      reinforcement/mesh: design-specific
+      base preparation: site-specific
+      joint type and spacing: design-specific
+      curing requirements: provider-confirmed
+      drainage/fall: site-specific
+      edges/formwork: design-specific
+      service-specific requirements: product-specific
+  concrete-slabs-south-west-sydney:
+    display_name: "Concrete Slabs"
+    cells:
+      concrete thickness: design-specific
+      concrete strength/grade: design-specific
+      reinforcement/mesh: design-specific
+      base preparation: site-specific
+      joint type and spacing: design-specific
+      curing requirements: provider-confirmed
+      drainage/fall: site-specific
+      edges/formwork: design-specific
+      service-specific requirements: design-specific
+  concrete-paths-south-west-sydney:
+    display_name: "Concrete Paths"
+    cells:
+      concrete thickness: site-specific
+      concrete strength/grade: design-specific
+      reinforcement/mesh: design-specific
+      base preparation: site-specific
+      joint type and spacing: design-specific
+      curing requirements: provider-confirmed
+      drainage/fall: site-specific
+      edges/formwork: design-specific
+      service-specific requirements: site-specific
+  concrete-patios-south-west-sydney:
+    display_name: "Concrete Patios"
+    cells:
+      concrete thickness: site-specific
+      concrete strength/grade: design-specific
+      reinforcement/mesh: design-specific
+      base preparation: site-specific
+      joint type and spacing: design-specific
+      curing requirements: provider-confirmed
+      drainage/fall: site-specific
+      edges/formwork: design-specific
+      service-specific requirements: design-specific
   decorative-concrete-south-west-sydney:
     display_name: "Decorative Concrete"
-    slab_thickness:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    concrete_grade:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    reinforcement:             {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    base_preparation:          {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    control_joint_spacing:     {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    cure_time:                 {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    fall_and_drainage:         {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    edge_treatment:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    service_specific_requirement:
-      note: "which finishes are offered — coloured, stencil, stamped, honed; oxide dosing; sealer"
-      value: "", verified: false, attested_by: "", source: "", sighted_date: ""
-
+    cells:
+      concrete thickness: site-specific
+      concrete strength/grade: design-specific
+      reinforcement/mesh: design-specific
+      base preparation: site-specific
+      joint type and spacing: design-specific
+      curing requirements: provider-confirmed
+      drainage/fall: site-specific
+      edges/formwork: design-specific
+      service-specific requirements: product-specific
+  concrete-driveway-replacement-south-west-sydney:
+    display_name: "Concrete Driveway Replacement"
+    cells:
+      concrete thickness: site-specific
+      concrete strength/grade: design-specific
+      reinforcement/mesh: design-specific
+      base preparation: site-specific
+      joint type and spacing: design-specific
+      curing requirements: provider-confirmed
+      drainage/fall: site-specific
+      edges/formwork: design-specific
+      service-specific requirements: site-specific
+  shed-and-garage-slabs-south-west-sydney:
+    display_name: "Shed and Garage Slabs"
+    cells:
+      concrete thickness: design-specific
+      concrete strength/grade: design-specific
+      reinforcement/mesh: design-specific
+      base preparation: site-specific
+      joint type and spacing: design-specific
+      curing requirements: provider-confirmed
+      drainage/fall: site-specific
+      edges/formwork: design-specific
+      service-specific requirements: design-specific
   concrete-crossovers-and-laybacks-south-west-sydney:
-    display_name: "Concrete Crossovers & Laybacks"
-    slab_thickness:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    concrete_grade:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    reinforcement:             {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    base_preparation:          {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    control_joint_spacing:     {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    cure_time:                 {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    fall_and_drainage:         {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    edge_treatment:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    service_specific_requirement:
-      note: >
-        PER LGA, NOT ONE SET. Camden, Liverpool, Campbelltown and Wollondilly each
-        specify their own width limits, grade limits, application path and fees.
-        These are the same figures blocked by the Liverpool question in
-        reports/23-owner-questions.md and required again by the Stage 31 calculator.
-      value: "", verified: false, attested_by: "", source: "", sighted_date: ""
-
+    display_name: "Concrete Crossovers and Laybacks"
+    cells:
+      concrete thickness: council-specific
+      concrete strength/grade: council-specific
+      reinforcement/mesh: council-specific
+      base preparation: council-specific
+      joint type and spacing: council-specific
+      curing requirements: council-specific
+      drainage/fall: council-specific
+      edges/formwork: council-specific
+      service-specific requirements: council-specific
   commercial-concreting-south-west-sydney:
     display_name: "Commercial Concreting"
-    slab_thickness:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    concrete_grade:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    reinforcement:             {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    base_preparation:          {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    control_joint_spacing:     {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    cure_time:                 {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    fall_and_drainage:         {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    edge_treatment:            {value: "", verified: false, attested_by: "", source: "", sighted_date: ""}
-    service_specific_requirement:
-      note: >
-        Hardstand loading class and vehicle type; whether an engineer's design is
-        required; whether the operator holds the licence class and insurance for
-        commercial work — that last point is an open P1 identity blocker.
-      value: "", verified: false, attested_by: "", source: "", sighted_date: ""
+    cells:
+      concrete thickness: design-specific
+      concrete strength/grade: design-specific
+      reinforcement/mesh: design-specific
+      base preparation: site-specific
+      joint type and spacing: design-specific
+      curing requirements: design-specific
+      drainage/fall: site-specific
+      edges/formwork: design-specific
+      service-specific requirements: design-specific
 
-# ---------------------------------------------------------------------------
-# UNATTRIBUTED VALUES CURRENTLY PUBLISHED (D23.3)
-#
-# Each of these appears on all ten published service pages with no attestation.
-# They are recorded here as findings, NOT as values to copy into the matrix.
-# ---------------------------------------------------------------------------
-currently_published_unattributed:
-  note: >
-    All nine appear identically on all ten service pages. Identical values across
-    ten different services is not a specification; it is a template artefact.
-    None may be carried into the matrix above without independent attestation.
-  values:
-    - {figure: "32 MPa",     appears_on_pages: 10, attested: false, field: concrete_grade}
-    - {figure: "125mm",      appears_on_pages: 10, attested: false, field: slab_thickness}
-    - {figure: "SL72",       appears_on_pages: 10, attested: false, field: reinforcement}
-    - {figure: "800mm",      appears_on_pages: 10, attested: false, field: "footpath allocation, Oran Park"}
-    - {figure: "900mm",      appears_on_pages: 10, attested: false, field: "footpath allocation, Camden LGA default"}
-    - {figure: "1200mm",     appears_on_pages: 10, attested: false, field: "allocation width"}
-    - {figure: "4.0–5.5m",   appears_on_pages: 10, attested: false, field: "crossing width range"}
-    - {figure: "4%",         appears_on_pages: 10, attested: false, field: "grade"}
-    - {figure: "1:6",        appears_on_pages: 10, attested: false, field: "fall ratio"}
-    - {figure: "SL82",       appears_on_pages: 1,  attested: false, field: reinforcement, page: concrete-slabs-south-west-sydney}
+curing_disposition:
+  services:
+    - concrete-slabs-south-west-sydney
+    - shed-and-garage-slabs-south-west-sydney
+  classification: provider-confirmed
+  resolution: claim-removed
+  verified: false
+  public_wording: "Curing requirements are confirmed for the selected concrete system and project conditions before placement. The appointed provider must follow the applicable design, supplier and product requirements, taking account of exposure and weather conditions."
+  numeric_output_prohibited: true
+  evidence: "DECISION-09 owner decision and independent-provider operating model; no universal method asserted"
+
+source_classification_register:
+  source: "reports/53-service-specification-matrix.csv"
+  rows: 90
+  classifications: [DESIGN-SPECIFIC, COUNCIL-SPECIFIC, PRODUCT-SPECIFIC, SITE-SPECIFIC, PROVIDER-METHOD, UNRESOLVED]
+  note: "Report 53 classifications are retained as evidence for the disposition; the two UNRESOLVED curing rows are resolved by D40 claim removal, not by verifying a value."

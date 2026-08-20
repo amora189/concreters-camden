@@ -1,0 +1,12 @@
+{
+  "model": "data\\service-specs.yml",
+  "decision": "build\\54-independent-provider-decision.json",
+  "cells": 90,
+  "status": "PASS",
+  "errors": [],
+  "derivative": {
+    "status": "NOT_RUN"
+  },
+  "numeric_output_prohibited_without_evidence": true,
+  "ledger_decision_id": "DECISION-09"
+}

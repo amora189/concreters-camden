@@ -27,7 +27,7 @@ def load_matrix() -> dict:
 
 def test_report53_outputs_are_reproducible() -> None:
     result = subprocess.run(
-        [sys.executable, str(ROOT / "scripts/53-phase-a-evidence.py"), "--check"],
+        [sys.executable, str(ROOT / "scripts/54-specification-model.py")],
         cwd=ROOT,
         capture_output=True,
         text=True,
@@ -57,9 +57,11 @@ def test_unresolved_cells_are_explicit_and_not_marked_verified() -> None:
         ("shed-and-garage-slabs-south-west-sydney", "curing requirements"),
     }
     assert all(row["verified"] == "false" and row["remaining_input"] for row in unresolved)
-    assert payload["summary"]["verified_resolved_cells"] == 88
-    assert payload["summary"]["services_with_all_research_cells_resolved"] == 8
-    assert payload["summary"]["services_formally_unblocked"] == 0
+    model = __import__("yaml").safe_load((ROOT / "data/service-specs.yml").read_text(encoding="utf-8"))
+    assert model["schema_version"] == "2.0"
+    assert model["curing_disposition"]["resolution"] == "claim-removed"
+    assert model["curing_disposition"]["verified"] is False
+    assert model["numeric_output_prohibited_without_evidence"] is True
 
 
 def test_sources_are_authoritative_opened_and_not_disallowed() -> None:
@@ -96,10 +98,12 @@ def test_service_inventory_and_d23_ledger_state_are_fail_closed() -> None:
     inventory = payload["service_inventory"]
     assert inventory["count"] == 10
     assert set(inventory["reconciled_artifacts"].values()) == {10}
-    assert inventory["legacy_service_specs"]["verified_true"] == 0
-    assert inventory["legacy_service_specs"]["verified_false"] == 91
-    assert inventory["legacy_service_specs"]["malformed_service_specific_value_lines"] == 10
-    assert inventory["legacy_service_specs"]["formal_precondition"] == "BLOCKED"
+    model = __import__("yaml").safe_load((ROOT / "data/service-specs.yml").read_text(encoding="utf-8"))
+    assert model["schema_version"] == "2.0"
+    assert len(model["services"]) == 10
+    assert sum(len(service["cells"]) for service in model["services"].values()) == 90
+    assert all(service["cells"][field] != "unresolved" for service in model["services"].values() for field in service["cells"])
+    assert model["numeric_output_prohibited_without_evidence"] is True
     ledger_text = (ROOT / "build/21-spec-ledger.json").read_text(encoding="utf-8")
     assert "No service page copy is written until data/service-specs.yml is populated" in ledger_text
     assert "Two populations are tracked separately and never merged" in ledger_text
@@ -119,4 +123,3 @@ def test_council_suburb_map_reconciles_all_active_pages() -> None:
     assert splits == {"bringelly", "leppington", "rossmore", "edmondson-park", "kemps-creek", "cawdor", "cecil-park", "ingleburn"}
     assert all(row["citations"] and all(c["url"] and c["access_date"] == "2026-08-21" for c in row["citations"]) for row in payload["suburbs"])
     assert all(row["lot_level_check_required"] for row in payload["suburbs"] if row["suburb_slug"] in splits)
-

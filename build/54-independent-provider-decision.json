@@ -1,0 +1,34 @@
+{
+  "decision_id": "DECISION-09",
+  "date": "2026-08-21",
+  "source": "owner instruction issued in session, 21 August 2026",
+  "model": "independent-provider-coordination",
+  "resolution_classes": [
+    "evidenced-fixed-value",
+    "council-specific",
+    "design-specific",
+    "product-specific",
+    "site-specific",
+    "provider-confirmed",
+    "not-applicable",
+    "unresolved"
+  ],
+  "dispositions": {
+    "claim-removed": {
+      "verified": false,
+      "public_numeric_output": false,
+      "requires": ["classification", "evidence_or_operating_model_authority", "approved_conditional_wording", "derivative_claim_scan"]
+    },
+    "evidenced-fixed-value": {
+      "verified": true,
+      "public_numeric_output": true,
+      "requires": ["source", "sighted_date", "exact_value"]
+    }
+  },
+  "curing_public_wording": "Curing requirements are confirmed for the selected concrete system and project conditions before placement. The appointed provider must follow the applicable design, supplier and product requirements, taking account of exposure and weather conditions.",
+  "curing_services": ["concrete-slabs-south-west-sydney", "shed-and-garage-slabs-south-west-sydney"],
+  "numeric_output_prohibited_without_evidence": true,
+  "withdrawn_pages": 81,
+  "active_pages_target": 76,
+  "calculator": "excluded"
+}
