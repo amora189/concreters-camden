@@ -225,6 +225,7 @@ def seo_profile(slug: str, title: str, page_type: str, service_slug: str = "") -
 def page_head(profile: dict[str, object], canonical: str, crumbs: list[tuple[str, str]], page_type: str, service_slug: str = "") -> str:
     title = str(profile["title"])
     description = str(profile["description"])
+    robots = str(profile.get("robots", "index,follow"))
     graph: list[dict[str, object]] = [{
         "@type": "WebPage", "name": title, "url": canonical, "description": description,
         "inLanguage": "en-AU", "isPartOf": {"@type": "WebSite", "name": BRAND, "url": BASE + "/"},
@@ -240,7 +241,7 @@ def page_head(profile: dict[str, object], canonical: str, crumbs: list[tuple[str
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}">
-  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="robots" content="{html.escape(robots)}">
   <link rel="canonical" href="{canonical}"><meta property="og:title" content="{html.escape(title)}">
   <meta property="og:description" content="{html.escape(description)}"><meta property="og:url" content="{canonical}">
   <link rel="stylesheet" href="/assets/site.css"><script type="application/ld+json">{schema}</script>
@@ -266,7 +267,7 @@ def footer() -> str:
 def document(profile: dict[str, object] | str, canonical: str, content: str, alt_register: dict[str, str], crumbs: list[tuple[str, str]] | dict[str, str] | None = None, page_type: str = "", service_slug: str = "") -> str:
     if isinstance(profile, str):
         # Backwards-compatible call shape retained for the generated 404 page.
-        profile = {"title": f"{profile} | {BRAND}", "description": canonical}
+        profile = {"title": f"{profile} | {BRAND}", "description": canonical, "robots": "noindex,nofollow,noarchive"}
         canonical, content, alt_register, crumbs = content, alt_register, crumbs if isinstance(crumbs, dict) else {}, []
     crumbs = crumbs if isinstance(crumbs, list) else []
     return page_head(profile, canonical, crumbs, page_type, service_slug) + header() + f'<main>{content}</main>' + footer() + '<script src="/assets/site.js" defer></script></body></html>'
@@ -421,7 +422,7 @@ def write_seo_inventory(rows: list[dict[str, object]], media_names: list[str]) -
         writer.writerows(records)
     title_unique = len({r["title"] for r in records}) == len(records)
     description_unique = len({r["meta_description"] for r in records}) == len(records)
-    md = ["# SEO intent and metadata map", "", "Generated from the approved 76-page static route inventory.", "", f"- Pages mapped: {len(records)}", f"- Unique titles: {'PASS' if title_unique else 'FAIL'}", f"- Unique descriptions: {'PASS' if description_unique else 'FAIL'}", "- Release state: private preview (`noindex,nofollow,noarchive`; `Disallow: /`)", "- Schema policy: WebPage plus BreadcrumbList; Service only on service pages; no LocalBusiness, Organization, Review or AggregateRating.", "", "| URL | Type | Intent | Primary phrase | Title | Indexability | Breadcrumbs | Schema |", "|---|---|---|---|---|---|---|---|"]
+    md = ["# SEO intent and metadata map", "", "Generated from the approved 76-page static route inventory.", "", f"- Pages mapped: {len(records)}", f"- Unique titles: {'PASS' if title_unique else 'FAIL'}", f"- Unique descriptions: {'PASS' if description_unique else 'FAIL'}", "- Release state: live site (`index,follow`; robots allows crawling)", "- Schema policy: WebPage plus BreadcrumbList; Service only on service pages; no LocalBusiness, Organization, Review or AggregateRating.", "", "| URL | Type | Intent | Primary phrase | Title | Indexability | Breadcrumbs | Schema |", "|---|---|---|---|---|---|---|---|"]
     for record in records:
         md.append("| " + " | ".join(record[key].replace("|", "\\|") for key in ("url", "page_type", "search_intent", "primary_target_phrase", "title", "indexability", "breadcrumb_trail", "schema_types")) + " |")
     SEO_MD.write_text("\n".join(md) + "\n", encoding="utf-8")
@@ -479,13 +480,14 @@ def main() -> int:
         rows.append({"slug": slug, "path": path, "title": title, "page_type": page_type, "profile": profile, "canonical": canonical, "breadcrumbs": crumbs, "service_slug": service_slug})
     (OUT / "assets" / "site.css").write_text(CSS + FORM_CSS, encoding="utf-8")
     (OUT / "assets" / "site.js").write_text(JS, encoding="utf-8")
-    (OUT / "sitemap.xml").write_text("<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"></urlset>", encoding="utf-8")
-    (OUT / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
-    (OUT / "_headers").write_text("/*\n  X-Robots-Tag: noindex, nofollow\n  X-Content-Type-Options: nosniff\n", encoding="utf-8")
+    sitemap_urls = "".join(f"<url><loc>{html.escape(str(row['canonical']))}</loc></url>" for row in rows)
+    (OUT / "sitemap.xml").write_text(f"<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">{sitemap_urls}</urlset>", encoding="utf-8")
+    (OUT / "robots.txt").write_text("User-agent: *\nAllow: /\n\nSitemap: https://concreterscamden.com.au/sitemap.xml\n", encoding="utf-8")
+    (OUT / "_headers").write_text("/*\n  X-Content-Type-Options: nosniff\n", encoding="utf-8")
     not_found = document("Page not found", "The requested page could not be found.", BASE + "/404/", f'<section class="page-hero page-hero--simple"><div class="container narrow"><span class="eyebrow">404</span><h1>That page is not here.</h1><p class="hero-lead">Try the homepage or explore the service pathways.</p><a class="button" href="/">Back to the homepage <span>↗</span></a></div></section>', alt_register)
     (OUT / "404.html").write_text(not_found, encoding="utf-8")
     write_seo_inventory(rows, media_names)
-    print(json.dumps({"pages": len(rows), "images": len(media_names), "stylesheets": 1, "scripts": 1, "indexable": 0, "output": str(OUT)}, indent=2))
+    print(json.dumps({"pages": len(rows), "images": len(media_names), "stylesheets": 1, "scripts": 1, "indexable": len(rows), "output": str(OUT)}, indent=2))
     return 0
 
 
