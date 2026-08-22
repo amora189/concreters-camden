@@ -80,7 +80,6 @@ def main() -> int:
     sitemap = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">" + "".join(f"<url><loc>https://concreterscamden.com.au{p}</loc></url>" for _, p, _ in rows) + "</urlset>"
     (OUT / "sitemap.xml").write_text(sitemap, encoding="utf-8")
     (OUT / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
-    (OUT / "_redirects").write_text("/wp-admin/* /404.html 404\n", encoding="utf-8")
     (OUT / "_headers").write_text("/*\n  X-Robots-Tag: noindex, nofollow\n  X-Content-Type-Options: nosniff\n", encoding="utf-8")
     (OUT / "404.html").write_text(page_html("Page not found", "The requested page could not be found.", "https://concreterscamden.com.au/404/"), encoding="utf-8")
     (OUT / "assets" / "site.css").write_text("body{font-family:system-ui,sans-serif;max-width: seventyrem;margin:auto;padding:1rem;line-height:1.6}header,footer{padding:1rem 0}nav a{margin-right:1rem}.content{max-width:70ch}aside{border:1px solid #ddd;padding:1rem;margin-top:2rem}", encoding="utf-8")
