@@ -16,6 +16,8 @@ OUT = ROOT / "build" / "cloudflare-pages"
 MEDIA = ROOT / "source-inputs" / "media"
 ALT_REGISTER = ROOT / "reports" / "24-image-distribution.csv"
 MEDIA_REMEDIATION = ROOT / "build" / "47-media-remediation.csv"
+SEO_CSV = ROOT / "reports" / "seo-intent-and-metadata-map.csv"
+SEO_MD = ROOT / "reports" / "seo-intent-and-metadata-map.md"
 WP = "{http://wordpress.org/export/1.2/}"
 CONTENT = "{http://purl.org/rss/1.0/modules/content/}"
 BASE = "https://concreterscamden.com.au"
@@ -125,6 +127,12 @@ def pretty_area(slug: str) -> str:
     return slug.removeprefix("concreters-").replace("-", " ").title()
 
 
+def suburb_service_slug(slug: str) -> str:
+    if any(token in slug for token in ("commercial", "industrial")):
+        return "commercial-concreting-south-west-sydney"
+    return "concrete-driveways-south-west-sydney"
+
+
 def safe_excerpt(text: str, limit: int = 480) -> str:
     text = clean(text)
     # Keep approved factual copy useful while avoiding a false direct-contractor voice.
@@ -166,22 +174,74 @@ def link(href: str, label: str, class_name: str = "") -> str:
 
 
 def breadcrumb(items: list[tuple[str, str]]) -> str:
-    return '<nav class="breadcrumbs" aria-label="Breadcrumb">' + " <span>/</span> ".join(link(url, label) for url, label in items) + "</nav>"
+    normalized = list(items)
+    if any(label == "Services" for _, label in normalized):
+        normalized = [("/#services" if label == "Services" else url, label) for url, label in normalized]
+    if any(label == "Service areas" for _, label in normalized):
+        normalized = [("/#areas" if label == "Service areas" else url, "Areas We Serve" if label == "Service areas" else label) for url, label in normalized]
+        if len(normalized) == 3:
+            area_slug = normalized[-1][0].strip("/")
+            service_slug = suburb_service_slug(area_slug)
+            normalized[-1] = (f"/{area_slug}/", pretty_area(area_slug))
+            normalized.append((f"/{service_slug}/", SERVICES[service_slug][0]))
+    return '<nav class="breadcrumbs" aria-label="Breadcrumb">' + " <span>/</span> ".join(link(url, label) for url, label in normalized) + "</nav>"
 
 
-def page_head(title: str, description: str, canonical: str, alt_register: dict[str, str]) -> str:
-    schema = json.dumps({
-        "@context": "https://schema.org", "@type": "WebPage", "name": title, "url": canonical,
-        "description": description, "isPartOf": {"@type": "WebSite", "name": BRAND, "url": BASE + "/"},
-    }, ensure_ascii=False)
+def breadcrumb_items(slug: str, title: str, page_type: str, service_slug: str = "") -> list[tuple[str, str]]:
+    if page_type == "home":
+        return [("/", "Home")]
+    if page_type == "service":
+        return [("/", "Home"), ("/#services", "Services"), (f"/{slug}/", title)]
+    if page_type == "suburb":
+        service_slug = service_slug or SERVICE_ORDER[0]
+        return [("/", "Home"), ("/#areas", "Areas We Serve"), (f"/{slug}/", title), (f"/{service_slug}/", SERVICES[service_slug][0])]
+    if page_type == "404":
+        return []
+    return [("/", "Home"), (f"/{slug}/", title)]
+
+
+def seo_profile(slug: str, title: str, page_type: str, service_slug: str = "") -> dict[str, object]:
+    if page_type == "home":
+        return {"title": "Camden concreting enquiries | Structure Co", "description": "Plan a Camden or South-West Sydney concreting enquiry with Structure Co. Share the site context and coordinate the next step with an independent provider.", "intent": "Camden/South-West Sydney concreting enquiry coordination", "primary": "Camden concreting enquiries", "secondary": "South-West Sydney concrete enquiries; concreting enquiry coordination", "evidence": "reports/55-full-site-completion.md; data/verified-facts.yml; reports/34-service-page-rebuild.md"}
+    if page_type == "service":
+        service_name = SERVICES[slug][0]
+        return {"title": f"{service_name} South-West Sydney | Structure Co", "description": f"Explore {service_name.lower()} enquiry questions for South-West Sydney. Structure Co helps organise site details before an independent provider confirms the project scope.", "intent": f"{service_name} research and enquiry", "primary": f"{service_name} South-West Sydney", "secondary": f"{service_name} enquiry; concrete project questions", "evidence": "data/service-specs.yml; reports/53-service-specification-matrix.csv; reports/34-service-page-rebuild.md"}
+    if page_type == "suburb":
+        area = pretty_area(slug)
+        service_slug = service_slug or SERVICE_ORDER[0]
+        service_name = SERVICES[service_slug][0]
+        return {"title": f"Concrete enquiries in {area} | Structure Co Camden", "description": f"Prepare a concrete enquiry for {area}. Structure Co coordinates site, access and service questions with a suitable independent provider in South-West Sydney.", "intent": f"{area} concreting enquiry", "primary": f"concreters {area}", "secondary": f"{service_name.lower()} {area}; South-West Sydney concreting", "evidence": "build/53-council-suburb-map.json; suburbs-expanded.json; reports/34-service-page-rebuild.md"}
+    utility = {
+        "about": ("About Structure Co Concreters Camden", "Understand how Structure Co Concreters Camden coordinates independent-provider concreting enquiries and keeps project details specific to the actual site.", "who Structure Co is and how coordination works", "Structure Co Concreters Camden; independent-provider coordination"),
+        "contact": ("Contact Structure Co Concreters Camden", "Contact Structure Co Concreters Camden by email or phone with the site, intended use, access notes and timing for a considered concreting enquiry.", "contact and enquiry", "Camden concreting contact; concrete enquiry"),
+        "quote": ("Start a Camden concrete enquiry | Structure Co", "Start a Camden concrete enquiry by sharing the property, intended use, access, existing surface, drainage questions and timing with Structure Co.", "concreting enquiry", "Camden concrete enquiry; project brief"),
+        "gallery": ("Concrete reference images | Structure Co Camden", "Browse approved concrete reference images for finishes, access and existing conditions. Images are visual context, not customer evidence or completed-work claims.", "informational visual reference", "concrete finishes; site conditions"),
+        "privacy-policy": ("Privacy and enquiry information | Structure Co", "Read how Structure Co Concreters Camden handles information shared through a concreting enquiry and how to request access, correction or deletion.", "privacy and legal information", "enquiry information; privacy"),
+    }
+    item = utility.get(slug, (title, f"{title} from Structure Co Concreters Camden, with factual context for a considered concreting enquiry in South-West Sydney.", "supporting concreting information", title))
+    return {"title": item[0], "description": item[1], "intent": item[2], "primary": item[3].split(";", 1)[0], "secondary": item[3], "evidence": "data/verified-facts.yml; reports/55-full-site-completion.md"}
+
+
+def page_head(profile: dict[str, object], canonical: str, crumbs: list[tuple[str, str]], page_type: str, service_slug: str = "") -> str:
+    title = str(profile["title"])
+    description = str(profile["description"])
+    graph: list[dict[str, object]] = [{
+        "@type": "WebPage", "name": title, "url": canonical, "description": description,
+        "inLanguage": "en-AU", "isPartOf": {"@type": "WebSite", "name": BRAND, "url": BASE + "/"},
+    }]
+    if crumbs:
+        graph.append({"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i, "name": label, "item": BASE + url.split("#", 1)[0]} for i, (url, label) in enumerate(crumbs, 1)]})
+    if page_type == "service" and service_slug in SERVICES:
+        graph.append({"@type": "Service", "name": SERVICES[service_slug][0], "serviceType": SERVICES[service_slug][0], "description": SERVICES[service_slug][1], "url": canonical, "areaServed": ["Camden", "South-West Sydney"]})
+    schema = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
     return f'''<!doctype html>
 <html lang="en-AU">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{html.escape(title)} | {BRAND}</title>
+  <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <link rel="canonical" href="{canonical}"><meta property="og:title" content="{html.escape(title)} | {BRAND}">
+  <link rel="canonical" href="{canonical}"><meta property="og:title" content="{html.escape(title)}">
   <meta property="og:description" content="{html.escape(description)}"><meta property="og:url" content="{canonical}">
   <link rel="stylesheet" href="/assets/site.css"><script type="application/ld+json">{schema}</script>
 </head>'''
@@ -193,22 +253,33 @@ def header() -> str:
   <div class="utility"><div class="container utility__inner"><span>Independent-provider enquiry coordination · Camden &amp; South-West Sydney</span><span class="utility__contact"><a href="mailto:{EMAIL}">{EMAIL}</a><a href="{PHONE_URI}">{PHONE}</a></span></div></div>
   <div class="container nav-wrap"><a class="brand" href="/"><span class="brand-mark">SC</span><span><strong>Structure Co</strong><small>Concreters Camden</small></span></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu <span>☰</span></button>
-    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation"><a href="/">Home</a><div class="nav-dropdown"><button type="button" aria-expanded="false">Services <span>⌄</span></button><div class="nav-dropdown__menu">{service_links}</div></div><a href="/about/">About</a><a href="/gallery/">Gallery</a><a href="/contact/">Contact</a><a class="nav-cta" href="/quote/">Start an enquiry <span>↗</span></a></nav>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation"><a href="/">Home</a><div class="nav-dropdown"><button type="button" aria-expanded="false">Services <span>⌄</span></button><div class="nav-dropdown__menu">{service_links}</div></div><a href="/about/">About</a><a href="/gallery/">Gallery</a><a href="/contact/">Contact</a><a class="nav-cta" href="/#quote-form">Start an enquiry <span>↗</span></a></nav>
   </div>
 </header>'''
 
 
 def footer() -> str:
     service_links = "".join(f'<li>{link(f"/{slug}/", SERVICES[slug][0])}</li>' for slug in NAV_SERVICES)
-    return f'''<footer class="site-footer"><div class="container footer-grid"><div><a class="brand brand--footer" href="/"><span class="brand-mark">SC</span><span><strong>Structure Co</strong><small>Concreters Camden</small></span></a><p class="footer-intro">A considered starting point for concreting enquiries in Camden and South-West Sydney, coordinated with suitable independent providers.</p></div><div><h2>Explore</h2><ul><li>{link("/about/", "About")}</li><li>{link("/gallery/", "Gallery")}</li><li>{link("/contact/", "Contact")}</li><li>{link("/privacy-policy/", "Privacy")}</li></ul></div><div><h2>Services</h2><ul>{service_links}</ul></div><div><h2>Enquiries</h2><p><a href="mailto:{EMAIL}">{EMAIL}</a><br><a href="{PHONE_URI}">{PHONE}</a></p><p class="footer-address">{ADDRESS}<br><small>Administrative office only; not open to customers.</small></p><a class="button button--small" href="/quote/">Tell us about your project</a></div></div><div class="container footer-bottom"><span>© <span data-year>2026</span> {BRAND}</span><span>Submitting an enquiry does not create a construction contract.</span></div></footer>'''
+    return f'''<footer class="site-footer"><div class="container footer-grid"><div><a class="brand brand--footer" href="/"><span class="brand-mark">SC</span><span><strong>Structure Co</strong><small>Concreters Camden</small></span></a><p class="footer-intro">A considered starting point for concreting enquiries in Camden and South-West Sydney, coordinated with suitable independent providers.</p></div><div><h2>Explore</h2><ul><li>{link("/about/", "About")}</li><li>{link("/gallery/", "Gallery")}</li><li>{link("/contact/", "Contact")}</li><li>{link("/privacy-policy/", "Privacy")}</li></ul></div><div><h2>Services</h2><ul>{service_links}</ul></div><div><h2>Enquiries</h2><p><a href="mailto:{EMAIL}">{EMAIL}</a><br><a href="{PHONE_URI}">{PHONE}</a></p><p class="footer-address">{ADDRESS}<br><small>Administrative office only; not open to customers.</small></p><a class="button button--small" href="/quote/#quote-form">Tell us about your project</a></div></div><div class="container footer-bottom"><span>© <span data-year>2026</span> {BRAND}</span><span>Submitting an enquiry does not create a construction contract.</span></div></footer>'''
 
 
-def document(title: str, description: str, canonical: str, content: str, alt_register: dict[str, str]) -> str:
-    return page_head(title, description, canonical, alt_register) + header() + f'<main>{content}</main>' + footer() + '<script src="/assets/site.js" defer></script></body></html>'
+def document(profile: dict[str, object] | str, canonical: str, content: str, alt_register: dict[str, str], crumbs: list[tuple[str, str]] | dict[str, str] | None = None, page_type: str = "", service_slug: str = "") -> str:
+    if isinstance(profile, str):
+        # Backwards-compatible call shape retained for the generated 404 page.
+        profile = {"title": f"{profile} | {BRAND}", "description": canonical}
+        canonical, content, alt_register, crumbs = content, alt_register, crumbs if isinstance(crumbs, dict) else {}, []
+    crumbs = crumbs if isinstance(crumbs, list) else []
+    return page_head(profile, canonical, crumbs, page_type, service_slug) + header() + f'<main>{content}</main>' + footer() + '<script src="/assets/site.js" defer></script></body></html>'
 
 
 def cta_band(heading: str = "Ready to shape the brief?") -> str:
-    return f'''<section class="cta-band"><div><span class="eyebrow eyebrow--light">Start with the right questions</span><h2>{heading}</h2><p>Share the site, intended use and any access or timing questions. We will coordinate the next step with an independent provider where appropriate.</p></div><div class="cta-band__actions"><a class="button button--light" href="/quote/">Start an enquiry <span>↗</span></a><a class="text-link text-link--light" href="mailto:{EMAIL}">Email {EMAIL}</a></div></section>'''
+    return f'''<section class="cta-band"><div><span class="eyebrow eyebrow--light">Start with the right questions</span><h2>{heading}</h2><p>Share the site, intended use and any access or timing questions. We will coordinate the next step with an independent provider where appropriate.</p></div><div class="cta-band__actions"><a class="button button--light" href="/quote/#quote-form">Start an enquiry <span>↗</span></a><a class="text-link text-link--light" href="mailto:{EMAIL}">Email {EMAIL}</a></div></section>'''
+
+
+def enquiry_form(context: str = "home") -> str:
+    heading = "Start an enquiry" if context == "home" else "Tell us about the project"
+    intro = "Share the location, service and project details so the next conversation starts with useful context."
+    return f'''<section id="quote-form" class="section section--form" aria-labelledby="quote-form-title"><div class="container form-layout"><div class="form-card"><span class="eyebrow">Start an enquiry</span><h2 id="quote-form-title">{heading}</h2><p>{intro}</p><form action="https://formspree.io/f/xljrvvpd" method="POST" data-formspree><input type="hidden" name="_subject" value="New Structure Co Concreters Camden enquiry"><input type="hidden" name="_format" value="plain"><div class="form-honeypot" aria-hidden="true"><label>Leave this field blank<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div><div class="form-grid"><div class="form-field"><label for="enquiry-name">Name</label><input id="enquiry-name" name="name" type="text" autocomplete="name" required></div><div class="form-field"><label for="enquiry-email">Email</label><input id="enquiry-email" name="email" type="email" autocomplete="email" required></div><div class="form-field"><label for="enquiry-phone">Phone</label><input id="enquiry-phone" name="phone" type="tel" autocomplete="tel"></div><div class="form-field"><label for="enquiry-location">Suburb or project location</label><input id="enquiry-location" name="suburb_or_project_location" type="text" autocomplete="address-level2" required></div><div class="form-field"><label for="enquiry-service">Service</label><select id="enquiry-service" name="service" required><option value="">Choose a service</option><option>Concrete driveways</option><option>Exposed aggregate</option><option>Concrete slabs</option><option>Concrete paths</option><option>Concrete patios</option><option>Decorative concrete</option><option>Other concrete enquiry</option></select></div><div class="form-field"><label for="enquiry-timing">Preferred timing</label><input id="enquiry-timing" name="preferred_timing" type="text" autocomplete="off"></div><div class="form-field form-field--wide"><label for="enquiry-details">Project details</label><textarea id="enquiry-details" name="project_details" rows="5" required></textarea></div><div class="form-field form-field--wide form-consent"><label><input type="checkbox" name="consent" value="yes" required> I consent to my enquiry being used to coordinate a response.</label></div></div><button class="button" type="submit">Send enquiry</button><p class="form-status" role="status" aria-live="polite"></p></form></div><aside class="compliance-copy"><span class="eyebrow">Before you submit</span><p>Submitting an enquiry does not create a construction contract. Structure Co Concreters Camden coordinates enquiries with suitable independent providers. Provider identity, quotation, licensing, insurance, contract and warranty details must be confirmed before work begins.</p><p><a href="/privacy-policy/">Read the privacy information.</a></p></aside></div></section>'''
 
 
 def card_image(filename: str, alt_register: dict[str, str]) -> str:
@@ -225,7 +296,7 @@ def service_cards(alt_register: dict[str, str], media_names: list[str], slugs: l
     return "".join(cards)
 
 
-def home_content(alt_register: dict[str, str], media_names: list[str], suburb_slugs: list[str]) -> str:
+def _home_content_raw(alt_register: dict[str, str], media_names: list[str], suburb_slugs: list[str]) -> str:
     hero_image = image_for("exposed", media_names)
     area_cards = []
     for slug in suburb_slugs[:12]:
@@ -239,7 +310,15 @@ def home_content(alt_register: dict[str, str], media_names: list[str], suburb_sl
 <section class="section section--dark"><div class="container council-grid"><div><span class="eyebrow eyebrow--light">Council context</span><h2>Frontage work needs the right local check.</h2><p>For properties in Liverpool City Council, a vehicle crossing application is made under section 138 of the Roads Act 1993. Current forms, inspections, drawings, utilities and fees should be checked with Council for the actual property.</p><p>That information is a coordination reference, not evidence that Structure Co is licensed or insured.</p></div><div class="council-card"><span class="council-card__icon">◎</span><h3>Own a Liverpool property?</h3><p>Bring the crossing location and any current Council correspondence to the enquiry.</p><a class="text-link text-link--light" href="/concrete-crossovers-and-laybacks-south-west-sydney/">Explore crossovers &amp; laybacks <span>→</span></a></div></div></section>
 <section class="section section--areas"><div class="container"><div class="section-heading"><div><span class="eyebrow">Service areas</span><h2>Camden at the centre.</h2></div><p>Browse the existing area pages for local context. Property boundaries and council requirements should always be confirmed for the actual address.</p></div><div class="area-grid">{''.join(area_cards)}</div></div></section>
 <section class="section section--faq"><div class="container faq-grid"><div><span class="eyebrow">Questions, answered carefully</span><h2>Before you send an enquiry.</h2><p>These answers describe the coordination model and the information worth having ready.</p><a class="arrow-link" href="/contact/">Ask a question <span>→</span></a></div><div class="faq-list">{faq_items([('What happens after I enquire?', 'We review the project information and coordinate the next conversation where an independent provider is suitable. An enquiry does not create a construction contract.'), ('Do you publish prices?', 'No universal price is asserted. Scope, access, existing conditions, finish and project requirements need to be confirmed for the actual site.'), ('What should I include?', 'The property location, intended use, approximate dimensions, access constraints, existing surfaces, drainage concerns and timing are useful starting points.'), ('Can I visit the address?', 'No. {ADDRESS} is an administrative correspondence office and is not open to customers or visitors.')])}</div></div></section>
-{cta_band()}'''
+    {cta_band()}'''
+
+
+def home_content(alt_register: dict[str, str], media_names: list[str], suburb_slugs: list[str]) -> str:
+    raw = _home_content_raw(alt_register, media_names, suburb_slugs)
+    marker = '<section class="hero hero--home">'
+    raw = raw.replace(marker, f'<section class="hero hero--home"><div class="container home-breadcrumb">{breadcrumb(breadcrumb_items("homepage", "Home", "home"))}</div>', 1)
+    hero_end = raw.find('</section>')
+    return raw[:hero_end + len('</section>')] + enquiry_form("home") + raw[hero_end + len('</section>'):]
 
 
 def faq_items(items: list[tuple[str, str]]) -> str:
@@ -264,7 +343,7 @@ def service_content(slug: str, title: str, description: str, key: str, alt_regis
 {cta_band(f"Start a {title.lower()} enquiry") }'''
 
 
-def suburb_content(slug: str, title: str, original: str, alt_register: dict[str, str], media_names: list[str], suburb_slugs: list[str]) -> str:
+def suburb_content(slug: str, title: str, original: str, alt_register: dict[str, str], media_names: list[str], suburb_slugs: list[str], service_slug: str) -> str:
     area = pretty_area(slug)
     excerpt = safe_excerpt(original, 560) or f"An enquiry for {area} should describe the property, intended use, access, existing surfaces, drainage concerns and timing."
     neighbours = [s for s in suburb_slugs if s != slug][:6]
@@ -279,7 +358,7 @@ def suburb_content(slug: str, title: str, original: str, alt_register: dict[str,
 {cta_band(f"Start a {area} enquiry") }'''
 
 
-def utility_content(slug: str, title: str, original: str, alt_register: dict[str, str], media_names: list[str]) -> str:
+def _utility_content_raw(slug: str, title: str, original: str, alt_register: dict[str, str], media_names: list[str]) -> str:
     if slug == "about":
         return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb([("/", "Home"), ("/about/", "About")])}<span class="eyebrow">About Structure Co</span><h1>A clearer way to begin a concreting conversation.</h1><p class="hero-lead">{BRAND} coordinates enquiries with suitable independent providers across Camden and South-West Sydney.</p></div></section><section class="section"><div class="container split-grid"><div class="split-media">{img(image_for("project", media_names), alt_register, True)}</div><div class="split-copy"><span class="eyebrow">The model</span><h2>Useful information first.</h2><p>We help organise the site details and questions that make an enquiry easier to assess. The appointed provider confirms the method, documents, quotation and contractual details for the actual project.</p><p>Submitting an enquiry does not create a construction contract. The address is administrative correspondence only, and no public business credentials are asserted here.</p><a class="button" href="/quote/">Start an enquiry <span>↗</span></a></div></div></section><section class="section section--dark"><div class="container principles"><span class="eyebrow eyebrow--light">Our principles</span><div class="principle-grid"><article><h3>Specific, not sweeping.</h3><p>Site, design, council and product requirements are confirmed where they apply.</p></article><article><h3>Independent, not implied.</h3><p>Provider identity, licensing, insurance and warranty information are checked before work begins.</p></article><article><h3>Clear, not pushy.</h3><p>An enquiry gives you a place to start; it does not promise a price or outcome.</p></article></div></div></section>{cta_band("Have a question about the model?")}'''
     if slug == "contact":
@@ -293,6 +372,59 @@ def utility_content(slug: str, title: str, original: str, alt_register: dict[str
         return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb([("/", "Home"), ("/privacy-policy/", "Privacy")])}<span class="eyebrow">Privacy</span><h1>Privacy and enquiry information.</h1><p class="hero-lead">A plain-language summary of how enquiry information is handled.</p></div></section><section class="section"><div class="container legal-copy"><h2>Information shared with us</h2><p>The public site label is {BRAND}. Enquiry information is coordinated only as reasonably necessary to respond to a request and for applicable administration.</p><p>An enquiry may include a name, phone number, suburb, requested service, optional email address, approximate job size and a free-text message. Payment details are not requested.</p><h2>Why information is used</h2><p>Information is used to respond to an enquiry and, with the submitter's consent, may be shared with a suitable independent provider so that the provider can assess the enquiry. It is not sold, rented or disclosed for third-party marketing.</p><h2>Questions or corrections</h2><p>For access, correction or deletion questions about an enquiry, email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p><p>Submitting an enquiry does not create a construction contract.</p></div></section>'''
     body = safe_excerpt(original, 1500) or "This page provides approved information for a considered concreting enquiry."
     return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb([("/", "Home"), (f"/{slug}/", title)])}<span class="eyebrow">Camden guide</span><h1>{html.escape(title)}</h1><p class="hero-lead">A practical reference for planning the questions around a concrete project.</p></div></section><section class="section"><div class="container article-layout"><article class="article-copy"><p class="lede">{html.escape(body[:500])}</p><h2>Start with the actual property.</h2><p>Site access, existing surfaces, levels, drainage, intended use and the relevant council context can all affect the questions that need to be answered. The appointed provider and project designer confirm what applies before work begins.</p><h2>Keep the enquiry specific.</h2><p>Share drawings, photos, dimensions or current correspondence where available. This helps separate a useful project question from a universal claim.</p></article><aside class="article-aside"><span class="eyebrow">Next step</span><h3>Talk through the brief.</h3><p>We can coordinate an enquiry with a suitable independent provider.</p><a class="button button--small" href="/quote/">Start an enquiry</a></aside></div></section>{cta_band()}'''
+
+
+def utility_content(slug: str, title: str, original: str, alt_register: dict[str, str], media_names: list[str]) -> str:
+    raw = _utility_content_raw(slug, title, original, alt_register, media_names)
+    if slug == "quote":
+        marker = '</section><section class="section">'
+        raw = raw.replace(marker, '</section>' + enquiry_form("quote") + '<section class="section">', 1)
+    return raw
+
+
+def write_seo_inventory(rows: list[dict[str, object]], media_names: list[str]) -> None:
+    records: list[dict[str, str]] = []
+    for row in rows:
+        path = str(row["path"])
+        html_path = OUT / ("index.html" if path == "/" else path.strip("/") + "/index.html")
+        body = html_path.read_text(encoding="utf-8")
+        profile = row["profile"]
+        headings = re.findall(r"<h([1-3])\b[^>]*>(.*?)</h[1-3]>", body, flags=re.I | re.S)
+        outline = " | ".join(f"H{level}: {clean(re.sub(r'<[^>]+>', ' ', value))}" for level, value in headings)
+        links = sorted({href.split("#", 1)[0].split("?", 1)[0] for href in re.findall(r'<a\b[^>]+href=[\"\']([^\"\']+)', body, flags=re.I) if href.startswith("/") and not href.startswith("/assets/")})
+        schema_types: list[str] = []
+        for blob in re.findall(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>', body, flags=re.I | re.S):
+            try:
+                parsed = json.loads(blob)
+                nodes = parsed.get("@graph", []) if isinstance(parsed, dict) else [parsed]
+                schema_types.extend(str(node.get("@type")) for node in nodes if isinstance(node, dict) and node.get("@type"))
+            except json.JSONDecodeError:
+                schema_types.append("INVALID_JSON")
+        canonical_match = re.search(r'<link\b[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)', body, flags=re.I)
+        robots_match = re.search(r'<meta\b[^>]+name=["\']robots["\'][^>]+content=["\']([^"\']+)', body, flags=re.I)
+        h1_match = re.search(r"<h1\b[^>]*>(.*?)</h1>", body, flags=re.I | re.S)
+        records.append({
+            "url": path, "page_type": str(row["page_type"]), "search_intent": str(profile["intent"]),
+            "primary_target_phrase": str(profile["primary"]), "secondary_phrases": str(profile["secondary"]),
+            "title": str(profile["title"]), "meta_description": str(profile["description"]),
+            "h1": clean(re.sub(r"<[^>]+>", " ", h1_match.group(1))) if h1_match else "",
+            "h2_h3_outline": outline, "canonical_url": str(row["canonical"]),
+            "breadcrumb_trail": " > ".join(label for _, label in row["breadcrumbs"]),
+            "schema_types": "; ".join(dict.fromkeys(schema_types)), "internal_link_targets": "; ".join(links),
+            "indexability": robots_match.group(1).strip() if robots_match else "unknown",
+            "source_research_evidence": str(profile["evidence"]),
+        })
+    fields = list(records[0]) if records else ["url"]
+    with SEO_CSV.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(records)
+    title_unique = len({r["title"] for r in records}) == len(records)
+    description_unique = len({r["meta_description"] for r in records}) == len(records)
+    md = ["# SEO intent and metadata map", "", "Generated from the approved 76-page static route inventory.", "", f"- Pages mapped: {len(records)}", f"- Unique titles: {'PASS' if title_unique else 'FAIL'}", f"- Unique descriptions: {'PASS' if description_unique else 'FAIL'}", "- Release state: private preview (`noindex,nofollow,noarchive`; `Disallow: /`)", "- Schema policy: WebPage plus BreadcrumbList; Service only on service pages; no LocalBusiness, Organization, Review or AggregateRating.", "", "| URL | Type | Intent | Primary phrase | Title | Indexability | Breadcrumbs | Schema |", "|---|---|---|---|---|---|---|---|"]
+    for record in records:
+        md.append("| " + " | ".join(record[key].replace("|", "\\|") for key in ("url", "page_type", "search_intent", "primary_target_phrase", "title", "indexability", "breadcrumb_trail", "schema_types")) + " |")
+    SEO_MD.write_text("\n".join(md) + "\n", encoding="utf-8")
 
 
 def main() -> int:
@@ -317,11 +449,14 @@ def main() -> int:
     if not any(slug in pages for slug in {"privacy", "privacy-policy"}):
         raise SystemExit("privacy page missing from approved derivatives")
     suburb_slugs = sorted(slug for slug in pages if slug.startswith("concreters-"))
-    rows: list[tuple[str, str, str]] = []
+    rows: list[dict[str, object]] = []
     for slug, (title, original) in pages.items():
         path = "/" if slug == "homepage" else f"/{slug}/"
         output_dir = OUT if path == "/" else OUT / path.strip("/")
         output_dir.mkdir(parents=True, exist_ok=True)
+        page_type = "home" if slug == "homepage" else "service" if slug in SERVICES else "suburb" if slug.startswith("concreters-") else "utility"
+        service_slug = suburb_service_slug(slug) if page_type == "suburb" else slug if page_type == "service" else ""
+        profile = seo_profile(slug, title, page_type, service_slug)
         if slug == "homepage":
             description = "Structured concreting enquiries for Camden and South-West Sydney, coordinated with suitable independent providers."
             content = home_content(alt_register, media_names, suburb_slugs)
@@ -330,21 +465,27 @@ def main() -> int:
             content = service_content(slug, *SERVICES[slug], alt_register, media_names, suburb_slugs)
         elif slug.startswith("concreters-"):
             description = f"Concreting enquiry coordination for {pretty_area(slug)} and South-West Sydney."
-            content = suburb_content(slug, title, original, alt_register, media_names, suburb_slugs)
+            content = suburb_content(slug, title, original, alt_register, media_names, suburb_slugs, service_slug)
         else:
             description = f"{title} · {BRAND}"
             content = utility_content(slug, title, original, alt_register, media_names)
+        if page_type == "home":
+            content = content.replace('href="/quote/"', 'href="#quote-form"')
+        elif page_type in {"service", "suburb", "utility"} and slug != "quote":
+            content = content.replace('href="/quote/"', 'href="/quote/#quote-form"')
         canonical = BASE + path
-        (output_dir / "index.html").write_text(document(title, description, canonical, content, alt_register), encoding="utf-8")
-        rows.append((slug, path, title))
-    (OUT / "assets" / "site.css").write_text(CSS, encoding="utf-8")
+        crumbs = breadcrumb_items(slug, title, page_type, service_slug)
+        (output_dir / "index.html").write_text(document(profile, canonical, content, alt_register, crumbs, page_type, service_slug), encoding="utf-8")
+        rows.append({"slug": slug, "path": path, "title": title, "page_type": page_type, "profile": profile, "canonical": canonical, "breadcrumbs": crumbs, "service_slug": service_slug})
+    (OUT / "assets" / "site.css").write_text(CSS + FORM_CSS, encoding="utf-8")
     (OUT / "assets" / "site.js").write_text(JS, encoding="utf-8")
-    (OUT / "sitemap.xml").write_text("<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">" + "".join(f"<url><loc>{BASE}{path}</loc></url>" for _, path, _ in rows) + "</urlset>", encoding="utf-8")
+    (OUT / "sitemap.xml").write_text("<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"></urlset>", encoding="utf-8")
     (OUT / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
     (OUT / "_headers").write_text("/*\n  X-Robots-Tag: noindex, nofollow\n  X-Content-Type-Options: nosniff\n", encoding="utf-8")
     not_found = document("Page not found", "The requested page could not be found.", BASE + "/404/", f'<section class="page-hero page-hero--simple"><div class="container narrow"><span class="eyebrow">404</span><h1>That page is not here.</h1><p class="hero-lead">Try the homepage or explore the service pathways.</p><a class="button" href="/">Back to the homepage <span>↗</span></a></div></section>', alt_register)
     (OUT / "404.html").write_text(not_found, encoding="utf-8")
-    print(json.dumps({"pages": len(rows), "images": len(media_names), "stylesheets": 1, "scripts": 1, "output": str(OUT)}, indent=2))
+    write_seo_inventory(rows, media_names)
+    print(json.dumps({"pages": len(rows), "images": len(media_names), "stylesheets": 1, "scripts": 1, "indexable": 0, "output": str(OUT)}, indent=2))
     return 0
 
 
@@ -356,6 +497,34 @@ JS = r'''(() => {
     toggle.setAttribute('aria-expanded', String(open));
   });
   document.querySelectorAll('[data-year]').forEach(node => { node.textContent = new Date().getFullYear(); });
+  document.querySelectorAll('form[data-formspree]').forEach(form => {
+    const status = form.querySelector('.form-status');
+    const submit = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', async event => {
+      if (!window.fetch || !status || !submit) return;
+      event.preventDefault();
+      if (form.dataset.submitting === 'true') return;
+      form.dataset.submitting = 'true';
+      form.setAttribute('aria-busy', 'true');
+      submit.disabled = true;
+      status.className = 'form-status';
+      status.textContent = 'Sending your enquiry…';
+      try {
+        const response = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+        if (!response.ok) throw new Error('Form submission failed');
+        form.reset();
+        status.className = 'form-status form-status--success';
+        status.textContent = 'Thanks — your enquiry has been sent.';
+      } catch (error) {
+        status.className = 'form-status form-status--error';
+        status.textContent = 'We could not send the enquiry. Please check the fields and try again.';
+      } finally {
+        form.dataset.submitting = 'false';
+        form.removeAttribute('aria-busy');
+        submit.disabled = false;
+      }
+    });
+  });
 })();
 '''
 
@@ -366,6 +535,11 @@ CSS = r'''@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400
 h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;line-height:1.08;letter-spacing:-.055em;margin:0 0 18px}h1{font-size:clamp(44px,6vw,78px);max-width:750px}h2{font-size:clamp(32px,4vw,52px)}h3{font-size:22px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green-2);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px}.eyebrow:before{content:'';display:block;width:24px;height:2px;background:var(--orange)}.eyebrow--light{color:var(--lime)}.eyebrow--light:before{background:var(--lime)}.hero{overflow:hidden}.hero--home{padding:88px 0 74px;background:linear-gradient(120deg,#f7f8f5 5%,#eef2eb 100%)}.hero-grid,.page-hero__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,.87fr);align-items:center;gap:72px}.hero-copy{position:relative;z-index:1}.hero h1 em{font-style:normal;color:var(--green-2);position:relative}.hero h1 em:after{content:'';position:absolute;left:2px;right:0;bottom:-4px;height:9px;background:var(--lime);z-index:-1;transform:skew(-14deg)}.hero-lead{font-size:19px;line-height:1.55;max-width:620px;color:#40504b;margin:0 0 28px}.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px}.micro-note{color:var(--muted);font-size:12px;margin:17px 0 0}.hero-media{position:relative}.hero-media__frame,.page-hero__image{border-radius:24px;overflow:hidden;background:var(--green);box-shadow:var(--shadow);aspect-ratio:1.03}.hero-media img,.page-hero__image img{width:100%;height:100%;object-fit:cover}.hero-stamp{position:absolute;bottom:-24px;left:-28px;background:var(--lime);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:13px;box-shadow:0 12px 28px rgba(28,61,48,.15)}.hero-stamp strong{font:700 31px 'Space Grotesk';color:var(--green)}.hero-stamp span{font-size:11px;font-weight:700;line-height:1.35;text-transform:uppercase;letter-spacing:.08em}.trust-strip{background:var(--green);color:var(--white)}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:20px 0}.trust-grid div{display:flex;align-items:center;gap:16px;padding:9px 24px;border-right:1px solid rgba(255,255,255,.2)}.trust-grid div:first-child{padding-left:0}.trust-grid div:last-child{border:0}.trust-grid strong{font:600 13px 'Space Grotesk';color:var(--lime)}.trust-grid span{font-size:13px;color:#d7e5dc}.section{padding:105px 0}.section--services{background:var(--white)}.section--tint,.section--areas{background:var(--sand)}.section--dark{background:var(--green);color:var(--white)}.section--faq{background:var(--white)}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:42px}.section-heading>p{max-width:430px;color:var(--muted);margin:0}.section-heading--center{display:block;text-align:center;max-width:680px;margin-left:auto;margin-right:auto}.section-heading--center>p{margin:0 auto}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.service-grid--compact{grid-template-columns:repeat(3,1fr)}.service-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper);transition:transform .25s,box-shadow .25s}.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.card-image{height:190px;overflow:hidden;background:#dfe7df}.card-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.service-card:hover .card-image img{transform:scale(1.05)}.service-card__body{padding:22px 23px 24px;position:relative}.card-number{color:var(--orange);font:700 11px 'Space Grotesk';letter-spacing:.1em}.service-card h3{font-size:23px;margin:8px 0 10px}.service-card h3 a:hover{color:var(--green-2)}.service-card p{color:var(--muted);font-size:14px;line-height:1.55;min-height:68px;margin:0 0 17px}.arrow-link,.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--green-2);font-size:13px;font-weight:700}.arrow-link span,.text-link span{font-size:18px;transition:transform .2s}.arrow-link:hover span,.text-link:hover span{transform:translateX(4px)}.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:85px;align-items:center}.split-grid--reverse{grid-template-columns:1fr 1fr}.split-grid--reverse .split-media{order:2}.split-media{position:relative}.split-media img{width:100%;aspect-ratio:1.14;object-fit:cover;border-radius:20px;box-shadow:var(--shadow)}.image-caption{position:absolute;bottom:15px;left:15px;right:15px;padding:9px 12px;border-radius:9px;background:rgba(21,33,31,.82);color:#fff;font-size:11px}.split-copy p{max-width:510px;color:var(--muted)}.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--line);background:var(--line);border-radius:18px;overflow:hidden}.process-step{background:var(--white);padding:31px 28px 34px}.process-step>span{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--lime);color:var(--green);font:700 12px 'Space Grotesk';margin-bottom:26px}.process-step p{color:var(--muted);font-size:14px}.council-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:100px;align-items:center}.section--dark p{color:#c9d7d0}.council-card{background:#215345;border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:30px}.council-card__icon{font-size:34px;color:var(--lime);display:block;margin-bottom:16px}.council-card h3{color:var(--white)}.text-link--light{color:var(--lime)}.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.area-pill{display:flex;justify-content:space-between;align-items:center;padding:17px 18px;border:1px solid #d5ded6;border-radius:11px;background:rgba(255,255,255,.58);font-size:13px;font-weight:700;transition:background .2s,border .2s}.area-pill:hover{background:var(--white);border-color:var(--green-2)}.faq-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:90px}.faq-list{border-top:1px solid var(--line)}.faq-item{border-bottom:1px solid var(--line);padding:18px 0}.faq-item summary{cursor:pointer;list-style:none;font:600 17px 'Space Grotesk';display:flex;justify-content:space-between;gap:20px}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:after{content:'+';color:var(--orange);font-size:24px;line-height:1}.faq-item[open] summary:after{content:'−'}.faq-item p{color:var(--muted);font-size:14px;max-width:680px;margin:12px 0 0}.cta-band{margin:0 auto 0;padding:60px max(24px,calc((100% - var(--container))/2));background:var(--orange);color:var(--green);display:flex;justify-content:space-between;align-items:center;gap:40px}.cta-band h2{font-size:38px;max-width:600px;margin-bottom:10px}.cta-band p{max-width:590px;margin:0;color:#315448}.cta-band__actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.page-hero{padding:64px 0 76px;background:linear-gradient(120deg,#eef2eb,#f7f8f5)}.page-hero__grid{gap:70px}.page-hero h1{font-size:clamp(42px,5vw,67px)}.page-hero__image{aspect-ratio:1.15}.breadcrumbs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 40px;color:var(--muted);font-size:12px}.breadcrumbs span{color:#a4b0aa}.breadcrumbs a:last-child{color:var(--green);font-weight:700}.page-hero--simple{padding:70px 0 83px}.page-hero--simple h1{max-width:780px}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature-grid article,.principle-grid article{border:1px solid var(--line);border-radius:16px;padding:27px;background:var(--white)}.feature-icon{display:grid;place-items:center;width:36px;height:36px;background:var(--lime);border-radius:9px;color:var(--green);font:700 12px 'Space Grotesk';margin-bottom:24px}.feature-grid p,.principle-grid p{color:var(--muted);font-size:14px}.inline-links{display:flex;flex-wrap:wrap;gap:11px 20px}.inline-links a{text-decoration:underline;text-decoration-color:#b4cdb7;text-underline-offset:5px}.principles .eyebrow{margin-bottom:35px}.principle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.principle-grid article{background:#215345;border-color:rgba(255,255,255,.13)}.principle-grid h3{color:var(--white)}.principle-grid p{color:#c9d7d0}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-card{border:1px solid var(--line);border-radius:18px;padding:35px;background:var(--white)}.contact-card--primary{background:var(--green);color:var(--white);border-color:var(--green)}.contact-card--primary p{color:#d0e0d7}.contact-card h2{font-size:31px}.contact-value{font:600 20px 'Space Grotesk';color:var(--lime)}.muted{color:var(--muted)}.enquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px}.check-list{padding:0;margin:25px 0;list-style:none}.check-list li{padding:13px 0 13px 28px;border-bottom:1px solid var(--line);position:relative}.check-list li:before{content:'✓';position:absolute;left:0;color:var(--green-2);font-weight:700}.enquiry-note{border-radius:18px;padding:32px;background:var(--sand);align-self:start}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.gallery-grid figure{margin:0;background:var(--white);border:1px solid var(--line);border-radius:15px;overflow:hidden}.gallery-grid img{width:100%;aspect-ratio:1.2;object-fit:cover}.gallery-grid figcaption{padding:13px 15px;color:var(--muted);font-size:12px}.legal-copy,.article-copy{max-width:800px}.legal-copy h2,.article-copy h2{font-size:32px;margin-top:42px}.legal-copy p,.article-copy p{color:var(--muted)}.article-layout{display:grid;grid-template-columns:1fr 310px;gap:75px}.article-copy .lede{font-size:20px;color:var(--ink)}.article-aside{align-self:start;background:var(--sand);border-radius:18px;padding:27px}.article-aside p{font-size:14px}.site-footer{background:#102d27;color:#d8e4dc;padding:70px 0 22px}.brand--footer{color:var(--white)}.brand--footer small{color:#b3c9bd}.footer-grid{display:grid;grid-template-columns:1.35fr .65fr 1fr 1fr;gap:40px}.site-footer h2{font:600 13px 'Space Grotesk';letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin:4px 0 18px}.site-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:13px}.site-footer li a:hover{color:var(--lime)}.footer-intro{max-width:300px;color:#a9c1b6;font-size:13px;margin-top:25px}.site-footer p{font-size:13px;color:#a9c1b6}.site-footer a{color:#f1f5ed}.footer-address{line-height:1.7}.footer-address small{color:#a9c1b6}.footer-bottom{border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;gap:20px;padding-top:20px;margin-top:60px;color:#9db5aa;font-size:11px}
 @media (max-width:980px){.primary-nav{gap:14px}.hero-grid,.page-hero__grid{grid-template-columns:1fr 1fr;gap:38px}.service-grid,.service-grid--compact{grid-template-columns:repeat(2,1fr)}.area-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1.3fr 1fr 1fr}.footer-grid>div:last-child{grid-column:2}.council-grid{gap:45px}.section{padding:80px 0}}
 @media (max-width:720px){.container{width:min(var(--container),calc(100% - 32px))}.utility__inner{display:block;text-align:center}.utility__contact{justify-content:center;margin-top:3px}.nav-wrap{min-height:68px}.menu-toggle{display:block}.primary-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:14px 16px 20px;flex-direction:column;align-items:stretch;gap:3px;box-shadow:0 16px 30px rgba(17,47,39,.08)}.primary-nav.is-open{display:flex}.primary-nav>a,.nav-dropdown>button{padding:12px 10px;text-align:left}.nav-dropdown__menu{position:static;width:auto;border:0;box-shadow:none;padding:0 0 5px 12px;background:transparent;display:grid}.nav-cta{text-align:center!important;margin-top:8px}.hero--home{padding:54px 0 65px}.hero-grid,.page-hero__grid,.split-grid,.split-grid--reverse,.council-grid,.faq-grid,.contact-grid,.enquiry-grid,.article-layout{grid-template-columns:1fr;gap:38px}.hero h1{font-size:48px}.hero-lead{font-size:17px}.hero-media{margin:0 15px 15px}.hero-stamp{left:-15px}.trust-grid{grid-template-columns:1fr;gap:0;padding:7px 0}.trust-grid div,.trust-grid div:first-child{border-right:0;border-bottom:1px solid rgba(255,255,255,.2);padding:12px 0}.section{padding:65px 0}.section-heading{display:block;margin-bottom:28px}.section-heading>p{margin-top:14px}.service-grid,.service-grid--compact,.feature-grid,.principle-grid,.gallery-grid{grid-template-columns:1fr}.service-card p{min-height:auto}.card-image{height:210px}.split-grid--reverse .split-media{order:0}.split-copy h2{font-size:36px}.process-grid{grid-template-columns:1fr}.area-grid{grid-template-columns:repeat(2,1fr)}.cta-band{display:block;padding:48px 24px}.cta-band h2{font-size:33px}.cta-band__actions{margin-top:25px}.page-hero{padding:45px 0 58px}.page-hero--simple{padding:52px 0 62px}.breadcrumbs{margin-bottom:28px}.page-hero__image{order:-1;aspect-ratio:1.4}.page-hero__grid .page-hero__image{margin-bottom:10px}.page-hero__grid>div:first-child{order:1}.footer-grid{grid-template-columns:1fr 1fr;gap:35px}.footer-grid>div:last-child{grid-column:auto}.footer-bottom{display:block;margin-top:40px}.footer-bottom span{display:block;margin-top:7px}.hero-actions .button{width:100%}.contact-value{font-size:18px}}
+'''
+
+FORM_CSS = r'''
+.section--form{background:var(--white);padding-top:56px;padding-bottom:72px}.form-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.65fr);gap:34px;align-items:start}.form-card{border:1px solid var(--line);border-radius:var(--radius);padding:32px;background:var(--paper);box-shadow:var(--shadow)}.form-card>p{color:var(--muted);margin-top:-5px;margin-bottom:24px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.form-field{display:grid;gap:6px}.form-field--wide{grid-column:1/-1}.form-field label,.form-consent label{font-size:13px;font-weight:700;color:var(--ink)}.form-field input,.form-field select,.form-field textarea{width:100%;border:1px solid #c8d4cd;border-radius:9px;background:var(--white);color:var(--ink);font:inherit;font-size:15px;padding:11px 12px;min-height:46px}.form-field textarea{resize:vertical;min-height:125px}.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:3px solid rgba(200,232,107,.65);border-color:var(--green-2)}.form-consent label{display:flex;align-items:flex-start;gap:10px;font-weight:500;color:var(--muted)}.form-consent input{width:18px;height:18px;margin-top:3px;accent-color:var(--green)}.form-card .button{border:0;cursor:pointer;margin-top:20px}.form-card .button:disabled{opacity:.6;cursor:wait;transform:none}.form-status{min-height:24px;margin:14px 0 0;color:var(--muted);font-size:13px}.form-status--success{color:#1e6a46}.form-status--error{color:#a43d2a}.form-honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.compliance-copy{border:1px solid var(--line);border-radius:var(--radius);padding:27px;background:var(--sand);font-size:14px;color:var(--muted)}.compliance-copy p{margin-top:0}.compliance-copy a{text-decoration:underline;text-underline-offset:3px;color:var(--green-2);font-weight:700}
+@media (max-width:720px){.form-layout{grid-template-columns:1fr;gap:22px}.form-card{padding:22px}.form-grid{grid-template-columns:1fr}.form-field--wide{grid-column:auto}.section--form{padding-top:42px;padding-bottom:55px}}
 '''
 
 
