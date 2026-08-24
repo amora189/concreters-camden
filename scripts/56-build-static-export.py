@@ -346,7 +346,7 @@ def _home_content_raw(alt_register: dict[str, str], media_names: list[str], subu
 <section class="section"><div class="container"><div class="section-heading section-heading--center"><span class="eyebrow">The enquiry path</span><h2>Simple on the surface. Thoughtful underneath.</h2><p>Three useful steps keep the conversation focused without promising a construction outcome.</p></div><div class="process-grid"><article class="process-step"><span>01</span><h3>Tell us about the site</h3><p>Share the property location, intended use, existing surface, access constraints, drainage concerns and timing.</p></article><article class="process-step"><span>02</span><h3>Clarify the questions</h3><p>We help frame the information an appointed provider needs to assess the actual site and proposed scope.</p></article><article class="process-step"><span>03</span><h3>Coordinate the next step</h3><p>Provider identity, quotation, contract, licensing, insurance and warranty details are confirmed before work begins.</p></article></div></div></section>
 <section class="section section--dark"><div class="container council-grid"><div><span class="eyebrow eyebrow--light">Council context</span><h2>Frontage work needs the right local check.</h2><p>For properties in Liverpool City Council, a vehicle crossing application is made under section 138 of the Roads Act 1993. Current forms, inspections, drawings, utilities and fees should be checked with Council for the actual property.</p><p>That information is a coordination reference, not evidence that Structure Co is licensed or insured.</p></div><div class="council-card"><span class="council-card__icon">◎</span><h3>Own a Liverpool property?</h3><p>Bring the crossing location and any current Council correspondence to the enquiry.</p><a class="text-link text-link--light" href="/concrete-crossovers-and-laybacks-south-west-sydney/">Explore crossovers &amp; laybacks <span>→</span></a></div></div></section>
 <section class="section section--areas"><div class="container"><div class="section-heading"><div><span class="eyebrow">Service areas</span><h2>Camden at the centre.</h2></div><p>Browse the area pages for local context. Property boundaries and council requirements should always be confirmed for the actual address. <a href="/areas/">See every suburb we cover →</a></p></div><div class="area-grid">{''.join(area_cards)}</div></div></section>
-<section class="section section--faq"><div class="container faq-grid"><div><span class="eyebrow">Questions, answered carefully</span><h2>Before you send an enquiry.</h2><p>These answers describe the coordination model and the information worth having ready.</p><a class="arrow-link" href="/contact/">Ask a question <span>→</span></a></div><div class="faq-list">{faq_items([('What happens after I enquire?', 'We review the project information and coordinate the next conversation where an independent provider is suitable. An enquiry does not create a construction contract.'), ('Do you publish prices?', 'No universal price is asserted. Scope, access, existing conditions, finish and project requirements need to be confirmed for the actual site.'), ('What should I include?', 'The property location, intended use, approximate dimensions, access constraints, existing surfaces, drainage concerns and timing are useful starting points.'), ('Can I visit the address?', 'No. {ADDRESS} is an administrative correspondence office and is not open to customers or visitors.')])}</div></div></section>
+<section class="section section--faq"><div class="container faq-grid"><div><span class="eyebrow">Questions, answered carefully</span><h2>Before you send an enquiry.</h2><p>These answers describe the coordination model and the information worth having ready.</p><a class="arrow-link" href="/contact/">Ask a question <span>→</span></a></div><div class="faq-list">{faq_items([('What happens after I enquire?', 'We review the project information and coordinate the next conversation where an independent provider is suitable. An enquiry does not create a construction contract.'), ('Do you publish prices?', 'No universal price is asserted. Scope, access, existing conditions, finish and project requirements need to be confirmed for the actual site.'), ('What should I include?', 'The property location, intended use, approximate dimensions, access constraints, existing surfaces, drainage concerns and timing are useful starting points.'), ('Can I visit the address?', 'No. ' + ADDRESS + ' is an administrative correspondence office and is not open to customers or visitors.')])}</div></div></section>
     {cta_band()}'''
 
 
@@ -435,22 +435,43 @@ def services_hub_content(alt_register: dict[str, str], media_names: list[str], s
 
 
 def areas_hub_content(alt_register: dict[str, str], media_names: list[str], suburb_slugs: list[str]) -> str:
-    """Spec section 2 and section 5.3. Anchor text is varied, not repeated 60 times."""
-    title, h1, description = seo_spec.HUB_META["/areas/"]
-    tier1 = [s for s in suburb_slugs if s.removeprefix("concreters-") in seo_spec.TIER1]
-    spec_rest = [s for s in suburb_slugs if s.removeprefix("concreters-") in seo_spec.SUBURB_SPEC and s not in tier1]
-    wider = [s for s in suburb_slugs if s not in tier1 and s not in spec_rest]
+    """Spec section 2 and 5.3, as amended by DECISION-10 D45.
 
-    def group(slugs: list[str], offset: int = 0) -> str:
-        return "".join(
-            f'<a class="area-pill" href="/{s}/"><span>{html.escape(seo_spec.area_anchor(s, i + offset))}</span><span>↗</span></a>'
-            for i, s in enumerate(sorted(slugs))
-        )
+    Lists every built suburb, grouped by the council the evidence supports. A split
+    locality is not assigned to a council it may not belong to; it goes in a plainly
+    labelled group that says the check is per property.
+    """
+    _title, h1, description = seo_spec.HUB_META["/areas/"]
+    groups: dict[str, list[str]] = {}
+    unresolved: list[str] = []
+    for slug in suburb_slugs:
+        record = seo_spec.COUNCIL.get(slug.removeprefix("concreters-")) or {}
+        councils = record.get("evidence_supported_councils") or []
+        if len(councils) == 1:
+            groups.setdefault(councils[0], []).append(slug)
+        else:
+            unresolved.append(slug)
 
-    return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb(seo_spec.crumbs_for("areas-hub", "areas", "Areas"))}<span class="eyebrow">Areas</span><h1>{html.escape(h1)}</h1><p class="hero-lead">{html.escape(description)}</p></div></section>
-<section class="section"><div class="container"><div class="section-heading"><div><span class="eyebrow">Core coverage</span><h2>The suburbs we work in most.</h2></div><p>These pages carry the estate context, the council pathway and the service mix specific to that suburb.</p></div><div class="area-grid">{group(tier1)}</div></div></section>
-<section class="section section--tint"><div class="container"><div class="section-heading"><div><span class="eyebrow">Also across Camden</span><h2>The rest of the Camden LGA.</h2></div><p>Camden itself is covered on the <a href="/">homepage</a> — it is the same market, not a separate page.</p></div><div class="area-grid">{group(spec_rest, 3)}</div></div></section>
-<section class="section"><div class="container"><div class="section-heading"><div><span class="eyebrow">Wider South West Sydney</span><h2>Neighbouring suburbs.</h2></div><p>Reference pages for the wider region. Council boundaries and approval pathways must be confirmed for the actual property.</p></div><div class="area-grid">{group(wider, 1)}</div></div></section>
+    index = 0
+    sections = []
+    for council in sorted(groups):
+        pills = []
+        for slug in sorted(groups[council]):
+            pills.append(f'<a class="area-pill" href="/{slug}/"><span>{html.escape(seo_spec.area_anchor(slug, index))}</span><span>↗</span></a>')
+            index += 1
+        tint = " section--tint" if len(sections) % 2 else ""
+        sections.append(f'<section class="section{tint}"><div class="container"><div class="section-heading"><div><span class="eyebrow">{html.escape(council)}</span><h2>{html.escape(council)} suburbs</h2></div><p>{len(groups[council])} suburbs. Confirm the controlling council for the actual property before lodging a crossing or frontage application.</p></div><div class="area-grid">{"".join(pills)}</div></div></section>')
+
+    if unresolved:
+        pills = []
+        for slug in sorted(unresolved):
+            pills.append(f'<a class="area-pill" href="/{slug}/"><span>{html.escape(seo_spec.area_anchor(slug, index))}</span><span>↗</span></a>')
+            index += 1
+        tint = " section--tint" if len(sections) % 2 else ""
+        sections.append(f'<section class="section{tint}"><div class="container"><div class="section-heading"><div><span class="eyebrow">Council confirmed per property</span><h2>Suburbs that straddle a council boundary</h2></div><p>These {len(unresolved)} localities sit across more than one local government area. The controlling council has to be checked lot by lot in the NSW Planning Portal, so none is named here.</p></div><div class="area-grid">{"".join(pills)}</div></div></section>')
+
+    return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb(seo_spec.crumbs_for("areas-hub", "areas", "Areas"))}<span class="eyebrow">Areas</span><h1>{html.escape(h1)}</h1><p class="hero-lead">{html.escape(description)}</p><p class="micro-note">Camden itself is covered on the <a href="/">homepage</a> — it is the same market, not a separate page.</p></div></section>
+{"".join(sections)}
 {cta_band("Can't see your suburb?")}'''
 
 

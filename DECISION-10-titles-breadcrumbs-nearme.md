@@ -5,7 +5,8 @@ Origin: owner instruction issued in session, 24 August 2026, in response to the 
 questions raised against the supplied meta titles / breadcrumbs / near-me targeting spec.
 Status: **current owner decision.** Read-only once confirmed.
 
-Decisions D42–D45, plus the revisions D42-R1, D42-R2 and D43-R1. Numbering continues from DECISION-09 (D39–D41).
+Decisions D42–D45, plus the revisions D42-R1, D42-R2 and D43-R1.
+**Indexation: D44 → D45 (25 August 2026).** D45 is the current position. Numbering continues from DECISION-09 (D39–D41).
 
 **Telephone: D42 → D42-R1 → D42-R2.** Each is retained unedited so the next has
 something to cite. **D42-R2 (25 August 2026) is the current position.**
@@ -220,7 +221,7 @@ rather than shipping. This closes the class of defect, not the two instances.
 
 All 78 titles remain ≤60 characters and unique sitewide after the change.
 
-## D44 — All 54 non-Tier-1 suburb pages are noindex,follow
+## D44 — All 54 non-Tier-1 suburb pages are noindex,follow — **SUPERSEDED by D45**
 
 `suburbs.json` carries 16 suburb records. The build ships 60 suburb pages: 45 have no spec
 record, and `camden` correctly has no page (§2 folds it into the homepage). The spec's
@@ -239,6 +240,66 @@ The 45 out-of-scope pages carry no `suburbs.json` record, so they receive no nea
 fabrication. Extending `suburbs.json` to cover them is a separate, owner-scoped content job.
 
 ---
+
+## D45 — Every built page ships indexed
+
+Date: 25 August 2026 (Australia/Sydney). Origin: owner instruction issued in session.
+**Supersedes D44 and the spec §4 gate condition.**
+
+All 60 suburb pages ship `index,follow`, without per-m² pricing and without original
+photography. Nothing is deleted. The spec's condition — that Tier 2 and Tier 3 stay
+`noindex` until a page carries a real quoted price and a real photograph — no longer
+gates publication.
+
+**The gate code is retained and re-armable.** `lib/seo_spec.INDEX_ALL_SUBURBS = False`
+restores D44 behaviour exactly: Tier 1 indexable, the other 54 `noindex,follow`. The tier
+logic in `suburb_robots()` is intact, and the corresponding assertion in
+`scripts/57-seo-spec-gate.py` flips with the flag. One line, no code restored.
+
+`pricing.per_m2_ranges` and `photography.real_camden_photographs` remain `verified: false`.
+D45 changes what is published, not what is known.
+
+### The fallback tier
+
+45 built suburb pages have no record in `suburbs.json`. They ship on a documented fallback
+tier rather than being padded with invented specifics.
+
+| Field | Fallback | Source |
+|---|---|---|
+| `<title>` | `Concreters {Suburb} \| Driveways, Slabs & Crossovers` | pattern; asserted ≤60 chars, unique, no banned word |
+| meta description | one pattern with a length-fitted closing clause | asserted 150–158 chars and unique; **no council rule, estate name or soil condition** |
+| `<h1>` | `Concreters in {Suburb}` | pattern |
+| breadcrumbs | `Home / Areas / {Suburb}` | same rules as plan pages: terminal crumb unlinked, no fragments, three levels |
+| `Service` schema | emitted | `areaServed` only where the postcode resolves |
+| near-me FAQ | **omitted** | needs per-suburb job data that does not exist |
+| §5.4 service blocks | **omitted** | same |
+
+A missing FAQ is fine; an empty one is a structured-data violation. The gate asserts no
+fallback page carries a `suburb-service` block or an `FAQPage` node, and that no `FAQPage`
+anywhere has an empty or placeholder entry.
+
+### Postcodes
+
+`data/camden-verified-postcodes.json` is the only source of a published `postalCode`.
+
+- A name in `suburbs` → that postcode.
+- A name in `not_a_locality` → the parent locality's postcode, with the mapping recorded.
+- A name in neither, or in `ambiguous` → **`areaServed` omitted entirely.** A wrong postcode
+  is worse than none.
+
+Assertion: no `postalCode` may be emitted that is absent from this file, and every emitted
+value must match it. Elderslie resolves to **2570**, disambiguated in the file from 2335 in
+the Hunter Valley by bounding box; the build emits 2570 and the assertion holds it there.
+
+`containedInPlace` names a council only where `build/53-council-suburb-map.json` supports
+exactly one. A split locality names none.
+
+### `/areas/`
+
+Grouped by evidence-supported council. The eight split localities go under *"Suburbs that
+straddle a council boundary"*, which states the check is per property, rather than being
+assigned to a council they may not belong to.
+
 
 ## Implementation contract
 

@@ -21,6 +21,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 SUBURBS_JSON = ROOT / "suburbs.json"
 COUNCIL_MAP = ROOT / "build" / "53-council-suburb-map.json"
+VERIFIED_POSTCODES = ROOT / "data" / "camden-verified-postcodes.json"
 VERIFIED_FACTS = ROOT / "data" / "verified-facts.yml"
 
 BASE = "https://concreterscamden.com.au"
@@ -165,6 +166,40 @@ SUBURB_SPEC: dict[str, dict] = {row["slug"]: row for row in _spec_raw["suburbs"]
 _council_raw = json.loads(COUNCIL_MAP.read_text(encoding="utf-8"))
 #: suburb slug -> evidence record for all 60 built suburb pages
 COUNCIL: dict[str, dict] = {row["suburb_slug"]: row for row in _council_raw["suburbs"]}
+
+# ------------------------------------------------------- verified postcodes
+
+# data/camden-verified-postcodes.json is the ONLY source of a published postalCode.
+# `suburbs` carries verified Delivery Area rows; `not_a_locality` maps estate names to
+# their parent locality; `ambiguous` is a name that resolves to more than one postcode.
+# A name in neither `suburbs` nor `not_a_locality` gets no areaServed at all — a wrong
+# postcode is worse than none, and Elderslie alone collides with 2335 in the Hunter
+# Valley, disambiguated here to 2570 by bounding box.
+_postcode_raw = json.loads(VERIFIED_POSTCODES.read_text(encoding="utf-8"))
+POSTCODE_SUBURBS: dict[str, dict] = _postcode_raw["suburbs"]
+POSTCODE_PARENTS: dict[str, str] = _postcode_raw["not_a_locality"]
+POSTCODE_AMBIGUOUS: dict[str, object] = _postcode_raw["ambiguous"]
+
+#: every postcode the file permits, for the "no unlisted postcode" assertion
+PERMITTED_POSTCODES: frozenset[str] = frozenset(
+    row["postcode"] for row in POSTCODE_SUBURBS.values()
+)
+
+
+def resolve_postcode(name: str) -> tuple[str | None, str]:
+    """(postcode, provenance) for a suburb display name. None means omit areaServed."""
+    if name in POSTCODE_AMBIGUOUS:
+        return None, "ambiguous in camden-verified-postcodes.json"
+    if name in POSTCODE_SUBURBS:
+        return POSTCODE_SUBURBS[name]["postcode"], "camden-verified-postcodes.json suburbs"
+    parent = POSTCODE_PARENTS.get(name)
+    if parent and parent in POSTCODE_SUBURBS:
+        return (
+            POSTCODE_SUBURBS[parent]["postcode"],
+            f"camden-verified-postcodes.json not_a_locality -> parent locality {parent}",
+        )
+    return None, "absent from camden-verified-postcodes.json"
+
 
 #: spec section 2 - the homepage carries `concreters camden`; no /concreters-camden/ page.
 HOMEPAGE_SUBURB = "camden"
@@ -384,7 +419,9 @@ def suburb_title(page_slug: str) -> str:
     row = SUBURB_SPEC.get(slug)
     if row:
         return row["title_tag"]
-    return f"Concreters {area_name(page_slug)} | Driveways, Slabs & Paths"
+    # DECISION-10 D45 fallback tier: 44 built suburbs have no suburbs.json record.
+    # One documented pattern, no fabricated specifics. Asserted <=60 chars and unique.
+    return f"Concreters {area_name(page_slug)} | Driveways, Slabs & Crossovers"
 
 
 def suburb_h1(page_slug: str) -> str:
@@ -430,8 +467,21 @@ def suburb_description(page_slug: str) -> str:
     return core  # the section 1 length gate reports this rather than shipping it silently
 
 
+#: DECISION-10 D45. Owner instruction, 25 August 2026: every built page ships indexed,
+#: without per-m2 pricing or original photography, superseding the spec section 4 gate
+#: condition. The tier gate below is retained intact and re-arms by setting this to
+#: False — one line, no code deleted.
+INDEX_ALL_SUBURBS = True
+
+
 def suburb_robots(page_slug: str) -> str:
-    """spec section 4 + DECISION-10 D44: Tier 1 only is indexable."""
+    """DECISION-10 D45, over spec section 4 + D44.
+
+    With INDEX_ALL_SUBURBS False this reverts to the D44 behaviour: Tier 1 indexable,
+    everything else noindex,follow until a real quoted price and a real photograph exist.
+    """
+    if INDEX_ALL_SUBURBS:
+        return "index,follow"
     slug = page_slug.removeprefix("concreters-")
     return "index,follow" if slug in TIER1 else "noindex,follow"
 
@@ -488,30 +538,44 @@ def crumb_jsonld(crumbs: list[tuple[str | None, str]]) -> dict | None:
 # -------------------------------------------------------- geographic relevance
 
 def service_schema(page_slug: str) -> dict | None:
-    """spec section 7.1. Emitted only where the postcode is a spec-supplied value.
+    """spec section 7.1, as amended by DECISION-10 D45.
+
+    Emitted for every suburb page. `areaServed` appears only when the postcode resolves
+    from data/camden-verified-postcodes.json; otherwise it is omitted entirely rather
+    than guessed. `containedInPlace` names a council only where the evidence supports
+    exactly one — a split locality names none.
 
     `provider` is deliberately absent: DECISION-08 D35 clause 4 does not authorise an
     Organization node, and a dangling @id reference would be worse than none.
     """
     slug = page_slug.removeprefix("concreters-")
-    row = SUBURB_SPEC.get(slug)
-    if not row:
+    if slug not in COUNCIL and slug not in SUBURB_SPEC:
         return None
-    return {
-        "@type": "Service",
-        "serviceType": "Concreting",
-        "areaServed": {
-            "@type": "Place",
-            "name": row["name"],
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": row["name"],
-                "addressRegion": "NSW",
-                "postalCode": row["postcode"],
-                "addressCountry": "AU",
-            },
-        },
+    name = area_name(page_slug)
+    node: dict[str, object] = {"@type": "Service", "serviceType": "Concreting"}
+
+    postcode, _provenance = resolve_postcode(name)
+    if postcode is None:
+        return node
+
+    address: dict[str, object] = {
+        "@type": "PostalAddress",
+        "addressLocality": name,
+        "addressRegion": "NSW",
+        "postalCode": postcode,
+        "addressCountry": "AU",
     }
+    place: dict[str, object] = {"@type": "Place", "name": name, "address": address}
+    councils = (COUNCIL.get(slug) or {}).get("evidence_supported_councils") or []
+    if len(councils) == 1:
+        place["containedInPlace"] = {"@type": "AdministrativeArea", "name": councils[0]}
+    node["areaServed"] = place
+    return node
+
+
+def postcode_provenance(page_slug: str) -> tuple[str | None, str]:
+    """(postcode, provenance) for reporting. Mirrors what service_schema emits."""
+    return resolve_postcode(area_name(page_slug))
 
 
 def council_sentence(page_slug: str) -> str:

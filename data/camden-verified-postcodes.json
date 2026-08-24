@@ -1,0 +1,445 @@
+{
+  "_source": "schappim/australian-postcodes NSW.csv (Delivery Area rows only)",
+  "_verified": "2026-08-25",
+  "_rule": "postalCode may only be emitted for a name in `suburbs`. Anything in `ambiguous` or `not_a_locality` must omit areaServed.",
+  "suburbs": {
+    "Oran Park": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Leppington": {
+      "postcode": "2179",
+      "lat": -33.93,
+      "lon": 150.81
+    },
+    "Gregory Hills": {
+      "postcode": "2557",
+      "lat": -33.99,
+      "lon": 150.77
+    },
+    "Gledswood Hills": {
+      "postcode": "2557",
+      "lat": null,
+      "lon": null
+    },
+    "Austral": {
+      "postcode": "2179",
+      "lat": -33.93,
+      "lon": 150.81
+    },
+    "Harrington Park": {
+      "postcode": "2567",
+      "lat": -34.05,
+      "lon": 150.76
+    },
+    "Catherine Field": {
+      "postcode": "2557",
+      "lat": -33.99,
+      "lon": 150.77
+    },
+    "Edmondson Park": {
+      "postcode": "2174",
+      "lat": 0.0,
+      "lon": 0.0
+    },
+    "Narellan": {
+      "postcode": "2567",
+      "lat": -34.05,
+      "lon": 150.76
+    },
+    "Narellan Vale": {
+      "postcode": "2567",
+      "lat": -34.05,
+      "lon": 150.76
+    },
+    "Mount Annan": {
+      "postcode": "2567",
+      "lat": -34.05,
+      "lon": 150.76
+    },
+    "Spring Farm": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Camden": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Camden South": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Camden Park": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Currans Hill": {
+      "postcode": "2567",
+      "lat": -34.05,
+      "lon": 150.76
+    },
+    "Elderslie": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54,
+      "note": "disambiguated from ['2335', '2570'] by SW Sydney bounding box"
+    },
+    "Cobbitty": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Bringelly": {
+      "postcode": "2556",
+      "lat": -33.95,
+      "lon": 150.73
+    },
+    "Smeaton Grange": {
+      "postcode": "2567",
+      "lat": -34.05,
+      "lon": 150.76
+    },
+    "Grasmere": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Kirkham": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Ellis Lane": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Cawdor": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Bickley Vale": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Mount Hunter": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Theresa Park": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Werombi": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Rossmore": {
+      "postcode": "2557",
+      "lat": -33.99,
+      "lon": 150.77
+    },
+    "Denham Court": {
+      "postcode": "2565",
+      "lat": -33.99,
+      "lon": 150.84
+    },
+    "Carnes Hill": {
+      "postcode": "2171",
+      "lat": null,
+      "lon": null
+    },
+    "Casula": {
+      "postcode": "2170",
+      "lat": -33.95,
+      "lon": 150.91
+    },
+    "Prestons": {
+      "postcode": "2170",
+      "lat": -33.95,
+      "lon": 150.91
+    },
+    "Horningsea Park": {
+      "postcode": "2171",
+      "lat": -33.88,
+      "lon": 150.85
+    },
+    "Middleton Grange": {
+      "postcode": "2171",
+      "lat": -33.88,
+      "lon": 150.85
+    },
+    "West Hoxton": {
+      "postcode": "2171",
+      "lat": -33.88,
+      "lon": 150.85
+    },
+    "Hoxton Park": {
+      "postcode": "2171",
+      "lat": -33.88,
+      "lon": 150.85
+    },
+    "Cecil Hills": {
+      "postcode": "2171",
+      "lat": -33.88,
+      "lon": 150.85
+    },
+    "Elizabeth Hills": {
+      "postcode": "2171",
+      "lat": -33.88,
+      "lon": 150.85
+    },
+    "Len Waters Estate": {
+      "postcode": "2171",
+      "lat": -33.88,
+      "lon": 150.85
+    },
+    "Campbelltown": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Bradbury": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Appin": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Ambarvale": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Rosemeadow": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Ruse": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Airds": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Leumeah": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Minto": {
+      "postcode": "2566",
+      "lat": -34.02,
+      "lon": 150.84
+    },
+    "Ingleburn": {
+      "postcode": "2565",
+      "lat": -33.99,
+      "lon": 150.84
+    },
+    "Raby": {
+      "postcode": "2566",
+      "lat": -34.02,
+      "lon": 150.84
+    },
+    "Kearns": {
+      "postcode": "2558",
+      "lat": -34.04,
+      "lon": 150.81
+    },
+    "Eagle Vale": {
+      "postcode": "2558",
+      "lat": -34.04,
+      "lon": 150.81
+    },
+    "St Andrews": {
+      "postcode": "2566",
+      "lat": -34.02,
+      "lon": 150.84
+    },
+    "Varroville": {
+      "postcode": "2566",
+      "lat": -34.02,
+      "lon": 150.84
+    },
+    "Glenfield": {
+      "postcode": "2167",
+      "lat": -33.97,
+      "lon": 150.89
+    },
+    "Macquarie Fields": {
+      "postcode": "2564",
+      "lat": -33.99,
+      "lon": 150.89
+    },
+    "Menangle": {
+      "postcode": "2568",
+      "lat": -34.11,
+      "lon": 150.75
+    },
+    "Menangle Park": {
+      "postcode": "2563",
+      "lat": -34.1,
+      "lon": 150.76
+    },
+    "Douglas Park": {
+      "postcode": "2569",
+      "lat": -34.19,
+      "lon": 150.71
+    },
+    "Wilton": {
+      "postcode": "2571",
+      "lat": -34.29,
+      "lon": 150.53
+    },
+    "Picton": {
+      "postcode": "2571",
+      "lat": -34.29,
+      "lon": 150.53
+    },
+    "Tahmoor": {
+      "postcode": "2573",
+      "lat": -34.22,
+      "lon": 150.59
+    },
+    "Bargo": {
+      "postcode": "2574",
+      "lat": -34.35,
+      "lon": 150.63
+    },
+    "Thirlmere": {
+      "postcode": "2572",
+      "lat": -34.18,
+      "lon": 150.53
+    },
+    "Buxton": {
+      "postcode": "2571",
+      "lat": -34.29,
+      "lon": 150.53
+    },
+    "Yanderra": {
+      "postcode": "2574",
+      "lat": -34.35,
+      "lon": 150.63
+    },
+    "The Oaks": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Oakdale": {
+      "postcode": "2570",
+      "lat": -34.08,
+      "lon": 150.54
+    },
+    "Luddenham": {
+      "postcode": "2745",
+      "lat": -33.79,
+      "lon": 150.67
+    },
+    "Badgerys Creek": {
+      "postcode": "2555",
+      "lat": -33.88,
+      "lon": 150.74
+    },
+    "Kemps Creek": {
+      "postcode": "2178",
+      "lat": -33.87,
+      "lon": 150.84
+    },
+    "Mount Vernon": {
+      "postcode": "2178",
+      "lat": -33.87,
+      "lon": 150.84
+    },
+    "Silverdale": {
+      "postcode": "2752",
+      "lat": -33.94,
+      "lon": 150.58
+    },
+    "Warragamba": {
+      "postcode": "2752",
+      "lat": -33.94,
+      "lon": 150.58
+    },
+    "Wallacia": {
+      "postcode": "2745",
+      "lat": -33.79,
+      "lon": 150.67
+    },
+    "Greendale": {
+      "postcode": "2745",
+      "lat": -33.79,
+      "lon": 150.67,
+      "note": "disambiguated from ['2550', '2745'] by SW Sydney bounding box"
+    },
+    "Long Point": {
+      "postcode": "2564",
+      "lat": -33.99,
+      "lon": 150.89,
+      "note": "disambiguated from ['2330', '2564'] by SW Sydney bounding box"
+    },
+    "Blair Athol": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Claymore": {
+      "postcode": "2559",
+      "lat": -34.05,
+      "lon": 150.8
+    },
+    "Woodbine": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Bow Bowing": {
+      "postcode": "2566",
+      "lat": -34.02,
+      "lon": 150.84
+    },
+    "Kentlyn": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Gilead": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    },
+    "Wedderburn": {
+      "postcode": "2560",
+      "lat": -34.08,
+      "lon": 150.83
+    }
+  },
+  "ambiguous": {},
+  "not_a_locality": {
+    "Harrington Grove": "Harrington Park",
+    "Willowdale": "Denham Court",
+    "Catherine Park": "Catherine Field",
+    "Oran Park Town": "Oran Park",
+    "Turner Road": "Gregory Hills",
+    "Emerald Hills": "Leppington",
+    "Ed.Square": "Edmondson Park"
+  }
+}

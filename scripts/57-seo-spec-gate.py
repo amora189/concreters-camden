@@ -140,6 +140,75 @@ def main() -> int:
                 for s, r in seo_spec.SUBURB_SPEC.items() if s != seo_spec.HOMEPAGE_SUBURB),
             f"{len(seo_spec.SUBURB_SPEC) - 1} descriptions, 126-182 chars as authored in suburbs.json")
 
+    # -------------------------------------------- fallback tier (DECISION-10 D45)
+    banned = ("enquir", "near me", "best", "cheap", "#1")
+    fallback_urls = sorted(u for u in pages
+                           if u.startswith("/concreters-")
+                           and u.removeprefix("/concreters-").rstrip("/") not in seo_spec.SUBURB_SPEC)
+    pattern_bad, banned_hits = [], []
+    for url in fallback_urls:
+        page = pages[url]
+        want = seo_spec.suburb_title(url.strip("/"))
+        if page["title"] != want:
+            pattern_bad.append(f"{url}: {page['title']!r} != {want!r}")
+        for word in banned:
+            if word in page["title"].lower() or word in page["h1"].lower():
+                banned_hits.append(f'{url}: "{word}"')
+    assert_("fallback-tier titles follow the documented pattern",
+            not pattern_bad, "; ".join(pattern_bad[:4]))
+    assert_("no title or h1 contains enquir / near me / best / cheap / #1",
+            not banned_hits and not [u for u, p in pages.items()
+                                     if any(w in p["title"].lower() or w in p["h1"].lower() for w in banned)],
+            "; ".join(banned_hits[:4]))
+    dupe_desc = {d: c for d, c in Counter(p["description"] for p in pages.values()).items() if c > 1}
+    assert_("every meta description unique sitewide", not dupe_desc, "; ".join(list(dupe_desc)[:2]))
+    # Generic-but-true: a fallback page must not carry a suburb-specific claim it has no
+    # data for. The section 5.4 block and the near-me FAQ are the only places those live.
+    fabricated = [u for u in fallback_urls
+                  if 'class="suburb-service"' in pages[u]["src"] or nodes(pages[u], "FAQPage")]
+    assert_("no fallback-tier page carries a fabricated suburb specific",
+            not fabricated, "; ".join(fabricated[:4]))
+
+    # ------------------------------------------- postcodes (verified file only)
+    emitted, unlisted, mismatched_pc = {}, [], []
+    for url, page in pages.items():
+        if not url.startswith("/concreters-"):
+            continue  # service pages carry a coarse string areaServed, not a Place
+        for node in nodes(page, "Service"):
+            area = node.get("areaServed")
+            if not isinstance(area, dict):
+                continue
+            got = area["address"]["postalCode"]
+            emitted[url] = got
+            if got not in seo_spec.PERMITTED_POSTCODES:
+                unlisted.append(f"{url}: {got}")
+            want, _ = seo_spec.postcode_provenance(url.strip("/"))
+            if want != got:
+                mismatched_pc.append(f"{url}: emitted {got}, file says {want}")
+    assert_("no postalCode emitted that is absent from camden-verified-postcodes.json",
+            not unlisted, "; ".join(unlisted[:6]))
+    assert_("every emitted postalCode matches camden-verified-postcodes.json",
+            not mismatched_pc, "; ".join(mismatched_pc[:6]))
+    omitted_area = sorted(u for u in pages
+                          if u.startswith("/concreters-") and u not in emitted)
+    assert_("areaServed omitted rather than guessed where the file has no entry",
+            all(seo_spec.postcode_provenance(u.strip("/"))[0] is None for u in omitted_area),
+            f"{len(omitted_area)} pages: {', '.join(u.strip('/').removeprefix('concreters-') for u in omitted_area)}")
+
+    # ---------------------------------------------------- FAQ blocks not empty
+    empty_faq = []
+    for url, page in pages.items():
+        for node in nodes(page, "FAQPage"):
+            if not node.get("mainEntity"):
+                empty_faq.append(f"{url}: empty mainEntity")
+            for qa in node.get("mainEntity", []):
+                text = (qa.get("acceptedAnswer") or {}).get("text", "").strip()
+                if not qa.get("name", "").strip() or not text:
+                    empty_faq.append(f"{url}: empty Q or A")
+                if re.search(r"\[\[|\{[A-Z_]{3,}\}|TBC|TBA", qa.get("name", "") + text):
+                    empty_faq.append(f"{url}: placeholder in FAQ")
+    assert_("no empty or placeholder FAQ entry", not empty_faq, "; ".join(empty_faq[:4]))
+
     assert_("/areas/ exists and is indexable",
             "/areas/" in pages and not pages["/areas/"]["robots"].startswith("noindex"))
     assert_("/services/ exists and is indexable",
@@ -193,19 +262,33 @@ def main() -> int:
     assert_("every crumb URL resolves to a built page", not dead, "; ".join(dead))
 
     # ---------------------------------------------------------------- indexation
-    indexable_subs = sorted(u for u, p in suburbs.items() if not p["robots"].startswith("noindex"))
-    expected = sorted(f"/concreters-{s}/" for s in seo_spec.TIER1)
-    assert_("exactly the 6 Tier 1 suburb pages are index,follow",
-            indexable_subs == expected, f"got {indexable_subs}")
-    noindexed = [u for u, p in suburbs.items() if p["robots"] != "noindex,follow" and u not in expected]
-    assert_("every non-Tier-1 suburb page is noindex,follow (DECISION-10 D44)",
-            not noindexed, "; ".join(noindexed))
+    # DECISION-10 D45 supersedes the D44 gate. The tier logic is retained in
+    # seo_spec.suburb_robots(); setting INDEX_ALL_SUBURBS = False re-arms it and this
+    # assertion flips back with it.
+    if seo_spec.INDEX_ALL_SUBURBS:
+        noindexed = sorted(u for u, p in suburbs.items() if p["robots"].startswith("noindex"))
+        assert_("every suburb page is index,follow (DECISION-10 D45)",
+                not noindexed, f"{len(suburbs)} suburb pages indexed; noindex on {noindexed}")
+        assert_("D45 re-armable: the D44 tier gate is retained, not deleted",
+                seo_spec.suburb_robots.__doc__ is not None and bool(seo_spec.TIER1),
+                f"INDEX_ALL_SUBURBS=False restores Tier 1 only ({len(seo_spec.TIER1)} pages)")
+    else:
+        indexable_subs = sorted(u for u, p in suburbs.items() if not p["robots"].startswith("noindex"))
+        expected = sorted(f"/concreters-{s}/" for s in seo_spec.TIER1)
+        assert_("exactly the 6 Tier 1 suburb pages are index,follow",
+                indexable_subs == expected, f"got {indexable_subs}")
+        noindexed = [u for u, p in suburbs.items() if p["robots"] != "noindex,follow" and u not in expected]
+        assert_("every non-Tier-1 suburb page is noindex,follow (DECISION-10 D44)",
+                not noindexed, "; ".join(noindexed))
     sitemap = (OUT / "sitemap.xml").read_text(encoding="utf-8")
     locs = set(re.findall(r"<loc>(.*?)</loc>", sitemap))
     in_sitemap_noindex = [u for u, p in pages.items() if p["robots"].startswith("noindex") and BASE + u in locs]
     assert_("sitemap contains zero noindex URLs", not in_sitemap_noindex, "; ".join(in_sitemap_noindex))
     missing_from_sitemap = [u for u, p in pages.items() if not p["robots"].startswith("noindex") and BASE + u not in locs]
     assert_("every indexable page is in the sitemap", not missing_from_sitemap, "; ".join(missing_from_sitemap))
+    indexable_set = {BASE + u for u, p in pages.items() if not p["robots"].startswith("noindex")}
+    assert_("sitemap matches the indexable set exactly", locs == indexable_set,
+            f"{len(locs)} URLs in sitemap, {len(indexable_set)} indexable pages")
 
     # ---------------------------------------------------------------- schema
     assert_("no LocalBusiness or GeneralContractor node outside / and /contact/",
@@ -376,10 +459,12 @@ def main() -> int:
     blocked("spec section 5.2 price FAQ and '{X} business days'",
             "pricing.per_m2_ranges verified:false, blocks_pages:53. No response-time "
             "commitment recorded. Both withheld with an inline marker in every page.")
-    blocked("Tier 2 and Tier 3 noindex cannot be lifted",
-            "Spec section 4 requires a real quoted price AND a real photograph. "
-            "pricing.per_m2_ranges and photography.real_camden_photographs are both "
-            "verified:false. All 10 stay noindex,follow.")
+    retired("Tier 2 and Tier 3 noindex cannot be lifted",
+            "DECISION-10 D45. The owner instructed that every built page ships indexed "
+            "without per-m2 pricing or original photography, superseding the spec "
+            "section 4 gate condition. pricing.per_m2_ranges and "
+            "photography.real_camden_photographs remain verified:false; the gate code is "
+            "retained and re-arms via seo_spec.INDEX_ALL_SUBURBS = False.")
     blocked("spec section 3 /services/stencilled-and-stamped-concrete/",
             "Resolved by removal, not by padding: no source page exists in "
             "build/46-active-main-import.xml, nothing in the build links to it, and the "
@@ -392,10 +477,12 @@ def main() -> int:
             "and Liverpool City Council, lot-level check required. The page names no single "
             "council, per its public_wording_rule. The spec's 'resolve to one council' is "
             "unsatisfiable because the locality genuinely straddles the boundary.")
-    blocked("45 out-of-scope suburb pages carry no spec data",
-            "DECISION-10 D44 keeps them published and noindex,follow. They have no "
-            "suburbs.json record, so no near-me FAQ, Service node or section 5.4 block "
-            "is emitted for them.")
+    fallback = sorted(u for u in suburbs if u.removeprefix("/concreters-").rstrip("/") not in seo_spec.SUBURB_SPEC)
+    blocked("fallback-tier suburb pages carry no suburbs.json record",
+            f"{len(fallback)} pages ship indexed under D45 on the documented fallback "
+            "tier: pattern title, generic-but-true meta, H1, breadcrumbs and a Service "
+            "node. They carry no near-me FAQ and no section 5.4 block, because both need "
+            "per-suburb job data that does not exist. Nothing is fabricated to fill them.")
 
     width = max(len(n) for n, _, _ in RESULTS)
     for name, verdict, detail in RESULTS:
