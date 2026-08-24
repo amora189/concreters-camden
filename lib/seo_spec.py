@@ -136,7 +136,7 @@ SERVICE_MOVE: dict[str, tuple[str, str, str]] = {
     # old flat slug: (new slug under /services/, title tag, h1)
     "concrete-driveways-south-west-sydney": (
         "concrete-driveways",
-        "Concrete Driveways Camden | Cost, Specs & Crossovers",
+        "Concrete Driveways | Camden & South West Sydney",
         "Concrete Driveways in Camden & South West Sydney",
     ),
     "concrete-crossovers-and-laybacks-south-west-sydney": (
@@ -151,12 +151,12 @@ SERVICE_MOVE: dict[str, tuple[str, str, str]] = {
     ),
     "shed-and-garage-slabs-south-west-sydney": (
         "shed-and-garage-slabs",
-        "Shed & Garage Slabs Camden | Thickness, Mesh & Cost",
+        "Shed & Garage Slabs | Camden & South West Sydney",
         "Shed & Garage Slabs",
     ),
     "exposed-aggregate-south-west-sydney": (
         "exposed-aggregate",
-        "Exposed Aggregate Driveways Camden | Finishes & Cost",
+        "Exposed Aggregate Driveways | Camden & SW Sydney",
         "Exposed Aggregate Concrete",
     ),
     "decorative-concrete-south-west-sydney": (
@@ -166,12 +166,12 @@ SERVICE_MOVE: dict[str, tuple[str, str, str]] = {
     ),
     "concrete-patios-south-west-sydney": (
         "alfresco-and-patio-slabs",
-        "Alfresco & Patio Slabs Camden | Levels, Falls & Cost",
+        "Alfresco & Patio Slabs | Camden & South West Sydney",
         "Alfresco & Patio Slabs",
     ),
     "concrete-paths-south-west-sydney": (
         "concrete-paths-and-footpaths",
-        "Concrete Paths & Footpaths Camden | Widths & Cost",
+        "Concrete Paths & Footpaths | Camden & SW Sydney",
         "Concrete Paths & Footpaths",
     ),
     "concrete-driveway-replacement-south-west-sydney": (
@@ -243,6 +243,35 @@ def redirects_file() -> str:
     return "\n".join(lines) + "\n"
 
 
+# ---------------------------------------------- title promises (DECISION-10 D43-R1)
+
+#: A word in a title tag is a promise. Each of these requires the matching content module
+#: to be present on that page, declared as `data-module="..."` in the rendered HTML.
+#: The gate fails the build on a mismatch, which prevents the class of defect rather than
+#: the two instances that were found.
+TITLE_PROMISES: dict[str, str] = {
+    "cost": "pricing",
+    "price": "pricing",
+    "prices": "pricing",
+    "pricing": "pricing",
+    "$": "pricing",
+    "quote": "quote-request",
+    "thickness": "specification",
+    "mesh": "specification",
+    "specs": "specification",
+}
+
+
+def title_promises(title: str) -> dict[str, str]:
+    """Trigger word -> required module, for one title tag."""
+    found: dict[str, str] = {}
+    for word, module in TITLE_PROMISES.items():
+        pattern = re.escape(word) if word == "$" else r"(?<![a-z])" + re.escape(word) + r"(?![a-z])"
+        if re.search(pattern, title, re.I):
+            found[word] = module
+    return found
+
+
 # ------------------------------------------------------------- titles and H1s
 
 HUB_META = {
@@ -277,7 +306,7 @@ UTILITY_META = {
         None,
     ),
     "quote": (
-        "Free Concreting Quote | Camden & South West Sydney",
+        "Request a Concreting Quote | Camden & SW Sydney",
         "Request a Quote",
         None,
     ),

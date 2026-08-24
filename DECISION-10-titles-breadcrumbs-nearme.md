@@ -5,7 +5,7 @@ Origin: owner instruction issued in session, 24 August 2026, in response to the 
 questions raised against the supplied meta titles / breadcrumbs / near-me targeting spec.
 Status: **current owner decision.** Read-only once confirmed.
 
-Decisions D42–D44, plus the revision D42-R1. Numbering continues from DECISION-09 (D39–D41).
+Decisions D42–D44, plus the revisions D42-R1 and D43-R1. Numbering continues from DECISION-09 (D39–D41).
 
 **D42 is superseded by D42-R1 (24 August 2026).** It is retained below unedited so the
 reversal has something to cite; read D42-R1 for the current position.
@@ -115,7 +115,8 @@ Structure Co performs the work:
 The independent-provider disclosure stays in body copy, the footer and the enquiry form. D39's
 prohibition on unsupported technical and licensing claims is unaffected.
 
-Two title tags are applied verbatim under this clause and are flagged as the thinnest fit:
+Two title tags were applied verbatim under this clause and flagged as the thinnest fit.
+**Both are corrected by D43-R1 below**; they are described here as issued:
 
 - `Free Concreting Quote | Camden & South West Sydney` — Structure Co coordinates the quote,
   it does not issue it. The page body says so.
@@ -124,6 +125,52 @@ Two title tags are applied verbatim under this clause and are flagged as the thi
   content the page cannot carry.
 
 Both should be revisited when the owner reviews commercial wording.
+
+## D43-R1 — Titles may not promise a content module the page does not carry
+
+Date: 24 August 2026 (Australia/Sydney). Origin: owner instruction issued in session.
+**Amends D43.** The spec's §3 title tags are no longer applied verbatim where a title
+names content the page cannot lawfully carry.
+
+D43 applied `Shed & Garage Slabs Camden | Thickness, Mesh & Cost` and
+`Free Concreting Quote | Camden & South West Sydney` verbatim and flagged them as the
+thinnest fit. That was the wrong resolution. A title is a promise made in the SERP; a page
+that cannot keep it earns a pogo-stick, not a ranking. The fix is to change the title, not
+to soften or pad the page.
+
+Six titles carried a promise word. Five are corrected; one is kept because the page
+genuinely carries the module.
+
+| Page | Before | After |
+|---|---|---|
+| `/services/concrete-driveways/` | `Concrete Driveways Camden \| Cost, Specs & Crossovers` | `Concrete Driveways \| Camden & South West Sydney` |
+| `/services/shed-and-garage-slabs/` | `Shed & Garage Slabs Camden \| Thickness, Mesh & Cost` | `Shed & Garage Slabs \| Camden & South West Sydney` |
+| `/services/exposed-aggregate/` | `Exposed Aggregate Driveways Camden \| Finishes & Cost` | `Exposed Aggregate Driveways \| Camden & SW Sydney` |
+| `/services/alfresco-and-patio-slabs/` | `Alfresco & Patio Slabs Camden \| Levels, Falls & Cost` | `Alfresco & Patio Slabs \| Camden & South West Sydney` |
+| `/services/concrete-paths-and-footpaths/` | `Concrete Paths & Footpaths Camden \| Widths & Cost` | `Concrete Paths & Footpaths \| Camden & SW Sydney` |
+| `/quote/` | `Free Concreting Quote \| Camden & South West Sydney` | `Request a Concreting Quote \| Camden & SW Sydney` |
+
+`Cost` appeared on five service titles while `pricing.per_m2_ranges` is unverified and
+D39 prohibits publishing a figure. `Thickness` and `Mesh` named universal specifications
+that D39 removes. `Free` on `/quote/` asserted a free quote from an entity that does not
+issue quotes; `Request a Concreting Quote` describes what the visitor actually does, and
+that page does carry the enquiry form.
+
+**Standing assertion.** `lib/seo_spec.TITLE_PROMISES` maps each promise word to a required
+content module, and `scripts/57-seo-spec-gate.py` fails the build when a title names a
+module the page does not declare:
+
+```text
+  cost, price, prices, pricing, $   ->  data-module="pricing"        (none exists)
+  quote                             ->  data-module="quote-request"  (the enquiry form)
+  thickness, mesh, specs            ->  data-module="specification"  (none exists)
+```
+
+The enquiry form now declares `data-module="quote-request"`. No page declares a `pricing`
+or `specification` module, so any future title reintroducing those words fails the build
+rather than shipping. This closes the class of defect, not the two instances.
+
+All 78 titles remain ≤60 characters and unique sitewide after the change.
 
 ## D44 — All 54 non-Tier-1 suburb pages are noindex,follow
 

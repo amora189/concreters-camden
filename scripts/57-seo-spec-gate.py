@@ -101,6 +101,17 @@ def main() -> int:
     dupes = {t: c for t, c in Counter(p["title"] for p in pages.values()).items() if c > 1}
     assert_("every title unique sitewide", not dupes, "; ".join(dupes))
 
+    # DECISION-10 D43-R1. A word in a title is a promise: `Cost`, `Price`, `$`, `Quote`,
+    # `Thickness`, `Mesh` and `Specs` each require the matching content module to be
+    # declared on that page. Prevents the class of defect, not the two instances found.
+    unkept = []
+    for url, page in pages.items():
+        for word, module in seo_spec.title_promises(page["title"]).items():
+            if f'data-module="{module}"' not in page["src"]:
+                unkept.append(f'{url}: title says "{word}" but carries no {module} module')
+    assert_("no title promises a content module the page does not carry",
+            not unkept, "; ".join(unkept))
+
     unsourced = []
     for slug, row in seo_spec.SUBURB_SPEC.items():
         if slug == seo_spec.HOMEPAGE_SUBURB:
