@@ -131,13 +131,69 @@ contact:
     note: "Component of the owner-attested administrative correspondence address."
     source: "owner attestation, 21 August 2026"
     sighted_date: "2026-08-21"
+  # ---------------------------------------------------------------------------
+  # DEPLOYMENT SOURCE OF TRUTH for the public telephone. DECISION-10 D42-R1.
+  #
+  # These two fields are the ONLY place a published telephone number may come from.
+  # lib/seo_spec.py resolves them; scripts/56-build-static-export.py refuses to write
+  # deployable output while nsw_number_pending is true. No template, partial or build
+  # script may hardcode a number.
+  #
+  # D42-R1 reverses D42. Ownership of the (03) number was never in question. The defect
+  # is a Victorian area code standing as the contact point on a site whose entire
+  # ranking case is proximity to Camden, NSW. Omitting `telephone` from schema hid the
+  # contradiction from parsers but left it in the header, footer and every call CTA,
+  # where both the user and the crawler still saw it.
+  #
+  # No number may be inferred, researched or carried from another source
+  # (CLAUDE.md section 3 hard stop 6). It arrives by owner attestation or not at all.
+  # ---------------------------------------------------------------------------
+  phone_display:
+    value: ""
+    verified: false
+    required_for: ["site header", "site footer", "call CTAs", "Organization.telephone"]
+    blocks_pages: 79
+    note: >
+      NSW 02 number as it should read on the page, e.g. "(02) NNNN NNNN". Owner is
+      provisioning a Sydney 02 number routed to the same destination with the existing
+      whisper. Until this and phone_e164 are populated and nsw_number_pending is false,
+      the static export build fails closed.
+    source: ""
+    sighted_date: ""
+  phone_e164:
+    value: ""
+    verified: false
+    required_for: ["tel: URI", "Organization.telephone"]
+    note: >
+      Same number in E.164, e.g. "+612NNNNNNNN". Must begin "+612" — the build asserts
+      the area code rather than trusting the field.
+    source: ""
+    sighted_date: ""
+  nsw_number_pending:
+    value: true
+    verified: true
+    note: >
+      Enforcement flag, not a warning. While true the static export build raises before
+      writing any file. Flip to false only when phone_display and phone_e164 both carry
+      an owner-attested NSW 02 number.
+    source: "DECISION-10 D42-R1, 24 August 2026"
+    sighted_date: "2026-08-24"
   phone:
+    # HISTORICAL. Superseded as the publishable contact point by D42-R1 on 24 August
+    # 2026. Retained because the frozen WXR-derivative pipeline
+    # (lib/content_remediation.py, scripts/51-evidence-validation.py and the hash-locked
+    # build/46-active-main-import.xml) was generated against this attestation and still
+    # validates against it. It must NOT be read by the static export builder and must
+    # not reach any deployable path.
     value: "(03) 4328 3392"
     uri: "tel:+61343283392"
     verified: true
+    superseded_by: "contact.phone_display / contact.phone_e164 (DECISION-10 D42-R1)"
+    publishable: false
     note: >
-      Owner-attested public telephone. It must not be described as a local Camden or
-      Sydney number; the (03) area code is retained exactly as supplied.
+      Owner-attested public telephone, 21 August 2026. Ownership and routing were
+      proven; that was never the issue. It must not be described as a local Camden or
+      Sydney number, and under D42-R1 it must not be published at all.
     ownership_proven: true
     routing_proven: true
     source: "owner attestation, 21 August 2026"
