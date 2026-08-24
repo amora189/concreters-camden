@@ -282,6 +282,70 @@ def main() -> int:
     unreachable = sorted(set(pages) - reachable)
     assert_("every page is reachable within 2 clicks of /", not unreachable, "; ".join(unreachable))
 
+    # ---------------------------------------------------------- internal links
+    # Every internal href must resolve to a file that exists in the build. A link to a
+    # redirect source is a needless hop and is reported separately from a dead link.
+    def resolves(href: str) -> bool:
+        if href == "/":
+            return (OUT / "index.html").is_file()
+        clean = href.lstrip("/")
+        return (OUT / clean / "index.html").is_file() or (OUT / clean).is_file()
+
+    dead: list[str] = []
+    via_redirect: list[str] = []
+    bad_fragment: list[str] = []
+    external: set[str] = set()
+    for url, page in pages.items():
+        for raw in sorted(set(re.findall(r'href="([^"]+)"', page["src"]))):
+            if raw.startswith(("mailto:", "tel:", "#")):
+                continue
+            if raw.startswith(("http://", "https://", "//")):
+                external.add(raw)
+                continue
+            path, _, fragment = raw.partition("#")
+            path = path.split("?", 1)[0]
+            if not path.startswith("/"):
+                dead.append(f"{url} -> {raw} (not absolute)")
+                continue
+            if not resolves(path):
+                (via_redirect if path in targets else dead).append(f"{url} -> {raw}")
+                continue
+            if fragment and path in pages and f'id="{fragment}"' not in pages[path]["src"]:
+                bad_fragment.append(f"{url} -> {raw}")
+    assert_("every internal link resolves to a file in the build", not dead, "; ".join(dead[:8]))
+    assert_("no internal link points at a redirect source", not via_redirect, "; ".join(via_redirect[:8]))
+    assert_("every internal fragment link has a matching id", not bad_fragment, "; ".join(bad_fragment[:8]))
+    unbuilt_linked = [s for s in seo_spec.UNBUILT_SERVICES
+                      if any(f'href="/services/{s}/"' in p["src"] for p in pages.values())]
+    assert_("no link points at an unbuilt service page", not unbuilt_linked, "; ".join(unbuilt_linked))
+    dead_redirect_targets = sorted({d for d in targets.values() if not resolves(d)})
+    assert_("every redirect target resolves to a file in the build",
+            not dead_redirect_targets, "; ".join(dead_redirect_targets))
+    sitemap_dead = sorted(u for u in locs if not resolves(u.replace(BASE, "")))
+    assert_("every sitemap URL resolves to a file in the build", not sitemap_dead, "; ".join(sitemap_dead))
+    if external:
+        RESULTS.append(("external links present (not fetched)", "PASS", "; ".join(sorted(external))))
+
+    # ------------------------------------------------------ placeholder tokens
+    tokens: list[str] = []
+    for url, page in pages.items():
+        found = re.findall(r"\[\[[^\]]{1,80}\]\]", page["src"])
+        found += [m for m in re.findall(r"\{[A-Z_]{3,40}\}", page["src"])]
+        if found:
+            tokens.append(f"{url}: {sorted(set(found))[:3]}")
+    assert_("no [[...]] or {TOKEN} placeholder reaches the output", not tokens, "; ".join(tokens[:6]))
+
+    # ------------------------------------------------------------ JSON-LD sanity
+    ids = {n["@id"] for p in pages.values() for b in p["ld"] for n in b.get("@graph", [b]) if n.get("@id")}
+    refs: list[str] = []
+    for url, page in pages.items():
+        for blob in page["ld"]:
+            for node in blob.get("@graph", [blob]):
+                for value in node.values():
+                    if isinstance(value, dict) and set(value) == {"@id"} and value["@id"] not in ids:
+                        refs.append(f"{url} -> {value['@id']}")
+    assert_("every referenced JSON-LD @id is defined", not refs, "; ".join(refs[:6]))
+
     # ------------------------------------------------- decisions and blockers
     # Un-retired by DECISION-10 D42-R1, 24 August 2026. Active assertion over every
     # deployable file, not just HTML.
@@ -311,8 +375,10 @@ def main() -> int:
             "pricing.per_m2_ranges and photography.real_camden_photographs are both "
             "verified:false. All 10 stay noindex,follow.")
     blocked("spec section 3 /services/stencilled-and-stamped-concrete/",
-            "No source page exists in build/46-active-main-import.xml. Not built rather "
-            "than published thin. 10 of the spec's 11 service pages ship.")
+            "Resolved by removal, not by padding: no source page exists in "
+            "build/46-active-main-import.xml, nothing in the build links to it, and the "
+            "services hub records it in an HTML comment rather than an anchor. 10 of the "
+            "spec's 11 service pages ship. Reopens when source content exists.")
     bringelly = seo_spec.COUNCIL["bringelly"]
     assert_("Bringelly council resolved against evidence",
             bringelly["assignment_status"] == "split-locality" and bringelly["lot_level_check_required"],
