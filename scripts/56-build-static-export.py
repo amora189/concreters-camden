@@ -6,10 +6,15 @@ import html
 import json
 import re
 import shutil
+import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from lib import seo_spec  # noqa: E402  (path bootstrap above)
+
 SOURCE = ROOT / "build" / "46-active-main-import.xml"
 PRIVACY = ROOT / "build" / "51-privacy-import.xml"
 OUT = ROOT / "build" / "cloudflare-pages"
@@ -23,8 +28,10 @@ CONTENT = "{http://purl.org/rss/1.0/modules/content/}"
 BASE = "https://concreterscamden.com.au"
 BRAND = "Structure Co Concreters Camden"
 EMAIL = "info@concreterscamden.com.au"
-PHONE = "(03) 4328 3392"
-PHONE_URI = "tel:+61343283392"
+# DECISION-10 D42-R1: the telephone has exactly one source, data/verified-facts.yml,
+# resolved through lib/seo_spec.py. No hardcoded number may appear in this file.
+# seo_spec.require_deployable_phone() is called at the top of main() and raises before
+# anything is written while contact.nsw_number_pending is true.
 ADDRESS = "15 Murray Street, Camden NSW 2570"
 
 SERVICES = {
@@ -173,53 +180,70 @@ def link(href: str, label: str, class_name: str = "") -> str:
     return f'<a href="{href}"{cls}>{html.escape(label)}</a>'
 
 
-def breadcrumb(items: list[tuple[str, str]]) -> str:
-    normalized = list(items)
-    if any(label == "Services" for _, label in normalized):
-        normalized = [("/#services" if label == "Services" else url, label) for url, label in normalized]
-    if any(label == "Service areas" for _, label in normalized):
-        normalized = [("/#areas" if label == "Service areas" else url, "Areas We Serve" if label == "Service areas" else label) for url, label in normalized]
-        if len(normalized) == 3:
-            area_slug = normalized[-1][0].strip("/")
-            service_slug = suburb_service_slug(area_slug)
-            normalized[-1] = (f"/{area_slug}/", pretty_area(area_slug))
-            normalized.append((f"/{service_slug}/", SERVICES[service_slug][0]))
-    return '<nav class="breadcrumbs" aria-label="Breadcrumb">' + " <span>/</span> ".join(link(url, label) for url, label in normalized) + "</nav>"
+def breadcrumb(items: list[tuple[str | None, str]]) -> str:
+    """Spec section 6.2. Terminal crumb is plain text; no fragments; max three levels."""
+    return seo_spec.crumb_markup(items)
 
 
-def breadcrumb_items(slug: str, title: str, page_type: str, service_slug: str = "") -> list[tuple[str, str]]:
-    if page_type == "home":
-        return [("/", "Home")]
+def breadcrumb_items(slug: str, title: str, page_type: str, service_slug: str = "") -> list[tuple[str | None, str]]:
     if page_type == "service":
-        return [("/", "Home"), ("/#services", "Services"), (f"/{slug}/", title)]
+        return seo_spec.crumbs_for("service", slug, seo_spec.SERVICE_MOVE[slug][2])
     if page_type == "suburb":
-        service_slug = service_slug or SERVICE_ORDER[0]
-        return [("/", "Home"), ("/#areas", "Areas We Serve"), (f"/{slug}/", title), (f"/{service_slug}/", SERVICES[service_slug][0])]
-    if page_type == "404":
+        return seo_spec.crumbs_for("suburb", slug, seo_spec.area_name(slug))
+    if page_type in {"areas-hub", "services-hub"}:
+        return seo_spec.crumbs_for(page_type, slug, title)
+    if page_type in {"home", "404"}:
         return []
-    return [("/", "Home"), (f"/{slug}/", title)]
+    label = {"about": "About", "contact": "Contact", "quote": "Quote", "gallery": "Gallery", "privacy-policy": "Privacy"}.get(slug, title)
+    return seo_spec.crumbs_for("utility", slug, label)
+
+
+UTILITY_DESCRIPTIONS = {
+    "about": "How Structure Co Concreters Camden works: we coordinate concreting across the Camden LGA with independent providers who quote, licence and warrant the work.",
+    "contact": "Talk to Structure Co about concreting in Camden or South West Sydney. Send the site, the intended use and the access constraints, and we take it from there.",
+    "quote": "Request a concreting quote for Camden or South West Sydney. Send the property, intended use, dimensions and timing so the provider can price the real site.",
+    "gallery": "Reference images for concrete finishes, driveway crossings, slabs and site conditions across South West Sydney. Visual context for a brief, not our own jobs.",
+    "privacy-policy": "How Structure Co Concreters Camden handles the information you send with a concreting enquiry, and how to ask for access, correction or deletion of it.",
+}
 
 
 def seo_profile(slug: str, title: str, page_type: str, service_slug: str = "") -> dict[str, object]:
+    """Spec sections 1-4. Titles and suburb descriptions are resolved, never templated."""
     if page_type == "home":
-        return {"title": "Camden concreting enquiries | Structure Co", "description": "Plan a Camden or South-West Sydney concreting enquiry with Structure Co. Share the site context and coordinate the next step with an independent provider.", "intent": "Camden/South-West Sydney concreting enquiry coordination", "primary": "Camden concreting enquiries", "secondary": "South-West Sydney concrete enquiries; concreting enquiry coordination", "evidence": "reports/55-full-site-completion.md; data/verified-facts.yml; reports/34-service-page-rebuild.md"}
+        spec_title, spec_h1, _ = seo_spec.UTILITY_META["homepage"]
+        return {"title": spec_title, "h1": spec_h1, "robots": "index,follow",
+                "description": "Concreting in Camden and South West Sydney — driveways, house and shed slabs, council crossovers and exposed aggregate. Heritage frontages to new estates.",
+                "intent": "Camden concreting, commercial", "primary": "concreters camden",
+                "secondary": "concreting camden; concrete driveways camden; camden concreters",
+                "evidence": "suburbs.json (camden record, folded to homepage per spec section 2); reports/57-spec-conflicts.md"}
+    if page_type == "services-hub" or page_type == "areas-hub":
+        path = "/services/" if page_type == "services-hub" else "/areas/"
+        spec_title, spec_h1, description = seo_spec.HUB_META[path]
+        return {"title": spec_title, "h1": spec_h1, "description": description, "robots": "index,follow",
+                "intent": "hub navigation", "primary": spec_title.split(" | ")[0].lower(),
+                "secondary": spec_h1.lower(), "evidence": "spec section 2 and section 6.2"}
     if page_type == "service":
-        service_name = SERVICES[slug][0]
-        return {"title": f"{service_name} South-West Sydney | Structure Co", "description": f"Explore {service_name.lower()} enquiry questions for South-West Sydney. Structure Co helps organise site details before an independent provider confirms the project scope.", "intent": f"{service_name} research and enquiry", "primary": f"{service_name} South-West Sydney", "secondary": f"{service_name} enquiry; concrete project questions", "evidence": "data/service-specs.yml; reports/53-service-specification-matrix.csv; reports/34-service-page-rebuild.md"}
+        new_slug, spec_title, spec_h1 = seo_spec.SERVICE_MOVE[slug]
+        return {"title": spec_title, "h1": spec_h1, "robots": "index,follow",
+                "description": seo_spec.SERVICE_DESCRIPTION[slug],
+                "intent": f"{spec_h1} research and quote", "primary": spec_title.split(" | ")[0].lower(),
+                "secondary": f"{spec_h1.lower()} camden; {spec_h1.lower()} south west sydney",
+                "evidence": "spec section 3; data/service-specs.yml; reports/53-service-specification-matrix.csv"}
     if page_type == "suburb":
-        area = pretty_area(slug)
-        service_slug = service_slug or SERVICE_ORDER[0]
-        service_name = SERVICES[service_slug][0]
-        return {"title": f"Concrete enquiries in {area} | Structure Co Camden", "description": f"Prepare a concrete enquiry for {area}. Structure Co coordinates site, access and service questions with a suitable independent provider in South-West Sydney.", "intent": f"{area} concreting enquiry", "primary": f"concreters {area}", "secondary": f"{service_name.lower()} {area}; South-West Sydney concreting", "evidence": "build/53-council-suburb-map.json; suburbs-expanded.json; reports/34-service-page-rebuild.md"}
-    utility = {
-        "about": ("About Structure Co Concreters Camden", "Understand how Structure Co Concreters Camden coordinates independent-provider concreting enquiries and keeps project details specific to the actual site.", "who Structure Co is and how coordination works", "Structure Co Concreters Camden; independent-provider coordination"),
-        "contact": ("Contact Structure Co Concreters Camden", "Contact Structure Co Concreters Camden by email or phone with the site, intended use, access notes and timing for a considered concreting enquiry.", "contact and enquiry", "Camden concreting contact; concrete enquiry"),
-        "quote": ("Start a Camden concrete enquiry | Structure Co", "Start a Camden concrete enquiry by sharing the property, intended use, access, existing surface, drainage questions and timing with Structure Co.", "concreting enquiry", "Camden concrete enquiry; project brief"),
-        "gallery": ("Concrete reference images | Structure Co Camden", "Browse approved concrete reference images for finishes, access and existing conditions. Images are visual context, not customer evidence or completed-work claims.", "informational visual reference", "concrete finishes; site conditions"),
-        "privacy-policy": ("Privacy and enquiry information | Structure Co", "Read how Structure Co Concreters Camden handles information shared through a concreting enquiry and how to request access, correction or deletion.", "privacy and legal information", "enquiry information; privacy"),
-    }
-    item = utility.get(slug, (title, f"{title} from Structure Co Concreters Camden, with factual context for a considered concreting enquiry in South-West Sydney.", "supporting concreting information", title))
-    return {"title": item[0], "description": item[1], "intent": item[2], "primary": item[3].split(";", 1)[0], "secondary": item[3], "evidence": "data/verified-facts.yml; reports/55-full-site-completion.md"}
+        area = seo_spec.area_name(slug)
+        sub = slug.removeprefix("concreters-")
+        row = seo_spec.SUBURB_SPEC.get(sub)
+        return {"title": seo_spec.suburb_title(slug), "h1": seo_spec.suburb_h1(slug),
+                "description": seo_spec.suburb_description(slug), "robots": seo_spec.suburb_robots(slug),
+                "intent": f"{area} concreting, commercial",
+                "primary": row["primary_keyword"] if row else f"concreters {area.lower()}",
+                "secondary": "; ".join(row["secondary_keywords"][:4]) if row else f"concreting {area.lower()}",
+                "evidence": "suburbs.json title_tag/meta_description; build/53-council-suburb-map.json"}
+    spec_title, spec_h1, _ = seo_spec.UTILITY_META.get(slug, (title, title, None))
+    description = UTILITY_DESCRIPTIONS.get(slug, f"{title} — Structure Co Concreters Camden, serving the Camden LGA and South West Sydney.")
+    return {"title": spec_title, "h1": spec_h1, "description": description, "robots": "index,follow",
+            "intent": "supporting information", "primary": spec_title.split(" | ")[0].lower(),
+            "secondary": spec_h1.lower(), "evidence": "spec section 2; data/verified-facts.yml"}
 
 
 def page_head(profile: dict[str, object], canonical: str, crumbs: list[tuple[str, str]], page_type: str, service_slug: str = "") -> str:
@@ -230,10 +254,21 @@ def page_head(profile: dict[str, object], canonical: str, crumbs: list[tuple[str
         "@type": "WebPage", "name": title, "url": canonical, "description": description,
         "inLanguage": "en-AU", "isPartOf": {"@type": "WebSite", "name": BRAND, "url": BASE + "/"},
     }]
-    if crumbs:
-        graph.append({"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i, "name": label, "item": BASE + url.split("#", 1)[0]} for i, (url, label) in enumerate(crumbs, 1)]})
+    crumb_node = seo_spec.crumb_jsonld(crumbs)
+    if crumb_node:
+        graph.append(crumb_node)
     if page_type == "service" and service_slug in SERVICES:
         graph.append({"@type": "Service", "name": SERVICES[service_slug][0], "serviceType": SERVICES[service_slug][0], "description": SERVICES[service_slug][1], "url": canonical, "areaServed": ["Camden", "South-West Sydney"]})
+    if page_type == "suburb":
+        # Spec section 7.1. `provider` is deliberately absent: DECISION-08 D35 clause 4
+        # does not authorise an Organization node, so no @id is referenced.
+        service_node = seo_spec.service_schema(str(profile.get("slug", "")))
+        if service_node:
+            service_node["url"] = canonical
+            graph.append(service_node)
+        faq_node = profile.get("faq_node")
+        if faq_node:
+            graph.append(faq_node)
     schema = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
     return f'''<!doctype html>
 <html lang="en-AU">
@@ -245,23 +280,24 @@ def page_head(profile: dict[str, object], canonical: str, crumbs: list[tuple[str
   <link rel="canonical" href="{canonical}"><meta property="og:title" content="{html.escape(title)}">
   <meta property="og:description" content="{html.escape(description)}"><meta property="og:url" content="{canonical}">
   <link rel="stylesheet" href="/assets/site.css"><script type="application/ld+json">{schema}</script>
-</head>'''
+</head>
+<body>'''
 
 
 def header() -> str:
     service_links = "".join(link(f"/{slug}/", SERVICES[slug][0]) for slug in NAV_SERVICES)
     return f'''<header class="site-header">
-  <div class="utility"><div class="container utility__inner"><span>Independent-provider enquiry coordination · Camden &amp; South-West Sydney</span><span class="utility__contact"><a href="mailto:{EMAIL}">{EMAIL}</a><a href="{PHONE_URI}">{PHONE}</a></span></div></div>
+  <div class="utility"><div class="container utility__inner"><span>Independent-provider enquiry coordination · Camden &amp; South-West Sydney</span><span class="utility__contact"><a href="mailto:{EMAIL}">{EMAIL}</a><a href="{seo_spec.phone_uri()}">{seo_spec.phone_display()}</a></span></div></div>
   <div class="container nav-wrap"><a class="brand" href="/"><span class="brand-mark">SC</span><span><strong>Structure Co</strong><small>Concreters Camden</small></span></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu <span>☰</span></button>
-    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation"><a href="/">Home</a><div class="nav-dropdown"><button type="button" aria-expanded="false">Services <span>⌄</span></button><div class="nav-dropdown__menu">{service_links}</div></div><a href="/about/">About</a><a href="/gallery/">Gallery</a><a href="/contact/">Contact</a><a class="nav-cta" href="/#quote-form">Start an enquiry <span>↗</span></a></nav>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation"><a href="/">Home</a><div class="nav-dropdown"><button type="button" aria-expanded="false">Services <span>⌄</span></button><div class="nav-dropdown__menu"><a href="/services/"><strong>All services</strong></a>{service_links}</div></div><a href="/areas/">Areas</a><a href="/about/">About</a><a href="/gallery/">Gallery</a><a href="/contact/">Contact</a><a class="nav-cta" href="/#quote-form">Start an enquiry <span>↗</span></a></nav>
   </div>
 </header>'''
 
 
 def footer() -> str:
     service_links = "".join(f'<li>{link(f"/{slug}/", SERVICES[slug][0])}</li>' for slug in NAV_SERVICES)
-    return f'''<footer class="site-footer"><div class="container footer-grid"><div><a class="brand brand--footer" href="/"><span class="brand-mark">SC</span><span><strong>Structure Co</strong><small>Concreters Camden</small></span></a><p class="footer-intro">A considered starting point for concreting enquiries in Camden and South-West Sydney, coordinated with suitable independent providers.</p></div><div><h2>Explore</h2><ul><li>{link("/about/", "About")}</li><li>{link("/gallery/", "Gallery")}</li><li>{link("/contact/", "Contact")}</li><li>{link("/privacy-policy/", "Privacy")}</li></ul></div><div><h2>Services</h2><ul>{service_links}</ul></div><div><h2>Enquiries</h2><p><a href="mailto:{EMAIL}">{EMAIL}</a><br><a href="{PHONE_URI}">{PHONE}</a></p><p class="footer-address">{ADDRESS}<br><small>Administrative office only; not open to customers.</small></p><a class="button button--small" href="/quote/#quote-form">Tell us about your project</a></div></div><div class="container footer-bottom"><span>© <span data-year>2026</span> {BRAND}</span><span>Submitting an enquiry does not create a construction contract.</span></div></footer>'''
+    return f'''<footer class="site-footer"><div class="container footer-grid"><div><a class="brand brand--footer" href="/"><span class="brand-mark">SC</span><span><strong>Structure Co</strong><small>Concreters Camden</small></span></a><p class="footer-intro">A considered starting point for concreting enquiries in Camden and South-West Sydney, coordinated with suitable independent providers.</p></div><div><h2>Explore</h2><ul><li>{link("/services/", "Services")}</li><li>{link("/areas/", "Areas we service")}</li><li>{link("/about/", "About")}</li><li>{link("/gallery/", "Gallery")}</li><li>{link("/contact/", "Contact")}</li><li>{link("/privacy-policy/", "Privacy")}</li></ul></div><div><h2>Services</h2><ul>{service_links}<li>{link("/services/", "All services")}</li></ul></div><div><h2>Enquiries</h2><p><a href="mailto:{EMAIL}">{EMAIL}</a><br><a href="{seo_spec.phone_uri()}">{seo_spec.phone_display()}</a></p><p class="footer-address">{ADDRESS}<br><small>Administrative office only; not open to customers.</small></p><a class="button button--small" href="/quote/#quote-form">Tell us about your project</a></div></div><div class="container footer-bottom"><span>© <span data-year>2026</span> {BRAND}</span><span>Submitting an enquiry does not create a construction contract.</span></div></footer>'''
 
 
 def document(profile: dict[str, object] | str, canonical: str, content: str, alt_register: dict[str, str], crumbs: list[tuple[str, str]] | dict[str, str] | None = None, page_type: str = "", service_slug: str = "") -> str:
@@ -280,7 +316,7 @@ def cta_band(heading: str = "Ready to shape the brief?") -> str:
 def enquiry_form(context: str = "home") -> str:
     heading = "Start an enquiry" if context == "home" else "Tell us about the project"
     intro = "Share the location, service and project details so the next conversation starts with useful context."
-    return f'''<section id="quote-form" class="section section--form" aria-labelledby="quote-form-title"><div class="container form-layout"><div class="form-card"><span class="eyebrow">Start an enquiry</span><h2 id="quote-form-title">{heading}</h2><p>{intro}</p><form action="https://formspree.io/f/xljrvvpd" method="POST" data-formspree><input type="hidden" name="_subject" value="New Structure Co Concreters Camden enquiry"><input type="hidden" name="_format" value="plain"><div class="form-honeypot" aria-hidden="true"><label>Leave this field blank<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div><div class="form-grid"><div class="form-field"><label for="enquiry-name">Name</label><input id="enquiry-name" name="name" type="text" autocomplete="name" required></div><div class="form-field"><label for="enquiry-email">Email</label><input id="enquiry-email" name="email" type="email" autocomplete="email" required></div><div class="form-field"><label for="enquiry-phone">Phone</label><input id="enquiry-phone" name="phone" type="tel" autocomplete="tel"></div><div class="form-field"><label for="enquiry-location">Suburb or project location</label><input id="enquiry-location" name="suburb_or_project_location" type="text" autocomplete="address-level2" required></div><div class="form-field"><label for="enquiry-service">Service</label><select id="enquiry-service" name="service" required><option value="">Choose a service</option><option>Concrete driveways</option><option>Exposed aggregate</option><option>Concrete slabs</option><option>Concrete paths</option><option>Concrete patios</option><option>Decorative concrete</option><option>Other concrete enquiry</option></select></div><div class="form-field"><label for="enquiry-timing">Preferred timing</label><input id="enquiry-timing" name="preferred_timing" type="text" autocomplete="off"></div><div class="form-field form-field--wide"><label for="enquiry-details">Project details</label><textarea id="enquiry-details" name="project_details" rows="5" required></textarea></div><div class="form-field form-field--wide form-consent"><label><input type="checkbox" name="consent" value="yes" required> I consent to my enquiry being used to coordinate a response.</label></div></div><button class="button" type="submit">Send enquiry</button><p class="form-status" role="status" aria-live="polite"></p></form></div><aside class="compliance-copy"><span class="eyebrow">Before you submit</span><p>Submitting an enquiry does not create a construction contract. Structure Co Concreters Camden coordinates enquiries with suitable independent providers. Provider identity, quotation, licensing, insurance, contract and warranty details must be confirmed before work begins.</p><p><a href="/privacy-policy/">Read the privacy information.</a></p></aside></div></section>'''
+    return f'''<section id="quote-form" class="section section--form" data-module="quote-request" aria-labelledby="quote-form-title"><div class="container form-layout"><div class="form-card"><span class="eyebrow">Start an enquiry</span><h2 id="quote-form-title">{heading}</h2><p>{intro}</p><form action="https://formspree.io/f/xljrvvpd" method="POST" data-formspree><input type="hidden" name="_subject" value="New Structure Co Concreters Camden enquiry"><input type="hidden" name="_format" value="plain"><div class="form-honeypot" aria-hidden="true"><label>Leave this field blank<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div><div class="form-grid"><div class="form-field"><label for="enquiry-name">Name</label><input id="enquiry-name" name="name" type="text" autocomplete="name" required></div><div class="form-field"><label for="enquiry-email">Email</label><input id="enquiry-email" name="email" type="email" autocomplete="email" required></div><div class="form-field"><label for="enquiry-phone">Phone</label><input id="enquiry-phone" name="phone" type="tel" autocomplete="tel"></div><div class="form-field"><label for="enquiry-location">Suburb or project location</label><input id="enquiry-location" name="suburb_or_project_location" type="text" autocomplete="address-level2" required></div><div class="form-field"><label for="enquiry-service">Service</label><select id="enquiry-service" name="service" required><option value="">Choose a service</option><option>Concrete driveways</option><option>Exposed aggregate</option><option>Concrete slabs</option><option>Concrete paths</option><option>Concrete patios</option><option>Decorative concrete</option><option>Other concrete enquiry</option></select></div><div class="form-field"><label for="enquiry-timing">Preferred timing</label><input id="enquiry-timing" name="preferred_timing" type="text" autocomplete="off"></div><div class="form-field form-field--wide"><label for="enquiry-details">Project details</label><textarea id="enquiry-details" name="project_details" rows="5" required></textarea></div><div class="form-field form-field--wide form-consent"><label><input type="checkbox" name="consent" value="yes" required> I consent to my enquiry being used to coordinate a response.</label></div></div><button class="button" type="submit">Send enquiry</button><p class="form-status" role="status" aria-live="polite"></p></form></div><aside class="compliance-copy"><span class="eyebrow">Before you submit</span><p>Submitting an enquiry does not create a construction contract. Structure Co Concreters Camden coordinates enquiries with suitable independent providers. Provider identity, quotation, licensing, insurance, contract and warranty details must be confirmed before work begins.</p><p><a href="/privacy-policy/">Read the privacy information.</a></p></aside></div></section>'''
 
 
 def card_image(filename: str, alt_register: dict[str, str]) -> str:
@@ -303,21 +339,20 @@ def _home_content_raw(alt_register: dict[str, str], media_names: list[str], subu
     for slug in suburb_slugs[:12]:
         area = pretty_area(slug)
         area_cards.append(f'<a class="area-pill" href="/{slug}/"><span>{html.escape(area)}</span><span>↗</span></a>')
-    return f'''<section class="hero hero--home"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">Camden · South-West Sydney</span><h1>Concrete enquiries, <em>structured</em> around your site.</h1><p class="hero-lead">Structure Co Concreters Camden helps turn a rough idea into a clear, considered enquiry for driveways, slabs, paths and outdoor spaces.</p><div class="hero-actions"><a class="button" href="/quote/">Start an enquiry <span>↗</span></a><a class="button button--ghost" href="{PHONE_URI}">Call {PHONE}</a></div><p class="micro-note">Independent-provider coordination. An enquiry is not a construction contract.</p></div><div class="hero-media"><div class="hero-media__frame">{img(hero_image, alt_register, True)}</div><div class="hero-stamp"><strong>01</strong><span>Local context<br>matters</span></div></div></div></section>
+    return f'''<section class="hero hero--home"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">Camden · South-West Sydney</span><h1>Concreting in <em>Camden</em>, NSW</h1><p class="hero-lead">Driveways, house and shed slabs, council crossovers, exposed aggregate and outdoor areas across the Camden LGA and South West Sydney.</p><div class="hero-actions"><a class="button" href="/quote/">Start an enquiry <span>↗</span></a><a class="button button--ghost" href="{seo_spec.phone_uri()}">Call {seo_spec.phone_display()}</a></div><p class="micro-note">Independent-provider coordination. An enquiry is not a construction contract.</p></div><div class="hero-media"><div class="hero-media__frame">{img(hero_image, alt_register, True)}</div><div class="hero-stamp"><strong>01</strong><span>Local context<br>matters</span></div></div></div></section>
 <section class="trust-strip"><div class="container trust-grid"><div><strong>01</strong><span>Start with a clear brief</span></div><div><strong>02</strong><span>Understand the site questions</span></div><div><strong>03</strong><span>Coordinate the next step</span></div></div></section>
 <section class="section section--services"><div class="container"><div class="section-heading"><div><span class="eyebrow">What can we help coordinate?</span><h2>Services for the way Camden lives.</h2></div><p>Explore the main service pathways and the information an appointed provider should confirm before work begins.</p></div><div class="service-grid">{service_cards(alt_register, media_names, SERVICE_ORDER)}</div></div></section>
-<section class="section section--tint"><div class="container split-grid"><div class="split-media">{img(image_for("aerial", media_names), alt_register)}<span class="image-caption">Camden and the South-West Sydney growth corridor</span></div><div class="split-copy"><span class="eyebrow">A local starting point</span><h2>Good concrete decisions begin before the concrete.</h2><p>Access, existing surfaces, levels, drainage, intended use and council interfaces can all change the questions a project needs to answer. A useful enquiry puts those details on the table early.</p><p>We coordinate enquiries with suitable independent providers. The appointed provider and project designer confirm the applicable requirements for the actual property, system and conditions.</p><a class="arrow-link" href="/about/">How the model works <span>→</span></a></div></div></section>
+<section class="section section--tint"><div class="container split-grid"><div class="split-media">{img(image_for("aerial", media_names), alt_register)}<span class="image-caption">Camden and the South-West Sydney growth corridor</span></div><div class="split-copy"><span class="eyebrow">Camden, specifically</span><h2>Camden is two jobs, not one.</h2><p>The town centre sits inside the Camden Town Centre Heritage Conservation Area — the Argyle, John, Murray and Oxley Street precincts — where finishes and the approval pathway are constrained, and much of the low-lying land near the Nepean carries flood planning controls that drive slab heights and falls. Both should be confirmed with Camden Council for the actual property.</p><p>Out in the growth corridor releases neither applies, and the work is handover driveways, crossovers and shed slabs instead. Older Camden and Camden South homes are mostly driveway replacement on stock built between the 1900s and the 1980s, often with no documented footing design to work from.</p><a class="arrow-link" href="/areas/">Suburbs we cover <span>→</span></a></div></div></section>
 <section class="section"><div class="container"><div class="section-heading section-heading--center"><span class="eyebrow">The enquiry path</span><h2>Simple on the surface. Thoughtful underneath.</h2><p>Three useful steps keep the conversation focused without promising a construction outcome.</p></div><div class="process-grid"><article class="process-step"><span>01</span><h3>Tell us about the site</h3><p>Share the property location, intended use, existing surface, access constraints, drainage concerns and timing.</p></article><article class="process-step"><span>02</span><h3>Clarify the questions</h3><p>We help frame the information an appointed provider needs to assess the actual site and proposed scope.</p></article><article class="process-step"><span>03</span><h3>Coordinate the next step</h3><p>Provider identity, quotation, contract, licensing, insurance and warranty details are confirmed before work begins.</p></article></div></div></section>
 <section class="section section--dark"><div class="container council-grid"><div><span class="eyebrow eyebrow--light">Council context</span><h2>Frontage work needs the right local check.</h2><p>For properties in Liverpool City Council, a vehicle crossing application is made under section 138 of the Roads Act 1993. Current forms, inspections, drawings, utilities and fees should be checked with Council for the actual property.</p><p>That information is a coordination reference, not evidence that Structure Co is licensed or insured.</p></div><div class="council-card"><span class="council-card__icon">◎</span><h3>Own a Liverpool property?</h3><p>Bring the crossing location and any current Council correspondence to the enquiry.</p><a class="text-link text-link--light" href="/concrete-crossovers-and-laybacks-south-west-sydney/">Explore crossovers &amp; laybacks <span>→</span></a></div></div></section>
-<section class="section section--areas"><div class="container"><div class="section-heading"><div><span class="eyebrow">Service areas</span><h2>Camden at the centre.</h2></div><p>Browse the existing area pages for local context. Property boundaries and council requirements should always be confirmed for the actual address.</p></div><div class="area-grid">{''.join(area_cards)}</div></div></section>
-<section class="section section--faq"><div class="container faq-grid"><div><span class="eyebrow">Questions, answered carefully</span><h2>Before you send an enquiry.</h2><p>These answers describe the coordination model and the information worth having ready.</p><a class="arrow-link" href="/contact/">Ask a question <span>→</span></a></div><div class="faq-list">{faq_items([('What happens after I enquire?', 'We review the project information and coordinate the next conversation where an independent provider is suitable. An enquiry does not create a construction contract.'), ('Do you publish prices?', 'No universal price is asserted. Scope, access, existing conditions, finish and project requirements need to be confirmed for the actual site.'), ('What should I include?', 'The property location, intended use, approximate dimensions, access constraints, existing surfaces, drainage concerns and timing are useful starting points.'), ('Can I visit the address?', 'No. {ADDRESS} is an administrative correspondence office and is not open to customers or visitors.')])}</div></div></section>
+<section class="section section--areas"><div class="container"><div class="section-heading"><div><span class="eyebrow">Service areas</span><h2>Camden at the centre.</h2></div><p>Browse the area pages for local context. Property boundaries and council requirements should always be confirmed for the actual address. <a href="/areas/">See every suburb we cover →</a></p></div><div class="area-grid">{''.join(area_cards)}</div></div></section>
+<section class="section section--faq"><div class="container faq-grid"><div><span class="eyebrow">Questions, answered carefully</span><h2>Before you send an enquiry.</h2><p>These answers describe the coordination model and the information worth having ready.</p><a class="arrow-link" href="/contact/">Ask a question <span>→</span></a></div><div class="faq-list">{faq_items([('What happens after I enquire?', 'We review the project information and coordinate the next conversation where an independent provider is suitable. An enquiry does not create a construction contract.'), ('Do you publish prices?', 'No universal price is asserted. Scope, access, existing conditions, finish and project requirements need to be confirmed for the actual site.'), ('What should I include?', 'The property location, intended use, approximate dimensions, access constraints, existing surfaces, drainage concerns and timing are useful starting points.'), ('Can I visit the address?', 'No. ' + ADDRESS + ' is an administrative correspondence office and is not open to customers or visitors.')])}</div></div></section>
     {cta_band()}'''
 
 
 def home_content(alt_register: dict[str, str], media_names: list[str], suburb_slugs: list[str]) -> str:
+    # Spec section 6.2: the homepage carries no breadcrumb.
     raw = _home_content_raw(alt_register, media_names, suburb_slugs)
-    marker = '<section class="hero hero--home">'
-    raw = raw.replace(marker, f'<section class="hero hero--home"><div class="container home-breadcrumb">{breadcrumb(breadcrumb_items("homepage", "Home", "home"))}</div>', 1)
     hero_end = raw.find('</section>')
     return raw[:hero_end + len('</section>')] + enquiry_form("home") + raw[hero_end + len('</section>'):]
 
@@ -335,7 +370,7 @@ def service_content(slug: str, title: str, description: str, key: str, alt_regis
         ("Who confirms the technical requirements?", "The appointed provider and project designer must confirm the applicable requirement for the actual design, site and selected system before work begins."),
         ("Is a price or construction outcome assured?", "No. Scope, quotation, contract, provider credentials and warranty information must be confirmed before work begins."),
     ]
-    return f'''<section class="page-hero"><div class="container page-hero__grid"><div>{breadcrumb([("/", "Home"), ("/", "Services"), (f"/{slug}/", title)])}<span class="eyebrow">Service pathway</span><h1>{html.escape(title)} in South-West Sydney.</h1><p class="hero-lead">{description}</p><div class="hero-actions"><a class="button" href="/quote/">Start an enquiry <span>↗</span></a><a class="button button--ghost" href="{PHONE_URI}">Call {PHONE}</a></div></div><div class="page-hero__image">{img(filename, alt_register, True)}</div></div></section>
+    return f'''<section class="page-hero"><div class="container page-hero__grid"><div>{breadcrumb(seo_spec.crumbs_for("service", slug, seo_spec.SERVICE_CRUMB[slug]))}<span class="eyebrow">Service</span><h1>{html.escape(seo_spec.SERVICE_MOVE[slug][2])}</h1><p class="hero-lead">{description}</p><div class="hero-actions"><a class="button" href="/quote/">Start an enquiry <span>↗</span></a><a class="button button--ghost" href="{seo_spec.phone_uri()}">Call {seo_spec.phone_display()}</a></div></div><div class="page-hero__image">{img(filename, alt_register, True)}</div></div></section>
 <section class="section"><div class="container"><div class="section-heading"><div><span class="eyebrow">A better brief</span><h2>Make the site questions visible.</h2></div><p>Every project is different. These are useful prompts for a conversation with the appointed provider, not a specification or promise of method.</p></div><div class="feature-grid"><article><span class="feature-icon">01</span><h3>Use &amp; access</h3><p>Explain how the area will be used, how people or vehicles reach it, and what needs to remain accessible.</p></article><article><span class="feature-icon">02</span><h3>Existing conditions</h3><p>Note current slabs, paving, soil, levels, drainage paths, edges and anything that may need investigation.</p></article><article><span class="feature-icon">03</span><h3>Project documents</h3><p>Bring drawings, approvals, easements or Council correspondence that may apply to the actual property.</p></article></div></div></section>
 <section class="section section--tint"><div class="container split-grid split-grid--reverse"><div class="split-media">{img(image_for("cracks", media_names), alt_register)}<span class="image-caption">Existing conditions need an on-site assessment</span></div><div class="split-copy"><span class="eyebrow">Project-specific by design</span><h2>Technical details are confirmed for the actual system.</h2><p>Concrete thickness, strength or grade, reinforcement, base preparation, joints, curing, drainage and edges are not universal values. The appointed provider and project designer must confirm the applicable requirement before work begins.</p><p>For a selected product or finish, the supplier and appointed provider must also confirm what applies to the chosen system and conditions.</p></div></div></section>
 <section class="section"><div class="container"><div class="section-heading section-heading--center"><span class="eyebrow">Related pathways</span><h2>Keep exploring the brief.</h2><p>These service pages sit alongside this enquiry pathway.</p></div><div class="service-grid service-grid--compact">{service_cards(alt_register, media_names, related)}</div></div></section>
@@ -350,29 +385,31 @@ def suburb_content(slug: str, title: str, original: str, alt_register: dict[str,
     neighbours = [s for s in suburb_slugs if s != slug][:6]
     local_image = image_for("aerial", media_names) if "park" in slug or "hills" in slug else image_for("driveway", media_names)
     context_note = "Council boundaries and approval pathways can vary by property. The controlling council's current requirements and approved documents must be checked for the actual address."
-    return f'''<section class="page-hero page-hero--area"><div class="container page-hero__grid"><div>{breadcrumb([("/", "Home"), ("/", "Service areas"), (f"/{slug}/", area)])}<span class="eyebrow">Service area</span><h1>Concreting enquiries in {html.escape(area)}.</h1><p class="hero-lead">A considered starting point for residential, access and outdoor concrete questions around {html.escape(area)} and the wider South-West Sydney region.</p><div class="hero-actions"><a class="button" href="/quote/">Start an enquiry <span>↗</span></a><a class="button button--ghost" href="/contact/">Contact us</a></div></div><div class="page-hero__image">{img(local_image, alt_register, True)}</div></div></section>
+    return f'''<section class="page-hero page-hero--area"><div class="container page-hero__grid"><div>{breadcrumb(seo_spec.crumbs_for("suburb", slug, area))}<span class="eyebrow">Service area</span><h1>{html.escape(seo_spec.suburb_h1(slug))}</h1><p class="hero-lead">Driveways, slabs, crossovers, paths and outdoor areas around {html.escape(area)} and the wider South West Sydney region.</p><div class="hero-actions"><a class="button" href="/quote/">Start an enquiry <span>↗</span></a><a class="button button--ghost" href="/contact/">Contact us</a></div></div><div class="page-hero__image">{img(local_image, alt_register, True)}</div></div></section>
 <section class="section"><div class="container"><div class="section-heading"><div><span class="eyebrow">Local context</span><h2>Begin with what is true of your site.</h2></div><p>{context_note}</p></div><div class="local-context"><p>{html.escape(excerpt)}</p></div></div></section>
-<section class="section section--tint"><div class="container"><div class="section-heading section-heading--center"><span class="eyebrow">Service pathways</span><h2>Choose the conversation that fits.</h2><p>Use the service pages to prepare a useful brief; the appointed provider confirms the project-specific requirements.</p></div><div class="service-grid service-grid--compact">{service_cards(alt_register, media_names, SERVICE_ORDER[:6])}</div></div></section>
+<section class="section section--tint"><div class="container"><div class="section-heading section-heading--center">{seo_spec.near_me_h2(slug)}<p>Use the service pages to prepare a useful brief; the appointed provider confirms the project-specific requirements.</p></div><div class="service-grid service-grid--compact">{service_cards(alt_register, media_names, SERVICE_ORDER[:6])}</div></div></section>
+{seo_spec.service_in_suburb_blocks(slug, {key: value[0] for key, value in SERVICES.items()})}
 <section class="section"><div class="container split-grid"><div class="split-media">{img(image_for("path", media_names), alt_register)}<span class="image-caption">Access, levels and edges are useful enquiry details</span></div><div class="split-copy"><span class="eyebrow">Questions worth bringing</span><h2>Access, drainage and intended use.</h2><p>Tell us what the area needs to do, what is already there and what might make access or levels difficult. Photographs, sketches and relevant Council correspondence can make the first conversation more useful.</p><p>For frontage work, confirm the controlling council and its current application, inspection and construction requirements before any commitment.</p><a class="arrow-link" href="/concrete-crossovers-and-laybacks-south-west-sydney/">Read about crossovers &amp; laybacks <span>→</span></a></div></div></section>
 <section class="section section--areas"><div class="container"><div class="section-heading"><div><span class="eyebrow">Nearby areas</span><h2>Continue around South-West Sydney.</h2></div><p>These links are existing area pages, not a claim that every project is accepted or every boundary is identical.</p></div><div class="area-grid">{''.join(f'<a class="area-pill" href="/{n}/"><span>{html.escape(pretty_area(n))}</span><span>↗</span></a>' for n in neighbours)}</div></div></section>
-<section class="section section--faq"><div class="container faq-grid"><div><span class="eyebrow">Area FAQ</span><h2>Before an area enquiry.</h2></div><div class="faq-list">{faq_items([(f"Do you work in {area}?", "This page is an enquiry pathway. We coordinate suitable independent-provider conversations after the property and scope are understood."), ("What should I send first?", "The address or locality, intended use, approximate dimensions, access constraints, existing surfaces, drainage concerns and timing are a useful start."), ("Are council requirements the same everywhere?", "No. The controlling council's current requirements and approved documents must be checked for the actual property."), ("Is the Camden address open to visitors?", f"No. {ADDRESS} is an administrative correspondence office and is not open to customers or visitors.")])}</div></div></section>
+{seo_spec.near_me_faq(slug)[0]}
+<section class="section section--faq"><div class="container faq-grid"><div><span class="eyebrow">Area FAQ</span><h2>Common questions</h2></div><div class="faq-list">{faq_items([(f"Do you work in {area}?", "This page is an enquiry pathway. We coordinate suitable independent-provider conversations after the property and scope are understood."), ("What should I send first?", "The address or locality, intended use, approximate dimensions, access constraints, existing surfaces, drainage concerns and timing are a useful start."), ("Are council requirements the same everywhere?", "No. The controlling council's current requirements and approved documents must be checked for the actual property."), ("Is the Camden address open to visitors?", f"No. {ADDRESS} is an administrative correspondence office and is not open to customers or visitors.")])}</div></div></section>
 {cta_band(f"Start a {area} enquiry") }'''
 
 
 def _utility_content_raw(slug: str, title: str, original: str, alt_register: dict[str, str], media_names: list[str]) -> str:
     if slug == "about":
-        return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb([("/", "Home"), ("/about/", "About")])}<span class="eyebrow">About Structure Co</span><h1>A clearer way to begin a concreting conversation.</h1><p class="hero-lead">{BRAND} coordinates enquiries with suitable independent providers across Camden and South-West Sydney.</p></div></section><section class="section"><div class="container split-grid"><div class="split-media">{img(image_for("project", media_names), alt_register, True)}</div><div class="split-copy"><span class="eyebrow">The model</span><h2>Useful information first.</h2><p>We help organise the site details and questions that make an enquiry easier to assess. The appointed provider confirms the method, documents, quotation and contractual details for the actual project.</p><p>Submitting an enquiry does not create a construction contract. The address is administrative correspondence only, and no public business credentials are asserted here.</p><a class="button" href="/quote/">Start an enquiry <span>↗</span></a></div></div></section><section class="section section--dark"><div class="container principles"><span class="eyebrow eyebrow--light">Our principles</span><div class="principle-grid"><article><h3>Specific, not sweeping.</h3><p>Site, design, council and product requirements are confirmed where they apply.</p></article><article><h3>Independent, not implied.</h3><p>Provider identity, licensing, insurance and warranty information are checked before work begins.</p></article><article><h3>Clear, not pushy.</h3><p>An enquiry gives you a place to start; it does not promise a price or outcome.</p></article></div></div></section>{cta_band("Have a question about the model?")}'''
+        return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb(seo_spec.crumbs_for("utility", "about", "About"))}<span class="eyebrow">About Structure Co</span><h1>About Structure Co</h1><p class="hero-lead">{BRAND} coordinates enquiries with suitable independent providers across Camden and South-West Sydney.</p></div></section><section class="section"><div class="container split-grid"><div class="split-media">{img(image_for("project", media_names), alt_register, True)}</div><div class="split-copy"><span class="eyebrow">The model</span><h2>Useful information first.</h2><p>We help organise the site details and questions that make an enquiry easier to assess. The appointed provider confirms the method, documents, quotation and contractual details for the actual project.</p><p>Submitting an enquiry does not create a construction contract. The address is administrative correspondence only, and no public business credentials are asserted here.</p><a class="button" href="/quote/">Start an enquiry <span>↗</span></a></div></div></section><section class="section section--dark"><div class="container principles"><span class="eyebrow eyebrow--light">Our principles</span><div class="principle-grid"><article><h3>Specific, not sweeping.</h3><p>Site, design, council and product requirements are confirmed where they apply.</p></article><article><h3>Independent, not implied.</h3><p>Provider identity, licensing, insurance and warranty information are checked before work begins.</p></article><article><h3>Clear, not pushy.</h3><p>An enquiry gives you a place to start; it does not promise a price or outcome.</p></article></div></div></section>{cta_band("Have a question about the model?")}'''
     if slug == "contact":
-        return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb([("/", "Home"), ("/contact/", "Contact")])}<span class="eyebrow">Contact</span><h1>Bring the project questions.</h1><p class="hero-lead">Tell us about the site, the intended use and anything that needs a closer look.</p><div class="hero-actions"><a class="button" href="mailto:{EMAIL}">Email {EMAIL} <span>↗</span></a><a class="button button--ghost" href="{PHONE_URI}">Call {PHONE}</a></div></div></section><section class="section"><div class="container contact-grid"><div class="contact-card contact-card--primary"><span class="eyebrow">Enquiries</span><h2>Start by email or phone.</h2><p>Include the property locality, intended use, access constraints, existing surfaces, drainage concerns and timing where you can.</p><p><a class="contact-value" href="mailto:{EMAIL}">{EMAIL}</a><br><a class="contact-value" href="{PHONE_URI}">{PHONE}</a></p></div><div class="contact-card"><span class="eyebrow">Correspondence address</span><h2>{ADDRESS}</h2><p>This is an administrative office for correspondence only. It is not open to customers or visitors.</p><p class="muted">Submitting an enquiry does not create a construction contract.</p></div></div></section>{cta_band("Ready to share the essentials?")}'''
+        return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb(seo_spec.crumbs_for("utility", "contact", "Contact"))}<span class="eyebrow">Contact</span><h1>Start a Concreting Quote in Camden</h1><p class="hero-lead">Tell us about the site, the intended use and anything that needs a closer look.</p><div class="hero-actions"><a class="button" href="mailto:{EMAIL}">Email {EMAIL} <span>↗</span></a><a class="button button--ghost" href="{seo_spec.phone_uri()}">Call {seo_spec.phone_display()}</a></div></div></section><section class="section"><div class="container contact-grid"><div class="contact-card contact-card--primary"><span class="eyebrow">Enquiries</span><h2>Start by email or phone.</h2><p>Include the property locality, intended use, access constraints, existing surfaces, drainage concerns and timing where you can.</p><p><a class="contact-value" href="mailto:{EMAIL}">{EMAIL}</a><br><a class="contact-value" href="{seo_spec.phone_uri()}">{seo_spec.phone_display()}</a></p></div><div class="contact-card"><span class="eyebrow">Correspondence address</span><h2>{ADDRESS}</h2><p>This is an administrative office for correspondence only. It is not open to customers or visitors.</p><p class="muted">Submitting an enquiry does not create a construction contract.</p></div></div></section>{cta_band("Ready to share the essentials?")}'''
     if slug == "quote":
-        return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb([("/", "Home"), ("/quote/", "Start an enquiry")])}<span class="eyebrow">Start an enquiry</span><h1>Give the next conversation a head start.</h1><p class="hero-lead">A few useful details help us understand the shape of the question before an independent-provider conversation is coordinated.</p><a class="button" href="mailto:{EMAIL}?subject=Concrete%20enquiry%20for%20Camden">Email the enquiry <span>↗</span></a></div></section><section class="section"><div class="container enquiry-grid"><div><span class="eyebrow">What to include</span><h2>A practical brief can be simple.</h2><ul class="check-list"><li>Property address or locality</li><li>Intended use and approximate dimensions</li><li>Existing surface, access and drainage notes</li><li>Relevant drawings or Council correspondence</li><li>Preferred timing and any constraints</li></ul></div><div class="enquiry-note"><span class="feature-icon">i</span><h3>What happens next?</h3><p>We review the information and coordinate the next step where a suitable independent provider can assess the scope. Provider identity, quotation, contract, licensing, insurance and warranty details must be confirmed before work begins.</p><p>Submitting an enquiry does not create a construction contract.</p></div></div></section>{cta_band("Prefer to talk first?")}'''
+        return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb(seo_spec.crumbs_for("utility", "quote", "Quote"))}<span class="eyebrow">Start an enquiry</span><h1>Request a Quote</h1><p class="hero-lead">A few useful details help us understand the shape of the question before an independent-provider conversation is coordinated.</p><a class="button" href="mailto:{EMAIL}?subject=Concrete%20enquiry%20for%20Camden">Email the enquiry <span>↗</span></a></div></section><section class="section"><div class="container enquiry-grid"><div><span class="eyebrow">What to include</span><h2>A practical brief can be simple.</h2><ul class="check-list"><li>Property address or locality</li><li>Intended use and approximate dimensions</li><li>Existing surface, access and drainage notes</li><li>Relevant drawings or Council correspondence</li><li>Preferred timing and any constraints</li></ul></div><div class="enquiry-note"><span class="feature-icon">i</span><h3>What happens next?</h3><p>We review the information and coordinate the next step where a suitable independent provider can assess the scope. Provider identity, quotation, contract, licensing, insurance and warranty details must be confirmed before work begins.</p><p>Submitting an enquiry does not create a construction contract.</p></div></div></section>{cta_band("Prefer to talk first?")}'''
     if slug == "gallery":
         gallery_images = SAFE_MEDIA[:9]
-        return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb([("/", "Home"), ("/gallery/", "Gallery")])}<span class="eyebrow">Approved image library</span><h1>Materials for the conversation.</h1><p class="hero-lead">A visual reference for finishes, access and existing conditions. These images do not represent a completed Camden project or a testimonial.</p></div></section><section class="section"><div class="container gallery-grid">{''.join(f'<figure>{img(name, alt_register)}<figcaption>{html.escape(alt_for(name, alt_register))}</figcaption></figure>' for name in gallery_images if name in media_names)}</div></section>{cta_band("Have a project image to share?")}'''
+        return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb(seo_spec.crumbs_for("utility", "gallery", "Gallery"))}<span class="eyebrow">Approved image library</span><h1>Concrete Finishes &amp; Site Conditions</h1><p class="hero-lead">A visual reference for finishes, access and existing conditions. These images do not represent a completed Camden project or a testimonial.</p></div></section><section class="section"><div class="container gallery-grid">{''.join(f'<figure>{img(name, alt_register)}<figcaption>{html.escape(alt_for(name, alt_register))}</figcaption></figure>' for name in gallery_images if name in media_names)}</div></section>{cta_band("Have a project image to share?")}'''
     if slug in {"privacy-policy", "privacy"}:
-        return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb([("/", "Home"), ("/privacy-policy/", "Privacy")])}<span class="eyebrow">Privacy</span><h1>Privacy and enquiry information.</h1><p class="hero-lead">A plain-language summary of how enquiry information is handled.</p></div></section><section class="section"><div class="container legal-copy"><h2>Information shared with us</h2><p>The public site label is {BRAND}. Enquiry information is coordinated only as reasonably necessary to respond to a request and for applicable administration.</p><p>An enquiry may include a name, phone number, suburb, requested service, optional email address, approximate job size and a free-text message. Payment details are not requested.</p><h2>Why information is used</h2><p>Information is used to respond to an enquiry and, with the submitter's consent, may be shared with a suitable independent provider so that the provider can assess the enquiry. It is not sold, rented or disclosed for third-party marketing.</p><h2>Questions or corrections</h2><p>For access, correction or deletion questions about an enquiry, email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p><p>Submitting an enquiry does not create a construction contract.</p></div></section>'''
+        return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb(seo_spec.crumbs_for("utility", "privacy-policy", "Privacy"))}<span class="eyebrow">Privacy</span><h1>Privacy Policy</h1><p class="hero-lead">A plain-language summary of how enquiry information is handled.</p></div></section><section class="section"><div class="container legal-copy"><h2>Information shared with us</h2><p>The public site label is {BRAND}. Enquiry information is coordinated only as reasonably necessary to respond to a request and for applicable administration.</p><p>An enquiry may include a name, phone number, suburb, requested service, optional email address, approximate job size and a free-text message. Payment details are not requested.</p><h2>Why information is used</h2><p>Information is used to respond to an enquiry and, with the submitter's consent, may be shared with a suitable independent provider so that the provider can assess the enquiry. It is not sold, rented or disclosed for third-party marketing.</p><h2>Questions or corrections</h2><p>For access, correction or deletion questions about an enquiry, email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p><p>Submitting an enquiry does not create a construction contract.</p></div></section>'''
     body = safe_excerpt(original, 1500) or "This page provides approved information for a considered concreting enquiry."
-    return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb([("/", "Home"), (f"/{slug}/", title)])}<span class="eyebrow">Camden guide</span><h1>{html.escape(title)}</h1><p class="hero-lead">A practical reference for planning the questions around a concrete project.</p></div></section><section class="section"><div class="container article-layout"><article class="article-copy"><p class="lede">{html.escape(body[:500])}</p><h2>Start with the actual property.</h2><p>Site access, existing surfaces, levels, drainage, intended use and the relevant council context can all affect the questions that need to be answered. The appointed provider and project designer confirm what applies before work begins.</p><h2>Keep the enquiry specific.</h2><p>Share drawings, photos, dimensions or current correspondence where available. This helps separate a useful project question from a universal claim.</p></article><aside class="article-aside"><span class="eyebrow">Next step</span><h3>Talk through the brief.</h3><p>We can coordinate an enquiry with a suitable independent provider.</p><a class="button button--small" href="/quote/">Start an enquiry</a></aside></div></section>{cta_band()}'''
+    return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb(seo_spec.crumbs_for("utility", slug, title))}<span class="eyebrow">Camden guide</span><h1>{html.escape(title)}</h1><p class="hero-lead">A practical reference for planning the questions around a concrete project.</p></div></section><section class="section"><div class="container article-layout"><article class="article-copy"><p class="lede">{html.escape(body[:500])}</p><h2>Start with the actual property.</h2><p>Site access, existing surfaces, levels, drainage, intended use and the relevant council context can all affect the questions that need to be answered. The appointed provider and project designer confirm what applies before work begins.</p><h2>Keep the enquiry specific.</h2><p>Share drawings, photos, dimensions or current correspondence where available. This helps separate a useful project question from a universal claim.</p></article><aside class="article-aside"><span class="eyebrow">Next step</span><h3>Talk through the brief.</h3><p>We can coordinate an enquiry with a suitable independent provider.</p><a class="button button--small" href="/quote/">Start an enquiry</a></aside></div></section>{cta_band()}'''
 
 
 def utility_content(slug: str, title: str, original: str, alt_register: dict[str, str], media_names: list[str]) -> str:
@@ -381,6 +418,61 @@ def utility_content(slug: str, title: str, original: str, alt_register: dict[str
         marker = '</section><section class="section">'
         raw = raw.replace(marker, '</section>' + enquiry_form("quote") + '<section class="section">', 1)
     return raw
+
+
+def services_hub_content(alt_register: dict[str, str], media_names: list[str], suburb_slugs: list[str]) -> str:
+    """Spec section 2. Real, crawlable parent for every /services/ URL."""
+    title, h1, description = seo_spec.HUB_META["/services/"]
+    unbuilt = "".join(
+        f"<!-- BLOCKED: spec section 3 lists /services/{slug}/ but no source page exists in "
+        f"build/46-active-main-import.xml. Not built rather than published thin. -->"
+        for slug in seo_spec.UNBUILT_SERVICES
+    )
+    return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb(seo_spec.crumbs_for("services-hub", "services", "Services"))}<span class="eyebrow">Services</span><h1>{html.escape(h1)}</h1><p class="hero-lead">{html.escape(description)}</p></div></section>
+{unbuilt}<section class="section"><div class="container"><div class="service-grid">{service_cards(alt_register, media_names, SERVICE_ORDER)}</div></div></section>
+<section class="section section--areas"><div class="container"><div class="section-heading"><div><span class="eyebrow">Where</span><h2>Every service, across the Camden LGA.</h2></div><p>Each suburb page carries the three to five services that actually come up in that street. <a href="/areas/">Browse the suburbs →</a></p></div><div class="area-grid">{''.join(f'<a class="area-pill" href="/{s}/"><span>{html.escape(seo_spec.area_name(s))}</span><span>↗</span></a>' for s in sorted(suburb_slugs, key=lambda x: (x.removeprefix("concreters-") not in seo_spec.TIER1, x))[:12])}</div></div></section>
+{cta_band("Not sure which service you need?")}'''
+
+
+def areas_hub_content(alt_register: dict[str, str], media_names: list[str], suburb_slugs: list[str]) -> str:
+    """Spec section 2 and 5.3, as amended by DECISION-10 D45.
+
+    Lists every built suburb, grouped by the council the evidence supports. A split
+    locality is not assigned to a council it may not belong to; it goes in a plainly
+    labelled group that says the check is per property.
+    """
+    _title, h1, description = seo_spec.HUB_META["/areas/"]
+    groups: dict[str, list[str]] = {}
+    unresolved: list[str] = []
+    for slug in suburb_slugs:
+        record = seo_spec.COUNCIL.get(slug.removeprefix("concreters-")) or {}
+        councils = record.get("evidence_supported_councils") or []
+        if len(councils) == 1:
+            groups.setdefault(councils[0], []).append(slug)
+        else:
+            unresolved.append(slug)
+
+    index = 0
+    sections = []
+    for council in sorted(groups):
+        pills = []
+        for slug in sorted(groups[council]):
+            pills.append(f'<a class="area-pill" href="/{slug}/"><span>{html.escape(seo_spec.area_anchor(slug, index))}</span><span>↗</span></a>')
+            index += 1
+        tint = " section--tint" if len(sections) % 2 else ""
+        sections.append(f'<section class="section{tint}"><div class="container"><div class="section-heading"><div><span class="eyebrow">{html.escape(council)}</span><h2>{html.escape(council)} suburbs</h2></div><p>{len(groups[council])} suburbs. Confirm the controlling council for the actual property before lodging a crossing or frontage application.</p></div><div class="area-grid">{"".join(pills)}</div></div></section>')
+
+    if unresolved:
+        pills = []
+        for slug in sorted(unresolved):
+            pills.append(f'<a class="area-pill" href="/{slug}/"><span>{html.escape(seo_spec.area_anchor(slug, index))}</span><span>↗</span></a>')
+            index += 1
+        tint = " section--tint" if len(sections) % 2 else ""
+        sections.append(f'<section class="section{tint}"><div class="container"><div class="section-heading"><div><span class="eyebrow">Council confirmed per property</span><h2>Suburbs that straddle a council boundary</h2></div><p>These {len(unresolved)} localities sit across more than one local government area. The controlling council has to be checked lot by lot in the NSW Planning Portal, so none is named here.</p></div><div class="area-grid">{"".join(pills)}</div></div></section>')
+
+    return f'''<section class="page-hero page-hero--simple"><div class="container narrow">{breadcrumb(seo_spec.crumbs_for("areas-hub", "areas", "Areas"))}<span class="eyebrow">Areas</span><h1>{html.escape(h1)}</h1><p class="hero-lead">{html.escape(description)}</p><p class="micro-note">Camden itself is covered on the <a href="/">homepage</a> — it is the same market, not a separate page.</p></div></section>
+{"".join(sections)}
+{cta_band("Can't see your suburb?")}'''
 
 
 def write_seo_inventory(rows: list[dict[str, object]], media_names: list[str]) -> None:
@@ -429,6 +521,8 @@ def write_seo_inventory(rows: list[dict[str, object]], media_names: list[str]) -
 
 
 def main() -> int:
+    # Fail closed before touching the output directory. DECISION-10 D42-R1.
+    seo_spec.require_deployable_phone()
     if OUT.exists():
         shutil.rmtree(OUT)
     (OUT / "assets" / "media").mkdir(parents=True)
@@ -451,15 +545,31 @@ def main() -> int:
         raise SystemExit("privacy page missing from approved derivatives")
     suburb_slugs = sorted(slug for slug in pages if slug.startswith("concreters-"))
     rows: list[dict[str, object]] = []
-    for slug, (title, original) in pages.items():
-        path = "/" if slug == "homepage" else f"/{slug}/"
+    hub_specs = [("areas", "areas-hub"), ("services", "services-hub")]
+    for slug, (title, original) in list(pages.items()) + [(name, ("", "")) for name, _ in hub_specs]:
+        hub_type = dict(hub_specs).get(slug) if slug in dict(hub_specs) else None
+        if slug in SERVICES:
+            path = seo_spec.service_path(slug)
+        elif slug == "homepage":
+            path = "/"
+        else:
+            path = f"/{slug}/"
         output_dir = OUT if path == "/" else OUT / path.strip("/")
         output_dir.mkdir(parents=True, exist_ok=True)
-        page_type = "home" if slug == "homepage" else "service" if slug in SERVICES else "suburb" if slug.startswith("concreters-") else "utility"
+        page_type = hub_type or ("home" if slug == "homepage" else "service" if slug in SERVICES else "suburb" if slug.startswith("concreters-") else "utility")
         service_slug = suburb_service_slug(slug) if page_type == "suburb" else slug if page_type == "service" else ""
         profile = seo_profile(slug, title, page_type, service_slug)
-        if slug == "homepage":
-            description = "Structured concreting enquiries for Camden and South-West Sydney, coordinated with suitable independent providers."
+        profile["slug"] = slug
+        if page_type == "suburb":
+            profile["faq_node"] = seo_spec.near_me_faq(slug)[1]
+        if hub_type == "areas-hub":
+            description = str(profile["description"])
+            content = areas_hub_content(alt_register, media_names, suburb_slugs)
+        elif hub_type == "services-hub":
+            description = str(profile["description"])
+            content = services_hub_content(alt_register, media_names, suburb_slugs)
+        elif slug == "homepage":
+            description = str(profile["description"])
             content = home_content(alt_register, media_names, suburb_slugs)
         elif slug in SERVICES:
             description = SERVICES[slug][1]
@@ -472,22 +582,47 @@ def main() -> int:
             content = utility_content(slug, title, original, alt_register, media_names)
         if page_type == "home":
             content = content.replace('href="/quote/"', 'href="#quote-form"')
-        elif page_type in {"service", "suburb", "utility"} and slug != "quote":
+        elif slug != "quote":
             content = content.replace('href="/quote/"', 'href="/quote/#quote-form"')
         canonical = BASE + path
         crumbs = breadcrumb_items(slug, title, page_type, service_slug)
-        (output_dir / "index.html").write_text(document(profile, canonical, content, alt_register, crumbs, page_type, service_slug), encoding="utf-8")
-        rows.append({"slug": slug, "path": path, "title": title, "page_type": page_type, "profile": profile, "canonical": canonical, "breadcrumbs": crumbs, "service_slug": service_slug})
-    (OUT / "assets" / "site.css").write_text(CSS + FORM_CSS, encoding="utf-8")
+        markup = document(profile, canonical, content, alt_register, crumbs, page_type, service_slug)
+        # Spec section 3: every internal service link points at the moved /services/ URL.
+        markup = seo_spec.rewrite_service_links(markup)
+        (output_dir / "index.html").write_text(markup, encoding="utf-8")
+        rows.append({"slug": slug, "path": path, "title": str(profile["title"]), "page_type": page_type, "profile": profile, "canonical": canonical, "breadcrumbs": crumbs, "service_slug": service_slug, "robots": str(profile.get("robots", "index,follow"))})
+    (OUT / "assets" / "site.css").write_text(CSS + FORM_CSS + SPEC_CSS, encoding="utf-8")
     (OUT / "assets" / "site.js").write_text(JS, encoding="utf-8")
-    sitemap_urls = "".join(f"<url><loc>{html.escape(str(row['canonical']))}</loc></url>" for row in rows)
+    # Spec section 8: the sitemap contains zero noindex URLs.
+    indexable = [row for row in rows if not str(row["robots"]).startswith("noindex")]
+    sitemap_urls = "".join(f"<url><loc>{html.escape(str(row['canonical']))}</loc></url>" for row in indexable)
     (OUT / "sitemap.xml").write_text(f"<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">{sitemap_urls}</urlset>", encoding="utf-8")
     (OUT / "robots.txt").write_text("User-agent: *\nAllow: /\n\nSitemap: https://concreterscamden.com.au/sitemap.xml\n", encoding="utf-8")
     (OUT / "_headers").write_text("/*\n  X-Content-Type-Options: nosniff\n", encoding="utf-8")
+    (OUT / "_redirects").write_text(seo_spec.redirects_file(), encoding="utf-8")
     not_found = document("Page not found", "The requested page could not be found.", BASE + "/404/", f'<section class="page-hero page-hero--simple"><div class="container narrow"><span class="eyebrow">404</span><h1>That page is not here.</h1><p class="hero-lead">Try the homepage or explore the service pathways.</p><a class="button" href="/">Back to the homepage <span>↗</span></a></div></section>', alt_register)
     (OUT / "404.html").write_text(not_found, encoding="utf-8")
+    # DECISION-10 D42-R2. Second line of defence, inverted: the number is now permitted,
+    # so the risk is a *variant* of it. Body copy lifted from the WXR derivatives carries
+    # the number in 70 places, and a second display format is a NAP inconsistency. Any
+    # phone-shaped string not byte-identical to the attested display or E.164 form
+    # destroys the output rather than leaving a deployable artifact behind.
+    mismatched: list[str] = []
+    for path in sorted(OUT.rglob("*")):
+        if not path.is_file() or path.suffix.lower() not in {".html", ".xml", ".txt", ".json", ".css", ".js"}:
+            continue
+        hits = seo_spec.scan_phone_mismatches(path.read_text(encoding="utf-8"))
+        if hits:
+            mismatched.append(f"{path.relative_to(OUT)}: {sorted(set(hits))}")
+    if mismatched:
+        shutil.rmtree(OUT)
+        raise SystemExit(
+            "Telephone string not matching data/verified-facts.yml reached deployable output; discarded.\n  "
+            + "\n  ".join(mismatched[:20])
+        )
+
     write_seo_inventory(rows, media_names)
-    print(json.dumps({"pages": len(rows), "images": len(media_names), "stylesheets": 1, "scripts": 1, "indexable": len(rows), "output": str(OUT)}, indent=2))
+    print(json.dumps({"pages": len(rows), "images": len(media_names), "stylesheets": 1, "scripts": 1, "indexable": len(indexable), "noindex": len(rows) - len(indexable), "output": str(OUT)}, indent=2))
     return 0
 
 
@@ -542,6 +677,20 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;line-height:1.08;letter-sp
 FORM_CSS = r'''
 .section--form{background:var(--white);padding-top:56px;padding-bottom:72px}.form-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.65fr);gap:34px;align-items:start}.form-card{border:1px solid var(--line);border-radius:var(--radius);padding:32px;background:var(--paper);box-shadow:var(--shadow)}.form-card>p{color:var(--muted);margin-top:-5px;margin-bottom:24px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.form-field{display:grid;gap:6px}.form-field--wide{grid-column:1/-1}.form-field label,.form-consent label{font-size:13px;font-weight:700;color:var(--ink)}.form-field input,.form-field select,.form-field textarea{width:100%;border:1px solid #c8d4cd;border-radius:9px;background:var(--white);color:var(--ink);font:inherit;font-size:15px;padding:11px 12px;min-height:46px}.form-field textarea{resize:vertical;min-height:125px}.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:3px solid rgba(200,232,107,.65);border-color:var(--green-2)}.form-consent label{display:flex;align-items:flex-start;gap:10px;font-weight:500;color:var(--muted)}.form-consent input{width:18px;height:18px;margin-top:3px;accent-color:var(--green)}.form-card .button{border:0;cursor:pointer;margin-top:20px}.form-card .button:disabled{opacity:.6;cursor:wait;transform:none}.form-status{min-height:24px;margin:14px 0 0;color:var(--muted);font-size:13px}.form-status--success{color:#1e6a46}.form-status--error{color:#a43d2a}.form-honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.compliance-copy{border:1px solid var(--line);border-radius:var(--radius);padding:27px;background:var(--sand);font-size:14px;color:var(--muted)}.compliance-copy p{margin-top:0}.compliance-copy a{text-decoration:underline;text-underline-offset:3px;color:var(--green-2);font-weight:700}
 @media (max-width:720px){.form-layout{grid-template-columns:1fr;gap:22px}.form-card{padding:22px}.form-grid{grid-template-columns:1fr}.form-field--wide{grid-column:auto}.section--form{padding-top:42px;padding-bottom:55px}}
+'''
+
+SPEC_CSS = r'''
+.near-me-heading{margin:0}
+.section--suburb-services{padding-top:10px}
+.section--suburb-services>.container>h2{margin:0 0 26px}
+.suburb-service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.suburb-service h3{margin:0 0 10px;font-size:1.12rem;line-height:1.35}
+.suburb-service h3 a{text-decoration:none}
+.suburb-service h3 a:hover{text-decoration:underline;text-underline-offset:3px}
+.suburb-service p{margin:0;color:var(--ink-2,#555);font-size:.96rem;line-height:1.65}
+.section--near-me-faq .faq-list{margin-top:18px}
+.breadcrumbs [aria-current="page"]{opacity:.72}
+@media (max-width:720px){.suburb-service-grid{grid-template-columns:1fr;gap:20px}}
 '''
 
 

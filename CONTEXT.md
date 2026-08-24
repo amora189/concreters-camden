@@ -1,6 +1,6 @@
 # Project Context — Concreters Camden
 
-Last updated: 21 August 2026 (Australia/Sydney)
+Last updated: 25 August 2026 (Australia/Sydney)
 
 ## Overall goal
 
@@ -27,6 +27,124 @@ or index-ready. Full preflight is NO-GO on uniqueness and coherence.**
 The governing current handover is `HANDOVER-2026-08-19.md`. Older dated sections below are retained
 as history; the 21 August delta immediately below supersedes their then-current identity, claim,
 Liverpool, privacy, derivative-hash and preflight counts.
+
+### 25 August 2026 — index-everything build, verified and cleared for deploy
+
+Authority: owner instruction 25 August 2026, recorded as `DECISION-10` **D42-R2** (accept the
+existing telephone) and **D45** (every built page ships indexed). Both supersede earlier
+positions in the same file. Assertion run: `reports/57-titles-breadcrumbs-nearme-audit.md`.
+Fallback-tier page list: `reports/58-fallback-tier.tsv`.
+
+Scope: `build/cloudflare-pages/`, `lib/seo_spec.py`, `scripts/56-build-static-export.py`,
+`scripts/57-seo-spec-gate.py`, `data/verified-facts.yml`, new `data/camden-verified-postcodes.json`.
+No instruction document, immutable artifact or `archive/` file was touched.
+
+**What was actually verified**, by re-running `scripts/57-seo-spec-gate.py` against the built
+files on disk — **63 assertions pass, 0 fail, 4 blocked, 1 retired**:
+
+```text
+  pages built                     78 + 404
+  indexable                       78  (was 24)
+  noindex                          0  (was 54)
+  sitemap URLs                    78, matching the indexable set exactly
+  suburb pages                    60, all index,follow, none deleted
+  fallback-tier suburb pages      45  documented pattern title/meta/H1/crumbs
+  titles over 60 chars             0   |  duplicate titles 0  |  duplicate metas 0
+  banned words in title/H1         0   (enquir, near me, best, cheap, #1)
+  titles promising a missing module 0
+  postcodes from verified file    55 of 60; 5 omit areaServed rather than guess
+  postcodes disagreeing with file  0
+  dead internal links              0   |  redirect chains 0  |  loops 0
+  placeholder tokens in output     0   ({ADDRESS} leak on / found and fixed)
+  empty or placeholder FAQ entries 0
+  malformed HTML documents         0 of 79
+  phone strings not matching verified-facts.yml  0
+  telephone properties in schema   0
+  immutable hashes                 6/6 MATCH
+```
+
+**Telephone.** `(03) 4328 3392` ships, under `contact.area_code_override: true`
+(`reviewed: 2026-08-25`). The Victorian area code is an accepted, documented
+geographic-signal contradiction, not an oversight. The §8 assertion is inverted rather than
+retired: every phone-shaped string in every deployable file must be byte-identical to
+`verified-facts.yml`. The NSW `+612` shape assertion and the fail-closed path are retained and
+re-arm by removing the override flag. Format audit found the number in exactly two forms
+across the WXR derivatives, both attested — no variant, so no normalisation was needed and no
+hash-locked artifact required regenerating.
+
+**Indexation.** D45 supersedes D44 and the spec §4 gate. `seo_spec.INDEX_ALL_SUBURBS = False`
+restores the D44 behaviour exactly; the tier logic is intact.
+
+**Blockers — none cleared, none added.** `pricing.per_m2_ranges` and
+`photography.real_camden_photographs` remain `verified: false`; D45 changes what is published,
+not what is known. The §5.2 price FAQ and the `{X} business days` clause stay withheld, the
+§7.2 `Organization` node stays blocked on a verified legal entity, and
+`/services/stencilled-and-stamped-concrete/` stays unbuilt for want of source content.
+
+**Next safe action:** merge to `main`, push, deploy the export, verify redirects against the
+live domain. Search Console submission and Request Indexing are owner-side.
+
+### 24 August 2026 — titles, breadcrumbs and near-me targeting applied to the static export
+
+Authority: the supplied meta titles / breadcrumbs / near-me targeting spec, as amended by
+`DECISION-10-titles-breadcrumbs-nearme.md` (D42–D44). Conflict register:
+`reports/57-spec-conflicts.md`. Assertion run: `reports/57-titles-breadcrumbs-nearme-audit.md`.
+
+Scope of this change: `build/cloudflare-pages/` (the static export), `lib/seo_spec.py`,
+`scripts/56-build-static-export.py`, `scripts/57-seo-spec-gate.py`. No instruction document,
+immutable artifact or `archive/` file was touched. Nothing was imported, deployed or pushed.
+
+**What was actually verified**, by re-running `scripts/57-seo-spec-gate.py` against the built
+files on disk — 40 assertions pass, 0 fail, 5 blocked, 1 retired:
+
+```text
+  pages built                     78 + 404
+  indexable                       24 — 6 Tier 1 suburbs, 10 services, 2 hubs, 6 utility
+  noindex,follow                  54 suburb pages (D44)
+  sitemap URLs                    24, zero noindex
+  titles from suburbs.json        15/15 in-scope suburb pages, verbatim, no template fallback
+  meta descriptions               suburbs.json verbatim; all authored ones 150-158 chars
+  titles over 60 chars            0
+  duplicate titles                0
+  "enquir" in a title or H1       0 (was 63 of 77)
+  breadcrumbs with 4 levels       0 (was 60)
+  terminal crumbs carrying item   0 (was 76)
+  fragment crumb links            0 (was 70 visible /#areas and /#services)
+  service URLs under /services/   10, with 20 301 rules in _redirects, no chains, no loops
+  near-me H2 (spec 5.1)           15 in-scope suburb pages, exactly one each
+  near-me FAQ (spec 5.2)          15, FAQPage JSON-LD verbatim against rendered HTML
+  service-in-suburb blocks (5.4)  15 pages x 3-5 services, 60 paragraphs, all unique
+  Service + areaServed (7.1)      15, postcode from suburbs.json
+  LocalBusiness / AggregateRating 0
+  reachable within 2 clicks of /  all pages
+  immutable hashes                6/6 MATCH
+```
+
+**Blockers — none cleared by this work, none added.** The two P0 owner inputs (image binaries,
+Astra Customizer export) are untouched. The spec added visibility on five more:
+
+- per-m² price bands — `verified: false`, blocks 53 pages and the §5.2 price FAQ;
+- real Camden photographs — `verified: false`, blocks 16 pages;
+- with both unverified, the §4 condition for lifting `noindex` on Tier 2/3 can never be met;
+- verified legal entity name — blocks the §7.2 `Organization` node (DECISION-08 D35 clause 4);
+- source content for `/services/stencilled-and-stamped-concrete/` — 10 of the spec's 11
+  service pages ship; the eleventh is not built rather than published thin.
+
+**Not resolved, by design.** The spec's §7.3 requirement for an NSW `02` number is overridden
+by D42: `(03) 4328 3392` is owner-attested with `ownership_proven: true` and is retained
+exactly as supplied. No `02` number exists in the repository and none may be inferred. The
+geographic contradiction is accepted as a known cost, not fixed. `telephone` is emitted in no
+schema node.
+
+Bringelly's LGA is **not** resolved to one council, and that is the correct outcome:
+`build/53-council-suburb-map.json` records it as `split-locality` across Camden Council and
+Liverpool City Council with `lot_level_check_required: true`. The page names no single council.
+
+**This is a generated artifact on disk, not a live site.** The export has not been deployed and
+the launch gate is unchanged.
+
+**Next safe action:** owner review of DECISION-10 D42–D44 and of the five blockers above.
+No deployment.
 
 ### 21 August 2026 — Phase A service-specification evidence acquisition incomplete
 

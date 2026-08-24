@@ -131,13 +131,84 @@ contact:
     note: "Component of the owner-attested administrative correspondence address."
     source: "owner attestation, 21 August 2026"
     sighted_date: "2026-08-21"
+  # ---------------------------------------------------------------------------
+  # DEPLOYMENT SOURCE OF TRUTH for the public telephone. DECISION-10 D42-R1.
+  #
+  # These two fields are the ONLY place a published telephone number may come from.
+  # lib/seo_spec.py resolves them; scripts/56-build-static-export.py refuses to write
+  # deployable output while nsw_number_pending is true. No template, partial or build
+  # script may hardcode a number.
+  #
+  # D42-R1 reverses D42. Ownership of the (03) number was never in question. The defect
+  # is a Victorian area code standing as the contact point on a site whose entire
+  # ranking case is proximity to Camden, NSW. Omitting `telephone` from schema hid the
+  # contradiction from parsers but left it in the header, footer and every call CTA,
+  # where both the user and the crawler still saw it.
+  #
+  # No number may be inferred, researched or carried from another source
+  # (CLAUDE.md section 3 hard stop 6). It arrives by owner attestation or not at all.
+  # ---------------------------------------------------------------------------
+  phone_display:
+    value: "(03) 4328 3392"
+    verified: true
+    required_for: ["site header", "site footer", "call CTAs"]
+    note: >
+      The single published display format. Every emitted occurrence must match this
+      string byte for byte; the build asserts equality rather than absence, so a stale
+      or mistyped variant fails. Victorian area code, retained under D42-R2 with
+      area_code_override.
+    source: "owner attestation 21 August 2026, reaffirmed 25 August 2026"
+    sighted_date: "2026-08-25"
+  phone_e164:
+    value: "+61343283392"
+    verified: true
+    required_for: ["tel: URI"]
+    note: >
+      Same number in E.164. The "+612" NSW shape assertion in
+      lib/seo_spec.require_deployable_phone() is branched around while
+      area_code_override is true; it is retained, not deleted, and re-arms the moment
+      the override is removed.
+    source: "owner attestation 21 August 2026, reaffirmed 25 August 2026"
+    sighted_date: "2026-08-25"
+  area_code_override:
+    # DECISION-10 D42-R2. Owner has declined to acquire an NSW number. The Victorian
+    # area code is accepted as a known, documented geographic-signal contradiction,
+    # not an oversight. Removing this flag re-arms the NSW shape assertion and the
+    # fail-closed path in one line.
+    value: true
+    verified: true
+    reviewed: "2026-08-25"
+    accepted_cost: >
+      An 03 area code is a negative local-relevance signal on a site whose ranking case
+      is proximity to Camden, NSW. It is displayed in the header, footer and every call
+      CTA. It is not emitted in any schema node.
+    source: "DECISION-10 D42-R2, owner instruction 25 August 2026"
+    sighted_date: "2026-08-25"
+  nsw_number_pending:
+    value: false
+    verified: true
+    note: >
+      Set false by D42-R2. The fail-closed path it controls is retained in
+      lib/seo_spec.require_deployable_phone() for the case where an NSW number is
+      later acquired and area_code_override is removed.
+    source: "DECISION-10 D42-R2, 25 August 2026"
+    sighted_date: "2026-08-25"
   phone:
+    # HISTORICAL. Superseded as the publishable contact point by D42-R1 on 24 August
+    # 2026. Retained because the frozen WXR-derivative pipeline
+    # (lib/content_remediation.py, scripts/51-evidence-validation.py and the hash-locked
+    # build/46-active-main-import.xml) was generated against this attestation and still
+    # validates against it. It must NOT be read by the static export builder and must
+    # not reach any deployable path.
     value: "(03) 4328 3392"
     uri: "tel:+61343283392"
     verified: true
+    superseded_by: "contact.phone_display / contact.phone_e164 (DECISION-10 D42-R1)"
+    publishable: false
     note: >
-      Owner-attested public telephone. It must not be described as a local Camden or
-      Sydney number; the (03) area code is retained exactly as supplied.
+      Owner-attested public telephone, 21 August 2026. Ownership and routing were
+      proven; that was never the issue. It must not be described as a local Camden or
+      Sydney number, and under D42-R1 it must not be published at all.
     ownership_proven: true
     routing_proven: true
     source: "owner attestation, 21 August 2026"
