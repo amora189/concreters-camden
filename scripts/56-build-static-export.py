@@ -581,22 +581,23 @@ def main() -> int:
     (OUT / "_redirects").write_text(seo_spec.redirects_file(), encoding="utf-8")
     not_found = document("Page not found", "The requested page could not be found.", BASE + "/404/", f'<section class="page-hero page-hero--simple"><div class="container narrow"><span class="eyebrow">404</span><h1>That page is not here.</h1><p class="hero-lead">Try the homepage or explore the service pathways.</p><a class="button" href="/">Back to the homepage <span>↗</span></a></div></section>', alt_register)
     (OUT / "404.html").write_text(not_found, encoding="utf-8")
-    # DECISION-10 D42-R1. Second line of defence: the templates are parameterised, but
-    # body copy lifted from the WXR derivatives still carries the superseded number in
-    # 66 places. If any of it reaches a written file, destroy the output rather than
-    # leave a deployable artifact behind.
-    leaked: list[str] = []
+    # DECISION-10 D42-R2. Second line of defence, inverted: the number is now permitted,
+    # so the risk is a *variant* of it. Body copy lifted from the WXR derivatives carries
+    # the number in 70 places, and a second display format is a NAP inconsistency. Any
+    # phone-shaped string not byte-identical to the attested display or E.164 form
+    # destroys the output rather than leaving a deployable artifact behind.
+    mismatched: list[str] = []
     for path in sorted(OUT.rglob("*")):
         if not path.is_file() or path.suffix.lower() not in {".html", ".xml", ".txt", ".json", ".css", ".js"}:
             continue
-        hits = seo_spec.scan_forbidden_phone(path.read_text(encoding="utf-8"))
+        hits = seo_spec.scan_phone_mismatches(path.read_text(encoding="utf-8"))
         if hits:
-            leaked.append(f"{path.relative_to(OUT)}: {sorted(set(hits))}")
-    if leaked:
+            mismatched.append(f"{path.relative_to(OUT)}: {sorted(set(hits))}")
+    if mismatched:
         shutil.rmtree(OUT)
         raise SystemExit(
-            "Forbidden telephone pattern reached deployable output; build discarded.\n  "
-            + "\n  ".join(leaked[:20])
+            "Telephone string not matching data/verified-facts.yml reached deployable output; discarded.\n  "
+            + "\n  ".join(mismatched[:20])
         )
 
     write_seo_inventory(rows, media_names)

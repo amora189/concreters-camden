@@ -5,10 +5,10 @@ Origin: owner instruction issued in session, 24 August 2026, in response to the 
 questions raised against the supplied meta titles / breadcrumbs / near-me targeting spec.
 Status: **current owner decision.** Read-only once confirmed.
 
-Decisions D42–D44, plus the revisions D42-R1 and D43-R1. Numbering continues from DECISION-09 (D39–D41).
+Decisions D42–D45, plus the revisions D42-R1, D42-R2 and D43-R1. Numbering continues from DECISION-09 (D39–D41).
 
-**D42 is superseded by D42-R1 (24 August 2026).** It is retained below unedited so the
-reversal has something to cite; read D42-R1 for the current position.
+**Telephone: D42 → D42-R1 → D42-R2.** Each is retained unedited so the next has
+something to cite. **D42-R2 (25 August 2026) is the current position.**
 
 The supplied spec is the authority for titles, breadcrumbs, indexation, schema and near-me
 targeting **except** where a clause below amends it. Where the spec and this file disagree,
@@ -40,7 +40,7 @@ Consequences:
 3. CLAUDE.md §3 hard stop 6 continues to apply. No NSW number may be inferred, researched or
    carried from another source. If the owner supplies one, D42 is superseded by a new record.
 
-## D42-R1 — Reversal: the NSW number is required, and the build fails without it
+## D42-R1 — Reversal: the NSW number is required — **SUPERSEDED by D42-R2**
 
 Date: 24 August 2026 (Australia/Sydney). Origin: owner instruction issued in session.
 **Supersedes D42 in full.** The spec's §7.3 and §9 item 1 are restored to force.
@@ -91,6 +91,54 @@ The superseded `contact.phone` block is retained in `verified-facts.yml` marked
 `build/46-active-main-import.xml`) was generated against that attestation and still
 validates against it. Re-parameterising that pipeline would regenerate a hash-locked
 derivative and is out of scope here.
+
+## D42-R2 — The existing number is accepted; no NSW number will be acquired
+
+Date: 25 August 2026 (Australia/Sydney). Origin: owner instruction issued in session.
+**Supersedes D42-R1 in full.**
+
+Rationale, as instructed: *owner has declined to acquire an NSW number; the Victorian area
+code is accepted as a known, documented geographic-signal contradiction, not an oversight.*
+
+**Decision:**
+
+1. `(03) 4328 3392` / `+61343283392` ship as the public contact point.
+   `data/verified-facts.yml` → `contact.area_code_override: true`, `reviewed: 2026-08-25`,
+   and `contact.nsw_number_pending: false`.
+
+2. **The fail-closed path and the NSW shape assertion are retained, not deleted.**
+   `lib/seo_spec.require_deployable_phone()` branches on `area_code_override`. Remove that
+   flag from `verified-facts.yml` and the `+612` / `(02) NNNN NNNN` assertions re-arm and
+   the build fails closed again — one line, no code restored.
+
+3. **The §8 assertion stays active and is inverted.** It no longer asserts the *absence* of
+   an `03` string; it asserts that every phone-shaped string in every deployable file is
+   byte-identical to `contact.phone_display` or `contact.phone_e164`. A stale or mistyped
+   variant — `03 4328 3392`, `+61 3 4328 3392`, `0343283392` — still fails the build. The
+   override accepts one number, not a family of formats.
+
+4. **The post-build output scan is repurposed the same way** and still deletes the output
+   directory rather than leaving a deployable artifact carrying a wrong format.
+
+5. **`telephone` stays out of every schema node**, now asserted rather than assumed. The
+   number is a contact affordance on the page; it is not a structured geographic claim.
+
+**Accepted cost, recorded so it is not rediscovered as a bug:** an `03` area code is a
+negative local-relevance signal on a site whose ranking case is proximity to Camden, NSW.
+It appears in the header, footer and every call CTA. This is a deliberate owner trade-off.
+
+**Format audit (D42-R2 clause 3).** The two WXR derivatives the builder reads carry the
+number 70 times, in exactly two forms, both of which are the attested pair:
+
+```text
+  build/46-active-main-import.xml    65  tel:+61343283392
+                                      4  (03) 4328 3392
+  build/51-privacy-import.xml         1  (03) 4328 3392
+```
+
+No variant exists — no `03 4328 3392`, no `+61 3 4328 3392`, no `0343283392`. **No
+normalisation was required and no hash-locked artifact needed regenerating.** Gate 21
+integrity is intact.
 
 ## D43 — Spec titles verbatim, H1s with the direct-performance claim removed
 

@@ -347,22 +347,28 @@ def main() -> int:
     assert_("every referenced JSON-LD @id is defined", not refs, "; ".join(refs[:6]))
 
     # ------------------------------------------------- decisions and blockers
-    # Un-retired by DECISION-10 D42-R1, 24 August 2026. Active assertion over every
-    # deployable file, not just HTML.
-    leaked: list[str] = []
+    # DECISION-10 D42-R2 clause 4. The assertion stays active but is inverted: every
+    # phone-shaped string in every deployable file must equal the attested number.
+    mismatched: list[str] = []
     for path in sorted(OUT.rglob("*")):
         if not path.is_file() or path.suffix.lower() not in {".html", ".xml", ".txt", ".json", ".css", ".js"}:
             continue
-        hits = seo_spec.scan_forbidden_phone(path.read_text(encoding="utf-8"))
+        hits = seo_spec.scan_phone_mismatches(path.read_text(encoding="utf-8"))
         if hits:
-            leaked.append(f"{path.relative_to(OUT)}: {sorted(set(hits))}")
-    assert_("no (03), 03 NNNN NNNN or +61 3 string in any output file",
-            not leaked, "; ".join(leaked[:6]))
+            mismatched.append(f"{path.relative_to(OUT)}: {sorted(set(hits))}")
+    assert_("every phone string in output matches verified-facts.yml exactly",
+            not mismatched, "; ".join(mismatched[:6]))
+    assert_("area_code_override recorded and dated (D42-R2)",
+            seo_spec.area_code_override()
+            and bool(seo_spec._contact["area_code_override"].get("reviewed")),
+            f"reviewed {seo_spec._contact['area_code_override'].get('reviewed')}")
     assert_("telephone resolves from verified-facts.yml only, zero hardcodes",
-            not seo_spec.nsw_number_pending()
-            and seo_spec.phone_display() in pages["/contact/"]["src"]
+            seo_spec.phone_display() in pages["/contact/"]["src"]
             and seo_spec.phone_uri() in pages["/contact/"]["src"],
             "contact.phone_display / contact.phone_e164 are the single source")
+    schema_phone = [u for u, p in pages.items()
+                    if any("telephone" in n for b in p["ld"] for n in b.get("@graph", [b]))]
+    assert_("no telephone property in any schema node", not schema_phone, "; ".join(schema_phone))
     blocked("sitewide Organization node (spec section 7.2)",
             "DECISION-08 D35 clause 4 does not authorise an Organization node; "
             "legal_entity.legal_name is unverified. Service + WebPage + BreadcrumbList "

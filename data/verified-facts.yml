@@ -149,35 +149,50 @@ contact:
   # (CLAUDE.md section 3 hard stop 6). It arrives by owner attestation or not at all.
   # ---------------------------------------------------------------------------
   phone_display:
-    value: ""
-    verified: false
-    required_for: ["site header", "site footer", "call CTAs", "Organization.telephone"]
-    blocks_pages: 79
+    value: "(03) 4328 3392"
+    verified: true
+    required_for: ["site header", "site footer", "call CTAs"]
     note: >
-      NSW 02 number as it should read on the page, e.g. "(02) NNNN NNNN". Owner is
-      provisioning a Sydney 02 number routed to the same destination with the existing
-      whisper. Until this and phone_e164 are populated and nsw_number_pending is false,
-      the static export build fails closed.
-    source: ""
-    sighted_date: ""
+      The single published display format. Every emitted occurrence must match this
+      string byte for byte; the build asserts equality rather than absence, so a stale
+      or mistyped variant fails. Victorian area code, retained under D42-R2 with
+      area_code_override.
+    source: "owner attestation 21 August 2026, reaffirmed 25 August 2026"
+    sighted_date: "2026-08-25"
   phone_e164:
-    value: ""
-    verified: false
-    required_for: ["tel: URI", "Organization.telephone"]
+    value: "+61343283392"
+    verified: true
+    required_for: ["tel: URI"]
     note: >
-      Same number in E.164, e.g. "+612NNNNNNNN". Must begin "+612" — the build asserts
-      the area code rather than trusting the field.
-    source: ""
-    sighted_date: ""
-  nsw_number_pending:
+      Same number in E.164. The "+612" NSW shape assertion in
+      lib/seo_spec.require_deployable_phone() is branched around while
+      area_code_override is true; it is retained, not deleted, and re-arms the moment
+      the override is removed.
+    source: "owner attestation 21 August 2026, reaffirmed 25 August 2026"
+    sighted_date: "2026-08-25"
+  area_code_override:
+    # DECISION-10 D42-R2. Owner has declined to acquire an NSW number. The Victorian
+    # area code is accepted as a known, documented geographic-signal contradiction,
+    # not an oversight. Removing this flag re-arms the NSW shape assertion and the
+    # fail-closed path in one line.
     value: true
     verified: true
+    reviewed: "2026-08-25"
+    accepted_cost: >
+      An 03 area code is a negative local-relevance signal on a site whose ranking case
+      is proximity to Camden, NSW. It is displayed in the header, footer and every call
+      CTA. It is not emitted in any schema node.
+    source: "DECISION-10 D42-R2, owner instruction 25 August 2026"
+    sighted_date: "2026-08-25"
+  nsw_number_pending:
+    value: false
+    verified: true
     note: >
-      Enforcement flag, not a warning. While true the static export build raises before
-      writing any file. Flip to false only when phone_display and phone_e164 both carry
-      an owner-attested NSW 02 number.
-    source: "DECISION-10 D42-R1, 24 August 2026"
-    sighted_date: "2026-08-24"
+      Set false by D42-R2. The fail-closed path it controls is retained in
+      lib/seo_spec.require_deployable_phone() for the case where an NSW number is
+      later acquired and area_code_override is removed.
+    source: "DECISION-10 D42-R2, 25 August 2026"
+    sighted_date: "2026-08-25"
   phone:
     # HISTORICAL. Superseded as the publishable contact point by D42-R1 on 24 August
     # 2026. Retained because the frozen WXR-derivative pipeline

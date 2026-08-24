@@ -55,13 +55,46 @@ def phone_uri() -> str:
     return "tel:" + phone_e164()
 
 
+def area_code_override() -> bool:
+    """DECISION-10 D42-R2. True when the owner has accepted the non-NSW area code.
+
+    Absent or false, the NSW shape assertion below re-arms and the build fails closed
+    on anything that is not an 02 number.
+    """
+    node = _contact.get("area_code_override") or {}
+    return bool(node.get("value"))
+
+
 def require_deployable_phone() -> None:
     """Fail closed. This is the enforcement mechanism, not a warning.
 
-    Nothing may be published while the NSW number is outstanding: the superseded (03)
-    number is a Victorian area code on a Camden NSW site, and no number may be inferred
-    to fill the gap (CLAUDE.md section 3 hard stop 6).
+    Two paths, both retained:
+
+    * `area_code_override` true (D42-R2) — the owner has declined to acquire an NSW
+      number and accepts the Victorian area code as a documented cost. The number must
+      still be present, internally consistent and byte-identical wherever it is emitted.
+    * `area_code_override` absent or false (D42-R1) — the NSW `+612` / `(02) NNNN NNNN`
+      shape is asserted and the build refuses to publish anything else. Removing the
+      flag from verified-facts.yml re-arms this in one line.
+
+    No number may be inferred to fill a gap (CLAUDE.md section 3 hard stop 6).
     """
+    if area_code_override():
+        display = str(_contact["phone_display"]["value"]).strip()
+        e164 = str(_contact["phone_e164"]["value"]).strip()
+        if not display or not e164:
+            raise PhonePending(
+                "contact.area_code_override is true but contact.phone_display / "
+                "contact.phone_e164 are empty in data/verified-facts.yml. The override "
+                "accepts a non-NSW area code; it does not accept an absent number."
+            )
+        if re.sub(r"\D", "", display).lstrip("0") != re.sub(r"\D", "", e164).removeprefix("61"):
+            raise PhonePending(
+                f"contact.phone_display {display!r} and contact.phone_e164 {e164!r} are "
+                "not the same number. Refusing to publish two different numbers."
+            )
+        return
+
     if nsw_number_pending():
         raise PhonePending(
             "NSW telephone number pending. data/verified-facts.yml -> "
@@ -93,22 +126,35 @@ def require_deployable_phone() -> None:
         )
 
 
-#: strings that must never appear in deployable output. Section 4 checklist line 1.
-FORBIDDEN_PHONE_PATTERNS = (
-    r"\(03\)",
-    r"\+61\s?3\b",
-    r"\+613\d",
-    r"\btel:\+613\d",
-    r"\b03\s\d{4}\s?\d{4}\b",
+#: Anything that looks like an Australian telephone number in deployable output.
+#: The gate is now an equality test, not an absence test (D42-R2 clause 4): every hit
+#: must be byte-identical to the attested display or E.164 form, so a stale or mistyped
+#: variant — "03 4328 3392", "+61 3 4328 3392", "0343283392" — still fails the build.
+PHONE_SHAPED = re.compile(
+    r"""(?x)
+    tel:\+?\d{6,15}
+  | \+61[\s-]?\d(?:[\s-]?\d){7,9}
+  | \(0\d\)[\s-]?\d{3,4}[\s-]?\d{3,4}
+  | \b0\d[\s-]?\d{4}[\s-]?\d{4}\b
+  | \b0\d{9}\b
+    """
 )
 
 
-def scan_forbidden_phone(text: str) -> list[str]:
-    """Every forbidden telephone fragment in `text`, for the output gate."""
-    hits: list[str] = []
-    for pattern in FORBIDDEN_PHONE_PATTERNS:
-        hits.extend(match.group(0) for match in re.finditer(pattern, text))
-    return hits
+def attested_phone_strings() -> set[str]:
+    """The only telephone strings permitted in deployable output."""
+    return {phone_display(), phone_uri(), phone_e164()}
+
+
+def scan_phone_mismatches(text: str) -> list[str]:
+    """Every phone-shaped string in `text` that is not the attested number.
+
+    Inverted from the D42-R1 absence check: under D42-R2 the number is allowed, so the
+    risk shifts from "a forbidden number appears" to "a variant of the right number
+    appears". A second display format is a NAP inconsistency and is treated as a failure.
+    """
+    allowed = attested_phone_strings()
+    return [m.group(0) for m in PHONE_SHAPED.finditer(text) if m.group(0) not in allowed]
 
 # ---------------------------------------------------------------- source data
 
